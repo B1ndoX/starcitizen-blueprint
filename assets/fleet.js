@@ -289,10 +289,14 @@ function initMemberPhysics() {
   engine.gravity.y = 1.08;
   const runner = Runner.create();
   const groundY = height - (width < 560 ? 78 : 64);
+  const topLimit = width < 560 ? 34 : 48;
   const wallDepth = 120;
-  const sideInset = width < 560 ? 32 : 42;
+  const sideInset = width < 560 ? 32 : 54;
   const walls = [
     Bodies.rectangle(width / 2, groundY + wallDepth / 2, width + wallDepth * 2, wallDepth, {
+      isStatic: true,
+    }),
+    Bodies.rectangle(width / 2, topLimit - wallDepth / 2, width + wallDepth * 2, wallDepth, {
       isStatic: true,
     }),
     Bodies.rectangle(sideInset - wallDepth / 2, height / 2, wallDepth, height * 2, {
@@ -309,9 +313,10 @@ function initMemberPhysics() {
     const chipW = chipBox.width || fighterSize + 30;
     const chipH = chipBox.height || fighterSize + 34;
     const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
-    const columnCount = Math.max(3, Math.floor(width / Math.max(78, radius * 1.65)));
-    const x = ((index % columnCount) + 0.5) * (width / columnCount);
-    const y = -80 - Math.floor(index / columnCount) * (radius * 2 + 22) - (index % 5) * 24;
+    const spawnMinX = sideInset + radius;
+    const spawnMaxX = width - sideInset - radius;
+    const x = randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX));
+    const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.62)) - index * randomRange(4, 12);
     const body = Bodies.circle(x, y, radius, {
       restitution: 0.34,
       friction: 0.72,
@@ -357,6 +362,7 @@ function initMemberPhysics() {
     combatants.forEach((item) => {
       const { body, chip, width: chipW, height: chipH, alive } = item;
       if (!alive) return;
+      keepFighterInBounds(item, { width, groundY, sideInset, topLimit });
       chip.style.setProperty("--chip-x", `${body.position.x - chipW / 2}px`);
       chip.style.setProperty("--chip-y", `${body.position.y - chipH / 2}px`);
       chip.style.setProperty("--body-rotation", `${body.angle}rad`);
@@ -397,6 +403,27 @@ function startCombatLoop(engine) {
       beginAttack(engine, attacker, target.item, now);
     });
   }, 160);
+}
+
+function keepFighterInBounds(item, bounds) {
+  if (!window.Matter) return;
+  const { Body } = window.Matter;
+  const { body, radius } = item;
+  const minX = bounds.sideInset + radius * 0.18;
+  const maxX = bounds.width - bounds.sideInset - radius * 0.18;
+  const minY = bounds.topLimit + radius * 0.35;
+  const maxY = bounds.groundY - radius * 0.22;
+  const nextX = clamp(body.position.x, minX, maxX);
+  const nextY = clamp(body.position.y, minY, maxY);
+
+  if (nextX !== body.position.x || nextY !== body.position.y) {
+    Body.setPosition(body, { x: nextX, y: nextY });
+    Body.setVelocity(body, {
+      x: clamp(body.velocity.x * 0.35, -6, 6),
+      y: clamp(body.velocity.y * 0.35, -6, 6),
+    });
+    Body.setAngularVelocity(body, clamp(body.angularVelocity, -0.08, 0.08));
+  }
 }
 
 function beginAttack(engine, attacker, target, now) {
@@ -808,15 +835,18 @@ function movePhysicsDrag(event) {
   const { Body } = window.Matter;
   const now = performance.now();
   const { item, fieldBox } = activePhysicsDrag;
+  const sideInset = fieldBox.width < 560 ? 32 : 54;
+  const groundY = fieldBox.height - (fieldBox.width < 560 ? 78 : 64);
+  const topLimit = fieldBox.width < 560 ? 34 : 48;
   const nextX = clamp(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.width / 2,
-    item.radius + 8,
-    fieldBox.width - item.radius - 8,
+    sideInset + item.radius * 0.18,
+    fieldBox.width - sideInset - item.radius * 0.18,
   );
   const nextY = clamp(
     event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.height / 2,
-    item.radius + 8,
-    fieldBox.height - item.radius - 8,
+    topLimit + item.radius * 0.35,
+    groundY - item.radius * 0.22,
   );
   const dt = Math.max(1, now - activePhysicsDrag.lastTime);
 
