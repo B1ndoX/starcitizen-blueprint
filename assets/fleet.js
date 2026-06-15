@@ -9,6 +9,7 @@ const scrollLinks = [...document.querySelectorAll("[data-scroll-link]")];
 const galleryDialog = document.querySelector("#galleryDialog");
 const galleryPreview = document.querySelector("#galleryPreview");
 const galleryMarquee = document.querySelector(".gallery-marquee");
+const galleryTrack = document.querySelector(".gallery-track");
 
 const rsiMediaBase = "https://robertsspaceindustries.com";
 const defaultAvatar =
@@ -881,6 +882,7 @@ updateActiveScrollLink();
 
 function openGalleryPreview(image) {
   if (!galleryDialog || !galleryPreview) return;
+  galleryTrack?.classList.add("is-paused");
   galleryPreview.src = image.currentSrc || image.src;
   galleryPreview.alt = image.alt || "GVY 团建照片放大预览";
   if (typeof galleryDialog.showModal === "function") {
@@ -890,10 +892,17 @@ function openGalleryPreview(image) {
   galleryDialog.setAttribute("open", "");
 }
 
-galleryMarquee?.addEventListener("click", (event) => {
+galleryMarquee?.addEventListener("pointerdown", (event) => {
+  if (event.button && event.button !== 0) return;
   const image = event.target.closest(".gallery-card img");
   if (!image) return;
+  event.preventDefault();
   openGalleryPreview(image);
+});
+
+galleryDialog?.addEventListener("close", () => {
+  galleryTrack?.classList.remove("is-paused");
+  if (galleryPreview) galleryPreview.removeAttribute("src");
 });
 
 galleryDialog?.addEventListener("click", (event) => {

@@ -971,7 +971,8 @@ a {
   animation: marquee 42s linear infinite;
 }
 
-.gallery-marquee:hover .gallery-track {
+.gallery-marquee:hover .gallery-track,
+.gallery-track.is-paused {
   animation-play-state: paused;
 }
 
