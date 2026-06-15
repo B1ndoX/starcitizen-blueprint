@@ -11,7 +11,7 @@
   --orange: #ff850a;
   --violet: #b969da;
   --line: #000000;
-  --max: 1180px;
+  --max: clamp(1180px, 88vw, 1840px);
 }
 
 * {
@@ -163,13 +163,13 @@ a {
 }
 
 .hero-section {
-  padding: 34px 18px 22px;
+  padding: clamp(24px, 3vw, 46px) 18px 22px;
 }
 
 .hero-stage {
   position: relative;
-  width: min(var(--max), 100%);
-  min-height: 620px;
+  width: min(var(--max), calc(100vw - 36px));
+  min-height: clamp(580px, calc(100vh - 132px), 860px);
   margin: 0 auto;
   overflow: hidden;
   border: 6px solid var(--line);
@@ -208,13 +208,13 @@ a {
 
 .hero-title {
   position: absolute;
-  inset: 86px 18px 70px;
+  inset: clamp(82px, 9vh, 118px) clamp(18px, 2.5vw, 46px) clamp(64px, 8vh, 98px);
   z-index: 2;
   display: grid;
   align-content: center;
   margin: 0;
   color: var(--ink);
-  font-size: 168px;
+  font-size: clamp(142px, 13vw, 270px);
   font-weight: 950;
   line-height: 0.82;
   text-align: center;

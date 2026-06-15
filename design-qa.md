@@ -114,6 +114,8 @@ Checks:
 - Added a mutual-destruction ending: if death resolution leaves zero living fighters, the battle now overrides any prior winner state and displays `💥 无人生还` with a no-survivors celebration layer.
 - Committed attacks and already-fired projectiles now finish resolving even if the attacker dies during windup or flight, making final trade kills possible instead of silently canceling the second hit.
 - Browser verification with `fleet.js?v=20260615-16` and `fleet.css?v=20260615-13` passed: 31 fighters loaded, current resources were active, and no horizontal overflow was detected.
+- Reworked fleet page width from a fixed 1180px stage to responsive `clamp(1180px, 88vw, 1840px)` sizing, with hero height tied to viewport height instead of a fixed 16:9-like composition.
+- Responsive browser measurement passed at 1280x720, 1600x900, 2200x1000, and 2560x1080: hero/content widths scaled from 1180px to 1408px to 1840px, no horizontal overflow was detected, and the bottom `返回顶部` action now targets `#pageTop`.
 
 Known note:
 - The page is a static prototype. The recruitment form generates a local application card only; it does not submit to RSI or send data to a server.
