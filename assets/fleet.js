@@ -6,6 +6,9 @@ const recruitOutput = document.querySelector("#recruitOutput");
 const memberField = document.querySelector("#memberField");
 const siteNav = document.querySelector(".site-nav");
 const scrollLinks = [...document.querySelectorAll("[data-scroll-link]")];
+const galleryDialog = document.querySelector("#galleryDialog");
+const galleryPreview = document.querySelector("#galleryPreview");
+const galleryMarquee = document.querySelector(".gallery-marquee");
 
 const rsiMediaBase = "https://robertsspaceindustries.com";
 const defaultAvatar =
@@ -875,6 +878,27 @@ scrollLinks.forEach((link) => {
 window.addEventListener("scroll", updateActiveScrollLink, { passive: true });
 window.addEventListener("resize", updateActiveScrollLink);
 updateActiveScrollLink();
+
+function openGalleryPreview(image) {
+  if (!galleryDialog || !galleryPreview) return;
+  galleryPreview.src = image.currentSrc || image.src;
+  galleryPreview.alt = image.alt || "GVY 团建照片放大预览";
+  if (typeof galleryDialog.showModal === "function") {
+    galleryDialog.showModal();
+    return;
+  }
+  galleryDialog.setAttribute("open", "");
+}
+
+galleryMarquee?.addEventListener("click", (event) => {
+  const image = event.target.closest(".gallery-card img");
+  if (!image) return;
+  openGalleryPreview(image);
+});
+
+galleryDialog?.addEventListener("click", (event) => {
+  if (event.target === galleryDialog) galleryDialog.close();
+});
 
 document.querySelectorAll("[data-open-recruit]").forEach((button) => {
   button.addEventListener("click", () => {
