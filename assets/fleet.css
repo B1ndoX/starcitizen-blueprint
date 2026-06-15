@@ -747,14 +747,14 @@ a {
 .ticker-track {
   display: flex;
   width: max-content;
-  gap: 24px;
-  padding: 8px 0;
+  gap: 36px;
+  padding: 5px 0;
   color: var(--ink);
-  font-size: clamp(22px, 1.35vw, 32px);
+  font-size: clamp(18px, 0.95vw, 24px);
   font-weight: 950;
   line-height: 1;
   white-space: nowrap;
-  animation: marquee 24s linear infinite;
+  animation: marquee 44s linear infinite;
 }
 
 .ticker-track span {
@@ -1414,8 +1414,8 @@ a {
   }
 
   .ticker-track {
-    padding: 9px 0;
-    font-size: clamp(24px, 1.15vw, 34px);
+    padding: 6px 0;
+    font-size: clamp(19px, 0.95vw, 26px);
   }
 
   .split-section,
@@ -1519,8 +1519,8 @@ a {
   }
 
   .ticker-track {
-    padding: 7px 0;
-    font-size: clamp(22px, 1vw, 28px);
+    padding: 5px 0;
+    font-size: clamp(18px, 0.82vw, 23px);
   }
 
   .split-section,
@@ -1573,7 +1573,7 @@ a {
   }
 
   .ticker-track {
-    font-size: clamp(20px, 0.9vw, 26px);
+    font-size: clamp(17px, 0.75vw, 21px);
   }
 }
 
@@ -1751,7 +1751,7 @@ a {
   }
 
   .ticker-track {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .split-section,
