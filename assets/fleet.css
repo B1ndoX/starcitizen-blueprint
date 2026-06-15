@@ -757,6 +757,7 @@ a {
 
 .split-section,
 .wings-section,
+.gallery-section,
 .join-section {
   width: min(var(--max), calc(100% - 36px));
   margin: 58px auto;
@@ -925,6 +926,73 @@ a {
   color: var(--ink);
   font-size: 12px;
   text-transform: uppercase;
+}
+
+.gallery-section {
+  overflow: hidden;
+}
+
+.gallery-section .section-head {
+  margin-bottom: 18px;
+}
+
+.gallery-marquee {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0 18px;
+  scrollbar-color: var(--line) transparent;
+}
+
+.gallery-marquee::-webkit-scrollbar {
+  height: 12px;
+}
+
+.gallery-marquee::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery-marquee::-webkit-scrollbar-thumb {
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--yellow);
+}
+
+.gallery-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  animation: marquee 42s linear infinite;
+}
+
+.gallery-marquee:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+.gallery-card {
+  flex: 0 0 clamp(280px, 28vw, 520px);
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border: 5px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 9px 9px 0 var(--line);
+  transform: rotate(-1deg);
+}
+
+.gallery-card:nth-child(2n) {
+  transform: rotate(1deg);
+}
+
+.gallery-card:nth-child(3n) {
+  transform: rotate(0deg);
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .join-section {
@@ -1308,6 +1376,7 @@ a {
 
   .split-section,
   .wings-section,
+  .gallery-section,
   .join-section {
     margin: clamp(64px, 5vw, 84px) auto;
   }
@@ -1412,6 +1481,7 @@ a {
 
   .split-section,
   .wings-section,
+  .gallery-section,
   .join-section {
     margin: clamp(34px, 4vh, 50px) auto;
   }
@@ -1499,17 +1569,48 @@ a {
 
 @media (max-width: 640px) {
   .site-nav {
-    gap: 12px;
-    padding: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    min-height: auto;
+    padding: 10px 12px 12px;
+  }
+
+  .fleet-brand {
+    min-width: 0;
+    gap: 8px;
   }
 
   .fleet-brand strong {
-    font-size: 20px;
+    display: block;
+    overflow: hidden;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fleet-brand small {
+    font-size: 10px;
+    line-height: 1.1;
   }
 
   .fleet-mark {
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
+    border-width: 3px;
+    box-shadow: 3px 3px 0 var(--line);
+  }
+
+  .fleet-mark img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .nav-return,
@@ -1517,7 +1618,16 @@ a {
   .primary-action,
   .secondary-action,
   .role-chip {
-    font-size: 14px;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .nav-links a,
+  .nav-return {
+    min-height: 42px;
+    padding: 0 10px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 var(--line);
   }
 
   .hero-section {
@@ -1525,7 +1635,7 @@ a {
   }
 
   .hero-stage {
-    min-height: 510px;
+    min-height: clamp(560px, calc(100vh - 168px), 700px);
     box-shadow: 7px 7px 0 var(--line);
   }
 
@@ -1560,10 +1670,35 @@ a {
     border-width: 4px;
   }
 
-  .weapon-icon {
-    right: -10px;
-    bottom: -8px;
-    border-width: 2px;
+  .weapon-aim {
+    right: -26%;
+    bottom: -24%;
+    width: calc(var(--fighter-size, 54px) * 0.9);
+    height: calc(var(--fighter-size, 54px) * 0.9);
+  }
+
+  .fighter-heavy .weapon-aim,
+  .fighter-axe .weapon-aim,
+  .fighter-bow .weapon-aim,
+  .fighter-crossbow .weapon-aim {
+    right: -30%;
+    bottom: -28%;
+    width: calc(var(--fighter-size, 54px) * 1.02);
+    height: calc(var(--fighter-size, 54px) * 1.02);
+  }
+
+  .fighter-spear .weapon-aim {
+    right: -34%;
+    bottom: -33%;
+    width: calc(var(--fighter-size, 54px) * 1.12);
+    height: calc(var(--fighter-size, 54px) * 1.12);
+  }
+
+  .fighter-shield .weapon-aim {
+    right: -20%;
+    bottom: -20%;
+    width: calc(var(--fighter-size, 54px) * 0.78);
+    height: calc(var(--fighter-size, 54px) * 0.78);
   }
 
   .primary-action,
@@ -1577,6 +1712,7 @@ a {
 
   .split-section,
   .wings-section,
+  .gallery-section,
   .join-section {
     width: calc(100% - 24px);
     margin: 38px auto;
@@ -1598,6 +1734,17 @@ a {
 
   .wing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-track {
+    gap: 12px;
+    animation-duration: 32s;
+  }
+
+  .gallery-card {
+    flex-basis: min(74vw, 330px);
+    border-width: 4px;
+    box-shadow: 6px 6px 0 var(--line);
   }
 
   .join-section {

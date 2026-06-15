@@ -157,6 +157,7 @@ const weaponDeck = [
   "pistol",
 ];
 const weaponsByKind = Object.fromEntries(weapons.map((weapon) => [weapon.kind, weapon]));
+const memberLoadouts = [];
 let physicsCleanup = null;
 let resizeTimer = null;
 let activePhysicsDrag = null;
@@ -178,8 +179,11 @@ function randomRange(min, max) {
 }
 
 function selectWeapon(index) {
-  const kind = weaponDeck[(index * 5 + 2) % weaponDeck.length];
-  return weaponsByKind[kind] || weapons[index % weapons.length];
+  if (memberLoadouts[index]) return memberLoadouts[index];
+
+  const kind = weaponDeck[Math.floor(Math.random() * weaponDeck.length)];
+  memberLoadouts[index] = weaponsByKind[kind] || weapons[Math.floor(Math.random() * weapons.length)];
+  return memberLoadouts[index];
 }
 
 function renderMemberWall() {
@@ -231,14 +235,14 @@ function preloadWeaponImages() {
 
 function calculateChipSizing(fieldWidth, memberCount) {
   const isMobile = fieldWidth < 560;
-  const base = isMobile ? 56 : fieldWidth < 940 ? 62 : 66;
-  const minimum = isMobile ? 42 : 48;
-  const reduction = Math.max(0, memberCount - 18) * (isMobile ? 0.65 : 0.85);
+  const base = isMobile ? 50 : fieldWidth < 940 ? 62 : 66;
+  const minimum = isMobile ? 38 : 48;
+  const reduction = Math.max(0, memberCount - 18) * (isMobile ? 0.75 : 0.85);
   const size = Math.round(clamp(base - reduction, minimum, base));
 
   return {
     size,
-    nameSize: Math.round(clamp(size / 5.2, isMobile ? 9 : 11, isMobile ? 11 : 13)),
+    nameSize: Math.round(clamp(size / 5.2, isMobile ? 8 : 11, isMobile ? 10 : 13)),
     weaponSize: Math.round(clamp(size / 7.2, isMobile ? 7 : 8, isMobile ? 9 : 10)),
   };
 }
