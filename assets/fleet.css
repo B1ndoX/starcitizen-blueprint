@@ -193,6 +193,7 @@ a {
 .hero-kicker {
   position: relative;
   z-index: 4;
+  display: block;
   width: fit-content;
   margin: 20px auto 0;
   padding: 10px 16px;
@@ -204,6 +205,8 @@ a {
   font-family: Arial, sans-serif;
   font-size: 15px;
   font-weight: 950;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .hero-title {
