@@ -1,0 +1,7 @@
+services:
+  blueprint-atlas:
+    build: .
+    container_name: sc-blueprint-atlas
+    restart: unless-stopped
+    ports:
+      - "8088:80"

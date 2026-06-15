@@ -1,0 +1,16 @@
+:80 {
+	root * /srv
+	encode zstd gzip
+	file_server
+
+	header {
+		Cache-Control "public, max-age=300"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+
+	@static {
+		path *.css *.js *.jpg *.png *.webp *.json
+	}
+	header @static Cache-Control "public, max-age=86400"
+}
