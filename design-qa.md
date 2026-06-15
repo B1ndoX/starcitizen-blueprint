@@ -116,6 +116,8 @@ Checks:
 - Browser verification with `fleet.js?v=20260615-16` and `fleet.css?v=20260615-13` passed: 31 fighters loaded, current resources were active, and no horizontal overflow was detected.
 - Reworked fleet page width from a fixed 1180px stage to responsive `clamp(1180px, 88vw, 1840px)` sizing, with hero height tied to viewport height instead of a fixed 16:9-like composition.
 - Responsive browser measurement passed at 1280x720, 1600x900, 2200x1000, and 2560x1080: hero/content widths scaled from 1180px to 1408px to 1840px, no horizontal overflow was detected, and the bottom `返回顶部` action now targets `#pageTop`.
+- Added display-ratio scaling for large monitors: normal large displays can expand to 2200px with larger nav, hero, headings, and cards, while 21:9 and 32:9 layouts cap width from viewport height so the page does not become a long strip.
+- Large-screen measurement passed at 1920x1080, 2560x1440, 3440x1440, and 3840x1080: normal 32-inch style layouts scaled up to 2200px, ultrawide layouts converged to 1960px/1782px, and no horizontal overflow was detected.
 
 Known note:
 - The page is a static prototype. The recruitment form generates a local application card only; it does not submit to RSI or send data to a server.
