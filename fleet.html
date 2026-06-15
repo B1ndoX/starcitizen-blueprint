@@ -9,7 +9,7 @@
       content="星际公民舰队官网：招募、舰队编队、行动板和成员风格展示。"
     />
     <title>星际远航者 GVY | Galactic Voyagers</title>
-    <link rel="stylesheet" href="./assets/fleet.css?v=20260616-7" />
+    <link rel="stylesheet" href="./assets/fleet.css?v=20260616-9" />
   </head>
   <body id="pageTop">
     <header class="site-nav" data-theme="dark">
@@ -242,6 +242,16 @@
       </section>
     </main>
 
+    <aside class="application-feed" aria-label="舰队申请动态">
+      <div class="feed-head">
+        <span>申请动态</span>
+        <strong>LIVE</strong>
+      </div>
+      <div class="feed-list" id="applicationFeed" aria-live="polite">
+        <p class="feed-empty">等待新的入队申请。</p>
+      </div>
+    </aside>
+
     <dialog class="recruit-dialog" id="recruitDialog">
       <form method="dialog">
         <button class="dialog-close" type="submit" aria-label="关闭">×</button>
@@ -286,6 +296,6 @@
     </dialog>
 
     <script src="./assets/vendor/matter.min.js?v=0.20.0" defer></script>
-    <script src="./assets/fleet.js?v=20260616-23" defer></script>
+    <script src="./assets/fleet.js?v=20260616-24" defer></script>
   </body>
 </html>
