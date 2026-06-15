@@ -10,8 +10,6 @@ const galleryDialog = document.querySelector("#galleryDialog");
 const galleryPreview = document.querySelector("#galleryPreview");
 const galleryMarquee = document.querySelector(".gallery-marquee");
 const galleryTrack = document.querySelector(".gallery-track");
-const applicationFeed = document.querySelector("#applicationFeed");
-const applicationFeedKey = "gvy-application-feed";
 
 const rsiMediaBase = "https://robertsspaceindustries.com";
 const defaultAvatar =
@@ -188,71 +186,6 @@ function avatarSrc(src) {
 
 function getNavOffset() {
   return Math.ceil((siteNav?.getBoundingClientRect().height || 0) + 22);
-}
-
-function readApplicationFeed() {
-  try {
-    return JSON.parse(localStorage.getItem(applicationFeedKey) || "[]");
-  } catch {
-    return [];
-  }
-}
-
-function writeApplicationFeed(items) {
-  try {
-    localStorage.setItem(applicationFeedKey, JSON.stringify(items.slice(0, 8)));
-  } catch {
-    // Storage can be blocked in private browsing; the live panel still updates in memory.
-  }
-}
-
-function renderApplicationFeed(items = readApplicationFeed()) {
-  if (!applicationFeed) return;
-  if (!items.length) {
-    applicationFeed.innerHTML = '<p class="feed-empty">等待新的入队申请。</p>';
-    return;
-  }
-
-  applicationFeed.innerHTML = items
-    .slice(0, 8)
-    .map((item) => {
-      const name = escapeHtml(item.name || "未知玩家");
-      const role = escapeHtml(item.role || "待定位置");
-      const time = escapeHtml(item.time || "刚刚");
-      return `
-        <article class="feed-item">
-          <strong>${name} 申请加入舰队</strong>
-          <span>${role}</span>
-          <time>${time}</time>
-        </article>
-      `;
-    })
-    .join("");
-}
-
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (char) => {
-    const entities = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;",
-    };
-    return entities[char];
-  });
-}
-
-function addApplicationFeedItem(name, role) {
-  const cleanName = String(name || "").trim() || "未知玩家";
-  const cleanRole = String(role || "").trim() || "待定位置";
-  const time = new Intl.DateTimeFormat("zh-CN", {
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(new Date());
-  const items = [{ name: cleanName, role: cleanRole, time }, ...readApplicationFeed()].slice(0, 8);
-  writeApplicationFeed(items);
-  renderApplicationFeed(items);
 }
 
 function clamp(value, min, max) {
@@ -1032,9 +965,7 @@ recruitForm.addEventListener("submit", (event) => {
   const formData = new FormData(recruitForm);
   const gameId = String(formData.get("gameId") || "Unknown").trim();
   const role = String(formData.get("role") || "待定").trim();
-  addApplicationFeedItem(gameId, role);
-  recruitOutput.value = `${gameId.toUpperCase()} / ${role} / 已显示在右侧申请动态，请继续前往 RSI 官网提交正式申请。`;
+  recruitOutput.value = `${gameId.toUpperCase()} / ${role} / GVY 申请卡已生成，请前往 RSI 官网提交正式申请。`;
 });
 
-renderApplicationFeed();
 renderMemberWall();
