@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
   background: var(--ink);
 }
 
@@ -153,6 +154,7 @@ a {
 }
 
 .nav-links a:hover,
+.nav-links a.is-active,
 .nav-return:hover,
 .secondary-action:hover,
 .primary-action:hover,
@@ -160,6 +162,10 @@ a {
 .role-chip.active {
   transform: translate(3px, 3px);
   box-shadow: 2px 2px 0 var(--line);
+}
+
+.nav-links a.is-active {
+  background: var(--pink);
 }
 
 .hero-section {
@@ -761,6 +767,7 @@ a {
 .join-section {
   width: min(var(--max), calc(100% - 36px));
   margin: 58px auto;
+  scroll-margin-top: 112px;
 }
 
 .split-section {
@@ -1607,7 +1614,7 @@ a {
 
   .nav-links {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
     overflow: visible;
     padding-bottom: 0;
@@ -1619,13 +1626,13 @@ a {
   .secondary-action,
   .role-chip {
     white-space: nowrap;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .nav-links a,
   .nav-return {
     min-height: 42px;
-    padding: 0 10px;
+    padding: 0 8px;
     border-width: 3px;
     box-shadow: 4px 4px 0 var(--line);
   }

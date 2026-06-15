@@ -4,6 +4,8 @@ const recruitDialog = document.querySelector("#recruitDialog");
 const recruitForm = document.querySelector("#recruitForm");
 const recruitOutput = document.querySelector("#recruitOutput");
 const memberField = document.querySelector("#memberField");
+const siteNav = document.querySelector(".site-nav");
+const scrollLinks = [...document.querySelectorAll("[data-scroll-link]")];
 
 const rsiMediaBase = "https://robertsspaceindustries.com";
 const defaultAvatar =
@@ -168,6 +170,10 @@ let winnerDeclared = false;
 function avatarSrc(src) {
   if (src.startsWith("/media/")) return `${rsiMediaBase}${src}`;
   return src;
+}
+
+function getNavOffset() {
+  return Math.ceil((siteNav?.getBoundingClientRect().height || 0) + 22);
 }
 
 function clamp(value, min, max) {
@@ -833,6 +839,42 @@ roleButtons.forEach((button) => {
     });
   });
 });
+
+function setActiveScrollLink(id) {
+  scrollLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+  });
+}
+
+function updateActiveScrollLink() {
+  if (!scrollLinks.length) return;
+  const offset = getNavOffset() + 18;
+  const sections = scrollLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+  const active = sections.reduce((current, section) => {
+    const top = section.getBoundingClientRect().top - offset;
+    if (top <= 0) return section;
+    return current;
+  }, null);
+  setActiveScrollLink(active?.id || "");
+}
+
+scrollLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+    event.preventDefault();
+    const top = window.scrollY + target.getBoundingClientRect().top - getNavOffset();
+    window.scrollTo({ top, behavior: "smooth" });
+    setActiveScrollLink(target.id);
+    history.replaceState(null, "", link.getAttribute("href"));
+  });
+});
+
+window.addEventListener("scroll", updateActiveScrollLink, { passive: true });
+window.addEventListener("resize", updateActiveScrollLink);
+updateActiveScrollLink();
 
 document.querySelectorAll("[data-open-recruit]").forEach((button) => {
   button.addEventListener("click", () => {
