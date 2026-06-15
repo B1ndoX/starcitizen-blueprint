@@ -733,8 +733,8 @@ a {
 
 .ticker-band {
   overflow: hidden;
-  border-top: 6px solid var(--line);
-  border-bottom: 6px solid var(--line);
+  border-top: 4px solid var(--line);
+  border-bottom: 4px solid var(--line);
   background: var(--yellow);
 }
 
@@ -742,9 +742,9 @@ a {
   display: flex;
   width: max-content;
   gap: 24px;
-  padding: 14px 0;
+  padding: 8px 0;
   color: var(--ink);
-  font-size: 42px;
+  font-size: clamp(22px, 1.35vw, 32px);
   font-weight: 950;
   line-height: 1;
   white-space: nowrap;
@@ -1370,8 +1370,8 @@ a {
   }
 
   .ticker-track {
-    padding: 16px 0;
-    font-size: clamp(44px, 1.9vw, 56px);
+    padding: 9px 0;
+    font-size: clamp(24px, 1.15vw, 34px);
   }
 
   .split-section,
@@ -1475,8 +1475,8 @@ a {
   }
 
   .ticker-track {
-    padding: 10px 0;
-    font-size: clamp(30px, 1.55vw, 40px);
+    padding: 7px 0;
+    font-size: clamp(22px, 1vw, 28px);
   }
 
   .split-section,
@@ -1529,7 +1529,7 @@ a {
   }
 
   .ticker-track {
-    font-size: clamp(28px, 1.25vw, 36px);
+    font-size: clamp(20px, 0.9vw, 26px);
   }
 }
 
@@ -1707,7 +1707,7 @@ a {
   }
 
   .ticker-track {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .split-section,
