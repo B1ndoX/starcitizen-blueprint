@@ -306,19 +306,21 @@ function initMemberPhysics() {
 
   combatants = chips.map((chip, index) => {
     const chipBox = chip.getBoundingClientRect();
+    const avatar = chip.querySelector(".fighter-avatar-wrap");
+    const avatarBox = avatar?.getBoundingClientRect();
     const fighterSize = sizing.size;
     const chipW = chipBox.width || fighterSize + 30;
     const chipH = chipBox.height || fighterSize + 34;
-    const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
+    const avatarCenterX = avatarBox ? avatarBox.left - chipBox.left + avatarBox.width / 2 : chipW / 2;
+    const avatarCenterY = avatarBox ? avatarBox.top - chipBox.top + avatarBox.height / 2 : chipH / 2;
+    const radius = Math.max(18, (avatarBox?.width || fighterSize) / 2);
     const weapon = selectWeapon(index);
-    const halfWidth = chipW / 2;
-    const halfHeight = chipH / 2;
-    const spawnMinX = sideInset + halfWidth;
-    const spawnMaxX = width - sideInset - halfWidth;
+    const spawnMinX = sideInset + radius;
+    const spawnMaxX = width - sideInset - radius;
     const x = randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX));
     const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.62)) - index * randomRange(4, 12);
     const body = Bodies.circle(x, y, radius, {
-      restitution: 0.34,
+      restitution: 0.08,
       friction: 0.72,
       frictionAir: 0.012,
       density: 0.0018,
@@ -329,6 +331,8 @@ function initMemberPhysics() {
       chip,
       width: chipW,
       height: chipH,
+      avatarCenterX,
+      avatarCenterY,
       radius,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
@@ -358,7 +362,41 @@ function initMemberPhysics() {
     return item;
   });
 
-  Composite.add(engine.world, combatants.map((item) => item.body));
+  const wallDepth = Math.max(220, sizing.size * 4);
+  const wallOptions = {
+    isStatic: true,
+    friction: 1,
+    frictionStatic: 1,
+    restitution: 0,
+    slop: 0,
+  };
+  const wallInnerLeft = sideInset;
+  const wallInnerRight = width - sideInset;
+  const wallInnerTop = topLimit;
+  const wallInnerBottom = groundY;
+  const walls = [
+    Bodies.rectangle(wallInnerLeft - wallDepth / 2, height / 2, wallDepth, height + wallDepth * 2, {
+      ...wallOptions,
+      label: "arena-wall-left",
+    }),
+    Bodies.rectangle(wallInnerRight + wallDepth / 2, height / 2, wallDepth, height + wallDepth * 2, {
+      ...wallOptions,
+      label: "arena-wall-right",
+    }),
+    Bodies.rectangle(width / 2, wallInnerTop - wallDepth / 2, width + wallDepth * 2, wallDepth, {
+      ...wallOptions,
+      label: "arena-wall-top",
+    }),
+    Bodies.rectangle(width / 2, wallInnerBottom + wallDepth / 2, width + wallDepth * 2, wallDepth, {
+      ...wallOptions,
+      label: "arena-wall-bottom",
+    }),
+  ];
+  walls.forEach((wall) => {
+    wall.fleetWallEdge = wall.label.replace("arena-wall-", "");
+  });
+
+  Composite.add(engine.world, [...walls, ...combatants.map((item) => item.body)]);
   const arenaBounds = { width, groundY, sideInset, topLimit };
   activeArenaBounds = arenaBounds;
   Events.on(engine, "beforeUpdate", () => {
@@ -372,6 +410,7 @@ function initMemberPhysics() {
     });
   });
   Events.on(engine, "collisionStart", handleCollisionStart);
+  Events.on(engine, "collisionActive", handleWallCollisions);
 
   let frame = 0;
   let renderTick = 0;
@@ -386,8 +425,8 @@ function initMemberPhysics() {
       const { body, chip, width: chipW, height: chipH, alive } = item;
       if (!alive) return;
       keepFighterInBounds(item, arenaBounds, true);
-      const nextX = Math.round((body.position.x - chipW / 2) * 10) / 10;
-      const nextY = Math.round((body.position.y - chipH / 2) * 10) / 10;
+      const nextX = Math.round((body.position.x - item.avatarCenterX) * 10) / 10;
+      const nextY = Math.round((body.position.y - item.avatarCenterY) * 10) / 10;
       const nextAngle = Math.round(body.angle * 1000) / 1000;
       if (nextX !== item.lastRenderX) {
         chip.style.setProperty("--chip-x", `${nextX}px`);
@@ -445,16 +484,15 @@ function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
   const { body } = item;
-  const halfWidth = item.width / 2;
-  const halfHeight = item.height / 2;
-  const minX = bounds.sideInset + halfWidth;
-  const maxX = bounds.width - bounds.sideInset - halfWidth;
-  const minY = bounds.topLimit + halfHeight;
-  const maxY = bounds.groundY - halfHeight;
+  const radius = item.radius;
+  const minX = bounds.sideInset + radius;
+  const maxX = bounds.width - bounds.sideInset - radius;
+  const minY = bounds.topLimit + radius;
+  const maxY = bounds.groundY - radius;
   const nextX = clamp(body.position.x, minX, maxX);
   const nextY = clamp(body.position.y, minY, maxY);
-  const maxVelocity = strict ? 8 : 10;
-  const edgeEpsilon = 1.2;
+  const maxVelocity = strict ? 7.5 : 9;
+  const edgeEpsilon = 0.3;
 
   if (nextX !== body.position.x || nextY !== body.position.y) {
     const hitHorizontalWall = nextX !== body.position.x;
@@ -622,10 +660,42 @@ function chaseTarget(attacker, target, now) {
 function handleCollisionStart(event) {
   if (!window.Matter) return;
 
+  handleWallCollisions(event);
   event.pairs.forEach((pair) => {
     nudgeCollisionBody(pair.bodyA, pair.bodyB);
     nudgeCollisionBody(pair.bodyB, pair.bodyA);
   });
+}
+
+function handleWallCollisions(event) {
+  if (!window.Matter) return;
+
+  event.pairs.forEach((pair) => {
+    absorbWallCollision(pair.bodyA, pair.bodyB);
+    absorbWallCollision(pair.bodyB, pair.bodyA);
+  });
+}
+
+function absorbWallCollision(body, otherBody) {
+  const item = body.fighterItem;
+  const edge = otherBody?.fleetWallEdge;
+  if (!item?.alive || !edge) return;
+
+  const { Body } = window.Matter;
+  const velocity = { x: body.velocity.x, y: body.velocity.y };
+
+  if (edge === "left" || edge === "right") {
+    velocity.x = 0;
+    body.force.x = 0;
+  }
+  if (edge === "top" || edge === "bottom") {
+    velocity.y = 0;
+    body.force.y = 0;
+  }
+
+  Body.setVelocity(body, velocity);
+  Body.setAngularVelocity(body, clamp(body.angularVelocity * 0.45, -0.035, 0.035));
+  lockArenaBoundary(item);
 }
 
 function nudgeCollisionBody(body, otherBody) {
@@ -868,8 +938,8 @@ function startPhysicsDrag(event) {
 
   const { Body } = window.Matter;
   const fieldBox = memberField.getBoundingClientRect();
-  const chipLeft = fieldBox.left + item.body.position.x - item.width / 2;
-  const chipTop = fieldBox.top + item.body.position.y - item.height / 2;
+  const chipLeft = fieldBox.left + item.body.position.x - item.avatarCenterX;
+  const chipTop = fieldBox.top + item.body.position.y - item.avatarCenterY;
 
   activePhysicsDrag = {
     item,
@@ -900,17 +970,16 @@ function movePhysicsDrag(event) {
   const sideInset = 6;
   const groundY = fieldBox.height - sideInset;
   const topLimit = sideInset;
-  const halfWidth = item.width / 2;
-  const halfHeight = item.height / 2;
+  const radius = item.radius;
   const nextX = clamp(
-    event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.width / 2,
-    sideInset + halfWidth,
-    fieldBox.width - sideInset - halfWidth,
+    event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.avatarCenterX,
+    sideInset + radius,
+    fieldBox.width - sideInset - radius,
   );
   const nextY = clamp(
-    event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.height / 2,
-    topLimit + halfHeight,
-    groundY - halfHeight,
+    event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.avatarCenterY,
+    topLimit + radius,
+    groundY - radius,
   );
   const dt = Math.max(1, now - activePhysicsDrag.lastTime);
 
