@@ -299,10 +299,10 @@ function initMemberPhysics() {
   engine.constraintIterations = 1;
   engine.gravity.y = 1.08;
   const runner = Runner.create();
-  const groundY = height - (width < 560 ? 78 : 64);
+  const groundY = height - (width < 560 ? 30 : 34);
   const topLimit = width < 560 ? 34 : 48;
   const wallDepth = Math.max(180, sizing.size * 3.4);
-  const sideInset = width < 560 ? 32 : 54;
+  const sideInset = width < 560 ? 10 : 14;
   const walls = [
     Bodies.rectangle(width / 2, groundY + wallDepth / 2, width + wallDepth * 2, wallDepth, {
       isStatic: true,
@@ -325,7 +325,7 @@ function initMemberPhysics() {
     const chipH = chipBox.height || fighterSize + 34;
     const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
     const weapon = selectWeapon(index);
-    const xPadding = Math.min(Math.max(radius * 1.5, chipW * 0.62, 42), Math.max(24, (width - sideInset * 2) / 2 - 4));
+    const xPadding = Math.min(Math.max(radius * 2.4, chipW * 1.3, width < 560 ? 76 : 110), Math.max(24, (width - sideInset * 2) / 2 - 4));
     const yPadding = Math.min(Math.max(radius * 1.02, chipH * 0.54, 32), Math.max(24, (groundY - topLimit) / 2 - 4));
     const spawnMinX = sideInset + xPadding;
     const spawnMaxX = width - sideInset - xPadding;
@@ -465,12 +465,16 @@ function keepFighterInBounds(item, bounds, strict = false) {
   const maxVelocity = strict ? 8 : 10;
 
   if (nextX !== body.position.x || nextY !== body.position.y) {
+    const hitLeftWall = body.position.x < minX && body.velocity.x < 0;
+    const hitRightWall = body.position.x > maxX && body.velocity.x > 0;
+    const hitTopWall = body.position.y < minY && body.velocity.y < 0;
+    const hitFloor = body.position.y > maxY && body.velocity.y > 0;
     Body.setPosition(body, { x: nextX, y: nextY });
     Body.setVelocity(body, {
-      x: clamp(body.velocity.x * 0.22, -maxVelocity, maxVelocity),
-      y: clamp(body.velocity.y * 0.22, -maxVelocity, maxVelocity),
+      x: hitLeftWall || hitRightWall ? 0 : clamp(body.velocity.x, -maxVelocity, maxVelocity),
+      y: hitTopWall || hitFloor ? 0 : clamp(body.velocity.y, -maxVelocity, maxVelocity),
     });
-    Body.setAngularVelocity(body, clamp(body.angularVelocity, -0.08, 0.08));
+    Body.setAngularVelocity(body, clamp(body.angularVelocity * 0.35, -0.04, 0.04));
     return;
   }
 
@@ -612,7 +616,7 @@ function handleCollisionStart(event) {
 
 function nudgeCollisionBody(body, otherBody) {
   const item = body.fighterItem;
-  if (!item?.alive || !otherBody) return;
+  if (!item?.alive || !otherBody?.fighterItem) return;
 
   const now = performance.now();
   if (now < item.nextCollisionBounceAt) return;
@@ -750,10 +754,10 @@ function celebrateWinner(winner) {
   if (window.Matter) {
     const { Body } = window.Matter;
     Body.setVelocity(winner.body, {
-      x: clamp(winner.body.velocity.x * 0.25 + randomRange(-2.6, 2.6), -6, 6),
-      y: -randomRange(7.2, 10.2),
+      x: clamp(winner.body.velocity.x * 0.2, -3, 3),
+      y: clamp(winner.body.velocity.y, -2, 4),
     });
-    Body.setAngularVelocity(winner.body, winner.body.angularVelocity + randomRange(-0.08, 0.08));
+    Body.setAngularVelocity(winner.body, clamp(winner.body.angularVelocity * 0.3, -0.03, 0.03));
   }
 
   const winnerName = winner.chip.querySelector(".fighter-name")?.textContent?.trim() || "GVY";
@@ -899,8 +903,8 @@ function movePhysicsDrag(event) {
   const { Body } = window.Matter;
   const now = performance.now();
   const { item, fieldBox } = activePhysicsDrag;
-  const sideInset = fieldBox.width < 560 ? 32 : 54;
-  const groundY = fieldBox.height - (fieldBox.width < 560 ? 78 : 64);
+  const sideInset = fieldBox.width < 560 ? 10 : 14;
+  const groundY = fieldBox.height - (fieldBox.width < 560 ? 30 : 34);
   const topLimit = fieldBox.width < 560 ? 34 : 48;
   const xPadding = item.xPadding || Math.max(item.radius, item.width * 0.5, 24);
   const yPadding = item.yPadding || Math.max(item.radius * 0.78, item.height * 0.42, 24);

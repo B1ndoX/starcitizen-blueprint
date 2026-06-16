@@ -514,12 +514,31 @@ a {
 .member-fighter.is-winner {
   z-index: 14;
   filter: saturate(1.45) contrast(1.18);
-  scale: 1.16;
 }
 
 .member-fighter.is-winner .fighter-name {
   background: var(--acid);
   animation: winnerBounce 1100ms ease-in-out infinite;
+}
+
+.member-fighter.is-winner::before {
+  position: absolute;
+  top: calc(var(--fighter-size, 66px) * 0.18);
+  left: 50%;
+  z-index: 5;
+  color: var(--yellow);
+  font-size: calc(var(--fighter-size, 66px) * 0.42);
+  line-height: 1;
+  text-shadow:
+    2px 0 0 var(--line),
+    -2px 0 0 var(--line),
+    0 2px 0 var(--line),
+    0 -2px 0 var(--line),
+    4px 4px 0 var(--line);
+  transform: translateX(-50%) rotate(-8deg);
+  content: "👑";
+  pointer-events: none;
+  animation: winnerCrown 1200ms ease-in-out infinite;
 }
 
 .member-fighter.is-winner .fighter-avatar-wrap {
@@ -1279,6 +1298,17 @@ a {
 
   50% {
     translate: 0 -5px;
+  }
+}
+
+@keyframes winnerCrown {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -4px;
   }
 }
 
