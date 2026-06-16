@@ -743,9 +743,13 @@ a {
 }
 
 .ticker-band {
+  width: min(var(--max), calc(100vw - 36px));
+  margin: 0 auto;
   overflow: hidden;
   border-top: 4px solid var(--line);
+  border-right: 4px solid var(--line);
   border-bottom: 4px solid var(--line);
+  border-left: 4px solid var(--line);
   background: var(--yellow);
 }
 
