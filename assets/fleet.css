@@ -752,14 +752,14 @@ a {
 .ticker-track {
   display: flex;
   width: max-content;
-  gap: 36px;
-  padding: 5px 0;
+  gap: 72px;
+  padding: 11px 0 12px;
   color: var(--ink);
-  font-size: clamp(18px, 0.95vw, 24px);
+  font-size: clamp(22px, 1.25vw, 34px);
   font-weight: 950;
-  line-height: 1;
+  line-height: 1.12;
   white-space: nowrap;
-  animation: marquee 44s linear infinite;
+  animation: marquee 74s linear infinite;
 }
 
 .ticker-track span {
@@ -949,10 +949,17 @@ a {
 }
 
 .gallery-marquee {
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
-  padding: 8px 0 18px;
+  padding: 22px 0 30px;
+  cursor: grab;
   scrollbar-color: var(--line) transparent;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.gallery-marquee.is-dragging {
+  cursor: grabbing;
 }
 
 .gallery-marquee::-webkit-scrollbar {
@@ -982,7 +989,14 @@ a {
   animation-play-state: paused;
 }
 
+.gallery-track.is-js-marquee {
+  animation: none;
+  will-change: transform;
+}
+
 .gallery-card {
+  position: relative;
+  z-index: 0;
   flex: 0 0 clamp(280px, 28vw, 520px);
   aspect-ratio: 16 / 9;
   margin: 0;
@@ -993,10 +1007,23 @@ a {
   box-shadow: 9px 9px 0 var(--line);
   cursor: zoom-in;
   transform: rotate(-1deg);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease,
+    transform 180ms ease;
 }
 
-.gallery-card:hover {
-  filter: saturate(1.08) contrast(1.04);
+.gallery-card:hover,
+.gallery-card:focus-within,
+.gallery-card:active {
+  z-index: 2;
+  border-color: var(--yellow);
+  box-shadow:
+    0 0 0 5px var(--paper),
+    14px 16px 0 var(--line);
+  filter: saturate(1.16) contrast(1.08) brightness(1.06);
+  transform: translateY(-14px) scale(1.045) rotate(0deg);
 }
 
 .gallery-card:nth-child(2n) {
@@ -1012,6 +1039,13 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.gallery-card:hover img,
+.gallery-card:focus-within img,
+.gallery-card:active img {
+  transform: scale(1.035);
 }
 
 .gallery-dialog {
@@ -1420,8 +1454,8 @@ a {
   }
 
   .ticker-track {
-    padding: 6px 0;
-    font-size: clamp(19px, 0.95vw, 26px);
+    padding: 12px 0 13px;
+    font-size: clamp(23px, 1.12vw, 34px);
   }
 
   .split-section,
@@ -1525,8 +1559,8 @@ a {
   }
 
   .ticker-track {
-    padding: 5px 0;
-    font-size: clamp(18px, 0.82vw, 23px);
+    padding: 10px 0 11px;
+    font-size: clamp(21px, 0.92vw, 28px);
   }
 
   .split-section,
@@ -1579,7 +1613,7 @@ a {
   }
 
   .ticker-track {
-    font-size: clamp(17px, 0.75vw, 21px);
+    font-size: clamp(19px, 0.84vw, 24px);
   }
 }
 
@@ -1757,6 +1791,8 @@ a {
   }
 
   .ticker-track {
+    gap: 48px;
+    padding: 9px 0 10px;
     font-size: 18px;
   }
 

@@ -10,6 +10,13 @@ const galleryDialog = document.querySelector("#galleryDialog");
 const galleryPreview = document.querySelector("#galleryPreview");
 const galleryMarquee = document.querySelector(".gallery-marquee");
 const galleryTrack = document.querySelector(".gallery-track");
+let galleryFrame = 0;
+let galleryHalfWidth = 0;
+let galleryOffset = 0;
+let galleryLastFrameAt = 0;
+let galleryHoverPaused = false;
+let galleryDialogPaused = false;
+let galleryDrag = null;
 
 const rsiMediaBase = "https://robertsspaceindustries.com";
 const defaultAvatar =
@@ -232,6 +239,7 @@ function renderMemberWall() {
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(initMemberPhysics, 180);
+    measureGalleryTrack();
   });
 }
 
@@ -286,6 +294,9 @@ function initMemberPhysics() {
   applyChipSizing(sizing);
 
   const engine = Engine.create();
+  engine.positionIterations = 4;
+  engine.velocityIterations = 3;
+  engine.constraintIterations = 1;
   engine.gravity.y = 1.08;
   const runner = Runner.create();
   const groundY = height - (width < 560 ? 78 : 64);
@@ -341,6 +352,11 @@ function initMemberPhysics() {
       nextCollisionBounceAt: 0,
       nextStompReactionAt: 0,
       actionUntil: 0,
+      lastRenderAngle: null,
+      lastRenderX: null,
+      lastRenderY: null,
+      lastWeaponAngle: null,
+      lastWeaponAttackAngle: null,
       weapon,
     };
     chip.style.setProperty("--hp", "100%");
@@ -358,14 +374,34 @@ function initMemberPhysics() {
   Events.on(engine, "collisionStart", handleCollisionStart);
 
   let frame = 0;
+  let renderTick = 0;
+  const arenaBounds = { width, groundY, sideInset, topLimit };
+  const renderEvery = width < 560 ? 2 : 1;
   function syncDom() {
+    renderTick += 1;
+    if (renderTick % renderEvery !== 0) {
+      frame = requestAnimationFrame(syncDom);
+      return;
+    }
     combatants.forEach((item) => {
       const { body, chip, width: chipW, height: chipH, alive } = item;
       if (!alive) return;
-      keepFighterInBounds(item, { width, groundY, sideInset, topLimit });
-      chip.style.setProperty("--chip-x", `${body.position.x - chipW / 2}px`);
-      chip.style.setProperty("--chip-y", `${body.position.y - chipH / 2}px`);
-      chip.style.setProperty("--body-rotation", `${body.angle}rad`);
+      keepFighterInBounds(item, arenaBounds);
+      const nextX = Math.round((body.position.x - chipW / 2) * 10) / 10;
+      const nextY = Math.round((body.position.y - chipH / 2) * 10) / 10;
+      const nextAngle = Math.round(body.angle * 1000) / 1000;
+      if (nextX !== item.lastRenderX) {
+        chip.style.setProperty("--chip-x", `${nextX}px`);
+        item.lastRenderX = nextX;
+      }
+      if (nextY !== item.lastRenderY) {
+        chip.style.setProperty("--chip-y", `${nextY}px`);
+        item.lastRenderY = nextY;
+      }
+      if (nextAngle !== item.lastRenderAngle) {
+        chip.style.setProperty("--body-rotation", `${nextAngle}rad`);
+        item.lastRenderAngle = nextAngle;
+      }
       if (item.target?.alive) aimWeaponAt(item, item.target);
     });
     frame = requestAnimationFrame(syncDom);
@@ -446,8 +482,14 @@ function aimWeaponAt(attacker, target) {
   const targetAngle = Math.atan2(dy, dx);
   const relativeAngle = targetAngle - attacker.body.angle + ((attacker.weapon.aimOffset || 0) * Math.PI) / 180;
 
-  attacker.chip.style.setProperty("--weapon-angle", `${relativeAngle}rad`);
-  attacker.chip.style.setProperty("--weapon-attack-angle", `${targetAngle}rad`);
+  if (attacker.lastWeaponAngle === null || Math.abs(relativeAngle - attacker.lastWeaponAngle) > 0.025) {
+    attacker.chip.style.setProperty("--weapon-angle", `${relativeAngle}rad`);
+    attacker.lastWeaponAngle = relativeAngle;
+  }
+  if (attacker.lastWeaponAttackAngle === null || Math.abs(targetAngle - attacker.lastWeaponAttackAngle) > 0.025) {
+    attacker.chip.style.setProperty("--weapon-attack-angle", `${targetAngle}rad`);
+    attacker.lastWeaponAttackAngle = targetAngle;
+  }
 }
 
 function hopFighter(fighter, now, target) {
@@ -923,7 +965,8 @@ updateActiveScrollLink();
 
 function openGalleryPreview(image) {
   if (!galleryDialog || !galleryPreview) return;
-  galleryTrack?.classList.add("is-paused");
+  galleryDialogPaused = true;
+  updateGalleryPauseState();
   galleryPreview.src = image.currentSrc || image.src;
   galleryPreview.alt = image.alt || "GVY 团建照片放大预览";
   if (typeof galleryDialog.showModal === "function") {
@@ -933,16 +976,113 @@ function openGalleryPreview(image) {
   galleryDialog.setAttribute("open", "");
 }
 
+function normalizeGalleryOffset() {
+  if (!galleryHalfWidth) return;
+  while (galleryOffset <= -galleryHalfWidth) galleryOffset += galleryHalfWidth;
+  while (galleryOffset > 0) galleryOffset -= galleryHalfWidth;
+}
+
+function renderGalleryOffset() {
+  if (!galleryTrack) return;
+  galleryTrack.style.transform = `translate3d(${Math.round(galleryOffset * 10) / 10}px, 0, 0)`;
+}
+
+function measureGalleryTrack() {
+  if (!galleryTrack) return;
+  galleryHalfWidth = galleryTrack.scrollWidth / 2;
+  normalizeGalleryOffset();
+  renderGalleryOffset();
+}
+
+function isGalleryPaused() {
+  return galleryHoverPaused || galleryDialogPaused || Boolean(galleryDrag);
+}
+
+function updateGalleryPauseState() {
+  galleryTrack?.classList.toggle("is-paused", isGalleryPaused());
+}
+
+function runGalleryMarquee(timestamp) {
+  if (!galleryTrack || !galleryHalfWidth) {
+    galleryFrame = requestAnimationFrame(runGalleryMarquee);
+    return;
+  }
+  if (!galleryLastFrameAt) galleryLastFrameAt = timestamp;
+  const elapsed = Math.min(64, timestamp - galleryLastFrameAt);
+  galleryLastFrameAt = timestamp;
+
+  if (!isGalleryPaused()) {
+    const cycleMs = window.innerWidth < 640 ? 46000 : 42000;
+    galleryOffset -= (galleryHalfWidth / cycleMs) * elapsed;
+    normalizeGalleryOffset();
+    renderGalleryOffset();
+  }
+
+  galleryFrame = requestAnimationFrame(runGalleryMarquee);
+}
+
+function initGalleryMarquee() {
+  if (!galleryMarquee || !galleryTrack) return;
+  galleryTrack.classList.add("is-js-marquee");
+  measureGalleryTrack();
+  cancelAnimationFrame(galleryFrame);
+  galleryFrame = requestAnimationFrame(runGalleryMarquee);
+}
+
+galleryMarquee?.addEventListener("pointerenter", () => {
+  galleryHoverPaused = true;
+  updateGalleryPauseState();
+});
+
+galleryMarquee?.addEventListener("pointerleave", () => {
+  galleryHoverPaused = false;
+  updateGalleryPauseState();
+});
+
 galleryMarquee?.addEventListener("pointerdown", (event) => {
   if (event.button && event.button !== 0) return;
   const image = event.target.closest(".gallery-card img");
   if (!image) return;
   event.preventDefault();
-  openGalleryPreview(image);
+  measureGalleryTrack();
+  galleryDrag = {
+    image,
+    moved: false,
+    pointerId: event.pointerId,
+    startOffset: galleryOffset,
+    startX: event.clientX,
+  };
+  galleryMarquee.classList.add("is-dragging");
+  galleryMarquee.setPointerCapture?.(event.pointerId);
+  updateGalleryPauseState();
 });
 
+galleryMarquee?.addEventListener("pointermove", (event) => {
+  if (!galleryDrag) return;
+  const distance = event.clientX - galleryDrag.startX;
+  if (Math.abs(distance) > 6) galleryDrag.moved = true;
+  galleryOffset = galleryDrag.startOffset + distance;
+  normalizeGalleryOffset();
+  renderGalleryOffset();
+});
+
+function finishGalleryDrag(event) {
+  if (!galleryDrag) return;
+  const { image, moved, pointerId } = galleryDrag;
+  galleryDrag = null;
+  if (event?.pointerType && event.pointerType !== "mouse") galleryHoverPaused = false;
+  galleryMarquee?.classList.remove("is-dragging");
+  if (pointerId !== undefined) galleryMarquee?.releasePointerCapture?.(pointerId);
+  updateGalleryPauseState();
+  if (!moved && event?.type !== "pointercancel") openGalleryPreview(image);
+}
+
+galleryMarquee?.addEventListener("pointerup", finishGalleryDrag);
+galleryMarquee?.addEventListener("pointercancel", finishGalleryDrag);
+
 galleryDialog?.addEventListener("close", () => {
-  galleryTrack?.classList.remove("is-paused");
+  galleryDialogPaused = false;
+  updateGalleryPauseState();
   if (galleryPreview) galleryPreview.removeAttribute("src");
 });
 
@@ -968,4 +1108,5 @@ recruitForm.addEventListener("submit", (event) => {
   recruitOutput.value = `${gameId.toUpperCase()} / ${role} / GVY 申请卡已生成，请前往 RSI 官网提交正式申请。`;
 });
 
+initGalleryMarquee();
 renderMemberWall();
