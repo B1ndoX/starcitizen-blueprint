@@ -300,7 +300,7 @@ function initMemberPhysics() {
   engine.constraintIterations = 1;
   engine.gravity.y = 0.58;
   const runner = Runner.create();
-  const sideInset = 6;
+  const sideInset = 16;
   const topLimit = sideInset;
   const groundY = height - sideInset;
 
@@ -967,7 +967,7 @@ function movePhysicsDrag(event) {
   const { Body } = window.Matter;
   const now = performance.now();
   const { item, fieldBox } = activePhysicsDrag;
-  const sideInset = 6;
+  const sideInset = 16;
   const groundY = fieldBox.height - sideInset;
   const topLimit = sideInset;
   const radius = item.radius;
