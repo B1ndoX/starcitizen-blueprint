@@ -203,6 +203,36 @@ function randomRange(min, max) {
   return min + Math.random() * (max - min);
 }
 
+function measureFighterPadding(chip, fallbackWidth, fallbackHeight, fallbackRadius) {
+  const chipBox = chip.getBoundingClientRect();
+  const centerX = chipBox.left + chipBox.width / 2;
+  const centerY = chipBox.top + chipBox.height / 2;
+  const visualParts = chip.querySelectorAll(".fighter-name, .fighter-avatar-wrap, .health-bar");
+  let left = chipBox.left;
+  let right = chipBox.right;
+  let top = chipBox.top;
+  let bottom = chipBox.bottom;
+
+  visualParts.forEach((part) => {
+    const rect = part.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    left = Math.min(left, rect.left);
+    right = Math.max(right, rect.right);
+    top = Math.min(top, rect.top);
+    bottom = Math.max(bottom, rect.bottom);
+  });
+
+  const minimumSide = Math.max(fallbackRadius * 1.08, fallbackWidth / 2, 30);
+  const minimumVertical = Math.max(fallbackHeight / 2, 24);
+
+  return {
+    left: Math.max(minimumSide, centerX - left),
+    right: Math.max(minimumSide, right - centerX),
+    top: Math.max(minimumVertical, centerY - top),
+    bottom: Math.max(minimumVertical, bottom - centerY),
+  };
+}
+
 function selectWeapon(index) {
   if (memberLoadouts[index]) return memberLoadouts[index];
 
@@ -310,10 +340,15 @@ function initMemberPhysics() {
     const chipH = chipBox.height || fighterSize + 34;
     const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
     const weapon = selectWeapon(index);
-    const xPadding = Math.min(Math.max(radius * 1.08, width < 560 ? 30 : 34), Math.max(24, (width - sideInset * 2) / 2 - 4));
-    const yPadding = Math.min(Math.max(chipH / 2, 24), Math.max(24, (groundY - topLimit) / 2 - 4));
-    const spawnMinX = sideInset + xPadding;
-    const spawnMaxX = width - sideInset - xPadding;
+    const measuredPadding = measureFighterPadding(chip, chipW, chipH, radius);
+    const maxHorizontalPadding = Math.max(24, (width - sideInset * 2) / 2 - 4);
+    const maxVerticalPadding = Math.max(24, (groundY - topLimit) / 2 - 4);
+    const leftPadding = Math.min(measuredPadding.left, maxHorizontalPadding);
+    const rightPadding = Math.min(measuredPadding.right, maxHorizontalPadding);
+    const topPadding = Math.min(measuredPadding.top, maxVerticalPadding);
+    const bottomPadding = Math.min(measuredPadding.bottom, maxVerticalPadding);
+    const spawnMinX = sideInset + leftPadding;
+    const spawnMaxX = width - sideInset - rightPadding;
     const x = randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX));
     const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.62)) - index * randomRange(4, 12);
     const body = Bodies.circle(x, y, radius, {
@@ -329,8 +364,10 @@ function initMemberPhysics() {
       width: chipW,
       height: chipH,
       radius,
-      xPadding,
-      yPadding,
+      leftPadding,
+      rightPadding,
+      topPadding,
+      bottomPadding,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
       alive: true,
@@ -361,6 +398,11 @@ function initMemberPhysics() {
 
   Composite.add(engine.world, combatants.map((item) => item.body));
   const arenaBounds = { width, groundY, sideInset, topLimit };
+  Events.on(engine, "beforeUpdate", () => {
+    combatants.forEach((item) => {
+      if (item.alive) keepFighterInBounds(item, arenaBounds, true);
+    });
+  });
   Events.on(engine, "afterUpdate", () => {
     combatants.forEach((item) => {
       if (item.alive) keepFighterInBounds(item, arenaBounds, true);
@@ -380,7 +422,7 @@ function initMemberPhysics() {
     combatants.forEach((item) => {
       const { body, chip, width: chipW, height: chipH, alive } = item;
       if (!alive) return;
-      keepFighterInBounds(item, arenaBounds);
+      keepFighterInBounds(item, arenaBounds, true);
       const nextX = Math.round((body.position.x - chipW / 2) * 10) / 10;
       const nextY = Math.round((body.position.y - chipH / 2) * 10) / 10;
       const nextAngle = Math.round(body.angle * 1000) / 1000;
@@ -439,25 +481,23 @@ function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
   const { body } = item;
-  const xPadding = item.xPadding || Math.max(item.radius * 1.08, 30);
-  const yPadding = item.yPadding || Math.max(item.height / 2, 24);
-  const minX = bounds.sideInset + xPadding;
-  const maxX = bounds.width - bounds.sideInset - xPadding;
-  const minY = bounds.topLimit + yPadding;
-  const maxY = bounds.groundY - yPadding;
+  const sidePadding = Math.max(item.radius * 1.08, item.width / 2, 30);
+  const verticalPadding = Math.max(item.height / 2, 24);
+  const minX = bounds.sideInset + (item.leftPadding || sidePadding);
+  const maxX = bounds.width - bounds.sideInset - (item.rightPadding || sidePadding);
+  const minY = bounds.topLimit + (item.topPadding || verticalPadding);
+  const maxY = bounds.groundY - (item.bottomPadding || verticalPadding);
   const nextX = clamp(body.position.x, minX, maxX);
   const nextY = clamp(body.position.y, minY, maxY);
   const maxVelocity = strict ? 8 : 10;
 
   if (nextX !== body.position.x || nextY !== body.position.y) {
-    const hitLeftWall = body.position.x < minX && body.velocity.x < 0;
-    const hitRightWall = body.position.x > maxX && body.velocity.x > 0;
-    const hitTopWall = body.position.y < minY && body.velocity.y < 0;
-    const hitFloor = body.position.y > maxY && body.velocity.y > 0;
+    const hitHorizontalWall = nextX !== body.position.x;
+    const hitVerticalWall = nextY !== body.position.y;
     Body.setPosition(body, { x: nextX, y: nextY });
     Body.setVelocity(body, {
-      x: hitLeftWall || hitRightWall ? 0 : clamp(body.velocity.x, -maxVelocity, maxVelocity),
-      y: hitTopWall || hitFloor ? 0 : clamp(body.velocity.y, -maxVelocity, maxVelocity),
+      x: hitHorizontalWall ? 0 : clamp(body.velocity.x, -maxVelocity, maxVelocity),
+      y: hitVerticalWall ? 0 : clamp(body.velocity.y, -maxVelocity, maxVelocity),
     });
     Body.setAngularVelocity(body, clamp(body.angularVelocity * 0.35, -0.04, 0.04));
     return;
@@ -891,17 +931,17 @@ function movePhysicsDrag(event) {
   const sideInset = 6;
   const groundY = fieldBox.height - sideInset;
   const topLimit = sideInset;
-  const xPadding = item.xPadding || Math.max(item.radius * 1.08, 30);
-  const yPadding = item.yPadding || Math.max(item.height / 2, 24);
+  const sidePadding = Math.max(item.radius * 1.08, item.width / 2, 30);
+  const verticalPadding = Math.max(item.height / 2, 24);
   const nextX = clamp(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.width / 2,
-    sideInset + xPadding,
-    fieldBox.width - sideInset - xPadding,
+    sideInset + (item.leftPadding || sidePadding),
+    fieldBox.width - sideInset - (item.rightPadding || sidePadding),
   );
   const nextY = clamp(
     event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.height / 2,
-    topLimit + yPadding,
-    groundY - yPadding,
+    topLimit + (item.topPadding || verticalPadding),
+    groundY - (item.bottomPadding || verticalPadding),
   );
   const dt = Math.max(1, now - activePhysicsDrag.lastTime);
 
