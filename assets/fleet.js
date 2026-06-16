@@ -185,6 +185,7 @@ let activePhysicsDrag = null;
 let combatants = [];
 let combatTimer = null;
 let winnerDeclared = false;
+let activeArenaBounds = null;
 
 function avatarSrc(src) {
   if (src.startsWith("/media/")) return `${rsiMediaBase}${src}`;
@@ -359,6 +360,7 @@ function initMemberPhysics() {
 
   Composite.add(engine.world, combatants.map((item) => item.body));
   const arenaBounds = { width, groundY, sideInset, topLimit };
+  activeArenaBounds = arenaBounds;
   Events.on(engine, "beforeUpdate", () => {
     combatants.forEach((item) => {
       if (item.alive) keepFighterInBounds(item, arenaBounds, true);
@@ -415,6 +417,7 @@ function initMemberPhysics() {
     Composite.clear(engine.world, false);
     Engine.clear(engine);
     memberField.querySelectorAll(".is-dragging").forEach((chip) => chip.classList.remove("is-dragging"));
+    activeArenaBounds = null;
   };
 }
 
@@ -451,6 +454,7 @@ function keepFighterInBounds(item, bounds, strict = false) {
   const nextX = clamp(body.position.x, minX, maxX);
   const nextY = clamp(body.position.y, minY, maxY);
   const maxVelocity = strict ? 8 : 10;
+  const edgeEpsilon = 1.2;
 
   if (nextX !== body.position.x || nextY !== body.position.y) {
     const hitHorizontalWall = nextX !== body.position.x;
@@ -460,18 +464,38 @@ function keepFighterInBounds(item, bounds, strict = false) {
       x: hitHorizontalWall ? 0 : clamp(body.velocity.x, -maxVelocity, maxVelocity),
       y: hitVerticalWall ? 0 : clamp(body.velocity.y, -maxVelocity, maxVelocity),
     });
+    if (hitHorizontalWall) body.force.x = 0;
+    if (hitVerticalWall) body.force.y = 0;
     Body.setAngularVelocity(body, clamp(body.angularVelocity * 0.35, -0.04, 0.04));
     return;
   }
 
   if (strict) {
-    const cappedX = clamp(body.velocity.x, -maxVelocity, maxVelocity);
-    const cappedY = clamp(body.velocity.y, -maxVelocity, maxVelocity);
+    const atLeftWall = body.position.x <= minX + edgeEpsilon;
+    const atRightWall = body.position.x >= maxX - edgeEpsilon;
+    const atTopWall = body.position.y <= minY + edgeEpsilon;
+    const atFloor = body.position.y >= maxY - edgeEpsilon;
+    const blockedX = (atLeftWall && body.velocity.x < 0) || (atRightWall && body.velocity.x > 0);
+    const blockedY = (atTopWall && body.velocity.y < 0) || (atFloor && body.velocity.y > 0);
+    const cappedX = blockedX ? 0 : clamp(body.velocity.x, -maxVelocity, maxVelocity);
+    const cappedY = blockedY ? 0 : clamp(body.velocity.y, -maxVelocity, maxVelocity);
+
+    if ((atLeftWall && body.force.x < 0) || (atRightWall && body.force.x > 0)) {
+      body.force.x = 0;
+    }
+    if ((atTopWall && body.force.y < 0) || (atFloor && body.force.y > 0)) {
+      body.force.y = 0;
+    }
     if (cappedX !== body.velocity.x || cappedY !== body.velocity.y) {
       Body.setVelocity(body, { x: cappedX, y: cappedY });
     }
     Body.setAngularVelocity(body, clamp(body.angularVelocity, -0.1, 0.1));
   }
+}
+
+function lockArenaBoundary(item) {
+  if (!item?.alive || !activeArenaBounds) return;
+  keepFighterInBounds(item, activeArenaBounds, true);
 }
 
 function beginAttack(engine, attacker, target, now) {
@@ -528,8 +552,10 @@ function hopFighter(fighter, now, target) {
     x: clamp(fighter.body.velocity.x * 0.22 + horizontalVelocity, -11, 11),
     y: clamp(fighter.body.velocity.y * 0.18 + verticalVelocity, -14, -6),
   });
+  lockArenaBoundary(fighter);
   if (support) applyStompReaction(fighter, support, horizontalVelocity, direction, now);
   Body.setAngularVelocity(fighter.body, fighter.body.angularVelocity + spin);
+  lockArenaBoundary(fighter);
   fighter.lastHopAt = now;
   fighter.nextHopAt = now + (hasTarget ? randomRange(1100, 2100) : randomRange(1400, 2600));
 }
@@ -570,6 +596,7 @@ function applyStompReaction(fighter, support, horizontalVelocity, direction, now
     y: clamp(support.body.velocity.y * 0.55 + randomRange(1.0, 2.2), -6, 8),
   });
   Body.setAngularVelocity(support.body, support.body.angularVelocity + pushDirection * randomRange(0.018, 0.052));
+  lockArenaBoundary(support);
   support.nextStompReactionAt = now + randomRange(520, 900);
 }
 
@@ -589,6 +616,7 @@ function chaseTarget(attacker, target, now) {
     x: (dx / distance) * chaseStrength * rangeFactor,
     y: clamp((dy / distance) * chaseStrength * 0.12, -0.0006, 0.001),
   });
+  lockArenaBoundary(attacker);
 }
 
 function handleCollisionStart(event) {
@@ -622,6 +650,7 @@ function nudgeCollisionBody(body, otherBody) {
     y: (dy / distance) * bounce - randomRange(0.003, 0.014),
   });
   Body.setAngularVelocity(body, body.angularVelocity + randomRange(-0.08, 0.08));
+  lockArenaBoundary(item);
   item.nextCollisionBounceAt = now + randomRange(120, 260);
 }
 
@@ -663,6 +692,7 @@ function fireProjectile(engine, attacker, target) {
     x: (-dx / distance) * 0.008,
     y: -0.004,
   });
+  lockArenaBoundary(attacker);
   drawProjectile(attacker.body.position, target.body.position, attacker.weapon, travelMs);
   setTimeout(() => {
     if (target.alive) {
@@ -691,6 +721,7 @@ function resolveAttackHit(engine, attacker, target) {
       x: (-dx / distance) * 0.028,
       y: (-dy / distance) * 0.018 - 0.012,
     });
+    lockArenaBoundary(attacker);
     if (showHitFeedback) setTimeout(() => target.chip.classList.remove("is-blocking"), 260);
   }
 
@@ -698,6 +729,7 @@ function resolveAttackHit(engine, attacker, target) {
     x: (dx / distance) * push,
     y: (dy / distance) * push - 0.009 - attacker.weapon.damage * 0.00035,
   });
+  lockArenaBoundary(target);
 
   target.hp = Math.max(0, target.hp - damage);
   target.chip.style.setProperty("--hp", `${(target.hp / target.maxHp) * 100}%`);
@@ -742,6 +774,7 @@ function celebrateWinner(winner) {
       y: clamp(Math.max(winner.body.velocity.y, 0), 0, 3),
     });
     Body.setAngularVelocity(winner.body, clamp(winner.body.angularVelocity * 0.3, -0.03, 0.03));
+    lockArenaBoundary(winner);
   }
 
   const winnerName = winner.chip.querySelector(".fighter-name")?.textContent?.trim() || "GVY";
@@ -884,6 +917,7 @@ function movePhysicsDrag(event) {
   activePhysicsDrag.velocityX = ((event.clientX - activePhysicsDrag.lastX) / dt) * 16;
   activePhysicsDrag.velocityY = ((event.clientY - activePhysicsDrag.lastY) / dt) * 16;
   Body.setPosition(item.body, { x: nextX, y: nextY });
+  lockArenaBoundary(item);
   activePhysicsDrag.lastX = event.clientX;
   activePhysicsDrag.lastY = event.clientY;
   activePhysicsDrag.lastTime = now;
@@ -899,6 +933,7 @@ function endPhysicsDrag() {
     x: clamp(velocityX, -12, 12),
     y: clamp(velocityY, -12, 12),
   });
+  lockArenaBoundary(item);
   item.chip.classList.remove("is-dragging");
   activePhysicsDrag = null;
   window.removeEventListener("pointermove", movePhysicsDrag);
