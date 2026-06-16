@@ -203,36 +203,6 @@ function randomRange(min, max) {
   return min + Math.random() * (max - min);
 }
 
-function measureFighterPadding(chip, fallbackWidth, fallbackHeight, fallbackRadius) {
-  const chipBox = chip.getBoundingClientRect();
-  const centerX = chipBox.left + chipBox.width / 2;
-  const centerY = chipBox.top + chipBox.height / 2;
-  const visualParts = chip.querySelectorAll(".fighter-name, .fighter-avatar-wrap, .health-bar");
-  let left = chipBox.left;
-  let right = chipBox.right;
-  let top = chipBox.top;
-  let bottom = chipBox.bottom;
-
-  visualParts.forEach((part) => {
-    const rect = part.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
-    left = Math.min(left, rect.left);
-    right = Math.max(right, rect.right);
-    top = Math.min(top, rect.top);
-    bottom = Math.max(bottom, rect.bottom);
-  });
-
-  const minimumSide = Math.max(fallbackRadius * 1.08, fallbackWidth / 2, 30);
-  const minimumVertical = Math.max(fallbackHeight / 2, 24);
-
-  return {
-    left: Math.max(minimumSide, centerX - left),
-    right: Math.max(minimumSide, right - centerX),
-    top: Math.max(minimumVertical, centerY - top),
-    bottom: Math.max(minimumVertical, bottom - centerY),
-  };
-}
-
 function selectWeapon(index) {
   if (memberLoadouts[index]) return memberLoadouts[index];
 
@@ -340,15 +310,10 @@ function initMemberPhysics() {
     const chipH = chipBox.height || fighterSize + 34;
     const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
     const weapon = selectWeapon(index);
-    const measuredPadding = measureFighterPadding(chip, chipW, chipH, radius);
-    const maxHorizontalPadding = Math.max(24, (width - sideInset * 2) / 2 - 4);
-    const maxVerticalPadding = Math.max(24, (groundY - topLimit) / 2 - 4);
-    const leftPadding = Math.min(measuredPadding.left, maxHorizontalPadding);
-    const rightPadding = Math.min(measuredPadding.right, maxHorizontalPadding);
-    const topPadding = Math.min(measuredPadding.top, maxVerticalPadding);
-    const bottomPadding = Math.min(measuredPadding.bottom, maxVerticalPadding);
-    const spawnMinX = sideInset + leftPadding;
-    const spawnMaxX = width - sideInset - rightPadding;
+    const halfWidth = chipW / 2;
+    const halfHeight = chipH / 2;
+    const spawnMinX = sideInset + halfWidth;
+    const spawnMaxX = width - sideInset - halfWidth;
     const x = randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX));
     const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.62)) - index * randomRange(4, 12);
     const body = Bodies.circle(x, y, radius, {
@@ -364,10 +329,6 @@ function initMemberPhysics() {
       width: chipW,
       height: chipH,
       radius,
-      leftPadding,
-      rightPadding,
-      topPadding,
-      bottomPadding,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
       alive: true,
@@ -481,12 +442,12 @@ function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
   const { body } = item;
-  const sidePadding = Math.max(item.radius * 1.08, item.width / 2, 30);
-  const verticalPadding = Math.max(item.height / 2, 24);
-  const minX = bounds.sideInset + (item.leftPadding || sidePadding);
-  const maxX = bounds.width - bounds.sideInset - (item.rightPadding || sidePadding);
-  const minY = bounds.topLimit + (item.topPadding || verticalPadding);
-  const maxY = bounds.groundY - (item.bottomPadding || verticalPadding);
+  const halfWidth = item.width / 2;
+  const halfHeight = item.height / 2;
+  const minX = bounds.sideInset + halfWidth;
+  const maxX = bounds.width - bounds.sideInset - halfWidth;
+  const minY = bounds.topLimit + halfHeight;
+  const maxY = bounds.groundY - halfHeight;
   const nextX = clamp(body.position.x, minX, maxX);
   const nextY = clamp(body.position.y, minY, maxY);
   const maxVelocity = strict ? 8 : 10;
@@ -688,7 +649,6 @@ function attackTarget(engine, attacker, target) {
     return;
   }
 
-  drawAttackFlash(attacker.body.position, target.body.position, attacker.weapon.effect, 1);
   resolveAttackHit(engine, attacker, target);
 }
 
@@ -744,7 +704,6 @@ function resolveAttackHit(engine, attacker, target) {
   if (showHitFeedback) {
     target.nextHitFeedbackAt = now + randomRange(560, 820);
     target.chip.classList.add("is-hit");
-    drawAttackFlash(target.body.position, attacker.body.position, blocked ? "shield" : "impact", 1);
     setTimeout(() => target.chip.classList.remove("is-hit"), 260);
   }
 
@@ -869,29 +828,6 @@ function drawProjectile(from, to, weapon, travelMs) {
   setTimeout(() => projectile.remove(), travelMs + 80);
 }
 
-function drawAttackFlash(from, to, effect, count = 1) {
-  const dx = to.x - from.x;
-  const dy = to.y - from.y;
-  const length = Math.max(24, Math.hypot(dx, dy));
-  const angle = Math.atan2(dy, dx);
-  const normalX = Math.cos(angle + Math.PI / 2);
-  const normalY = Math.sin(angle + Math.PI / 2);
-  const spread = Math.min(16, length * 0.08);
-
-  for (let index = 0; index < count; index += 1) {
-    const offset = (index - (count - 1) / 2) * spread;
-    const flash = document.createElement("span");
-
-    flash.className = `attack-flash ${effect || "beam"}`;
-    flash.style.width = `${length}px`;
-    flash.style.left = `${from.x + normalX * offset}px`;
-    flash.style.top = `${from.y + normalY * offset}px`;
-    flash.style.transform = `rotate(${angle}rad)`;
-    memberField.appendChild(flash);
-    setTimeout(() => flash.remove(), 220);
-  }
-}
-
 function startPhysicsDrag(event) {
   const item = event.currentTarget.physicsItem;
   if (!item || !window.Matter) return;
@@ -931,17 +867,17 @@ function movePhysicsDrag(event) {
   const sideInset = 6;
   const groundY = fieldBox.height - sideInset;
   const topLimit = sideInset;
-  const sidePadding = Math.max(item.radius * 1.08, item.width / 2, 30);
-  const verticalPadding = Math.max(item.height / 2, 24);
+  const halfWidth = item.width / 2;
+  const halfHeight = item.height / 2;
   const nextX = clamp(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.width / 2,
-    sideInset + (item.leftPadding || sidePadding),
-    fieldBox.width - sideInset - (item.rightPadding || sidePadding),
+    sideInset + halfWidth,
+    fieldBox.width - sideInset - halfWidth,
   );
   const nextY = clamp(
     event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.height / 2,
-    topLimit + (item.topPadding || verticalPadding),
-    groundY - (item.bottomPadding || verticalPadding),
+    topLimit + halfHeight,
+    groundY - halfHeight,
   );
   const dt = Math.max(1, now - activePhysicsDrag.lastTime);
 
