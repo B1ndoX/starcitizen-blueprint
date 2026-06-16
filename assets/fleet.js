@@ -301,7 +301,7 @@ function initMemberPhysics() {
   const runner = Runner.create();
   const groundY = height - (width < 560 ? 78 : 64);
   const topLimit = width < 560 ? 34 : 48;
-  const wallDepth = 120;
+  const wallDepth = Math.max(180, sizing.size * 3.4);
   const sideInset = width < 560 ? 32 : 54;
   const walls = [
     Bodies.rectangle(width / 2, groundY + wallDepth / 2, width + wallDepth * 2, wallDepth, {
@@ -324,8 +324,11 @@ function initMemberPhysics() {
     const chipW = chipBox.width || fighterSize + 30;
     const chipH = chipBox.height || fighterSize + 34;
     const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
-    const spawnMinX = sideInset + radius;
-    const spawnMaxX = width - sideInset - radius;
+    const weapon = selectWeapon(index);
+    const xPadding = Math.min(Math.max(radius * 1.5, chipW * 0.62, 42), Math.max(24, (width - sideInset * 2) / 2 - 4));
+    const yPadding = Math.min(Math.max(radius * 1.02, chipH * 0.54, 32), Math.max(24, (groundY - topLimit) / 2 - 4));
+    const spawnMinX = sideInset + xPadding;
+    const spawnMaxX = width - sideInset - xPadding;
     const x = randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX));
     const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.62)) - index * randomRange(4, 12);
     const body = Bodies.circle(x, y, radius, {
@@ -335,13 +338,14 @@ function initMemberPhysics() {
       density: 0.0018,
     });
 
-    const weapon = selectWeapon(index);
     const item = {
       body,
       chip,
       width: chipW,
       height: chipH,
       radius,
+      xPadding,
+      yPadding,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
       alive: true,
@@ -371,11 +375,16 @@ function initMemberPhysics() {
   });
 
   Composite.add(engine.world, [...walls, ...combatants.map((item) => item.body)]);
+  const arenaBounds = { width, groundY, sideInset, topLimit };
+  Events.on(engine, "afterUpdate", () => {
+    combatants.forEach((item) => {
+      if (item.alive) keepFighterInBounds(item, arenaBounds, true);
+    });
+  });
   Events.on(engine, "collisionStart", handleCollisionStart);
 
   let frame = 0;
   let renderTick = 0;
-  const arenaBounds = { width, groundY, sideInset, topLimit };
   const renderEvery = width < 560 ? 2 : 1;
   function syncDom() {
     renderTick += 1;
@@ -441,24 +450,37 @@ function startCombatLoop(engine) {
   }, 160);
 }
 
-function keepFighterInBounds(item, bounds) {
+function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
-  const { body, radius } = item;
-  const minX = bounds.sideInset + radius * 0.18;
-  const maxX = bounds.width - bounds.sideInset - radius * 0.18;
-  const minY = bounds.topLimit + radius * 0.35;
-  const maxY = bounds.groundY - radius * 0.22;
+  const { body } = item;
+  const xPadding = item.xPadding || Math.max(item.radius, item.width * 0.5, 24);
+  const yPadding = item.yPadding || Math.max(item.radius * 0.78, item.height * 0.42, 24);
+  const minX = bounds.sideInset + xPadding;
+  const maxX = bounds.width - bounds.sideInset - xPadding;
+  const minY = bounds.topLimit + yPadding;
+  const maxY = bounds.groundY - yPadding;
   const nextX = clamp(body.position.x, minX, maxX);
   const nextY = clamp(body.position.y, minY, maxY);
+  const maxVelocity = strict ? 8 : 10;
 
   if (nextX !== body.position.x || nextY !== body.position.y) {
     Body.setPosition(body, { x: nextX, y: nextY });
     Body.setVelocity(body, {
-      x: clamp(body.velocity.x * 0.35, -6, 6),
-      y: clamp(body.velocity.y * 0.35, -6, 6),
+      x: clamp(body.velocity.x * 0.22, -maxVelocity, maxVelocity),
+      y: clamp(body.velocity.y * 0.22, -maxVelocity, maxVelocity),
     });
     Body.setAngularVelocity(body, clamp(body.angularVelocity, -0.08, 0.08));
+    return;
+  }
+
+  if (strict) {
+    const cappedX = clamp(body.velocity.x, -maxVelocity, maxVelocity);
+    const cappedY = clamp(body.velocity.y, -maxVelocity, maxVelocity);
+    if (cappedX !== body.velocity.x || cappedY !== body.velocity.y) {
+      Body.setVelocity(body, { x: cappedX, y: cappedY });
+    }
+    Body.setAngularVelocity(body, clamp(body.angularVelocity, -0.1, 0.1));
   }
 }
 
@@ -880,15 +902,17 @@ function movePhysicsDrag(event) {
   const sideInset = fieldBox.width < 560 ? 32 : 54;
   const groundY = fieldBox.height - (fieldBox.width < 560 ? 78 : 64);
   const topLimit = fieldBox.width < 560 ? 34 : 48;
+  const xPadding = item.xPadding || Math.max(item.radius, item.width * 0.5, 24);
+  const yPadding = item.yPadding || Math.max(item.radius * 0.78, item.height * 0.42, 24);
   const nextX = clamp(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.width / 2,
-    sideInset + item.radius * 0.18,
-    fieldBox.width - sideInset - item.radius * 0.18,
+    sideInset + xPadding,
+    fieldBox.width - sideInset - xPadding,
   );
   const nextY = clamp(
     event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.height / 2,
-    topLimit + item.radius * 0.35,
-    groundY - item.radius * 0.22,
+    topLimit + yPadding,
+    groundY - yPadding,
   );
   const dt = Math.max(1, now - activePhysicsDrag.lastTime);
 

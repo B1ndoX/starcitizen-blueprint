@@ -12,6 +12,7 @@
   --violet: #b969da;
   --line: #000000;
   --max: clamp(1180px, 86vw, 2200px);
+  --hero-shadow: 12px;
 }
 
 * {
@@ -190,7 +191,7 @@ a {
     linear-gradient(90deg, transparent 0 34%, rgba(5, 5, 26, 0.96) 34% 42%, transparent 42% 48%),
     linear-gradient(90deg, transparent 0 63%, rgba(5, 5, 26, 0.96) 63% 72%, transparent 72% 82%),
     var(--hot);
-  box-shadow: 12px 12px 0 var(--line);
+  box-shadow: var(--hero-shadow) var(--hero-shadow) 0 var(--line);
 }
 
 .hero-stage::after {
@@ -743,7 +744,7 @@ a {
 }
 
 .ticker-band {
-  width: min(var(--max), calc(100vw - 36px));
+  width: min(calc(var(--max) + var(--hero-shadow)), calc(100vw - 36px + var(--hero-shadow)));
   margin: 0 auto;
   overflow: hidden;
   border-top: 4px solid var(--line);
@@ -751,6 +752,7 @@ a {
   border-bottom: 4px solid var(--line);
   border-left: 4px solid var(--line);
   background: var(--yellow);
+  transform: translateX(calc(var(--hero-shadow) / 2));
 }
 
 .ticker-track {
@@ -1656,6 +1658,10 @@ a {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --hero-shadow: 7px;
+  }
+
   .site-nav {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 10px;
@@ -1724,7 +1730,7 @@ a {
 
   .hero-stage {
     min-height: clamp(560px, calc(100vh - 168px), 700px);
-    box-shadow: 7px 7px 0 var(--line);
+    box-shadow: var(--hero-shadow) var(--hero-shadow) 0 var(--line);
   }
 
   .hero-kicker {
