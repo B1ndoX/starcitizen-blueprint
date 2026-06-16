@@ -302,18 +302,12 @@ function initMemberPhysics() {
   const groundY = height - (width < 560 ? 30 : 34);
   const topLimit = width < 560 ? 34 : 48;
   const wallDepth = Math.max(180, sizing.size * 3.4);
-  const sideInset = width < 560 ? 10 : 14;
+  const sideInset = 6;
   const walls = [
     Bodies.rectangle(width / 2, groundY + wallDepth / 2, width + wallDepth * 2, wallDepth, {
       isStatic: true,
     }),
     Bodies.rectangle(width / 2, topLimit - wallDepth / 2, width + wallDepth * 2, wallDepth, {
-      isStatic: true,
-    }),
-    Bodies.rectangle(sideInset - wallDepth / 2, height / 2, wallDepth, height * 2, {
-      isStatic: true,
-    }),
-    Bodies.rectangle(width - sideInset + wallDepth / 2, height / 2, wallDepth, height * 2, {
       isStatic: true,
     }),
   ];
@@ -325,7 +319,7 @@ function initMemberPhysics() {
     const chipH = chipBox.height || fighterSize + 34;
     const radius = Math.max(fighterSize * 0.72, Math.min(chipW, chipH) * 0.42);
     const weapon = selectWeapon(index);
-    const xPadding = Math.min(Math.max(radius * 2.4, chipW * 1.3, width < 560 ? 76 : 110), Math.max(24, (width - sideInset * 2) / 2 - 4));
+    const xPadding = Math.min(Math.max(radius * 1.08, width < 560 ? 30 : 34), Math.max(24, (width - sideInset * 2) / 2 - 4));
     const yPadding = Math.min(Math.max(radius * 1.02, chipH * 0.54, 32), Math.max(24, (groundY - topLimit) / 2 - 4));
     const spawnMinX = sideInset + xPadding;
     const spawnMaxX = width - sideInset - xPadding;
@@ -454,7 +448,7 @@ function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
   const { body } = item;
-  const xPadding = item.xPadding || Math.max(item.radius, item.width * 0.5, 24);
+  const xPadding = item.xPadding || Math.max(item.radius * 1.08, 30);
   const yPadding = item.yPadding || Math.max(item.radius * 0.78, item.height * 0.42, 24);
   const minX = bounds.sideInset + xPadding;
   const maxX = bounds.width - bounds.sideInset - xPadding;
@@ -903,10 +897,10 @@ function movePhysicsDrag(event) {
   const { Body } = window.Matter;
   const now = performance.now();
   const { item, fieldBox } = activePhysicsDrag;
-  const sideInset = fieldBox.width < 560 ? 10 : 14;
+  const sideInset = 6;
   const groundY = fieldBox.height - (fieldBox.width < 560 ? 30 : 34);
   const topLimit = fieldBox.width < 560 ? 34 : 48;
-  const xPadding = item.xPadding || Math.max(item.radius, item.width * 0.5, 24);
+  const xPadding = item.xPadding || Math.max(item.radius * 1.08, 30);
   const yPadding = item.yPadding || Math.max(item.radius * 0.78, item.height * 0.42, 24);
   const nextX = clamp(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.width / 2,
