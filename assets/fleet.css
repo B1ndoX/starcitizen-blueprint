@@ -970,6 +970,7 @@ a {
 }
 
 .gallery-track {
+  --marquee-seam-offset: 9px;
   display: flex;
   width: max-content;
   gap: 18px;
@@ -1183,7 +1184,7 @@ a {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - var(--marquee-seam-offset, 0px)));
   }
 }
 
@@ -1790,13 +1791,14 @@ a {
   }
 
   .gallery-track {
+    --marquee-seam-offset: 6px;
     gap: 12px;
     animation: marquee 46s linear infinite;
     will-change: transform;
   }
 
   .gallery-card {
-    flex-basis: min(84vw, 400px);
+    flex-basis: min(74vw, 330px);
     border-width: 4px;
     box-shadow: 6px 6px 0 var(--line);
   }
