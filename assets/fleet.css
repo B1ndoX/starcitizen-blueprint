@@ -1785,13 +1785,18 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .gallery-marquee {
+    overflow: hidden;
+  }
+
   .gallery-track {
     gap: 12px;
-    animation: none;
+    animation: marquee 46s linear infinite;
+    will-change: transform;
   }
 
   .gallery-card {
-    flex-basis: min(86vw, 420px);
+    flex-basis: min(84vw, 400px);
     border-width: 4px;
     box-shadow: 6px 6px 0 var(--line);
   }
