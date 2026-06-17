@@ -524,7 +524,7 @@ a {
 
 .member-fighter.is-winner::before {
   position: absolute;
-  top: calc(var(--fighter-size, 66px) * 0.18);
+  top: calc(var(--fighter-size, 66px) * 0.4);
   left: 50%;
   z-index: 5;
   color: var(--yellow);
@@ -1225,7 +1225,7 @@ a {
   }
 
   50% {
-    translate: 0 -4px;
+    translate: 0 -2px;
   }
 }
 
