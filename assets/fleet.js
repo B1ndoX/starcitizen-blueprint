@@ -413,14 +413,7 @@ function initMemberPhysics() {
   Events.on(engine, "collisionActive", handleWallCollisions);
 
   let frame = 0;
-  let renderTick = 0;
-  const renderEvery = width < 560 ? 2 : 1;
   function syncDom() {
-    renderTick += 1;
-    if (renderTick % renderEvery !== 0) {
-      frame = requestAnimationFrame(syncDom);
-      return;
-    }
     combatants.forEach((item) => {
       const { body, chip, width: chipW, height: chipH, alive } = item;
       if (!alive) return;
@@ -467,7 +460,7 @@ function startCombatLoop(engine) {
     const now = performance.now();
     combatants.forEach((attacker) => {
       if (!attacker.alive || winnerDeclared) return;
-      const target = findNearestTarget(attacker);
+      const target = getCombatTarget(attacker);
       attacker.target = target?.item || null;
       if (target) aimWeaponAt(attacker, target.item);
       hopFighter(attacker, now, target);
@@ -478,6 +471,19 @@ function startCombatLoop(engine) {
       beginAttack(engine, attacker, target.item, now);
     });
   }, 160);
+}
+
+function getCombatTarget(attacker) {
+  if (attacker.target?.alive) {
+    const dx = attacker.target.body.position.x - attacker.body.position.x;
+    const dy = attacker.target.body.position.y - attacker.body.position.y;
+    const distance = Math.hypot(dx, dy);
+    const holdRange = Math.max(170, attacker.weapon.range * 1.35);
+
+    if (distance <= holdRange) return { item: attacker.target, distance };
+  }
+
+  return findNearestTarget(attacker);
 }
 
 function keepFighterInBounds(item, bounds, strict = false) {

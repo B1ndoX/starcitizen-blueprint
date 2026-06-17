@@ -1728,6 +1728,20 @@ a {
     bottom: -24%;
     width: calc(var(--fighter-size, 54px) * 0.9);
     height: calc(var(--fighter-size, 54px) * 0.9);
+    filter: drop-shadow(2px 2px 0 rgba(5, 5, 26, 0.58));
+    transition: none;
+    backface-visibility: hidden;
+    transform: translateZ(0) rotate(var(--weapon-angle, -28deg));
+    will-change: transform;
+  }
+
+  .weapon-icon {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .weapon-icon img {
+    transform: translateZ(0);
   }
 
   .fighter-heavy .weapon-aim,
@@ -1747,11 +1761,16 @@ a {
     height: calc(var(--fighter-size, 54px) * 1.12);
   }
 
+  .fighter-pistol .weapon-aim {
+    transform: translateZ(0) rotate(var(--weapon-angle, -16deg));
+  }
+
   .fighter-shield .weapon-aim {
     right: -20%;
     bottom: -20%;
     width: calc(var(--fighter-size, 54px) * 0.78);
     height: calc(var(--fighter-size, 54px) * 0.78);
+    transform: translateZ(0) rotate(var(--weapon-angle, -10deg));
   }
 
   .primary-action,
