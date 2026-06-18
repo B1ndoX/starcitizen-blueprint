@@ -42,6 +42,30 @@ docker compose -f docker-compose.nas.yml up -d --build
 
 发布前在仓库设置里启用 Pages，并把来源设置为 GitHub Actions。
 
+## 添加舰队团建照片
+
+推荐把要新增的照片放进一个临时文件夹，例如 `~/Downloads/团建照片/待添加`，然后运行：
+
+```bash
+cd blueprint-site
+python3 scripts/add_gallery_photos.py ~/Downloads/团建照片/待添加
+```
+
+如果只想取某个文件夹里“最新加入”的 4 张：
+
+```bash
+cd blueprint-site
+python3 scripts/add_gallery_photos.py ~/Downloads/团建照片 --newest 4
+```
+
+脚本会自动把照片转成 `assets/gallery/team-XX.jpg`，最长边压到 1920，并重建 `fleet.html` 里的滚动图册。运行后提交并推送即可上线：
+
+```bash
+git add fleet.html assets/gallery scripts/add_gallery_photos.py README.md
+git commit -m "Add fleet gallery photos"
+git push
+```
+
 ## 数据说明
 
 - 蓝图、材料、制作时间来自 SCMDB 的 `crafting_blueprints` 数据。
