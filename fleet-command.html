@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#030508" />
+    <meta
+      name="description"
+      content="星际远航者舰队 GVY 官方玩家组织首页：舰队理念、行动编队、团建图册与招募申请。"
+    />
+    <title>星际远航者舰队 GVY | Galactic Voyagers</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260620-nav-visible" />
+  </head>
+  <body id="pageTop">
+    <a class="skip-link" href="#doctrine">跳到舰队内容</a>
+
+    <header class="command-nav" aria-label="舰队主导航">
+      <a class="fleet-brand" href="#pageTop" aria-label="星际远航者舰队首页">
+        <span class="brand-sigil" aria-hidden="true">GVY</span>
+        <span>
+          <strong>星际远航者舰队</strong>
+          <small>GALACTIC VOYAGERS</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#doctrine" data-scroll-link>舰队定位</a>
+        <a href="#operations" data-scroll-link>行动编队</a>
+        <a href="#gallery" data-scroll-link>团建图册</a>
+        <a href="#recruit" data-scroll-link>加入舰队</a>
+        <a href="./">蓝图查询</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro-sequence" id="top" data-intro-sequence>
+        <div class="intro-sticky" data-intro-sticky>
+          <div class="intro-media" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="metadata" poster="./assets/fleet-hero-poster.jpg">
+              <source src="./assets/fleet-hero.mp4" type="video/mp4" />
+            </video>
+            <canvas class="starfield-canvas" id="starfieldCanvas" aria-hidden="true"></canvas>
+          </div>
+
+          <div class="intro-shade" aria-hidden="true"></div>
+          <div class="intro-vignette" aria-hidden="true"></div>
+          <div class="intro-grain" aria-hidden="true"></div>
+          <div class="intro-scanline" aria-hidden="true"></div>
+
+          <div class="intro-minimal-hud" aria-hidden="true">
+            <span>ARCHIVE FEED / GVY-2956</span>
+            <span>COORD / 19.26.14 CN</span>
+          </div>
+
+          <div class="intro-fleet-visual" aria-hidden="true">
+            <svg class="capital-ship" viewBox="0 0 1120 420" role="img">
+              <path class="ship-shadow" d="M63 222 L220 154 L438 127 L604 44 L832 163 L1058 190 L1104 220 L965 244 L712 258 L532 378 L362 292 L146 265 Z" />
+              <path class="ship-core" d="M106 219 L245 172 L452 151 L604 78 L810 172 L1012 199 L1048 218 L944 235 L700 246 L530 338 L375 273 L163 250 Z" />
+              <path class="ship-keel" d="M390 230 L600 118 L820 219 L691 236 L533 304 Z" />
+              <path class="ship-bridge" d="M563 122 L615 96 L674 128 L633 151 L584 145 Z" />
+              <path class="ship-line" d="M164 219 L452 195 L600 118 L810 199 L1033 218" />
+              <path class="ship-line" d="M246 243 L532 304 L700 246 L944 235" />
+              <path class="ship-line" d="M375 273 L452 151 L530 338" />
+              <path class="ship-line" d="M700 246 L810 172 L820 219" />
+              <g class="escort-fleet">
+                <path d="M167 118 L232 100 L268 118 L232 130 Z" />
+                <path d="M262 84 L322 68 L356 86 L322 96 Z" />
+                <path d="M852 94 L928 78 L974 99 L926 115 Z" />
+                <path d="M934 292 L1000 278 L1035 295 L997 308 Z" />
+                <path d="M104 312 L164 299 L202 316 L160 329 Z" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="intro-title" aria-label="Galactic Voyagers GVY Fleet">
+            <p class="system-label">GVY VOYAGERS / COMMAND WAKE</p>
+            <h1>
+              <span>星际远航者舰队</span>
+              <small>GALACTIC VOYAGERS</small>
+              <em>GVY VOYAGERS</em>
+            </h1>
+          </div>
+
+          <div class="intro-motto">
+            <p>勇敢追寻，无限探索，加入战斗！</p>
+            <span>CHASE THE UNKNOWN.</span>
+            <span>VOYAGE BEYOND THE STARS.</span>
+          </div>
+
+          <div class="hud-frame intro-hud intro-hud-left" aria-label="舰队状态">
+            <span>ORG / GVY</span>
+            <span>NAME / GALACTIC VOYAGERS</span>
+            <span>STATUS / RECRUITING</span>
+            <span>MEMBERS / 31</span>
+          </div>
+
+          <div class="hud-frame intro-hud intro-hud-right" aria-label="舰队通讯">
+            <span>REGION / CN</span>
+            <span>COMMS / QQ 691311516</span>
+            <span>MODE / EXPLORATION · TRADE · SUPPORT</span>
+          </div>
+
+          <div class="intro-actions" aria-label="主要入口">
+            <a class="hud-button" href="#recruit" data-scroll-link>
+              <span>加入舰队</span>
+              <small>JOIN THE FLEET</small>
+            </a>
+            <a class="hud-button hud-button-secondary" href="#operations" data-scroll-link>
+              <span>查看行动编队</span>
+              <small>VIEW OPERATIONS</small>
+            </a>
+          </div>
+
+          <div class="scroll-cue" aria-hidden="true">
+            <span>SCROLL TO ENTER COMMAND DECK</span>
+            <small>下滑进入舰队指挥界面</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="identity-section" id="doctrine">
+        <div class="section-kicker">
+          <p class="system-label">FLEET IDENTITY</p>
+          <h2>我们是谁</h2>
+        </div>
+        <div class="identity-grid">
+          <div class="identity-copy reveal">
+            <p>
+              在无垠宇宙中携手探索未知，追寻星辰大海的奥秘。无论是首次起航的冒险者，还是经验丰富的先锋，我们的目标一致：勇敢追寻，无限探索！
+            </p>
+            <dl class="identity-stats">
+              <div>
+                <dt>ORG</dt>
+                <dd>GVY</dd>
+              </div>
+              <div>
+                <dt>COMMS</dt>
+                <dd>QQ 691311516</dd>
+              </div>
+              <div>
+                <dt>STATUS</dt>
+                <dd>RECRUITING</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="doctrine-panel reveal" data-doctrine-panel>
+            <div class="tactical-map" aria-hidden="true">
+              <span class="map-node map-node-fight active" data-node="fight"></span>
+              <span class="map-node map-node-work" data-node="work"></span>
+              <span class="map-node map-node-fun" data-node="fun"></span>
+              <span class="map-line map-line-a"></span>
+              <span class="map-line map-line-b"></span>
+              <span class="map-line map-line-c"></span>
+            </div>
+
+            <article class="doctrine-item active" tabindex="0" data-doctrine="fight">
+              <span>01 / SIGNAL ARMED</span>
+              <h3>FIGHT / 护航与前线</h3>
+              <p>和平为先，不主动挑事；若成员被威胁，舰队会一起站出来。</p>
+            </article>
+            <article class="doctrine-item" tabindex="0" data-doctrine="work">
+              <span>02 / SUPPLY ROUTE</span>
+              <h3>WORK / 资源与贸易</h3>
+              <p>资源采集、贸易网络、任务协作，把收益和路线做成共享资产。</p>
+            </article>
+            <article class="doctrine-item" tabindex="0" data-doctrine="fun">
+              <span>03 / STORY CREW</span>
+              <h3>FUN / 探索与互助</h3>
+              <p>新兵和老舰长都能上船，互相尊重、合作成长、一起写故事。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="operations-section" id="operations">
+        <div class="section-kicker">
+          <p class="system-label">OPERATIONS MAP</p>
+          <h2>选择你的远航位置</h2>
+        </div>
+
+        <div class="role-filter" aria-label="行动编队筛选">
+          <button type="button" class="filter-chip active" data-filter="all">全部</button>
+          <button type="button" class="filter-chip" data-filter="combat">战斗</button>
+          <button type="button" class="filter-chip" data-filter="industry">工业</button>
+          <button type="button" class="filter-chip" data-filter="support">后勤</button>
+          <button type="button" class="filter-chip" data-filter="explore">探索</button>
+        </div>
+
+        <div class="operation-map reveal" data-operation-map data-active-role="combat" aria-label="舰队行动编队星图">
+          <div class="operation-media-reel" aria-hidden="true">
+            <div class="operation-media-track">
+              <img src="./assets/gallery/team-05.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-13.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-14.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-15.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-18.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-05.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-13.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-14.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-15.jpg" alt="" loading="lazy" decoding="async" />
+              <img src="./assets/gallery/team-18.jpg" alt="" loading="lazy" decoding="async" />
+            </div>
+            <span>GVY MISSION ARCHIVE / OPERATIONS FOOTAGE</span>
+          </div>
+          <div class="route-layer" aria-hidden="true">
+            <span class="route route-focus"></span>
+            <span class="route route-1"></span>
+            <span class="route route-2"></span>
+            <span class="route route-3"></span>
+            <span class="route route-4"></span>
+          </div>
+
+          <article class="operation-node node-escort active" tabindex="0" data-role="combat">
+            <span class="node-pin" aria-hidden="true"></span>
+            <div class="node-body">
+              <p>01 / 战斗</p>
+              <h3>远航护航</h3>
+              <span>Vanguard / Arrow / Gladius</span>
+              <small>保护探索队和货线，必要时正面回应威胁。</small>
+            </div>
+          </article>
+
+          <article class="operation-node node-mining" tabindex="0" data-role="industry">
+            <span class="node-pin" aria-hidden="true"></span>
+            <div class="node-body">
+              <p>02 / 工业</p>
+              <h3>资源采集</h3>
+              <span>Prospector / Mole / Vulture</span>
+              <small>采矿、打捞、资源整理，为舰队行动提供底盘。</small>
+            </div>
+          </article>
+
+          <article class="operation-node node-trade" tabindex="0" data-role="support">
+            <span class="node-pin" aria-hidden="true"></span>
+            <div class="node-body">
+              <p>03 / 后勤</p>
+              <h3>贸易网络</h3>
+              <span>Cutlass Red / Starfarer / Vulcan</span>
+              <small>路线规划、补给中继、运输协作，把宇宙跑熟。</small>
+            </div>
+          </article>
+
+          <article class="operation-node node-explore" tabindex="0" data-role="explore">
+            <span class="node-pin" aria-hidden="true"></span>
+            <div class="node-body">
+              <p>04 / 探索</p>
+              <h3>未知探索</h3>
+              <span>Terrapin / 400i / Carrack</span>
+              <small>星系远征、地表侦察、活动组织，永远往下一片星海走。</small>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-kicker">
+          <p class="system-label">GVY ARCHIVE</p>
+          <h2>远航路上的团建瞬间</h2>
+        </div>
+
+        <div class="archive-wall reveal" data-orbit-gallery aria-label="GVY 团建图册 3D 星球环绕照片墙">
+          <div class="archive-planet" aria-hidden="true">
+            <span>GVY</span>
+          </div>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-01.jpg" data-caption="GVY 团建留影 01">
+            <img src="./assets/gallery/thumbs/team-01.jpg" alt="GVY 团建留影 01" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-02.jpg" data-caption="GVY 团建留影 02">
+            <img src="./assets/gallery/thumbs/team-02.jpg" alt="GVY 团建留影 02" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-03.jpg" data-caption="GVY 团建留影 03">
+            <img src="./assets/gallery/thumbs/team-03.jpg" alt="GVY 团建留影 03" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-04.jpg" data-caption="GVY 团建留影 04">
+            <img src="./assets/gallery/thumbs/team-04.jpg" alt="GVY 团建留影 04" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-05.jpg" data-caption="GVY 团建留影 05">
+            <img src="./assets/gallery/thumbs/team-05.jpg" alt="GVY 团建留影 05" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-06.jpg" data-caption="GVY 团建留影 06">
+            <img src="./assets/gallery/thumbs/team-06.jpg" alt="GVY 团建留影 06" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-07.jpg" data-caption="GVY 团建留影 07">
+            <img src="./assets/gallery/thumbs/team-07.jpg" alt="GVY 团建留影 07" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-08.jpg" data-caption="GVY 团建留影 08">
+            <img src="./assets/gallery/thumbs/team-08.jpg" alt="GVY 团建留影 08" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-09.jpg" data-caption="GVY 团建留影 09">
+            <img src="./assets/gallery/thumbs/team-09.jpg" alt="GVY 团建留影 09" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-10.jpg" data-caption="GVY 团建留影 10">
+            <img src="./assets/gallery/thumbs/team-10.jpg" alt="GVY 团建留影 10" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-11.jpg" data-caption="GVY 团建留影 11">
+            <img src="./assets/gallery/thumbs/team-11.jpg" alt="GVY 团建留影 11" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-12.jpg" data-caption="GVY 团建留影 12">
+            <img src="./assets/gallery/thumbs/team-12.jpg" alt="GVY 团建留影 12" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-13.jpg" data-caption="GVY 团建留影 13">
+            <img src="./assets/gallery/thumbs/team-13.jpg" alt="GVY 团建留影 13" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-14.jpg" data-caption="GVY 团建留影 14">
+            <img src="./assets/gallery/thumbs/team-14.jpg" alt="GVY 团建留影 14" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-15.jpg" data-caption="GVY 团建留影 15">
+            <img src="./assets/gallery/thumbs/team-15.jpg" alt="GVY 团建留影 15" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-16.jpg" data-caption="GVY 团建留影 16">
+            <img src="./assets/gallery/thumbs/team-16.jpg" alt="GVY 团建留影 16" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-17.jpg" data-caption="GVY 团建留影 17">
+            <img src="./assets/gallery/thumbs/team-17.jpg" alt="GVY 团建留影 17" loading="lazy" decoding="async" />
+          </button>
+          <button class="archive-frame" type="button" data-full="./assets/gallery/team-18.jpg" data-caption="GVY 团建留影 18">
+            <img src="./assets/gallery/thumbs/team-18.jpg" alt="GVY 团建留影 18" loading="lazy" decoding="async" />
+          </button>
+        </div>
+      </section>
+
+      <section class="recruit-section" id="recruit">
+        <div class="recruit-copy reveal">
+          <p class="system-label">RECRUIT TERMINAL</p>
+          <h2>无论你是首次起航，还是经验丰富的舰长，这里都是你的家。</h2>
+          <p>
+            星际远航者舰队欢迎愿意合作、愿意探索、愿意一起成长的玩家。你可以选择战斗护航、工业贸易、医疗后勤、探索侦察等方向加入舰队。
+          </p>
+          <a
+            class="hud-button hud-button-inline"
+            href="https://robertsspaceindustries.com/en/orgs/GVY"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>前往 RSI 官网申请</span>
+            <small>RSI ORG / GVY</small>
+          </a>
+        </div>
+
+        <div class="terminal reveal" aria-label="申请卡生成终端">
+          <div class="terminal-topline">
+            <span>GVY // APPLICATION CARD</span>
+            <span>LINK READY</span>
+          </div>
+          <form class="application-form" id="applicationForm">
+            <label>
+              <span>游戏 ID</span>
+              <input name="gameId" autocomplete="nickname" placeholder="输入你的游戏 ID" required />
+            </label>
+            <label>
+              <span>偏好位置</span>
+              <select name="role">
+                <option>战斗护航</option>
+                <option>工业贸易</option>
+                <option>医疗后勤</option>
+                <option>探索侦察</option>
+              </select>
+            </label>
+            <div class="terminal-actions">
+              <button class="hud-button hud-button-submit" type="submit">
+                <span>生成申请卡</span>
+                <small>GENERATE</small>
+              </button>
+              <a
+                class="hud-button hud-button-secondary"
+                href="https://robertsspaceindustries.com/en/orgs/GVY"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>前往 RSI 官网申请</span>
+                <small>SUBMIT ON RSI</small>
+              </a>
+            </div>
+          </form>
+          <output class="application-output" id="applicationOutput">
+填写游戏 ID 后，生成一段可复制的申请卡文案。
+真实加入舰队仍需要前往 RSI 官网 GVY 页面提交申请。
+          </output>
+          <button class="copy-button" type="button" data-copy-card>复制申请卡</button>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="archive-dialog" id="archiveDialog" aria-label="团建照片放大预览">
+      <form method="dialog">
+        <button class="archive-dialog-close" type="submit" aria-label="关闭照片预览">×</button>
+      </form>
+      <img id="archiveDialogImage" src="" alt="" />
+      <p id="archiveDialogCaption">GVY ARCHIVE</p>
+    </dialog>
+
+    <footer class="site-footer">
+      <div>
+        <strong>星际远航者舰队</strong>
+        <span>GALACTIC VOYAGERS · GVY VOYAGERS</span>
+      </div>
+      <nav aria-label="页脚链接">
+        <a href="https://robertsspaceindustries.com/en/orgs/GVY" target="_blank" rel="noreferrer">RSI 申请入口</a>
+        <a href="./">蓝图查询入口</a>
+        <a href="#pageTop">返回顶部</a>
+      </nav>
+      <p>QQ群：691311516</p>
+      <p class="disclaimer">
+        本网站为玩家组织网站，与 Cloud Imperium Games / Roberts Space Industries 官方无直接隶属关系。
+      </p>
+    </footer>
+
+    <script src="./assets/fleet-command.js?v=20260620-nav-visible" defer></script>
+  </body>
+</html>
