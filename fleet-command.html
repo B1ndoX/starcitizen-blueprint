@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260621-clean-flow-map" />
+    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260621-random-hero-video" />
   </head>
   <body id="pageTop">
     <a class="skip-link" href="#doctrine">跳到舰队内容</a>
@@ -42,8 +42,16 @@
       <section class="intro-sequence" id="top" data-intro-sequence>
         <div class="intro-sticky" data-intro-sticky>
           <div class="intro-media" aria-hidden="true">
-            <video autoplay muted loop playsinline preload="metadata" data-hero-video>
-              <source src="./assets/fleet-hero.mp4" type="video/mp4" />
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-hero-video
+              data-hero-videos="./assets/hero-random/fleet-hero-01.mp4|./assets/hero-random/fleet-hero-02.mp4|./assets/hero-random/fleet-hero-03.mp4"
+            >
+              <source src="./assets/hero-random/fleet-hero-01.mp4" type="video/mp4" />
             </video>
             <canvas class="starfield-canvas" id="starfieldCanvas" aria-hidden="true"></canvas>
           </div>
@@ -362,6 +370,6 @@
       </p>
     </footer>
 
-    <script src="./assets/fleet-command.js?v=20260621-clean-flow-map" defer></script>
+    <script src="./assets/fleet-command.js?v=20260621-random-hero-video" defer></script>
   </body>
 </html>

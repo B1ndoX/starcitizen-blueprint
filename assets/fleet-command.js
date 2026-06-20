@@ -115,6 +115,20 @@ function initHeroVideoFallback() {
   if (!video || !intro) return;
 
   let markedSlow = false;
+  const videoOptions = (video.dataset.heroVideos || "")
+    .split("|")
+    .map((path) => path.trim())
+    .filter(Boolean);
+  const requestedVideo = Number(new URLSearchParams(window.location.search).get("heroVideo"));
+
+  if (videoOptions.length > 0) {
+    const requestedIndex = Number.isInteger(requestedVideo) ? requestedVideo - 1 : -1;
+    const randomIndex = Math.floor(Math.random() * videoOptions.length);
+    const selectedIndex = requestedIndex >= 0 && requestedIndex < videoOptions.length ? requestedIndex : randomIndex;
+    video.src = videoOptions[selectedIndex];
+    video.dataset.heroVideoSelected = String(selectedIndex + 1);
+    video.load();
+  }
 
   function showPoster() {
     intro.classList.add("video-paused");
