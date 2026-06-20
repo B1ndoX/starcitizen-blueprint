@@ -168,6 +168,10 @@ function updateIntroProgress() {
   if (prefersReducedMotion) {
     intro.style.setProperty("--intro-progress", "1");
     intro.style.setProperty("--intro-title", "1");
+    intro.style.setProperty("--intro-title-label", "1");
+    intro.style.setProperty("--intro-title-main", "1");
+    intro.style.setProperty("--intro-title-sub", "1");
+    intro.style.setProperty("--intro-title-mark", "1");
     intro.style.setProperty("--intro-motto", "1");
     intro.style.setProperty("--intro-hud", "1");
     intro.style.setProperty("--intro-actions", "1");
@@ -205,13 +209,18 @@ function updateIntroProgress() {
   const rect = intro.getBoundingClientRect();
   const scrollable = Math.max(1, rect.height - window.innerHeight);
   const progress = clamp((0 - rect.top) / scrollable, 0, 1);
-  const title = smoothRange(progress, 0.04, 0.16) * (1 - smoothRange(progress, 0.84, 1));
-  const motto = smoothRange(progress, 0.12, 0.28) * (1 - smoothRange(progress, 0.84, 1));
-  const hud = smoothRange(progress, 0.24, 0.42);
-  const actions = smoothRange(progress, 0.38, 0.58);
+  const titleExit = 1 - smoothRange(progress, 0.84, 1);
+  const titleLabel = smoothRange(progress, 0.018, 0.11) * titleExit;
+  const titleMain = smoothRange(progress, 0.055, 0.28) * titleExit;
+  const titleSub = smoothRange(progress, 0.14, 0.36) * titleExit;
+  const titleMark = smoothRange(progress, 0.22, 0.46) * titleExit;
+  const title = smoothRange(progress, 0.018, 0.46) * titleExit;
+  const motto = smoothRange(progress, 0.34, 0.62) * titleExit;
+  const hud = smoothRange(progress, 0.5, 0.68);
+  const actions = smoothRange(progress, 0.62, 0.8);
   const exit = smoothRange(progress, 0.78, 1);
-  const navReveal = smoothRange(progress, 0.38, 0.55);
-  const scrollCue = 1 - smoothRange(progress, 0.02, 0.18);
+  const navReveal = smoothRange(progress, 0.46, 0.62);
+  const scrollCue = 1 - smoothRange(progress, 0.035, 0.18);
   const dark = clamp(0.28 + motto * 0.12 + hud * 0.08 + exit * 0.22, 0.28, 0.7);
   const videoOpacity = clamp(0.96 - exit * 0.16, 0.78, 0.96);
   const scanY = -26 + progress * 520;
@@ -221,6 +230,10 @@ function updateIntroProgress() {
 
   intro.style.setProperty("--intro-progress", progress.toFixed(4));
   intro.style.setProperty("--intro-title", title.toFixed(4));
+  intro.style.setProperty("--intro-title-label", titleLabel.toFixed(4));
+  intro.style.setProperty("--intro-title-main", titleMain.toFixed(4));
+  intro.style.setProperty("--intro-title-sub", titleSub.toFixed(4));
+  intro.style.setProperty("--intro-title-mark", titleMark.toFixed(4));
   intro.style.setProperty("--intro-motto", motto.toFixed(4));
   intro.style.setProperty("--intro-hud", hud.toFixed(4));
   intro.style.setProperty("--intro-actions", actions.toFixed(4));
@@ -239,7 +252,7 @@ function updateIntroProgress() {
   intro.style.setProperty("--intro-mobile-fleet-opacity", mobileFleetOpacity.toFixed(4));
   intro.style.setProperty("--intro-fleet-y", `${(-exit * 34).toFixed(2)}px`);
   intro.style.setProperty("--intro-fleet-scale", (1 + progress * 0.06).toFixed(4));
-  intro.style.setProperty("--intro-title-clip", `${((1 - title) * 100).toFixed(2)}%`);
+  intro.style.setProperty("--intro-title-clip", `${((1 - titleMain) * 100).toFixed(2)}%`);
   intro.style.setProperty("--intro-title-y", `${((1 - title) * 24 - exit * 44).toFixed(2)}px`);
   intro.style.setProperty("--intro-motto-y", `${((1 - motto) * 22 - exit * 38).toFixed(2)}px`);
   intro.style.setProperty("--intro-motto-clip", `${((1 - motto) * 100).toFixed(2)}%`);
@@ -365,7 +378,7 @@ function initReveal() {
 
   items.forEach((item, index) => {
     const isLargeSurface = item.matches(".operation-map, .archive-wall, .doctrine-panel, .terminal");
-    const delay = isLargeSurface ? 140 : (index % 4) * 80;
+    const delay = isLargeSurface ? 60 : (index % 4) * 55;
     item.style.setProperty("--reveal-delay", `${delay}ms`);
   });
 
@@ -377,7 +390,7 @@ function initReveal() {
         observer.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -22% 0px", threshold: 0.12 },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
   );
   items.forEach((item) => observer.observe(item));
 }

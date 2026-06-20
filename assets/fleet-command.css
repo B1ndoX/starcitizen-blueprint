@@ -602,8 +602,8 @@ select:focus-visible,
   --intro-exit: 0;
   --intro-dark: 0.68;
   position: relative;
-  height: 255vh;
-  min-height: 1680px;
+  height: clamp(1420px, 220vh, 2140px);
+  min-height: 0;
   background: #030508;
   isolation: isolate;
 }
@@ -746,11 +746,18 @@ select:focus-visible,
   line-height: 0.95;
 }
 
+.intro-title .system-label {
+  opacity: var(--intro-title-label, var(--intro-title, 0));
+  transform: translate3d(0, calc((1 - var(--intro-title-label, var(--intro-title, 0))) * 12px), 0);
+}
+
 .intro-title h1 span {
   font-size: clamp(2.45rem, 5.2vw, 6.6rem);
   font-weight: 950;
   letter-spacing: 0;
   white-space: nowrap;
+  opacity: var(--intro-title-main, var(--intro-title, 0));
+  transform: translate3d(0, calc((1 - var(--intro-title-main, var(--intro-title, 0))) * 18px), 0);
 }
 
 .intro-title h1 small,
@@ -763,8 +770,15 @@ select:focus-visible,
   text-transform: uppercase;
 }
 
+.intro-title h1 small {
+  opacity: var(--intro-title-sub, var(--intro-title, 0));
+  transform: translate3d(0, calc((1 - var(--intro-title-sub, var(--intro-title, 0))) * 14px), 0);
+}
+
 .intro-title h1 em {
   color: rgba(95, 168, 211, 0.78);
+  opacity: var(--intro-title-mark, var(--intro-title, 0));
+  transform: translate3d(0, calc((1 - var(--intro-title-mark, var(--intro-title, 0))) * 14px), 0);
 }
 
 .intro-motto {
@@ -1022,30 +1036,53 @@ select:focus-visible,
 
 .identity-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 0.82fr) minmax(420px, 1.18fr);
-  gap: clamp(28px, 5vw, 80px);
-  align-items: center;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(520px, 1.05fr);
+  gap: clamp(30px, 4vw, 76px);
+  align-items: stretch;
 }
 
 .identity-copy {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: clamp(430px, 32vw, 620px);
+  padding: clamp(24px, 3vw, 46px);
+  border-left: 1px solid rgba(200, 164, 93, 0.34);
   color: rgba(242, 245, 247, 0.76);
   font-size: clamp(1rem, 1.35vw, 1.28rem);
   line-height: 1.9;
+  background:
+    linear-gradient(90deg, rgba(200, 164, 93, 0.06), transparent 38%),
+    radial-gradient(circle at 0% 50%, rgba(95, 168, 211, 0.1), transparent 42%);
+}
+
+.identity-copy::before {
+  position: absolute;
+  left: -6px;
+  top: clamp(28px, 4vw, 58px);
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--gold);
+  background: #030508;
+  content: "";
+  transform: rotate(45deg);
 }
 
 .identity-stats {
   display: grid;
-  gap: 12px;
-  margin: 34px 0 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 42px 0 0;
 }
 
 .identity-stats div {
   display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 18px;
-  align-items: center;
-  padding: 13px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 8px;
+  min-height: 96px;
+  align-content: center;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.026);
 }
 
 .identity-stats dt {
@@ -1063,13 +1100,14 @@ select:focus-visible,
 .doctrine-panel {
   position: relative;
   display: grid;
-  gap: 14px;
-  min-height: 520px;
-  padding: clamp(20px, 3vw, 34px);
-  border: 1px solid rgba(95, 168, 211, 0.22);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(12px, 1.6vw, 22px);
+  min-height: clamp(430px, 32vw, 600px);
+  padding: clamp(22px, 2.4vw, 42px);
+  border: 1px solid rgba(95, 168, 211, 0.18);
   background:
-    radial-gradient(circle at 45% 42%, rgba(95, 168, 211, 0.14), transparent 32%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 48%),
+    radial-gradient(circle at 50% 45%, rgba(95, 168, 211, 0.12), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.046), transparent 48%),
     rgba(8, 13, 18, 0.58);
 }
 
@@ -1149,11 +1187,14 @@ select:focus-visible,
 .doctrine-item {
   position: relative;
   z-index: 1;
-  max-width: min(480px, 100%);
-  min-height: 122px;
-  padding: 18px 20px;
+  display: grid;
+  min-height: clamp(178px, 15vw, 260px);
+  align-content: end;
+  padding: clamp(18px, 2vw, 30px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(3, 5, 8, 0.54);
+  background:
+    linear-gradient(180deg, transparent, rgba(3, 5, 8, 0.42) 32%, rgba(3, 5, 8, 0.78)),
+    rgba(3, 5, 8, 0.44);
   cursor: pointer;
   transition:
     border-color 200ms ease,
@@ -1162,7 +1203,10 @@ select:focus-visible,
 }
 
 .doctrine-item:nth-of-type(3) {
-  justify-self: end;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  min-height: 100%;
+  justify-self: stretch;
 }
 
 .doctrine-item span,
@@ -1177,8 +1221,8 @@ select:focus-visible,
 }
 
 .doctrine-item h3 {
-  margin: 10px 0 8px;
-  font-size: clamp(1.15rem, 1.6vw, 1.8rem);
+  margin: 18px 0 12px;
+  font-size: clamp(1.35rem, 1.7vw, 2.3rem);
 }
 
 .doctrine-item p {
@@ -1191,7 +1235,7 @@ select:focus-visible,
 .doctrine-item:hover {
   border-color: rgba(200, 164, 93, 0.56);
   background: rgba(13, 21, 29, 0.86);
-  transform: translateX(8px);
+  transform: translateY(-10px);
 }
 
 .role-filter {
@@ -1516,22 +1560,18 @@ select:focus-visible,
 .archive-wall::before {
   z-index: 1;
   background:
-    radial-gradient(circle at 50% 46%, rgba(242, 245, 247, 0.14), rgba(95, 168, 211, 0.18) 0 9%, rgba(3, 5, 8, 0.74) 10% 17%, transparent 18%),
-    radial-gradient(circle at 50% 50%, transparent 0 30%, rgba(3, 5, 8, 0.22) 58%, rgba(3, 5, 8, 0.58) 100%),
+    radial-gradient(circle at 50% 50%, transparent 0 30%, rgba(3, 5, 8, 0.14) 58%, rgba(3, 5, 8, 0.48) 100%),
     linear-gradient(180deg, rgba(3, 5, 8, 0.36), transparent 24%, transparent 70%, rgba(3, 5, 8, 0.5));
   box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.42);
 }
 
 .archive-wall::after {
-  z-index: 30;
+  z-index: 2;
   background:
-    radial-gradient(circle at 50% 50%, transparent 0 24%, rgba(200, 164, 93, 0.2) 24.15% 24.35%, transparent 24.5%),
-    radial-gradient(circle at 50% 50%, transparent 0 37%, rgba(95, 168, 211, 0.18) 37.15% 37.32%, transparent 37.5%),
-    radial-gradient(circle at 50% 50%, transparent 0 49%, rgba(255, 255, 255, 0.1) 49.12% 49.24%, transparent 49.4%),
     linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px) 0 0 / 100% 72px,
     linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px) 0 0 / 86px 100%;
   mix-blend-mode: screen;
-  opacity: 0.66;
+  opacity: 0.14;
 }
 
 .archive-planet {
@@ -1543,18 +1583,24 @@ select:focus-visible,
   width: clamp(190px, 20vw, 330px);
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid rgba(95, 168, 211, 0.32);
+  border: 1px solid rgba(95, 168, 211, 0.26);
   border-radius: 50%;
-  color: rgba(242, 245, 247, 0.58);
+  color: rgba(242, 245, 247, 0.44);
   background:
-    radial-gradient(circle at 34% 30%, rgba(242, 245, 247, 0.22), transparent 0 12%),
-    radial-gradient(circle at 62% 64%, rgba(200, 164, 93, 0.12), transparent 0 24%),
-    radial-gradient(circle at 48% 50%, rgba(95, 168, 211, 0.26), rgba(10, 20, 28, 0.9) 48%, rgba(3, 5, 8, 0.98) 72%);
+    radial-gradient(circle at 28% 24%, rgba(242, 245, 247, 0.42), transparent 0 12%),
+    radial-gradient(circle at 32% 26%, rgba(130, 206, 234, 0.3), transparent 0 28%),
+    radial-gradient(ellipse at 44% 42%, rgba(214, 236, 233, 0.14), transparent 0 18%),
+    radial-gradient(ellipse at 52% 36%, rgba(28, 80, 97, 0.26), transparent 0 36%),
+    radial-gradient(circle at 68% 66%, rgba(10, 20, 28, 0.9), transparent 0 42%),
+    repeating-linear-gradient(168deg, rgba(95, 168, 211, 0.18) 0 5px, rgba(36, 69, 86, 0.05) 5px 18px, rgba(200, 164, 93, 0.055) 18px 24px),
+    repeating-radial-gradient(circle at 36% 34%, rgba(242, 245, 247, 0.065) 0 1px, transparent 1px 12px),
+    radial-gradient(circle at 50% 50%, #17374a 0 36%, #07131d 64%, #010307 100%);
   box-shadow:
-    inset -34px -28px 80px rgba(0, 0, 0, 0.74),
-    inset 18px 12px 44px rgba(95, 168, 211, 0.12),
-    0 0 80px rgba(95, 168, 211, 0.18),
-    0 0 0 34px rgba(95, 168, 211, 0.035);
+    inset -48px -38px 88px rgba(0, 0, 0, 0.82),
+    inset 24px 18px 52px rgba(134, 213, 242, 0.2),
+    0 0 92px rgba(95, 168, 211, 0.22),
+    0 0 0 38px rgba(95, 168, 211, 0.026),
+    0 0 0 92px rgba(200, 164, 93, 0.016);
   font-family: var(--mono);
   font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 800;
@@ -1566,16 +1612,22 @@ select:focus-visible,
 .archive-planet::before,
 .archive-planet::after {
   position: absolute;
-  inset: -38%;
-  border: 1px solid rgba(95, 168, 211, 0.15);
+  inset: -46%;
+  border: 1px solid rgba(95, 168, 211, 0.11);
   border-radius: 50%;
   content: "";
   transform: rotateX(68deg) rotateZ(-12deg);
 }
 
+.archive-planet > span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 24px rgba(95, 168, 211, 0.28);
+}
+
 .archive-planet::after {
-  inset: -58%;
-  border-color: rgba(200, 164, 93, 0.12);
+  inset: -70%;
+  border-color: rgba(200, 164, 93, 0.08);
   transform: rotateX(70deg) rotateZ(18deg);
 }
 
@@ -1594,8 +1646,8 @@ select:focus-visible,
   color: inherit;
   background: transparent;
   box-shadow:
-    0 18px 42px rgba(0, 0, 0, 0.28),
-    0 0 22px rgba(95, 168, 211, 0.06);
+    0 20px 48px rgba(0, 0, 0, 0.34),
+    0 0 26px rgba(95, 168, 211, 0.1);
   cursor: zoom-in;
   opacity: 0;
   transform: translate3d(-50%, -50%, 0) scale(0.82);
@@ -1614,7 +1666,7 @@ select:focus-visible,
   background:
     radial-gradient(ellipse at 50% 52%, transparent 0 42%, rgba(3, 5, 8, 0.14) 62%, rgba(3, 5, 8, 0.78) 100%),
     linear-gradient(90deg, rgba(95, 168, 211, 0.2), transparent 28%, transparent 70%, rgba(200, 164, 93, 0.16));
-  opacity: 0.92;
+  opacity: 0.52;
   content: "";
   -webkit-mask-image: radial-gradient(ellipse 86% 76% at 50% 50%, #000 48%, rgba(0, 0, 0, 0.82) 64%, transparent 100%);
   mask-image: radial-gradient(ellipse 86% 76% at 50% 50%, #000 48%, rgba(0, 0, 0, 0.82) 64%, transparent 100%);
@@ -1642,6 +1694,7 @@ select:focus-visible,
   object-fit: cover;
   color: transparent;
   border-radius: 22px;
+  filter: saturate(1.08) contrast(1.06) brightness(1.08);
   font-size: 0;
   -webkit-mask-image: radial-gradient(ellipse 86% 76% at 50% 50%, #000 50%, rgba(0, 0, 0, 0.88) 64%, rgba(0, 0, 0, 0.42) 78%, transparent 100%);
   mask-image: radial-gradient(ellipse 86% 76% at 50% 50%, #000 50%, rgba(0, 0, 0, 0.88) 64%, rgba(0, 0, 0, 0.42) 78%, transparent 100%);
@@ -1898,7 +1951,7 @@ select:focus-visible,
   --reveal-rotate-y: 0deg;
   --reveal-scale: 1.08;
   opacity: 0;
-  filter: blur(10px) saturate(0.72);
+  filter: blur(3px) saturate(0.88);
   transform:
     perspective(1200px)
     translate3d(var(--reveal-x), var(--reveal-y), var(--reveal-z))
@@ -1907,9 +1960,9 @@ select:focus-visible,
     scale(var(--reveal-scale));
   transform-origin: center center;
   transition:
-    opacity 900ms ease,
-    filter 900ms ease,
-    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 520ms ease,
+    filter 520ms ease,
+    transform 580ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, filter, transform;
 }
@@ -1926,10 +1979,10 @@ select:focus-visible,
 }
 
 .section-kicker.reveal {
-  --reveal-y: 96px;
-  --reveal-z: 340px;
+  --reveal-y: 72px;
+  --reveal-z: 240px;
   --reveal-rotate-x: 13deg;
-  --reveal-scale: 1.14;
+  --reveal-scale: 1.1;
 }
 
 .identity-copy.reveal,
@@ -1942,18 +1995,18 @@ select:focus-visible,
 
 .doctrine-panel.reveal,
 .terminal.reveal {
-  --reveal-x: 54px;
-  --reveal-y: 46px;
-  --reveal-z: 260px;
+  --reveal-x: 42px;
+  --reveal-y: 34px;
+  --reveal-z: 190px;
   --reveal-rotate-y: 7deg;
 }
 
 .operation-map.reveal,
 .archive-wall.reveal {
-  --reveal-y: 84px;
-  --reveal-z: 380px;
+  --reveal-y: 64px;
+  --reveal-z: 260px;
   --reveal-rotate-x: 8deg;
-  --reveal-scale: 1.1;
+  --reveal-scale: 1.07;
 }
 
 .role-filter.reveal {
@@ -2059,8 +2112,8 @@ select:focus-visible,
   }
 
   .intro-sequence {
-    height: 235vh;
-    min-height: 1580px;
+    height: clamp(1360px, 205vh, 2060px);
+    min-height: 0;
   }
 
   .intro-title {
@@ -2105,13 +2158,19 @@ select:focus-visible,
   }
 
   .doctrine-panel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     min-height: clamp(600px, 34vw, 780px);
   }
 
   .doctrine-item {
-    max-width: min(560px, 100%);
-    min-height: 142px;
-    padding: 24px 28px;
+    min-height: clamp(260px, 16vw, 360px);
+    padding: clamp(26px, 1.8vw, 36px);
+  }
+
+  .doctrine-item:nth-of-type(3) {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: clamp(260px, 16vw, 360px);
   }
 
   .operation-map {
@@ -2199,8 +2258,8 @@ select:focus-visible,
   }
 
   .intro-sequence {
-    height: 210vh;
-    min-height: 1320px;
+    height: clamp(1120px, 190vh, 1420px);
+    min-height: 0;
   }
 
   .intro-sticky::before {
@@ -2323,12 +2382,16 @@ select:focus-visible,
   }
 
   .doctrine-panel {
+    grid-template-columns: 1fr;
     min-height: auto;
   }
 
   .doctrine-item,
   .doctrine-item:nth-of-type(3) {
+    grid-column: auto;
+    grid-row: auto;
     justify-self: stretch;
+    min-height: 190px;
   }
 
   .operation-map {
