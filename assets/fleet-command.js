@@ -203,7 +203,6 @@ function updateIntroProgress() {
     root.style.setProperty("--command-nav-opacity", "1");
     root.style.setProperty("--command-nav-y", "0px");
     root.style.setProperty("--command-nav-pointer", "auto");
-    root.style.setProperty("--hero-progress", "1");
     return;
   }
 
@@ -267,7 +266,6 @@ function updateIntroProgress() {
   root.style.setProperty("--command-nav-opacity", navReveal.toFixed(4));
   root.style.setProperty("--command-nav-y", `${((1 - navReveal) * -12).toFixed(2)}px`);
   root.style.setProperty("--command-nav-pointer", navReveal > 0.95 ? "auto" : "none");
-  root.style.setProperty("--hero-progress", progress.toFixed(4));
 }
 
 function initPointerParallax() {
