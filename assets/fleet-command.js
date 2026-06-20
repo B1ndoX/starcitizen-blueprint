@@ -27,7 +27,7 @@ function initStarfield() {
 
   function createStars() {
     const compact = window.innerWidth < 720;
-    const count = compact ? 145 : 310;
+    const count = compact ? 80 : 160;
     stars = Array.from({ length: count }, () => ({
       x: Math.random(),
       y: Math.random(),
@@ -99,16 +99,67 @@ function initStarfield() {
     context.restore();
 
     if (!prefersReducedMotion) {
-      animationFrame = requestAnimationFrame(render);
+      animationFrame = 0;
     }
   }
 
   resize();
   render();
   window.addEventListener("resize", resize, { passive: true });
-  if (!prefersReducedMotion) animationFrame = requestAnimationFrame(render);
 
   return () => cancelAnimationFrame(animationFrame);
+}
+
+function initHeroVideoFallback() {
+  const video = document.querySelector("[data-hero-video]");
+  if (!video || !intro) return;
+
+  let markedSlow = false;
+
+  function showPoster() {
+    intro.classList.add("video-paused");
+  }
+
+  function showVideo() {
+    markedSlow = false;
+    intro.classList.remove("video-paused", "video-failed");
+  }
+
+  function markFailed() {
+    intro.classList.add("video-failed");
+  }
+
+  function tryPlay() {
+    const playResult = video.play();
+    if (playResult?.catch) playResult.catch(showPoster);
+  }
+
+  video.addEventListener("playing", showVideo);
+  video.addEventListener("canplay", showVideo);
+  video.addEventListener("error", markFailed);
+  video.addEventListener("stalled", showPoster);
+  video.addEventListener("suspend", () => {
+    if (video.readyState < 2) showPoster();
+  });
+
+  window.setTimeout(() => {
+    if (video.readyState < 2) {
+      markedSlow = true;
+      showPoster();
+    }
+  }, 2200);
+
+  ["pointerdown", "touchstart", "keydown"].forEach((eventName) => {
+    window.addEventListener(
+      eventName,
+      () => {
+        if (markedSlow || intro.classList.contains("video-paused")) tryPlay();
+      },
+      { once: true, passive: true },
+    );
+  });
+
+  tryPlay();
 }
 
 function updateIntroProgress() {
@@ -122,10 +173,7 @@ function updateIntroProgress() {
     intro.style.setProperty("--intro-actions", "1");
     intro.style.setProperty("--intro-exit", "0");
     intro.style.setProperty("--intro-dark", "0.82");
-    intro.style.setProperty("--intro-video-brightness", "1");
-    intro.style.setProperty("--intro-mobile-video-brightness", "0.96");
     intro.style.setProperty("--intro-video-opacity", "0.96");
-    intro.style.setProperty("--intro-video-scale", "1.03");
     intro.style.setProperty("--intro-shade-mid", "0.32");
     intro.style.setProperty("--intro-vignette-bottom", "0.28");
     intro.style.setProperty("--intro-scan-opacity", "0.36");
@@ -156,17 +204,14 @@ function updateIntroProgress() {
   const rect = intro.getBoundingClientRect();
   const scrollable = Math.max(1, rect.height - window.innerHeight);
   const progress = clamp((0 - rect.top) / scrollable, 0, 1);
-  const title = smoothRange(progress, 0.15, 0.35) * (1 - smoothRange(progress, 0.9, 1));
-  const motto = smoothRange(progress, 0.35, 0.55) * (1 - smoothRange(progress, 0.88, 1));
-  const hud = smoothRange(progress, 0.55, 0.75);
-  const actions = smoothRange(progress, 0.75, 0.98);
-  const exit = smoothRange(progress, 0.88, 1);
-  const navReveal = smoothRange(progress, 0.58, 0.76);
+  const title = smoothRange(progress, 0.04, 0.16) * (1 - smoothRange(progress, 0.84, 1));
+  const motto = smoothRange(progress, 0.12, 0.28) * (1 - smoothRange(progress, 0.84, 1));
+  const hud = smoothRange(progress, 0.24, 0.42);
+  const actions = smoothRange(progress, 0.38, 0.58);
+  const exit = smoothRange(progress, 0.78, 1);
+  const navReveal = smoothRange(progress, 0.38, 0.55);
   const dark = clamp(0.28 + motto * 0.12 + hud * 0.08 + exit * 0.22, 0.28, 0.7);
-  const videoBrightness = clamp(1 - exit * 0.16, 0.82, 1);
-  const mobileVideoBrightness = clamp(0.96 - exit * 0.12, 0.78, 0.96);
   const videoOpacity = clamp(0.96 - exit * 0.16, 0.78, 0.96);
-  const videoScale = 1.03 + progress * 0.035;
   const scanY = -26 + progress * 520;
   const scanOpacity = clamp(0.16 + title * 0.18 + actions * 0.12, 0.12, 0.46);
   const fleetOpacity = clamp(0.06 + hud * 0.15 - exit * 0.08, 0.03, 0.21);
@@ -179,10 +224,7 @@ function updateIntroProgress() {
   intro.style.setProperty("--intro-actions", actions.toFixed(4));
   intro.style.setProperty("--intro-exit", exit.toFixed(4));
   intro.style.setProperty("--intro-dark", dark.toFixed(4));
-  intro.style.setProperty("--intro-video-brightness", videoBrightness.toFixed(4));
-  intro.style.setProperty("--intro-mobile-video-brightness", mobileVideoBrightness.toFixed(4));
   intro.style.setProperty("--intro-video-opacity", videoOpacity.toFixed(4));
-  intro.style.setProperty("--intro-video-scale", videoScale.toFixed(4));
   intro.style.setProperty("--intro-shade-mid", clamp(0.22 + dark * 0.32, 0.22, 0.46).toFixed(4));
   intro.style.setProperty("--intro-vignette-bottom", clamp(0.26 + exit * 0.24, 0.26, 0.5).toFixed(4));
   intro.style.setProperty("--intro-scan-opacity", scanOpacity.toFixed(4));
@@ -655,6 +697,7 @@ function initScrollLoop() {
 }
 
 initStarfield();
+initHeroVideoFallback();
 initPointerParallax();
 initScrollLoop();
 initSmoothLinks();
