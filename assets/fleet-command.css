@@ -34,9 +34,7 @@ body {
   overflow-x: hidden;
   color: var(--text);
   background:
-    radial-gradient(circle at 16% 18%, rgba(95, 168, 211, 0.13), transparent 30vw),
-    radial-gradient(circle at 82% 12%, rgba(200, 164, 93, 0.09), transparent 32vw),
-    linear-gradient(180deg, #030508 0%, #05080c 40%, #090d12 100%);
+    linear-gradient(180deg, #030508 0%, #030508 38%, #05080c 72%, #090d12 100%);
   font-family: var(--sans);
   letter-spacing: 0;
 }
@@ -56,16 +54,15 @@ main {
   position: relative;
   overflow: clip;
   background:
-    radial-gradient(circle at 50% 8%, rgba(95, 168, 211, 0.08), transparent 30vw),
-    radial-gradient(circle at 50% 42%, rgba(95, 168, 211, 0.1), transparent 44vw),
+    radial-gradient(circle at 50% 240vh, rgba(95, 168, 211, 0.09), transparent 42vw),
     linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px) 0 0 / 100% 76px,
     linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px) 0 0 / 92px 100%,
-    linear-gradient(180deg, #030508 0%, #05090d 34%, #05090d 70%, #030508 100%);
+    linear-gradient(180deg, #030508 0 190vh, #04070a 215vh, #05090d 285vh, #030508 100%);
 }
 
 main::before {
   position: absolute;
-  inset: 100svh 0 0;
+  inset: 215vh 0 0;
   z-index: 0;
   background:
     radial-gradient(circle at 50% 16%, transparent 0 20%, rgba(95, 168, 211, 0.08) 20.1% 20.24%, transparent 20.36%),
@@ -601,8 +598,9 @@ select:focus-visible,
   --intro-scroll-cue: 1;
   --intro-exit: 0;
   --intro-dark: 0.68;
+  --intro-blackout: 0;
   position: relative;
-  height: clamp(1420px, 220vh, 2140px);
+  height: clamp(1280px, 185vh, 1780px);
   min-height: 0;
   background: #030508;
   isolation: isolate;
@@ -699,18 +697,15 @@ select:focus-visible,
 
 .intro-sticky::after {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 7;
   display: block;
-  height: min(46vh, 460px);
   background:
     linear-gradient(
       180deg,
-      rgba(3, 5, 8, 0) 0%,
-      rgba(3, 5, 8, 0.18) 28%,
-      rgba(3, 5, 8, 0.72) 66%,
+      rgba(3, 5, 8, var(--intro-blackout, 0)) 0%,
+      rgba(3, 5, 8, calc(var(--intro-blackout, 0) * 0.92)) 42%,
+      rgba(3, 5, 8, 0.72) 78%,
       #030508 100%
     );
   content: "";
@@ -1005,15 +1000,19 @@ select:focus-visible,
 .recruit-section {
   width: var(--max);
   margin: 0 auto;
-  padding: clamp(72px, 8vw, 118px) 0;
+  padding: clamp(42px, 4.6vw, 74px) 0;
 }
 
 .gallery-section {
-  padding-bottom: clamp(42px, 5vw, 76px);
+  padding-bottom: clamp(20px, 2.8vw, 42px);
+}
+
+.identity-section {
+  margin-top: clamp(-620px, -46vh, -360px);
 }
 
 .recruit-section {
-  padding-top: clamp(56px, 6vw, 92px);
+  padding-top: clamp(24px, 3.2vw, 52px);
 }
 
 .section-kicker {
@@ -1021,9 +1020,9 @@ select:focus-visible,
   grid-template-columns: minmax(0, 1fr) minmax(280px, 46%);
   gap: clamp(20px, 4vw, 60px);
   align-items: end;
-  margin-bottom: clamp(34px, 6vw, 76px);
+  margin-bottom: clamp(18px, 3vw, 42px);
   border-top: 1px solid rgba(255, 255, 255, 0.075);
-  padding-top: 22px;
+  padding-top: 18px;
 }
 
 .section-kicker h2 {
@@ -1100,10 +1099,11 @@ select:focus-visible,
 .doctrine-panel {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
-  gap: clamp(12px, 1.6vw, 22px);
-  min-height: clamp(430px, 32vw, 600px);
-  padding: clamp(22px, 2.4vw, 42px);
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 1.4vw, 18px);
+  min-height: clamp(430px, 28vw, 560px);
+  align-content: center;
+  padding: clamp(20px, 2.2vw, 34px);
   border: 1px solid rgba(95, 168, 211, 0.18);
   background:
     radial-gradient(circle at 50% 45%, rgba(95, 168, 211, 0.12), transparent 38%),
@@ -1188,9 +1188,10 @@ select:focus-visible,
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: clamp(178px, 15vw, 260px);
-  align-content: end;
-  padding: clamp(18px, 2vw, 30px);
+  width: 100%;
+  min-height: clamp(124px, 8vw, 162px);
+  align-content: center;
+  padding: clamp(16px, 1.7vw, 24px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background:
     linear-gradient(180deg, transparent, rgba(3, 5, 8, 0.42) 32%, rgba(3, 5, 8, 0.78)),
@@ -1203,9 +1204,9 @@ select:focus-visible,
 }
 
 .doctrine-item:nth-of-type(3) {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  min-height: 100%;
+  grid-column: auto;
+  grid-row: auto;
+  min-height: clamp(124px, 8vw, 162px);
   justify-self: stretch;
 }
 
@@ -1221,8 +1222,8 @@ select:focus-visible,
 }
 
 .doctrine-item h3 {
-  margin: 18px 0 12px;
-  font-size: clamp(1.35rem, 1.7vw, 2.3rem);
+  margin: 10px 0 8px;
+  font-size: clamp(1.2rem, 1.55vw, 1.85rem);
 }
 
 .doctrine-item p {
@@ -1235,7 +1236,7 @@ select:focus-visible,
 .doctrine-item:hover {
   border-color: rgba(200, 164, 93, 0.56);
   background: rgba(13, 21, 29, 0.86);
-  transform: translateY(-10px);
+  transform: translateX(8px);
 }
 
 .role-filter {
@@ -1247,7 +1248,7 @@ select:focus-visible,
 
 .operation-map {
   position: relative;
-  min-height: clamp(640px, 42vw, 940px);
+  min-height: clamp(600px, 36vw, 760px);
   overflow: hidden;
   border: 1px solid rgba(95, 168, 211, 0.14);
   --route-focus-left: 50%;
@@ -1331,7 +1332,7 @@ select:focus-visible,
 
 .operation-media-track img {
   width: clamp(420px, 43vw, 720px);
-  min-height: clamp(620px, 72vw, 820px);
+  min-height: clamp(500px, 50vw, 680px);
   object-fit: cover;
 }
 
@@ -1537,7 +1538,7 @@ select:focus-visible,
 
 .archive-wall {
   position: relative;
-  min-height: clamp(680px, 68vw, 920px);
+  min-height: clamp(460px, 42vw, 640px);
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.035);
   border-bottom: 1px solid rgba(255, 255, 255, 0.035);
@@ -2112,7 +2113,7 @@ select:focus-visible,
   }
 
   .intro-sequence {
-    height: clamp(1360px, 205vh, 2060px);
+    height: clamp(1260px, 172vh, 1860px);
     min-height: 0;
   }
 
@@ -2134,14 +2135,22 @@ select:focus-visible,
   .operations-section,
   .gallery-section,
   .recruit-section {
-    padding-top: clamp(96px, 6vw, 140px);
-    padding-bottom: clamp(96px, 6vw, 140px);
+    padding-top: clamp(56px, 3.8vw, 88px);
+    padding-bottom: clamp(56px, 3.8vw, 88px);
+  }
+
+  .gallery-section {
+    padding-bottom: clamp(28px, 2.4vw, 54px);
+  }
+
+  .recruit-section {
+    padding-top: clamp(34px, 2.8vw, 66px);
   }
 
   .section-kicker {
     grid-template-columns: minmax(420px, 0.9fr) minmax(620px, 1.1fr);
     gap: clamp(64px, 5vw, 112px);
-    margin-bottom: clamp(64px, 5vw, 104px);
+    margin-bottom: clamp(28px, 2.6vw, 58px);
   }
 
   .section-kicker h2 {
@@ -2158,23 +2167,23 @@ select:focus-visible,
   }
 
   .doctrine-panel {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    min-height: clamp(600px, 34vw, 780px);
+    grid-template-columns: 1fr;
+    min-height: clamp(500px, 28vw, 680px);
   }
 
   .doctrine-item {
-    min-height: clamp(260px, 16vw, 360px);
-    padding: clamp(26px, 1.8vw, 36px);
+    min-height: clamp(150px, 8vw, 190px);
+    padding: clamp(22px, 1.5vw, 30px);
   }
 
   .doctrine-item:nth-of-type(3) {
     grid-column: auto;
     grid-row: auto;
-    min-height: clamp(260px, 16vw, 360px);
+    min-height: clamp(150px, 8vw, 190px);
   }
 
   .operation-map {
-    min-height: clamp(760px, 39vw, 980px);
+    min-height: clamp(660px, 33vw, 800px);
   }
 
   .operation-node {
@@ -2202,7 +2211,7 @@ select:focus-visible,
   }
 
   .operation-map {
-    min-height: clamp(840px, 36vw, 1040px);
+    min-height: clamp(700px, 30vw, 860px);
   }
 }
 
@@ -2548,7 +2557,15 @@ select:focus-visible,
   .operations-section,
   .gallery-section,
   .recruit-section {
-    padding: 76px 0;
+    padding: 44px 0;
+  }
+
+  .gallery-section {
+    padding-bottom: 28px;
+  }
+
+  .recruit-section {
+    padding-top: 34px;
   }
 
   .identity-stats div {

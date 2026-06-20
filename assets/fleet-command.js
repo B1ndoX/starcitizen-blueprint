@@ -178,6 +178,7 @@ function updateIntroProgress() {
     intro.style.setProperty("--intro-scroll-cue", "1");
     intro.style.setProperty("--intro-exit", "0");
     intro.style.setProperty("--intro-dark", "0.82");
+    intro.style.setProperty("--intro-blackout", "0");
     intro.style.setProperty("--intro-video-opacity", "0.96");
     intro.style.setProperty("--intro-shade-mid", "0.32");
     intro.style.setProperty("--intro-vignette-bottom", "0.28");
@@ -221,8 +222,9 @@ function updateIntroProgress() {
   const exit = smoothRange(progress, 0.78, 1);
   const navReveal = smoothRange(progress, 0.46, 0.62);
   const scrollCue = 1 - smoothRange(progress, 0.035, 0.18);
-  const dark = clamp(0.28 + motto * 0.12 + hud * 0.08 + exit * 0.22, 0.28, 0.7);
-  const videoOpacity = clamp(0.96 - exit * 0.16, 0.78, 0.96);
+  const blackout = smoothRange(progress, 0.68, 0.92);
+  const dark = clamp(0.28 + motto * 0.12 + hud * 0.08 + exit * 0.34, 0.28, 0.82);
+  const videoOpacity = clamp(0.96 - blackout * 0.92, 0.04, 0.96);
   const scanY = -26 + progress * 520;
   const scanOpacity = clamp(0.16 + title * 0.18 + actions * 0.12, 0.12, 0.46);
   const fleetOpacity = clamp(0.06 + hud * 0.15 - exit * 0.08, 0.03, 0.21);
@@ -240,9 +242,10 @@ function updateIntroProgress() {
   intro.style.setProperty("--intro-scroll-cue", scrollCue.toFixed(4));
   intro.style.setProperty("--intro-exit", exit.toFixed(4));
   intro.style.setProperty("--intro-dark", dark.toFixed(4));
+  intro.style.setProperty("--intro-blackout", blackout.toFixed(4));
   intro.style.setProperty("--intro-video-opacity", videoOpacity.toFixed(4));
   intro.style.setProperty("--intro-shade-mid", clamp(0.22 + dark * 0.32, 0.22, 0.46).toFixed(4));
-  intro.style.setProperty("--intro-vignette-bottom", clamp(0.26 + exit * 0.24, 0.26, 0.5).toFixed(4));
+  intro.style.setProperty("--intro-vignette-bottom", clamp(0.26 + exit * 0.44, 0.26, 0.7).toFixed(4));
   intro.style.setProperty("--intro-scan-opacity", scanOpacity.toFixed(4));
   intro.style.setProperty("--intro-scan-y", `${scanY.toFixed(2)}%`);
   intro.style.setProperty("--intro-frame-opacity", clamp(0.05 + hud * 0.08, 0.05, 0.13).toFixed(4));
