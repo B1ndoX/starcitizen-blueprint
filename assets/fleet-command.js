@@ -433,22 +433,29 @@ function initOperationMap() {
   const nodes = [...document.querySelectorAll(".operation-node")];
   if (!filters.length || !nodes.length) return;
 
-  function activateNode(node, interacting = true) {
+  function syncFilter(role) {
+    filters.forEach((button) => {
+      button.classList.toggle("active", button.dataset.filter === role);
+    });
+  }
+
+  function activateNode(node, interacting = true, sync = true) {
     if (!node) return;
     const role = node.dataset.role || "combat";
     nodes.forEach((item) => item.classList.toggle("active", item === node));
     map?.setAttribute("data-active-role", role);
     map?.classList.toggle("is-interacting", interacting);
+    if (sync) syncFilter(role);
   }
 
   function setFilter(role) {
-    filters.forEach((button) => button.classList.toggle("active", button.dataset.filter === role));
+    syncFilter(role);
     nodes.forEach((node) => {
       const matches = role === "all" || node.dataset.role === role;
       node.classList.toggle("is-dimmed", !matches);
     });
     const activeNode = role === "all" ? nodes[0] : nodes.find((node) => node.dataset.role === role);
-    activateNode(activeNode, role !== "all");
+    activateNode(activeNode, role !== "all", role !== "all");
   }
 
   filters.forEach((button) => {
@@ -457,15 +464,22 @@ function initOperationMap() {
 
   nodes.forEach((node) => {
     node.addEventListener("mouseenter", () => {
+      nodes.forEach((item) => item.classList.remove("is-dimmed"));
       activateNode(node, true);
     });
     node.addEventListener("focus", () => {
+      nodes.forEach((item) => item.classList.remove("is-dimmed"));
+      activateNode(node, true);
+    });
+    node.addEventListener("click", () => {
+      nodes.forEach((item) => item.classList.remove("is-dimmed"));
       activateNode(node, true);
     });
   });
 
   map?.addEventListener("mouseleave", () => {
-    activateNode(nodes[0], false);
+    const activeFilter = filters.find((button) => button.classList.contains("active"))?.dataset.filter || "all";
+    if (activeFilter === "all") activateNode(nodes[0], false, false);
   });
 
   activateNode(nodes.find((node) => node.classList.contains("active")) || nodes[0], false);
