@@ -1891,17 +1891,77 @@ select:focus-visible,
 }
 
 .reveal {
+  --reveal-x: 0px;
+  --reveal-y: 70px;
+  --reveal-z: 260px;
+  --reveal-rotate-x: 10deg;
+  --reveal-rotate-y: 0deg;
+  --reveal-scale: 1.08;
   opacity: 0;
-  transform: translateY(28px);
+  filter: blur(10px) saturate(0.72);
+  transform:
+    perspective(1200px)
+    translate3d(var(--reveal-x), var(--reveal-y), var(--reveal-z))
+    rotateX(var(--reveal-rotate-x))
+    rotateY(var(--reveal-rotate-y))
+    scale(var(--reveal-scale));
+  transform-origin: center center;
   transition:
-    opacity 700ms ease,
-    transform 700ms ease;
+    opacity 900ms ease,
+    filter 900ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, filter, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  filter: blur(0) saturate(1);
+  transform:
+    perspective(1200px)
+    translate3d(0, 0, 0)
+    rotateX(0deg)
+    rotateY(0deg)
+    scale(1);
+}
+
+.section-kicker.reveal {
+  --reveal-y: 96px;
+  --reveal-z: 340px;
+  --reveal-rotate-x: 13deg;
+  --reveal-scale: 1.14;
+}
+
+.identity-copy.reveal,
+.recruit-copy.reveal {
+  --reveal-x: -54px;
+  --reveal-y: 48px;
+  --reveal-z: 220px;
+  --reveal-rotate-y: -7deg;
+}
+
+.doctrine-panel.reveal,
+.terminal.reveal {
+  --reveal-x: 54px;
+  --reveal-y: 46px;
+  --reveal-z: 260px;
+  --reveal-rotate-y: 7deg;
+}
+
+.operation-map.reveal,
+.archive-wall.reveal {
+  --reveal-y: 84px;
+  --reveal-z: 380px;
+  --reveal-rotate-x: 8deg;
+  --reveal-scale: 1.1;
+}
+
+.role-filter.reveal {
+  --reveal-x: -36px;
+  --reveal-y: 24px;
+  --reveal-z: 120px;
+  --reveal-rotate-x: 0deg;
+  --reveal-scale: 1.04;
 }
 
 @keyframes scanPulse {
@@ -2513,6 +2573,7 @@ select:focus-visible,
 
   .reveal {
     opacity: 1;
+    filter: none;
     transform: none;
   }
 }

@@ -364,7 +364,9 @@ function initReveal() {
   }
 
   items.forEach((item, index) => {
-    item.style.setProperty("--reveal-delay", `${(index % 3) * 70}ms`);
+    const isLargeSurface = item.matches(".operation-map, .archive-wall, .doctrine-panel, .terminal");
+    const delay = isLargeSurface ? 140 : (index % 4) * 80;
+    item.style.setProperty("--reveal-delay", `${delay}ms`);
   });
 
   const observer = new IntersectionObserver(
@@ -375,7 +377,7 @@ function initReveal() {
         observer.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -12% 0px", threshold: 0.16 },
+    { rootMargin: "0px 0px -22% 0px", threshold: 0.12 },
   );
   items.forEach((item) => observer.observe(item));
 }
