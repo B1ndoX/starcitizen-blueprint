@@ -13,14 +13,16 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260620-intro-clean" />
+    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260620-scroll-cue-logo" />
   </head>
   <body id="pageTop">
     <a class="skip-link" href="#doctrine">跳到舰队内容</a>
 
     <header class="command-nav" aria-label="舰队主导航">
       <a class="fleet-brand" href="#pageTop" aria-label="星际远航者舰队首页">
-        <span class="brand-sigil" aria-hidden="true">GVY</span>
+        <span class="brand-sigil" aria-hidden="true">
+          <img src="./assets/gvy-logo.png" alt="" />
+        </span>
         <span>
           <strong>星际远航者舰队</strong>
           <small>GALACTIC VOYAGERS</small>
@@ -66,11 +68,14 @@
             <span>VOYAGE BEYOND THE STARS.</span>
           </div>
 
+          <a class="intro-scroll-indicator" href="#doctrine" data-scroll-link aria-label="向下滚动查看舰队内容">
+            <span aria-hidden="true"></span>
+          </a>
         </div>
       </section>
 
       <section class="identity-section" id="doctrine">
-        <div class="section-kicker">
+        <div class="section-kicker reveal">
           <p class="system-label">FLEET IDENTITY</p>
           <h2>我们是谁</h2>
         </div>
@@ -125,12 +130,12 @@
       </section>
 
       <section class="operations-section" id="operations">
-        <div class="section-kicker">
+        <div class="section-kicker reveal">
           <p class="system-label">OPERATIONS MAP</p>
           <h2>选择你的远航位置</h2>
         </div>
 
-        <div class="role-filter" aria-label="行动编队筛选">
+        <div class="role-filter reveal" aria-label="行动编队筛选">
           <button type="button" class="filter-chip active" data-filter="all">全部</button>
           <button type="button" class="filter-chip" data-filter="combat">战斗</button>
           <button type="button" class="filter-chip" data-filter="industry">工业</button>
@@ -205,7 +210,7 @@
       </section>
 
       <section class="gallery-section" id="gallery">
-        <div class="section-kicker">
+        <div class="section-kicker reveal">
           <p class="system-label">GVY ARCHIVE</p>
           <h2>远航路上的团建瞬间</h2>
         </div>
@@ -357,6 +362,6 @@
       </p>
     </footer>
 
-    <script src="./assets/fleet-command.js?v=20260620-intro-clean" defer></script>
+    <script src="./assets/fleet-command.js?v=20260620-scroll-cue-logo" defer></script>
   </body>
 </html>

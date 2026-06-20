@@ -156,17 +156,22 @@ select:focus-visible,
 
 .brand-sigil {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   place-items: center;
   border: 1px solid rgba(200, 164, 93, 0.48);
-  color: var(--gold);
   background:
     linear-gradient(135deg, rgba(200, 164, 93, 0.18), transparent 54%),
     rgba(255, 255, 255, 0.03);
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 800;
+  overflow: hidden;
+}
+
+.brand-sigil img {
+  display: block;
+  width: 118%;
+  height: 118%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(200, 164, 93, 0.24));
 }
 
 .fleet-brand strong,
@@ -593,6 +598,7 @@ select:focus-visible,
   --intro-motto: 0;
   --intro-hud: 0;
   --intro-actions: 0;
+  --intro-scroll-cue: 1;
   --intro-exit: 0;
   --intro-dark: 0.68;
   position: relative;
@@ -713,6 +719,7 @@ select:focus-visible,
 
 .intro-title,
 .intro-motto,
+.intro-scroll-indicator,
 .intro-actions,
 .intro-hud,
 .scroll-cue {
@@ -789,6 +796,53 @@ select:focus-visible,
   font-size: clamp(0.78rem, 1.05vw, 1rem);
   white-space: nowrap;
   clip-path: inset(0 var(--intro-motto-clip, 100%) 0 0);
+}
+
+.intro-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(28px, 5vh, 54px);
+  z-index: 13;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  opacity: var(--intro-scroll-cue, 1);
+  transform: translate3d(-50%, calc((1 - var(--intro-scroll-cue, 1)) * 14px), 0);
+  pointer-events: auto;
+}
+
+.intro-scroll-indicator span,
+.intro-scroll-indicator::before,
+.intro-scroll-indicator::after {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-right: 2px solid rgba(242, 245, 247, 0.78);
+  border-bottom: 2px solid rgba(242, 245, 247, 0.78);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.intro-scroll-indicator span {
+  filter: drop-shadow(0 0 14px rgba(95, 168, 211, 0.46));
+  animation: scrollCueFloat 1.45s ease-in-out infinite;
+}
+
+.intro-scroll-indicator::before,
+.intro-scroll-indicator::after {
+  position: absolute;
+  opacity: 0.34;
+}
+
+.intro-scroll-indicator::before {
+  transform: translateY(-12px) rotate(45deg) scale(0.78);
+  animation: scrollCueEcho 1.45s ease-in-out infinite;
+}
+
+.intro-scroll-indicator::after {
+  transform: translateY(12px) rotate(45deg) scale(1.16);
+  animation: scrollCueEcho 1.45s ease-in-out infinite reverse;
 }
 
 .intro-hud {
@@ -1842,6 +1896,7 @@ select:focus-visible,
   transition:
     opacity 700ms ease,
     transform 700ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
 .reveal.is-visible {
@@ -1858,6 +1913,28 @@ select:focus-visible,
   50% {
     opacity: 0.92;
     transform: scaleY(1);
+  }
+}
+
+@keyframes scrollCueFloat {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(-5px) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(7px) rotate(45deg);
+  }
+}
+
+@keyframes scrollCueEcho {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.48;
   }
 }
 
@@ -2406,6 +2483,7 @@ select:focus-visible,
 
   .intro-title,
   .intro-motto,
+  .intro-scroll-indicator,
   .intro-hud,
   .intro-actions,
   .intro-sticky .scroll-cue {
@@ -2416,6 +2494,12 @@ select:focus-visible,
 
   .intro-media video {
     transform: none;
+  }
+
+  .intro-scroll-indicator span,
+  .intro-scroll-indicator::before,
+  .intro-scroll-indicator::after {
+    animation: none;
   }
 
   .operation-media-track {

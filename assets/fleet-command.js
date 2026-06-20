@@ -171,6 +171,7 @@ function updateIntroProgress() {
     intro.style.setProperty("--intro-motto", "1");
     intro.style.setProperty("--intro-hud", "1");
     intro.style.setProperty("--intro-actions", "1");
+    intro.style.setProperty("--intro-scroll-cue", "1");
     intro.style.setProperty("--intro-exit", "0");
     intro.style.setProperty("--intro-dark", "0.82");
     intro.style.setProperty("--intro-video-opacity", "0.96");
@@ -210,6 +211,7 @@ function updateIntroProgress() {
   const actions = smoothRange(progress, 0.38, 0.58);
   const exit = smoothRange(progress, 0.78, 1);
   const navReveal = smoothRange(progress, 0.38, 0.55);
+  const scrollCue = 1 - smoothRange(progress, 0.02, 0.18);
   const dark = clamp(0.28 + motto * 0.12 + hud * 0.08 + exit * 0.22, 0.28, 0.7);
   const videoOpacity = clamp(0.96 - exit * 0.16, 0.78, 0.96);
   const scanY = -26 + progress * 520;
@@ -222,6 +224,7 @@ function updateIntroProgress() {
   intro.style.setProperty("--intro-motto", motto.toFixed(4));
   intro.style.setProperty("--intro-hud", hud.toFixed(4));
   intro.style.setProperty("--intro-actions", actions.toFixed(4));
+  intro.style.setProperty("--intro-scroll-cue", scrollCue.toFixed(4));
   intro.style.setProperty("--intro-exit", exit.toFixed(4));
   intro.style.setProperty("--intro-dark", dark.toFixed(4));
   intro.style.setProperty("--intro-video-opacity", videoOpacity.toFixed(4));
@@ -359,6 +362,10 @@ function initReveal() {
     items.forEach((item) => item.classList.add("is-visible"));
     return;
   }
+
+  items.forEach((item, index) => {
+    item.style.setProperty("--reveal-delay", `${(index % 3) * 70}ms`);
+  });
 
   const observer = new IntersectionObserver(
     (entries) => {
