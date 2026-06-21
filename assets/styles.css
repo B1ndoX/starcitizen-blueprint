@@ -1030,59 +1030,10 @@ input:focus {
   gap: 8px;
 }
 
-.mineral-location-group h4,
-.mineral-signal-section h4 {
+.mineral-location-group h4 {
   margin: 0;
   color: var(--orange);
   font-size: 13px;
-}
-
-.mineral-signal-section {
-  display: grid;
-  gap: 8px;
-}
-
-.mineral-signal-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.mineral-signal-item {
-  min-width: 0;
-  display: grid;
-  gap: 7px;
-  padding: 9px 10px;
-  border: 1px solid rgba(255, 196, 104, 0.28);
-  border-radius: 14px;
-  background: rgba(42, 34, 18, 0.4);
-}
-
-.mineral-signal-item strong {
-  overflow: hidden;
-  color: var(--text-strong);
-  font-size: 12px;
-  font-weight: 780;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.mineral-signal-item span {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.mineral-signal-item b {
-  display: inline-flex;
-  align-items: center;
-  min-height: 21px;
-  padding: 0 7px;
-  border-radius: 999px;
-  color: #071019;
-  background: var(--orange);
-  font-size: 11px;
-  font-weight: 880;
 }
 
 .mineral-location-list {
@@ -1093,11 +1044,16 @@ input:focus {
 
 .mineral-location-item,
 .mineral-empty {
+  position: relative;
   min-width: 0;
   padding: 9px 10px;
   border: 1px solid rgba(113, 220, 255, 0.18);
   border-radius: 14px;
   background: rgba(13, 30, 44, 0.58);
+}
+
+.mineral-location-item.has-signal {
+  padding-right: 58px;
 }
 
 .mineral-location-item strong,
@@ -1120,6 +1076,94 @@ input:focus {
   font-size: 11px;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.mineral-signal-badge {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 22px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 196, 104, 0.35);
+  border-radius: 999px;
+  color: var(--orange);
+  background: rgba(255, 196, 104, 0.08);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.mineral-location-tooltip {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: calc(100% + 8px);
+  z-index: 20;
+  display: grid;
+  gap: 7px;
+  padding: 10px 11px;
+  border: 1px solid rgba(255, 196, 104, 0.42);
+  border-radius: 12px;
+  background: rgba(8, 18, 26, 0.96);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease;
+}
+
+.mineral-location-tooltip::after {
+  position: absolute;
+  right: 30px;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid rgba(255, 196, 104, 0.42);
+  border-bottom: 1px solid rgba(255, 196, 104, 0.42);
+  background: rgba(8, 18, 26, 0.96);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.mineral-location-item:hover .mineral-location-tooltip,
+.mineral-location-item:focus .mineral-location-tooltip,
+.mineral-location-item:focus-visible .mineral-location-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mineral-location-tooltip strong {
+  color: var(--text-strong);
+  font-size: 12px;
+}
+
+.mineral-location-tooltip small {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mineral-signal-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.mineral-signal-values b {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: #071019;
+  background: var(--orange);
+  font-size: 11px;
+  font-weight: 880;
 }
 
 .mineral-source {

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -9,6 +10,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 API_BASE = "https://api.uexcorp.uk/2.0"
+SG_MINING_URL = "https://sg-mining-finder.pages.dev/"
 
 RESOURCE_FILES = {
     "commodities": "commodities",
@@ -97,6 +99,12 @@ def fetch_resource(resource: str) -> list[dict]:
     return payload["data"]
 
 
+def fetch_text(url: str) -> str:
+    req = Request(url, headers={"User-Agent": "A-Yuan-Blueprint-Atlas/1.0"})
+    with urlopen(req, timeout=30) as response:
+        return response.read().decode("utf-8", "ignore")
+
+
 def ids(value: object) -> list[int]:
     if value in (None, ""):
         return []
@@ -170,6 +178,123 @@ def load_signal_calibration() -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def js_object_source(html: str, const_name: str) -> str:
+    marker = f"const {const_name} = "
+    start = html.index(marker) + len(marker)
+    while start < len(html) and html[start].isspace():
+        start += 1
+    opening = html[start]
+    closing = "}" if opening == "{" else "]"
+    depth = 0
+    in_string: str | None = None
+    escaped = False
+    for index in range(start, len(html)):
+        char = html[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == in_string:
+                in_string = None
+            continue
+        if char in ("'", '"'):
+            in_string = char
+            continue
+        if char == opening:
+            depth += 1
+        elif char == closing:
+            depth -= 1
+            if depth == 0:
+                return html[start : index + 1]
+    raise ValueError(f"Unable to parse {const_name}")
+
+
+def strip_js_comments(source: str) -> str:
+    return re.sub(r"//.*", "", source)
+
+
+def normalize_sg_location_code(code: str) -> str:
+    return re.sub(r"-\d+$", "", code)
+
+
+def load_sg_mining_data() -> dict:
+    try:
+        html = fetch_text(SG_MINING_URL)
+        location_names = json.loads(js_object_source(html, "LOCATION_NAMES"))
+        ship_data = json.loads(strip_js_comments(js_object_source(html, "SHIP_DATA_47")))
+        radar_source = js_object_source(html, "RADAR_DATA")
+    except Exception:
+        return {"locationsByName": {}, "shipData": {}, "radar": {}}
+
+    radar: dict[str, dict] = {}
+    for match in re.finditer(r"name:\s*'([^']+)'\s*,\s*rs:\s*(\d+).*?maxCluster:\s*(\d+)", radar_source, re.S):
+        name, base, max_cluster = match.groups()
+        radar[name.upper()] = {
+            "base": int(base),
+            "maxCluster": int(max_cluster),
+            "values": [int(base) * count for count in range(1, int(max_cluster) + 1)],
+        }
+    radar["ALUMINUM"] = radar.get("ALUMINIUM", {})
+
+    locations_by_name = {value: normalize_sg_location_code(key) for key, value in location_names.items()}
+    locations_by_name["Yela Ring"] = "YELB"
+    locations_by_name["Yela Belt"] = "YELB"
+    locations_by_name["Glaciem Ring"] = "GLACIUM"
+    locations_by_name["Pyro Clusters"] = "PYRO_DEEP"
+
+    return {"locationsByName": locations_by_name, "shipData": ship_data, "radar": radar}
+
+
+def sg_ore_key(material_name: str, commodity_name: str | None) -> str:
+    base = MATERIAL_ALIASES.get(material_name, material_name)
+    if base == "Ice" or commodity_name == "Ice (Raw)":
+        return "ICE"
+    if base == "Aluminum":
+        return "ALUMINUM"
+    if base in {"Quantainium", "Quantanium"}:
+        return "QUANTANIUM"
+    return re.sub(r"[^A-Za-z0-9]+", "_", base).strip("_").upper()
+
+
+def location_code_for_signal(location: dict, sg_data: dict) -> str | None:
+    en = location.get("en") or ""
+    zh = location.get("zh") or ""
+    if en in sg_data["locationsByName"]:
+        return sg_data["locationsByName"][en]
+    if zh in sg_data["shipData"]:
+        return zh
+    code_match = re.match(r"([A-Z]{3}-L\d)\b", en) or re.match(r"([A-Z]{3}-L\d)\b", zh)
+    if code_match and code_match.group(1) in sg_data["shipData"]:
+        return code_match.group(1)
+    return None
+
+
+def signal_for_location(location: dict, ore_key: str, sg_data: dict) -> dict | None:
+    code = location_code_for_signal(location, sg_data)
+    if not code:
+        return None
+    row = next((item for item in sg_data["shipData"].get(code, []) if item[0] == ore_key), None)
+    radar = sg_data["radar"].get(ore_key)
+    if not row or not radar:
+        return None
+    return {
+        "values": radar["values"],
+        "base": radar["base"],
+        "maxCluster": radar["maxCluster"],
+        "probability": row[1],
+        "sourceLocation": code,
+    }
+
+
+def annotate_location_signals(groups: dict[str, list[dict]], ore_key: str, sg_data: dict) -> None:
+    for locations in groups.values():
+        for location in locations:
+            signal = signal_for_location(location, ore_key, sg_data)
+            if signal:
+                location["signal"] = signal
+
+
 def main() -> None:
     resources = {key: fetch_resource(path) for key, path in RESOURCE_FILES.items()}
     lookup = {
@@ -183,6 +308,7 @@ def main() -> None:
         if item.get("id_orbit")
     }
     signal_calibration = load_signal_calibration()
+    sg_data = load_sg_mining_data()
     signal_by_material = signal_calibration.get("signals") or {}
     commodities = resources["commodities"]
     by_name = {item["name"]: item for item in commodities}
@@ -201,6 +327,8 @@ def main() -> None:
             "pointsOfInterest": [location_entry(lookup["pointsOfInterest"][item_id], "pointsOfInterest") for item_id in ids(commodity.get("ids_poi") if commodity else None) if item_id in lookup["pointsOfInterest"]],
             "lagrangePoints": [location_entry(lookup["orbits"][item_id], "lagrangePoints", station_by_orbit) for item_id in ids(commodity.get("ids_orbits") if commodity else None) if item_id in lookup["orbits"]],
         }
+        ore_key = sg_ore_key(name, commodity.get("name") if commodity else None)
+        annotate_location_signals(groups, ore_key, sg_data)
         materials[name] = {
             "commodityId": commodity.get("id") if commodity else None,
             "commodityName": commodity.get("name") if commodity else None,
@@ -217,6 +345,7 @@ def main() -> None:
             "source": "UEX API 2.0",
             "sourceUrl": "https://api.uexcorp.uk/2.0/",
             "signalSource": signal_calibration.get("source", ""),
+            "locationSignalSource": SG_MINING_URL,
             "signalUpdatedAt": signal_calibration.get("updatedAt", ""),
             "retrievedAt": datetime.now(timezone.utc).isoformat(),
             "note": "UEX data is community-maintained and may not reflect live servers. Empty entries are shown as no reliable mining location instead of inferred locations.",

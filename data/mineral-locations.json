@@ -4,8 +4,9 @@
     "source": "UEX API 2.0",
     "sourceUrl": "https://api.uexcorp.uk/2.0/",
     "signalSource": "Star Citizen Mining Signals spreadsheet",
+    "locationSignalSource": "https://sg-mining-finder.pages.dev/",
     "signalUpdatedAt": "2026-06-21",
-    "retrievedAt": "2026-06-21T05:09:05.608890+00:00",
+    "retrievedAt": "2026-06-21T05:48:08.240500+00:00",
     "note": "UEX data is community-maintained and may not reflect live servers. Empty entries are shown as no reliable mining location instead of inferred locations."
   },
   "materials": {
@@ -43,7 +44,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "TER"
+            }
           }
         ],
         "moons": [
@@ -54,7 +68,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "CEL"
+            }
           },
           {
             "id": 25,
@@ -63,7 +90,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "DAY"
+            }
           },
           {
             "id": 73,
@@ -72,7 +112,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "VUU"
+            }
           },
           {
             "id": 75,
@@ -81,7 +134,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "YEL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -103,7 +169,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ARC-L3"
+            }
           },
           {
             "id": 333,
@@ -112,7 +191,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "CRU-L5"
+            }
           },
           {
             "id": 342,
@@ -121,7 +213,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3885,
+                7770,
+                11655,
+                15540,
+                19425
+              ],
+              "base": 3885,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "MIC-L4"
+            }
           }
         ]
       },
@@ -182,7 +287,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 29.7,
+              "sourceLocation": "ABE"
+            }
           },
           {
             "id": 4,
@@ -191,7 +310,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 22.0,
+              "sourceLocation": "ARI"
+            }
           },
           {
             "id": 45,
@@ -200,7 +333,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "ITA"
+            }
           },
           {
             "id": 51,
@@ -209,7 +356,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "MAG"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -220,7 +381,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 10.3,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 225,
@@ -229,7 +404,21 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 13.8,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -238,7 +427,21 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 13.8,
+              "sourceLocation": "GLACIUM"
+            }
           },
           {
             "id": 270,
@@ -258,7 +461,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L1"
+            }
           },
           {
             "id": 327,
@@ -267,7 +484,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L2"
+            }
           },
           {
             "id": 334,
@@ -276,7 +507,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "HUR-L1"
+            }
           },
           {
             "id": 335,
@@ -285,7 +530,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L2"
+            }
           },
           {
             "id": 337,
@@ -294,7 +553,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "HUR-L4"
+            }
           },
           {
             "id": 338,
@@ -303,7 +576,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "HUR-L5"
+            }
           },
           {
             "id": 339,
@@ -321,7 +608,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "MIC-L2"
+            }
           },
           {
             "id": 343,
@@ -330,7 +631,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4285,
+                8570,
+                12855,
+                17140,
+                21425,
+                25710
+              ],
+              "base": 4285,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "MIC-L5"
+            }
           },
           {
             "id": 373,
@@ -679,7 +994,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "FUE"
+            }
           },
           {
             "id": 45,
@@ -688,7 +1016,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ITA"
+            }
           },
           {
             "id": 51,
@@ -697,7 +1038,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "MAG"
+            }
           },
           {
             "id": 73,
@@ -706,7 +1060,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "VUU"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -717,7 +1084,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 270,
@@ -737,7 +1117,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ARC-L5"
+            }
           },
           {
             "id": 332,
@@ -746,7 +1139,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3840,
+                7680,
+                11520,
+                15360,
+                19200
+              ],
+              "base": 3840,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "CRU-L4"
+            }
           },
           {
             "id": 342,
@@ -851,7 +1257,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                3540,
+                7080,
+                10620,
+                14160
+              ],
+              "base": 3540,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "WAL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -862,7 +1280,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3540,
+                7080,
+                10620,
+                14160
+              ],
+              "base": 3540,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 270,
@@ -882,7 +1312,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3540,
+                7080,
+                10620,
+                14160
+              ],
+              "base": 3540,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "ARC-L3"
+            }
           },
           {
             "id": 333,
@@ -891,7 +1333,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3540,
+                7080,
+                10620,
+                14160
+              ],
+              "base": 3540,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "CRU-L5"
+            }
           },
           {
             "id": 342,
@@ -900,7 +1354,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3540,
+                7080,
+                10620,
+                14160
+              ],
+              "base": 3540,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "MIC-L4"
+            }
           }
         ]
       },
@@ -990,7 +1456,19 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3600,
+                7200,
+                10800,
+                14400
+              ],
+              "base": 3600,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -999,7 +1477,19 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3600,
+                7200,
+                10800,
+                14400
+              ],
+              "base": 3600,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "GLACIUM"
+            }
           },
           {
             "id": 270,
@@ -1019,7 +1509,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3600,
+                7200,
+                10800,
+                14400
+              ],
+              "base": 3600,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "CRU-L1"
+            }
           },
           {
             "id": 336,
@@ -1028,7 +1530,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3600,
+                7200,
+                10800,
+                14400
+              ],
+              "base": 3600,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "HUR-L3"
+            }
           },
           {
             "id": 372,
@@ -1037,7 +1551,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3600,
+                7200,
+                10800,
+                14400
+              ],
+              "base": 3600,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "CRU-L2"
+            }
           }
         ]
       },
@@ -1088,7 +1614,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3570,
+                7140,
+                10710,
+                14280
+              ],
+              "base": 3570,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "BLO"
+            }
           },
           {
             "id": 243,
@@ -1097,7 +1635,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3570,
+                7140,
+                10710,
+                14280
+              ],
+              "base": 3570,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "PY4"
+            }
           }
         ],
         "moons": [
@@ -1108,7 +1658,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3570,
+                7140,
+                10710,
+                14280
+              ],
+              "base": 3570,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "ADI"
+            }
           },
           {
             "id": 36,
@@ -1117,7 +1679,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3570,
+                7140,
+                10710,
+                14280
+              ],
+              "base": 3570,
+              "maxCluster": 4,
+              "probability": 9.0,
+              "sourceLocation": "FUE"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -1139,7 +1713,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3570,
+                7140,
+                10710,
+                14280
+              ],
+              "base": 3570,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "HUR-L1"
+            }
           },
           {
             "id": 337,
@@ -1148,7 +1734,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3570,
+                7140,
+                10710,
+                14280
+              ],
+              "base": 3570,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "HUR-L4"
+            }
           },
           {
             "id": 338,
@@ -1223,7 +1821,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "PY1"
+            }
           },
           {
             "id": 243,
@@ -1232,7 +1844,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 25.7,
+              "sourceLocation": "PY4"
+            }
           },
           {
             "id": 245,
@@ -1241,7 +1867,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 20.8,
+              "sourceLocation": "TER"
+            }
           }
         ],
         "moons": [
@@ -1252,7 +1892,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 40.0,
+              "sourceLocation": "CLI"
+            }
           },
           {
             "id": 34,
@@ -1261,7 +1915,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 40.0,
+              "sourceLocation": "EUT"
+            }
           },
           {
             "id": 50,
@@ -1270,7 +1938,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "LYR"
+            }
           },
           {
             "id": 74,
@@ -1279,7 +1961,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 25.8,
+              "sourceLocation": "WAL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -1290,7 +1986,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 10.3,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 270,
@@ -1299,7 +2009,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 14.9,
+              "sourceLocation": "PYRO_DEEP"
+            }
           },
           {
             "id": 272,
@@ -1317,7 +2041,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 20.5,
+              "sourceLocation": "YELB"
+            }
           }
         ],
         "lagrangePoints": [
@@ -1328,7 +2066,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L3"
+            }
           },
           {
             "id": 330,
@@ -1337,7 +2089,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L5"
+            }
           },
           {
             "id": 331,
@@ -1346,7 +2112,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "CRU-L1"
+            }
           },
           {
             "id": 332,
@@ -1355,7 +2135,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "CRU-L4"
+            }
           },
           {
             "id": 333,
@@ -1364,7 +2158,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "CRU-L5"
+            }
           },
           {
             "id": 341,
@@ -1373,7 +2181,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "MIC-L3"
+            }
           },
           {
             "id": 342,
@@ -1382,7 +2204,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "MIC-L4"
+            }
           },
           {
             "id": 372,
@@ -1391,7 +2227,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4240,
+                8480,
+                12720,
+                16960,
+                21200,
+                25440
+              ],
+              "base": 4240,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "CRU-L2"
+            }
           }
         ]
       },
@@ -1453,7 +2303,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 29.8,
+              "sourceLocation": "ABE"
+            }
           },
           {
             "id": 4,
@@ -1462,7 +2326,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 22.0,
+              "sourceLocation": "ARI"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -1484,7 +2362,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "ARC-L1"
+            }
           },
           {
             "id": 327,
@@ -1493,7 +2385,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "ARC-L2"
+            }
           },
           {
             "id": 329,
@@ -1502,7 +2408,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "ARC-L4"
+            }
           },
           {
             "id": 334,
@@ -1511,7 +2431,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L1"
+            }
           },
           {
             "id": 335,
@@ -1520,7 +2454,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "HUR-L2"
+            }
           },
           {
             "id": 337,
@@ -1529,7 +2477,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L4"
+            }
           },
           {
             "id": 338,
@@ -1538,7 +2500,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "HUR-L5"
+            }
           },
           {
             "id": 339,
@@ -1556,7 +2532,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "MIC-L2"
+            }
           },
           {
             "id": 343,
@@ -1565,7 +2555,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4225,
+                8450,
+                12675,
+                16900,
+                21125,
+                25350
+              ],
+              "base": 4225,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "MIC-L5"
+            }
           },
           {
             "id": 373,
@@ -1858,7 +2862,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "TER"
+            }
           }
         ],
         "moons": [
@@ -1869,7 +2885,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 9.0,
+              "sourceLocation": "FAI"
+            }
           },
           {
             "id": 43,
@@ -1878,7 +2906,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "IGN"
+            }
           },
           {
             "id": 69,
@@ -1887,7 +2927,19 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "VAT"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -1909,7 +2961,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "ARC-L5"
+            }
           },
           {
             "id": 332,
@@ -1918,7 +2982,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "CRU-L4"
+            }
           },
           {
             "id": 341,
@@ -1927,7 +3003,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3585,
+                7170,
+                10755,
+                14340
+              ],
+              "base": 3585,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "MIC-L3"
+            }
           }
         ]
       },
@@ -2266,7 +3354,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 32.7,
+              "sourceLocation": "MIC"
+            }
           },
           {
             "id": 241,
@@ -2275,7 +3377,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 32.7,
+              "sourceLocation": "MON"
+            }
           }
         ],
         "moons": [
@@ -2286,7 +3402,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 22.0,
+              "sourceLocation": "ARI"
+            }
           },
           {
             "id": 16,
@@ -2295,7 +3425,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "CAL"
+            }
           },
           {
             "id": 36,
@@ -2304,7 +3448,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 26.7,
+              "sourceLocation": "FUE"
+            }
           },
           {
             "id": 73,
@@ -2313,7 +3471,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 26.8,
+              "sourceLocation": "VUU"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -2335,7 +3507,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L1"
+            }
           },
           {
             "id": 327,
@@ -2344,7 +3530,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L2"
+            }
           },
           {
             "id": 329,
@@ -2353,7 +3553,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L4"
+            }
           },
           {
             "id": 334,
@@ -2362,7 +3576,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L1"
+            }
           },
           {
             "id": 335,
@@ -2371,7 +3599,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L2"
+            }
           },
           {
             "id": 337,
@@ -2380,7 +3622,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L4"
+            }
           },
           {
             "id": 338,
@@ -2389,7 +3645,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "HUR-L5"
+            }
           },
           {
             "id": 339,
@@ -2407,7 +3677,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "MIC-L2"
+            }
           },
           {
             "id": 343,
@@ -2416,7 +3700,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4180,
+                8360,
+                12540,
+                16720,
+                20900,
+                25080
+              ],
+              "base": 4180,
+              "maxCluster": 6,
+              "probability": 23.9,
+              "sourceLocation": "MIC-L5"
+            }
           },
           {
             "id": 373,
@@ -2485,7 +3783,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "MIC"
+            }
           },
           {
             "id": 240,
@@ -2494,7 +3806,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 32.7,
+              "sourceLocation": "PY1"
+            }
           },
           {
             "id": 241,
@@ -2503,7 +3829,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "MON"
+            }
           },
           {
             "id": 242,
@@ -2512,7 +3852,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 35.0,
+              "sourceLocation": "BLO"
+            }
           },
           {
             "id": 243,
@@ -2521,7 +3875,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 25.7,
+              "sourceLocation": "PY4"
+            }
           }
         ],
         "moons": [
@@ -2532,7 +3900,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 43.5,
+              "sourceLocation": "ADI"
+            }
           },
           {
             "id": 16,
@@ -2541,7 +3923,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 32.7,
+              "sourceLocation": "CAL"
+            }
           },
           {
             "id": 35,
@@ -2550,7 +3946,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 26.7,
+              "sourceLocation": "FAI"
+            }
           },
           {
             "id": 36,
@@ -2559,7 +3969,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 26.8,
+              "sourceLocation": "FUE"
+            }
           },
           {
             "id": 50,
@@ -2568,7 +3992,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "LYR"
+            }
           },
           {
             "id": 51,
@@ -2577,7 +4015,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "MAG"
+            }
           },
           {
             "id": 69,
@@ -2586,7 +4038,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 36.0,
+              "sourceLocation": "VAT"
+            }
           },
           {
             "id": 73,
@@ -2595,7 +4061,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 26.8,
+              "sourceLocation": "VUU"
+            }
           },
           {
             "id": 74,
@@ -2604,7 +4084,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 25.7,
+              "sourceLocation": "WAL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -2615,7 +4109,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 10.3,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 225,
@@ -2624,7 +4132,21 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 13.8,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -2633,7 +4155,21 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 13.8,
+              "sourceLocation": "GLACIUM"
+            }
           },
           {
             "id": 270,
@@ -2660,7 +4196,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 20.5,
+              "sourceLocation": "YELB"
+            }
           }
         ],
         "lagrangePoints": [
@@ -2671,7 +4221,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "ARC-L3"
+            }
           },
           {
             "id": 330,
@@ -2680,7 +4244,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "ARC-L5"
+            }
           },
           {
             "id": 331,
@@ -2689,7 +4267,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "CRU-L1"
+            }
           },
           {
             "id": 332,
@@ -2698,7 +4290,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "CRU-L4"
+            }
           },
           {
             "id": 333,
@@ -2707,7 +4313,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "CRU-L5"
+            }
           },
           {
             "id": 336,
@@ -2716,7 +4336,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "HUR-L3"
+            }
           },
           {
             "id": 341,
@@ -2725,7 +4359,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "MIC-L3"
+            }
           },
           {
             "id": 342,
@@ -2734,7 +4382,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "MIC-L4"
+            }
           },
           {
             "id": 372,
@@ -2743,7 +4405,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4270,
+                8540,
+                12810,
+                17080,
+                21350,
+                25620
+              ],
+              "base": 4270,
+              "maxCluster": 6,
+              "probability": 17.9,
+              "sourceLocation": "CRU-L2"
+            }
           }
         ]
       },
@@ -2866,7 +4542,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3825,
+                7650,
+                11475,
+                15300,
+                19125
+              ],
+              "base": 3825,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "PY4"
+            }
           }
         ],
         "moons": [
@@ -2877,7 +4566,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                3825,
+                7650,
+                11475,
+                15300,
+                19125
+              ],
+              "base": 3825,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "LYR"
+            }
           },
           {
             "id": 74,
@@ -2886,7 +4588,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "弧光星",
-            "parentEn": "ArcCorp"
+            "parentEn": "ArcCorp",
+            "signal": {
+              "values": [
+                3825,
+                7650,
+                11475,
+                15300,
+                19125
+              ],
+              "base": 3825,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "WAL"
+            }
           }
         ],
         "pointsOfInterest": [],
@@ -2898,7 +4613,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3825,
+                7650,
+                11475,
+                15300,
+                19125
+              ],
+              "base": 3825,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "HUR-L1"
+            }
           },
           {
             "id": 337,
@@ -2907,7 +4635,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3825,
+                7650,
+                11475,
+                15300,
+                19125
+              ],
+              "base": 3825,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "HUR-L4"
+            }
           },
           {
             "id": 338,
@@ -2960,7 +4701,18 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3400,
+                6800,
+                10200
+              ],
+              "base": 3400,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -2969,7 +4721,18 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3400,
+                6800,
+                10200
+              ],
+              "base": 3400,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "GLACIUM"
+            }
           }
         ],
         "lagrangePoints": []
@@ -3012,7 +4775,18 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3370,
+                6740,
+                10110
+              ],
+              "base": 3370,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "HUR"
+            }
           }
         ],
         "moons": [
@@ -3023,7 +4797,18 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                3370,
+                6740,
+                10110
+              ],
+              "base": 3370,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "ABE"
+            }
           },
           {
             "id": 4,
@@ -3032,7 +4817,18 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                3370,
+                6740,
+                10110
+              ],
+              "base": 3370,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "ARI"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -3043,7 +4839,18 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3370,
+                6740,
+                10110
+              ],
+              "base": 3370,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "YELB"
+            }
           }
         ],
         "lagrangePoints": []
@@ -3104,7 +4911,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 32.7,
+              "sourceLocation": "MIC"
+            }
           }
         ],
         "moons": [
@@ -3115,7 +4936,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "CAL"
+            }
           },
           {
             "id": 23,
@@ -3124,7 +4959,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 40.0,
+              "sourceLocation": "CLI"
+            }
           },
           {
             "id": 34,
@@ -3133,7 +4982,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 40.0,
+              "sourceLocation": "EUT"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -3144,7 +5007,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 10.4,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 225,
@@ -3153,7 +5030,21 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 13.9,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -3162,7 +5053,21 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 13.9,
+              "sourceLocation": "GLACIUM"
+            }
           },
           {
             "id": 270,
@@ -3171,7 +5076,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 14.9,
+              "sourceLocation": "PYRO_DEEP"
+            }
           },
           {
             "id": 272,
@@ -3189,7 +5108,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 20.5,
+              "sourceLocation": "YELB"
+            }
           }
         ],
         "lagrangePoints": [
@@ -3200,7 +5133,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L3"
+            }
           },
           {
             "id": 330,
@@ -3209,7 +5156,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "ARC-L5"
+            }
           },
           {
             "id": 336,
@@ -3218,7 +5179,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "HUR-L3"
+            }
           },
           {
             "id": 341,
@@ -3227,7 +5202,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "MIC-L3"
+            }
           },
           {
             "id": 342,
@@ -3236,7 +5225,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4300,
+                8600,
+                12900,
+                17200,
+                21500,
+                25800
+              ],
+              "base": 4300,
+              "maxCluster": 6,
+              "probability": 17.8,
+              "sourceLocation": "MIC-L4"
+            }
           }
         ]
       },
@@ -3322,7 +5325,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4210,
+                8420,
+                12630,
+                16840,
+                21050,
+                25260
+              ],
+              "base": 4210,
+              "maxCluster": 6,
+              "probability": 35.0,
+              "sourceLocation": "BLO"
+            }
           }
         ],
         "moons": [
@@ -3333,7 +5350,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4210,
+                8420,
+                12630,
+                16840,
+                21050,
+                25260
+              ],
+              "base": 4210,
+              "maxCluster": 6,
+              "probability": 25.7,
+              "sourceLocation": "CEL"
+            }
           },
           {
             "id": 25,
@@ -3342,7 +5373,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4210,
+                8420,
+                12630,
+                16840,
+                21050,
+                25260
+              ],
+              "base": 4210,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "DAY"
+            }
           },
           {
             "id": 75,
@@ -3351,7 +5396,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4210,
+                8420,
+                12630,
+                16840,
+                21050,
+                25260
+              ],
+              "base": 4210,
+              "maxCluster": 6,
+              "probability": 25.7,
+              "sourceLocation": "YEL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -3405,7 +5464,18 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3385,
+                6770,
+                10155
+              ],
+              "base": 3385,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "BLO"
+            }
           },
           {
             "id": 245,
@@ -3414,7 +5484,18 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3385,
+                6770,
+                10155
+              ],
+              "base": 3385,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "TER"
+            }
           }
         ],
         "moons": [
@@ -3425,7 +5506,18 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3385,
+                6770,
+                10155
+              ],
+              "base": 3385,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "ADI"
+            }
           },
           {
             "id": 43,
@@ -3434,7 +5526,18 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3385,
+                6770,
+                10155
+              ],
+              "base": 3385,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "IGN"
+            }
           },
           {
             "id": 69,
@@ -3443,7 +5546,18 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3385,
+                6770,
+                10155
+              ],
+              "base": 3385,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "VAT"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -3454,7 +5568,18 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3385,
+                6770,
+                10155
+              ],
+              "base": 3385,
+              "maxCluster": 3,
+              "probability": 10.0,
+              "sourceLocation": "PYRO_DEEP"
+            }
           },
           {
             "id": 272,
@@ -3558,7 +5683,17 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3200,
+                6400
+              ],
+              "base": 3200,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -3567,7 +5702,17 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3200,
+                6400
+              ],
+              "base": 3200,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "GLACIUM"
+            }
           },
           {
             "id": 271,
@@ -3629,7 +5774,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 25.8,
+              "sourceLocation": "CEL"
+            }
           },
           {
             "id": 25,
@@ -3638,7 +5797,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "DAY"
+            }
           },
           {
             "id": 35,
@@ -3647,7 +5820,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 26.8,
+              "sourceLocation": "FAI"
+            }
           },
           {
             "id": 43,
@@ -3656,7 +5843,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 36.0,
+              "sourceLocation": "IGN"
+            }
           },
           {
             "id": 69,
@@ -3665,7 +5866,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 36.0,
+              "sourceLocation": "VAT"
+            }
           },
           {
             "id": 75,
@@ -3674,7 +5889,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 25.8,
+              "sourceLocation": "YEL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -3685,7 +5914,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 10.3,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 270,
@@ -3694,7 +5937,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4255,
+                8510,
+                12765,
+                17020,
+                21275,
+                25530
+              ],
+              "base": 4255,
+              "maxCluster": 6,
+              "probability": 14.9,
+              "sourceLocation": "PYRO_DEEP"
+            }
           },
           {
             "id": 272,
@@ -3746,7 +6003,17 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3185,
+                6370
+              ],
+              "base": 3185,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "PY1"
+            }
           },
           {
             "id": 241,
@@ -3755,7 +6022,17 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3185,
+                6370
+              ],
+              "base": 3185,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "MON"
+            }
           },
           {
             "id": 242,
@@ -3764,7 +6041,17 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3185,
+                6370
+              ],
+              "base": 3185,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "BLO"
+            }
           },
           {
             "id": 243,
@@ -3773,7 +6060,17 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3185,
+                6370
+              ],
+              "base": 3185,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "PY4"
+            }
           },
           {
             "id": 244,
@@ -3791,7 +6088,17 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3185,
+                6370
+              ],
+              "base": 3185,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "TER"
+            }
           }
         ],
         "moons": [],
@@ -3803,7 +6110,17 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3185,
+                6370
+              ],
+              "base": 3185,
+              "maxCluster": 2,
+              "probability": 2.0,
+              "sourceLocation": "PYRO_DEEP"
+            }
           },
           {
             "id": 272,
@@ -3865,7 +6182,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "CEL"
+            }
           },
           {
             "id": 23,
@@ -3874,7 +6203,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "CLI"
+            }
           },
           {
             "id": 34,
@@ -3883,7 +6224,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "微科星",
-            "parentEn": "MicroTech"
+            "parentEn": "MicroTech",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "EUT"
+            }
           },
           {
             "id": 75,
@@ -3892,7 +6245,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "YEL"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -3914,7 +6279,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "ARC-L1"
+            }
           },
           {
             "id": 327,
@@ -3923,7 +6300,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "ARC-L2"
+            }
           },
           {
             "id": 329,
@@ -3932,7 +6321,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "ARC-L4"
+            }
           },
           {
             "id": 335,
@@ -3941,7 +6342,19 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3555,
+                7110,
+                10665,
+                14220
+              ],
+              "base": 3555,
+              "maxCluster": 4,
+              "probability": 18.0,
+              "sourceLocation": "HUR-L2"
+            }
           }
         ]
       },
@@ -3992,7 +6405,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 44.0,
+              "sourceLocation": "HUR"
+            }
           },
           {
             "id": 240,
@@ -4001,7 +6428,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "PY1"
+            }
           },
           {
             "id": 241,
@@ -4010,7 +6451,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 32.6,
+              "sourceLocation": "MON"
+            }
           }
         ],
         "moons": [
@@ -4021,7 +6476,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 22.0,
+              "sourceLocation": "ARI"
+            }
           },
           {
             "id": 43,
@@ -4030,7 +6499,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 36.0,
+              "sourceLocation": "IGN"
+            }
           },
           {
             "id": 45,
@@ -4039,7 +6522,21 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 34.8,
+              "sourceLocation": "ITA"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -4050,7 +6547,21 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                4195,
+                8390,
+                12585,
+                16780,
+                20975,
+                25170
+              ],
+              "base": 4195,
+              "maxCluster": 6,
+              "probability": 14.8,
+              "sourceLocation": "PYRO_DEEP"
+            }
           }
         ],
         "lagrangePoints": []
@@ -4102,7 +6613,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "TER"
+            }
           }
         ],
         "moons": [
@@ -4113,7 +6637,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ABE"
+            }
           },
           {
             "id": 51,
@@ -4122,7 +6659,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "赫斯顿",
-            "parentEn": "Hurston"
+            "parentEn": "Hurston",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "MAG"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -4133,7 +6683,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 14.2,
+              "sourceLocation": "AARON_HALO"
+            }
           },
           {
             "id": 270,
@@ -4151,7 +6714,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "十字军",
-            "parentEn": "Crusader"
+            "parentEn": "Crusader",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "YELB"
+            }
           }
         ],
         "lagrangePoints": [
@@ -4162,7 +6738,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "CRU-L1"
+            }
           },
           {
             "id": 336,
@@ -4171,7 +6760,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "HUR-L3"
+            }
           },
           {
             "id": 372,
@@ -4180,7 +6782,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3855,
+                7710,
+                11565,
+                15420,
+                19275
+              ],
+              "base": 3855,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "CRU-L2"
+            }
           }
         ]
       },
@@ -4242,7 +6857,20 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3900,
+                7800,
+                11700,
+                15600,
+                19500
+              ],
+              "base": 3900,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "GLACIUM_KEEGER"
+            }
           },
           {
             "id": 226,
@@ -4251,7 +6879,20 @@
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3900,
+                7800,
+                11700,
+                15600,
+                19500
+              ],
+              "base": 3900,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "GLACIUM"
+            }
           },
           {
             "id": 270,
@@ -4260,7 +6901,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3900,
+                7800,
+                11700,
+                15600,
+                19500
+              ],
+              "base": 3900,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "PYRO_DEEP"
+            }
           },
           {
             "id": 271,
@@ -4298,7 +6952,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3900,
+                7800,
+                11700,
+                15600,
+                19500
+              ],
+              "base": 3900,
+              "maxCluster": 5,
+              "probability": 28.4,
+              "sourceLocation": "MIC-L2"
+            }
           },
           {
             "id": 343,
@@ -4307,7 +6974,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3900,
+                7800,
+                11700,
+                15600,
+                19500
+              ],
+              "base": 3900,
+              "maxCluster": 5,
+              "probability": 28.4,
+              "sourceLocation": "MIC-L5"
+            }
           },
           {
             "id": 373,
@@ -4368,7 +7048,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3870,
+                7740,
+                11610,
+                15480,
+                19350
+              ],
+              "base": 3870,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ADI"
+            }
           },
           {
             "id": 35,
@@ -4377,7 +7070,20 @@
             "systemZh": "派罗",
             "systemEn": "Pyro",
             "parentZh": "派罗 V",
-            "parentEn": "Pyro V"
+            "parentEn": "Pyro V",
+            "signal": {
+              "values": [
+                3870,
+                7740,
+                11610,
+                15480,
+                19350
+              ],
+              "base": 3870,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "FAI"
+            }
           }
         ],
         "pointsOfInterest": [
@@ -4399,7 +7105,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3870,
+                7740,
+                11610,
+                15480,
+                19350
+              ],
+              "base": 3870,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ARC-L1"
+            }
           },
           {
             "id": 327,
@@ -4408,7 +7127,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3870,
+                7740,
+                11610,
+                15480,
+                19350
+              ],
+              "base": 3870,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ARC-L2"
+            }
           },
           {
             "id": 329,
@@ -4417,7 +7149,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3870,
+                7740,
+                11610,
+                15480,
+                19350
+              ],
+              "base": 3870,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "ARC-L4"
+            }
           },
           {
             "id": 335,
@@ -4426,7 +7171,20 @@
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
-            "parentEn": ""
+            "parentEn": "",
+            "signal": {
+              "values": [
+                3870,
+                7740,
+                11610,
+                15480,
+                19350
+              ],
+              "base": 3870,
+              "maxCluster": 5,
+              "probability": 28.5,
+              "sourceLocation": "HUR-L2"
+            }
           }
         ]
       },

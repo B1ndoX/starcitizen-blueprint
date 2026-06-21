@@ -314,6 +314,25 @@ function mineralLocationSubline(location) {
   return parts.join(" · ");
 }
 
+function renderLocationSignalTooltip(location) {
+  const signal = location.signal || {};
+  const values = signal.values || [];
+  if (!values.length) return "";
+  const meta = [];
+  if (signal.probability) meta.push(`产出权重 ${signal.probability}%`);
+  if (signal.maxCluster) meta.push(`最大 ${signal.maxCluster} 簇`);
+  return `
+    <span class="mineral-signal-badge" aria-hidden="true">信号</span>
+    <div class="mineral-location-tooltip" role="tooltip">
+      <strong>该地点信号值</strong>
+      ${meta.length ? `<small>${escapeHtml(meta.join(" · "))}</small>` : ""}
+      <span class="mineral-signal-values">
+        ${values.map((value) => `<b>${escapeHtml(formatNumber(value))}</b>`).join(" ")}
+      </span>
+    </div>
+  `;
+}
+
 function renderMineralLocationGroups(info) {
   if (!info?.hasReliableLocations) {
     return `
@@ -335,10 +354,12 @@ function renderMineralLocationGroups(info) {
             ${locations
               .map((location) => {
                 const subline = mineralLocationSubline(location);
+                const signalTooltip = renderLocationSignalTooltip(location);
                 return `
-                  <div class="mineral-location-item">
+                  <div class="mineral-location-item${signalTooltip ? " has-signal" : ""}" ${signalTooltip ? 'tabindex="0"' : ""}>
                     <strong>${escapeHtml(mineralLocationLabel(location))}</strong>
                     ${subline ? `<small>${escapeHtml(subline)}</small>` : ""}
+                    ${signalTooltip}
                   </div>
                 `;
               })
@@ -348,29 +369,6 @@ function renderMineralLocationGroups(info) {
       `;
     })
     .join("");
-}
-
-function renderMineralSignals(info) {
-  const signal = info?.signal || {};
-  const values = signal.values || [];
-  if (!values.length) return "";
-  return `
-    <section class="mineral-signal-section">
-      <h4>信号值</h4>
-      <div class="mineral-signal-list">
-        ${values
-          .map(
-            (value, index) => `
-              <div class="mineral-signal-item">
-                <strong>${index + 1} 块</strong>
-                <span><b>${escapeHtml(formatNumber(value))}</b></span>
-              </div>
-            `,
-          )
-          .join("")}
-      </div>
-    </section>
-  `;
 }
 
 function renderMineralInfo(name) {
@@ -399,7 +397,6 @@ function renderMineralInfo(name) {
           <button type="button" class="mineral-close" data-close-mineral aria-label="关闭矿点详情">×</button>
         </header>
         <div class="mineral-card-body">
-          ${renderMineralSignals(info)}
           ${renderMineralLocationGroups(info)}
         </div>
         <footer class="mineral-source">
