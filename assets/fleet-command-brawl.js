@@ -1,10 +1,13 @@
 (() => {
   const memberField = document.querySelector("[data-member-brawl-field]");
   if (!memberField) return;
+  const memberTerminal = memberField.closest(".member-brawl-terminal");
+  const startButton = document.querySelector("[data-brawl-start]");
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let brawlRendered = false;
   let brawlActive = false;
+  let battleStarted = false;
   let shouldRunBrawl = false;
 
 const rsiMediaBase = "https://robertsspaceindustries.com";
@@ -170,6 +173,7 @@ const weaponsByKind = Object.fromEntries(weapons.map((weapon) => [weapon.kind, w
 const memberLoadouts = [];
 let physicsCleanup = null;
 let resizeTimer = null;
+let resizeListenerBound = false;
 let activePhysicsDrag = null;
 let combatants = [];
 let combatTimer = null;
@@ -181,16 +185,17 @@ function avatarSrc(src) {
   return src;
 }
 
-function getNavOffset() {
-  return Math.ceil((siteNav?.getBoundingClientRect().height || 0) + 22);
-}
-
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
 function randomRange(min, max) {
   return min + Math.random() * (max - min);
+}
+
+function clampInside(value, min, max) {
+  if (min > max) return (min + max) / 2;
+  return clamp(value, min, max);
 }
 
 function selectWeapon(index) {
@@ -203,6 +208,7 @@ function selectWeapon(index) {
 
 function renderMemberWall() {
   if (!memberField) return;
+  memberTerminal?.classList.add("is-awaiting-battle");
 
   memberField.innerHTML = members
     .map(([name, rank, avatar], index) => {
@@ -225,13 +231,22 @@ function renderMemberWall() {
     })
     .join("");
 
-  preloadWeaponImages().finally(() => {
-    if (!prefersReducedMotion && shouldRunBrawl) requestAnimationFrame(initMemberPhysics);
-  });
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(initMemberPhysics, 180);
-  });
+  preloadWeaponImages();
+  if (!resizeListenerBound) {
+    resizeListenerBound = true;
+    window.addEventListener("resize", () => {
+      if (battleStarted) scheduleMemberPhysics(180);
+      else applyChipSizing(calculateChipSizing(memberField.getBoundingClientRect().width, members.length));
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        if (physicsCleanup) physicsCleanup();
+        brawlActive = false;
+      }
+      else if (shouldRunBrawl && battleStarted) scheduleMemberPhysics(180);
+    });
+  }
+  applyChipSizing(calculateChipSizing(memberField.getBoundingClientRect().width, members.length));
 }
 
 function preloadWeaponImages() {
@@ -250,17 +265,32 @@ function preloadWeaponImages() {
   );
 }
 
+function scheduleMemberPhysics(delay = 120) {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (!shouldRunBrawl || prefersReducedMotion) return;
+
+    const run = () => {
+      requestAnimationFrame(() => requestAnimationFrame(initMemberPhysics));
+    };
+
+    if (document.fonts?.ready) document.fonts.ready.finally(run);
+    else run();
+  }, delay);
+}
+
 function calculateChipSizing(fieldWidth, memberCount) {
   const isMobile = fieldWidth < 560;
-  const base = isMobile ? 42 : fieldWidth < 940 ? 62 : 66;
-  const minimum = isMobile ? 30 : 48;
-  const reduction = Math.max(0, memberCount - 18) * (isMobile ? 0.65 : 0.85);
+  const base = isMobile ? 50 : fieldWidth < 940 ? 62 : 66;
+  const minimum = isMobile ? 34 : 48;
+  const reduction = Math.max(0, memberCount - 18) * (isMobile ? 0.75 : 0.85);
   const size = Math.round(clamp(base - reduction, minimum, base));
 
   return {
     size,
-    nameSize: Math.round(clamp(size / 5.2, isMobile ? 7 : 11, isMobile ? 9 : 13)),
-    weaponSize: Math.round(clamp(size / 7.2, isMobile ? 6 : 8, isMobile ? 8 : 10)),
+    nameSize: Math.round(clamp(size / 5.2, isMobile ? 8 : 11, isMobile ? 10 : 13)),
+    weaponSize: Math.round(clamp(size / 7.2, isMobile ? 7 : 8, isMobile ? 9 : 10)),
+    nameMax: Math.round(clamp(size * (isMobile ? 2.45 : 2.7), isMobile ? 72 : 92, isMobile ? 120 : 170)),
   };
 }
 
@@ -268,6 +298,7 @@ function applyChipSizing(size) {
   memberField.style.setProperty("--fighter-size", `${size.size}px`);
   memberField.style.setProperty("--fighter-name-size", `${size.nameSize}px`);
   memberField.style.setProperty("--fighter-weapon-size", `${size.weaponSize}px`);
+  memberField.style.setProperty("--fighter-name-max", `${size.nameMax}px`);
 }
 
 function initMemberPhysics() {
@@ -281,18 +312,26 @@ function initMemberPhysics() {
   const fieldBox = memberField.getBoundingClientRect();
   const width = fieldBox.width;
   const height = fieldBox.height;
+
+  if (width < 80 || height < 160 || !chips.length) {
+    scheduleMemberPhysics(180);
+    return;
+  }
+
   const sizing = calculateChipSizing(width, chips.length);
   applyChipSizing(sizing);
+  resetFighterRenderState(chips);
+  memberField.offsetWidth;
 
   const engine = Engine.create();
   engine.positionIterations = 4;
   engine.velocityIterations = 3;
   engine.constraintIterations = 1;
-  engine.gravity.y = 0.58;
+  engine.gravity.y = 0.5;
   const runner = Runner.create();
-  const sideInset = 16;
+  const sideInset = Math.round(clamp(width * 0.018, 12, 24));
   const topLimit = sideInset;
-  const groundY = height - sideInset;
+  const groundY = height - Math.round(clamp(height * 0.08, 28, 56));
 
   combatants = chips.map((chip, index) => {
     const chipBox = chip.getBoundingClientRect();
@@ -303,12 +342,12 @@ function initMemberPhysics() {
     const chipH = chipBox.height || fighterSize + 34;
     const avatarCenterX = avatarBox ? avatarBox.left - chipBox.left + avatarBox.width / 2 : chipW / 2;
     const avatarCenterY = avatarBox ? avatarBox.top - chipBox.top + avatarBox.height / 2 : chipH / 2;
-    const radius = Math.max(18, (avatarBox?.width || fighterSize) / 2);
+    const radius = Math.max(width < 560 ? 12 : 16, (avatarBox?.width || fighterSize) / 2);
     const weapon = selectWeapon(index);
-    const spawnMinX = sideInset + radius;
-    const spawnMaxX = width - sideInset - radius;
-    const x = randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX));
-    const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.62)) - index * randomRange(4, 12);
+    const spawnMinX = sideInset + avatarCenterX;
+    const spawnMaxX = width - sideInset - (chipW - avatarCenterX);
+    const x = clampInside(randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX)), spawnMinX, spawnMaxX);
+    const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.5)) - index * randomRange(3, 8);
     const body = Bodies.circle(x, y, radius, {
       restitution: 0.08,
       friction: 0.72,
@@ -323,6 +362,9 @@ function initMemberPhysics() {
       height: chipH,
       avatarCenterX,
       avatarCenterY,
+      edgePadX: Math.round(fighterSize * 0.72),
+      edgePadTop: Math.round(fighterSize * 0.16),
+      edgePadBottom: Math.round(fighterSize * 0.28),
       radius,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
@@ -435,12 +477,26 @@ function initMemberPhysics() {
   physicsCleanup = () => {
     cancelAnimationFrame(frame);
     clearInterval(combatTimer);
+    combatTimer = null;
     Runner.stop(runner);
     Composite.clear(engine.world, false);
     Engine.clear(engine);
     memberField.querySelectorAll(".is-dragging").forEach((chip) => chip.classList.remove("is-dragging"));
     activeArenaBounds = null;
+    physicsCleanup = null;
   };
+}
+
+function resetFighterRenderState(chips) {
+  chips.forEach((chip) => {
+    chip.classList.remove("is-attacking", "is-blocking", "is-hit", "is-dragging", "is-winner");
+    chip.style.setProperty("--chip-x", "0px");
+    chip.style.setProperty("--chip-y", "0px");
+    chip.style.setProperty("--body-rotation", "0rad");
+    chip.style.setProperty("--weapon-angle", "-28deg");
+    chip.style.setProperty("--weapon-attack-angle", "0rad");
+  });
+  memberField.querySelectorAll(".projectile").forEach((item) => item.remove());
 }
 
 function startCombatLoop(engine) {
@@ -480,13 +536,12 @@ function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
   const { body } = item;
-  const radius = item.radius;
-  const minX = bounds.sideInset + radius;
-  const maxX = bounds.width - bounds.sideInset - radius;
-  const minY = bounds.topLimit + radius;
-  const maxY = bounds.groundY - radius;
-  const nextX = clamp(body.position.x, minX, maxX);
-  const nextY = clamp(body.position.y, minY, maxY);
+  const minX = bounds.sideInset + item.edgePadX + item.avatarCenterX;
+  const maxX = bounds.width - bounds.sideInset - item.edgePadX - (item.width - item.avatarCenterX);
+  const minY = bounds.topLimit + item.edgePadTop + item.avatarCenterY;
+  const maxY = bounds.groundY - item.edgePadBottom - (item.height - item.avatarCenterY);
+  const nextX = clampInside(body.position.x, minX, maxX);
+  const nextY = clampInside(body.position.y, minY, maxY);
   const maxVelocity = strict ? 7.5 : 9;
   const edgeEpsilon = 0.3;
 
@@ -579,12 +634,12 @@ function hopFighter(fighter, now, target) {
     : randomRange(3.2, 6.1) * randomDirection;
   const supportLift = support ? randomRange(0.4, 1.1) : 0;
   const verticalVelocity =
-    -randomRange(6.8, 10.8) - supportLift - (hasTarget && dy < -18 ? randomRange(0.6, 1.8) : 0);
-  const spin = randomRange(0.026, 0.082) * direction;
+    -randomRange(6.4, 10.2) - supportLift - (hasTarget && dy < -18 ? randomRange(0.5, 1.6) : 0);
+  const spin = randomRange(0.024, 0.074) * direction;
 
   Body.setVelocity(fighter.body, {
-    x: clamp(fighter.body.velocity.x * 0.22 + horizontalVelocity, -11, 11),
-    y: clamp(fighter.body.velocity.y * 0.18 + verticalVelocity, -14, -6),
+    x: clamp(fighter.body.velocity.x * 0.22 + horizontalVelocity, -10, 10),
+    y: clamp(fighter.body.velocity.y * 0.18 + verticalVelocity, -12, -5),
   });
   lockArenaBoundary(fighter);
   if (support) applyStompReaction(fighter, support, horizontalVelocity, direction, now);
@@ -963,19 +1018,26 @@ function movePhysicsDrag(event) {
   const { Body } = window.Matter;
   const now = performance.now();
   const { item, fieldBox } = activePhysicsDrag;
-  const sideInset = 16;
-  const groundY = fieldBox.height - sideInset;
-  const topLimit = sideInset;
-  const radius = item.radius;
-  const nextX = clamp(
+  const bounds = activeArenaBounds || {
+    width: fieldBox.width,
+    groundY: fieldBox.height - 20,
+    topLimit: 20,
+    sideInset: 14,
+  };
+  const { sideInset, groundY, topLimit } = bounds;
+  const minX = sideInset + item.edgePadX + item.avatarCenterX;
+  const maxX = bounds.width - sideInset - item.edgePadX - (item.width - item.avatarCenterX);
+  const minY = topLimit + item.edgePadTop + item.avatarCenterY;
+  const maxY = groundY - item.edgePadBottom - (item.height - item.avatarCenterY);
+  const nextX = clampInside(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.avatarCenterX,
-    sideInset + radius,
-    fieldBox.width - sideInset - radius,
+    minX,
+    maxX,
   );
-  const nextY = clamp(
+  const nextY = clampInside(
     event.clientY - fieldBox.top - activePhysicsDrag.offsetY + item.avatarCenterY,
-    topLimit + radius,
-    groundY - radius,
+    minY,
+    maxY,
   );
   const dt = Math.max(1, now - activePhysicsDrag.lastTime);
 
@@ -1010,14 +1072,12 @@ function endPhysicsDrag() {
     if (!brawlRendered) {
       brawlRendered = true;
       renderMemberWall();
-      if (prefersReducedMotion) return;
-      brawlActive = true;
       return;
     }
 
-    if (!brawlActive && !prefersReducedMotion) {
+    if (battleStarted && !brawlActive && !prefersReducedMotion) {
       brawlActive = true;
-      initMemberPhysics();
+      scheduleMemberPhysics(80);
     }
   }
 
@@ -1027,6 +1087,24 @@ function endPhysicsDrag() {
     if (physicsCleanup) physicsCleanup();
     brawlActive = false;
   }
+
+  function startBattle() {
+    if (!brawlRendered) {
+      brawlRendered = true;
+      renderMemberWall();
+    }
+    battleStarted = true;
+    shouldRunBrawl = true;
+    memberTerminal?.classList.remove("is-awaiting-battle");
+    memberTerminal?.classList.add("is-battle-live");
+    startButton?.setAttribute("disabled", "true");
+
+    if (prefersReducedMotion) return;
+    brawlActive = true;
+    scheduleMemberPhysics(20);
+  }
+
+  startButton?.addEventListener("click", startBattle);
 
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(

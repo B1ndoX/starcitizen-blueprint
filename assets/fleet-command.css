@@ -1556,8 +1556,9 @@ select:focus-visible,
   --yellow: #ffd95c;
   --hot: #ee3f4c;
   --hot-dark: #9d1f32;
+  --brawl-field-top: clamp(150px, 17vw, 230px);
   position: relative;
-  min-height: clamp(560px, 52vw, 780px);
+  min-height: clamp(540px, 52vw, 800px);
   overflow: hidden;
   padding: clamp(18px, 2.2vw, 28px);
   border: 1px solid rgba(95, 168, 211, 0.26);
@@ -1589,6 +1590,14 @@ select:focus-visible,
   pointer-events: none;
 }
 
+.member-brawl-terminal.is-battle-live {
+  background:
+    radial-gradient(circle at 48% 52%, rgba(95, 168, 211, 0.13), transparent 30%),
+    linear-gradient(135deg, rgba(95, 168, 211, 0.12), transparent 52%),
+    linear-gradient(180deg, rgba(8, 13, 18, 0.88), rgba(3, 5, 8, 0.72)),
+    rgba(8, 13, 18, 0.82);
+}
+
 .member-brawl-heading {
   position: relative;
   z-index: 2;
@@ -1613,19 +1622,118 @@ select:focus-visible,
 
 .command-brawl-field {
   position: absolute;
-  inset: clamp(150px, 17vw, 230px) clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px);
+  inset: var(--brawl-field-top) clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px);
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
+}
+
+.command-brawl-field::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.28) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 72% 38%, rgba(112, 199, 255, 0.22) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 76%, rgba(255, 217, 92, 0.18) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 82%, rgba(255, 255, 255, 0.2) 0 1px, transparent 1.4px),
+    linear-gradient(180deg, rgba(95, 168, 211, 0.05), transparent 52%);
+  background-size:
+    180px 160px,
+    220px 190px,
+    260px 210px,
+    310px 230px,
+    100% 100%;
+  content: "";
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.member-brawl-terminal.is-awaiting-battle .command-brawl-field {
+  filter: blur(5px) saturate(0.72);
+  opacity: 0.45;
+}
+
+.member-brawl-terminal.is-awaiting-battle .member-fighter {
+  opacity: 0;
+}
+
+.member-brawl-terminal.is-battle-live .command-brawl-field {
+  filter: none;
+  opacity: 1;
+}
+
+.brawl-start-panel {
+  position: absolute;
+  inset: var(--brawl-field-top) clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.member-brawl-terminal.is-battle-live .brawl-start-panel {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 360ms ease;
+}
+
+.brawl-start-button {
+  position: relative;
+  display: grid;
+  min-width: clamp(178px, 18vw, 260px);
+  gap: 8px;
+  padding: clamp(18px, 2vw, 25px) clamp(24px, 2.6vw, 36px);
+  overflow: hidden;
+  border: 1px solid rgba(200, 164, 93, 0.78);
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(95, 168, 211, 0.18), transparent 48%),
+    rgba(8, 13, 18, 0.88);
+  box-shadow:
+    0 0 0 1px rgba(95, 168, 211, 0.24) inset,
+    0 18px 60px rgba(0, 0, 0, 0.56),
+    0 0 34px rgba(200, 164, 93, 0.18);
+  cursor: pointer;
+  pointer-events: auto;
+  text-align: left;
+  text-transform: uppercase;
+  animation: brawlStartPulse 1800ms ease-in-out infinite;
+}
+
+.brawl-start-button::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  content: "";
+  transform: translateX(-120%);
+  animation: brawlStartSweep 2400ms ease-in-out infinite;
+}
+
+.brawl-start-button span {
+  position: relative;
+  font-size: clamp(1.45rem, 2.2vw, 2.4rem);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.brawl-start-button small {
+  position: relative;
+  color: var(--gold);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 .member-fighter {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   display: grid;
   justify-items: center;
-  width: calc(var(--fighter-size, 66px) + 34px);
+  width: max(calc(var(--fighter-size, 66px) + 34px), var(--fighter-name-max, 118px));
   min-height: calc(var(--fighter-size, 66px) + 64px);
   border: 0;
   padding: 0;
@@ -1643,9 +1751,11 @@ select:focus-visible,
 }
 
 .fighter-name {
-  max-width: calc(var(--fighter-size, 66px) + 26px);
+  width: max-content;
+  min-width: calc(var(--fighter-size, 66px) * 0.86);
+  max-width: var(--fighter-name-max, 150px);
   margin-bottom: 4px;
-  padding: 3px 8px 4px;
+  padding: 3px clamp(7px, calc(var(--fighter-size, 66px) * 0.14), 12px) 4px;
   overflow: hidden;
   border: 3px solid var(--line);
   border-radius: 999px;
@@ -2219,6 +2329,35 @@ select:focus-visible,
   }
 }
 
+@keyframes brawlStartPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(95, 168, 211, 0.24) inset,
+      0 18px 60px rgba(0, 0, 0, 0.56),
+      0 0 34px rgba(200, 164, 93, 0.18);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(95, 168, 211, 0.34) inset,
+      0 24px 72px rgba(0, 0, 0, 0.62),
+      0 0 48px rgba(200, 164, 93, 0.3);
+  }
+}
+
+@keyframes brawlStartSweep {
+  0%,
+  34% {
+    transform: translateX(-120%);
+  }
+
+  72%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
 @keyframes winnerBounce {
   0%,
   100% {
@@ -2762,7 +2901,8 @@ select:focus-visible,
   }
 
   .member-brawl-terminal {
-    min-height: 640px;
+    min-height: clamp(610px, 78vw, 720px);
+    --brawl-field-top: 220px;
   }
 
   .member-brawl-heading {
@@ -2775,7 +2915,7 @@ select:focus-visible,
   }
 
   .command-brawl-field {
-    inset: 220px 14px 14px;
+    inset: var(--brawl-field-top) 14px 14px;
   }
 
   .site-footer {
@@ -2887,8 +3027,9 @@ select:focus-visible,
   }
 
   .member-brawl-terminal {
-    min-height: 760px;
+    min-height: 720px;
     padding: 14px;
+    --brawl-field-top: 390px;
   }
 
   .member-brawl-terminal::before {
@@ -2896,16 +3037,27 @@ select:focus-visible,
   }
 
   .command-brawl-field {
-    inset: 430px 10px 10px;
+    inset: var(--brawl-field-top) 10px 10px;
+  }
+
+  .brawl-start-button {
+    min-width: min(244px, calc(100vw - 76px));
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .brawl-start-button span {
+    font-size: 1.42rem;
   }
 
   .member-fighter {
-    width: calc(var(--fighter-size, 54px) + 22px);
+    width: max(calc(var(--fighter-size, 54px) + 22px), var(--fighter-name-max, 82px));
     min-height: calc(var(--fighter-size, 54px) + 46px);
   }
 
   .fighter-name {
-    max-width: calc(var(--fighter-size, 54px) + 18px);
+    min-width: calc(var(--fighter-size, 54px) * 0.9);
+    max-width: var(--fighter-name-max, 108px);
     padding: 3px 6px;
     border-width: 2px;
     font-size: var(--fighter-name-size, 10px);
