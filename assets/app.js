@@ -1,5 +1,6 @@
 const state = {
   data: null,
+  mineralLocations: { materials: {}, metadata: null },
   records: [],
   filtered: [],
   selectedId: null,
@@ -140,6 +141,7 @@ const flowcldMaterialLabels = {
   Quantanium: "量子矿",
   Riccite: "愈金",
   Sadaryx: "萨达瑞晶",
+  "Saldynium (Ore)": "烁迪银",
   "Saldynium Ore": "烁迪银",
   Saldynium: "烁迪银",
   Savrilium: "萨维里金属",
@@ -283,6 +285,114 @@ function materialKind(item) {
 
 function materialSlot(item) {
   return preferZh(item.slotZh, item.slot);
+}
+
+const mineralLocationGroups = [
+  ["starSystems", "星系"],
+  ["planets", "行星"],
+  ["moons", "卫星"],
+  ["lagrangePoints", "拉格朗日点"],
+  ["pointsOfInterest", "兴趣点"],
+];
+
+function mineralLocationInfo(name) {
+  return state.mineralLocations?.materials?.[name] || null;
+}
+
+function mineralLocationLabel(location) {
+  const zh = location.zh || location.en || "未知";
+  const en = location.en || location.zh || "Unknown";
+  return zh === en ? zh : `${zh} (${en})`;
+}
+
+function mineralLocationSubline(location) {
+  const parts = [];
+  if (location.systemEn && location.systemZh) parts.push(`${location.systemZh} (${location.systemEn})`);
+  if (location.parentEn && location.parentZh && location.parentEn !== location.en) {
+    parts.push(`${location.parentZh} (${location.parentEn})`);
+  }
+  return parts.join(" · ");
+}
+
+function renderMineralLocationGroups(info) {
+  if (!info?.hasReliableLocations) {
+    return `
+      <div class="mineral-empty">
+        <strong>暂无可靠矿点</strong>
+        <span>UEX 当前没有公开地点数据，未做推断。</span>
+      </div>
+    `;
+  }
+
+  return mineralLocationGroups
+    .map(([key, label]) => {
+      const locations = info.locations?.[key] || [];
+      if (!locations.length) return "";
+      return `
+        <section class="mineral-location-group">
+          <h4>${label}</h4>
+          <div class="mineral-location-list">
+            ${locations
+              .map((location) => {
+                const subline = mineralLocationSubline(location);
+                return `
+                  <div class="mineral-location-item">
+                    <strong>${escapeHtml(mineralLocationLabel(location))}</strong>
+                    ${subline ? `<small>${escapeHtml(subline)}</small>` : ""}
+                  </div>
+                `;
+              })
+              .join("")}
+          </div>
+        </section>
+      `;
+    })
+    .join("");
+}
+
+function renderMineralInfo(name) {
+  const info = mineralLocationInfo(name);
+  const displayName = materialDisplayLabel(name, flowcldMaterialLabels[name]);
+  const commodity = info?.commodityName && info.commodityName !== name ? info.commodityName : "";
+  const updatedAt = state.mineralLocations?.metadata?.retrievedAt
+    ? new Date(state.mineralLocations.metadata.retrievedAt).toLocaleString("zh-CN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : "未知";
+
+  return `
+    <div class="mineral-overlay" role="presentation">
+      <section class="mineral-card" role="dialog" aria-modal="true" aria-label="${escapeHtml(displayName)}矿点详情">
+        <header class="mineral-card-head">
+          <div>
+            <span>矿物分布</span>
+            <h3>${escapeHtml(displayName)}</h3>
+            ${commodity ? `<small>匹配资源：${escapeHtml(commodity)}</small>` : ""}
+          </div>
+          <button type="button" class="mineral-close" data-close-mineral aria-label="关闭矿点详情">×</button>
+        </header>
+        <div class="mineral-card-body">
+          ${renderMineralLocationGroups(info)}
+        </div>
+        <footer class="mineral-source">
+          来源：UEX API 2.0 · 更新时间 ${escapeHtml(updatedAt)}
+        </footer>
+      </section>
+    </div>
+  `;
+}
+
+function openMineralInfo(name) {
+  closeMineralInfo();
+  els.detailPanel.insertAdjacentHTML("beforeend", renderMineralInfo(name));
+}
+
+function closeMineralInfo() {
+  els.detailPanel.querySelector(".mineral-overlay")?.remove();
 }
 
 function missionTitle(mission) {
@@ -649,6 +759,18 @@ function bindEvents() {
     if (!card) return;
     selectRecord(card.dataset.id);
   });
+
+  els.detailPanel.addEventListener("click", (event) => {
+    const close = event.target.closest("[data-close-mineral]");
+    if (close || event.target.classList.contains("mineral-overlay")) {
+      closeMineralInfo();
+      return;
+    }
+
+    const mineral = event.target.closest("[data-mineral]");
+    if (!mineral) return;
+    openMineralInfo(mineral.dataset.mineral);
+  });
 }
 
 function materialMatches(record) {
@@ -798,15 +920,22 @@ function renderDetail() {
             materials.length
               ? materials
                   .map(
-                    (item) => `
-                    <div class="material-item">
+                    (item) => {
+                      const locationInfo = mineralLocationInfo(item.name);
+                      const locationLabel = locationInfo?.hasReliableLocations ? "矿点" : "暂无矿点";
+                      return `
+                    <button class="material-item material-item-button" type="button" data-mineral="${escapeHtml(item.name)}">
                       <span>
                         <strong>${escapeHtml(materialName(item))}</strong>
                         <small>${escapeHtml(materialSlot(item))} · ${escapeHtml(materialKind(item))}${item.minQuality ? ` · 最低品质 ${formatNumber(item.minQuality)}` : ""}</small>
                       </span>
-                      <strong>x${formatNumber(item.quantity)}</strong>
-                    </div>
-                  `,
+                      <span class="material-side">
+                        <span class="material-location-badge">${locationLabel}</span>
+                        <strong>x${formatNumber(item.quantity)}</strong>
+                      </span>
+                    </button>
+                  `;
+                    },
                   )
                   .join("")
               : `<div class="material-item"><span><strong>暂无材料</strong><small>无</small></span></div>`
@@ -867,9 +996,15 @@ function renderSources(record) {
 async function boot() {
   els.resultList.innerHTML = `<div class="loading-state"><div><h3>正在加载蓝图</h3><p>请稍候...</p></div></div>`;
   try {
-    const response = await fetch("./data/blueprint-index.json");
+    const [response, mineralResponse] = await Promise.all([
+      fetch("./data/blueprint-index.json"),
+      fetch("./data/mineral-locations.json").catch(() => null),
+    ]);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
+    if (mineralResponse?.ok) {
+      state.mineralLocations = await mineralResponse.json();
+    }
     state.records = state.data.records;
     els.versionBadge.textContent = state.data.version;
     initFilters();

@@ -1,0 +1,4163 @@
+{
+  "metadata": {
+    "name": "Star Citizen mineral locations",
+    "source": "UEX API 2.0",
+    "sourceUrl": "https://api.uexcorp.uk/2.0/",
+    "retrievedAt": "2026-06-21T04:38:25.488973+00:00",
+    "note": "UEX data is community-maintained and may not reflect live servers. Empty entries are shown as no reliable mining location instead of inferred locations."
+  },
+  "materials": {
+    "Agricium": {
+      "commodityId": 2,
+      "commodityName": "Agricium (Ore)",
+      "commodityCode": "AGRI",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/agricium-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 18,
+            "zh": "塞林",
+            "en": "Cellin",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 25,
+            "zh": "戴玛",
+            "en": "Daymar",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 75,
+            "zh": "耶拉",
+            "en": "Yela",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 328,
+            "zh": "ARC-L3",
+            "en": "ArcCorp Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 333,
+            "zh": "CRU-L5",
+            "en": "Crusader Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 342,
+            "zh": "MIC-L4",
+            "en": "microTech Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Aluminum": {
+      "commodityId": 6,
+      "commodityName": "Aluminum (Ore)",
+      "commodityCode": "ALUM",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/aluminum-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 45,
+            "zh": "伊塔",
+            "en": "Ita",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 326,
+            "zh": "ARC-L1",
+            "en": "ArcCorp Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 327,
+            "zh": "ARC-L2",
+            "en": "ArcCorp Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 334,
+            "zh": "HUR-L1",
+            "en": "Hurston Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 335,
+            "zh": "HUR-L2",
+            "en": "Hurston Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 337,
+            "zh": "HUR-L4",
+            "en": "Hurston Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 338,
+            "zh": "HUR-L5",
+            "en": "Hurston Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 339,
+            "zh": "MIC-L1",
+            "en": "microTech Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 340,
+            "zh": "MIC-L2",
+            "en": "microTech Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 343,
+            "zh": "MIC-L5",
+            "en": "microTech Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 373,
+            "zh": "CRU-L3",
+            "en": "Crusader Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Aphorite": {
+      "commodityId": 8,
+      "commodityName": "Aphorite",
+      "commodityCode": "APHO",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/aphorite/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 4,
+            "zh": "弧光星",
+            "en": "ArcCorp",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 325,
+            "zh": "戴拉玛",
+            "en": "Delamar",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 190,
+            "zh": "微科星",
+            "en": "MicroTech",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 2,
+            "zh": "阿迪尔",
+            "en": "Adir",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 16,
+            "zh": "卡利俄珀",
+            "en": "Calliope",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 18,
+            "zh": "塞林",
+            "en": "Cellin",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 23,
+            "zh": "克利俄",
+            "en": "Clio",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 25,
+            "zh": "戴玛",
+            "en": "Daymar",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 34,
+            "zh": "欧忒耳佩",
+            "en": "Euterpe",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 43,
+            "zh": "伊格尼斯",
+            "en": "Ignis",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 45,
+            "zh": "伊塔",
+            "en": "Ita",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 50,
+            "zh": "莱里亚",
+            "en": "Lyria",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 69,
+            "zh": "瓦特拉",
+            "en": "Vatra",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 75,
+            "zh": "耶拉",
+            "en": "Yela",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Aslarite": {
+      "commodityId": 199,
+      "commodityName": "Aslarite (Raw)",
+      "commodityCode": "ASLW",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/aslarite-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 45,
+            "zh": "伊塔",
+            "en": "Ita",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 330,
+            "zh": "ARC-L5",
+            "en": "ArcCorp Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 332,
+            "zh": "CRU-L4",
+            "en": "Crusader Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 342,
+            "zh": "MIC-L4",
+            "en": "microTech Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Beradom": {
+      "commodityId": 167,
+      "commodityName": "Beradom",
+      "commodityCode": "BERA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/beradom/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Beryl": {
+      "commodityId": 12,
+      "commodityName": "Beryl (Raw)",
+      "commodityCode": "BERY",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/beryl-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 328,
+            "zh": "ARC-L3",
+            "en": "ArcCorp Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 333,
+            "zh": "CRU-L5",
+            "en": "Crusader Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 342,
+            "zh": "MIC-L4",
+            "en": "microTech Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Bexalite": {
+      "commodityId": 14,
+      "commodityName": "Bexalite (Raw)",
+      "commodityCode": "BEXA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/bexalite-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 331,
+            "zh": "CRU-L1",
+            "en": "Crusader Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 336,
+            "zh": "HUR-L3",
+            "en": "Hurston Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 372,
+            "zh": "CRU-L2",
+            "en": "Crusader Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Borase": {
+      "commodityId": 16,
+      "commodityName": "Borase (Ore)",
+      "commodityCode": "BORA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/borase-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 2,
+            "zh": "阿迪尔",
+            "en": "Adir",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 334,
+            "zh": "HUR-L1",
+            "en": "Hurston Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 337,
+            "zh": "HUR-L4",
+            "en": "Hurston Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 338,
+            "zh": "HUR-L5",
+            "en": "Hurston Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Carinite": {
+      "commodityId": 178,
+      "commodityName": "Carinite (Pure)",
+      "commodityCode": "CARP",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/carinite-pure/",
+      "locations": {
+        "starSystems": [],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": false
+    },
+    "Copper": {
+      "commodityId": 21,
+      "commodityName": "Copper (Ore)",
+      "commodityCode": "COPP",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/copper-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 23,
+            "zh": "克利俄",
+            "en": "Clio",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 34,
+            "zh": "欧忒耳佩",
+            "en": "Euterpe",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 50,
+            "zh": "莱里亚",
+            "en": "Lyria",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 273,
+            "zh": "耶拉环",
+            "en": "Yela Ring",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 328,
+            "zh": "ARC-L3",
+            "en": "ArcCorp Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 330,
+            "zh": "ARC-L5",
+            "en": "ArcCorp Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 331,
+            "zh": "CRU-L1",
+            "en": "Crusader Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 332,
+            "zh": "CRU-L4",
+            "en": "Crusader Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 333,
+            "zh": "CRU-L5",
+            "en": "Crusader Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 341,
+            "zh": "MIC-L3",
+            "en": "microTech Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 342,
+            "zh": "MIC-L4",
+            "en": "microTech Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 372,
+            "zh": "CRU-L2",
+            "en": "Crusader Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Corundum": {
+      "commodityId": 23,
+      "commodityName": "Corundum (Raw)",
+      "commodityCode": "CORU",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/corundum-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 326,
+            "zh": "ARC-L1",
+            "en": "ArcCorp Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 327,
+            "zh": "ARC-L2",
+            "en": "ArcCorp Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 329,
+            "zh": "ARC-L4",
+            "en": "ArcCorp Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 334,
+            "zh": "HUR-L1",
+            "en": "Hurston Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 335,
+            "zh": "HUR-L2",
+            "en": "Hurston Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 337,
+            "zh": "HUR-L4",
+            "en": "Hurston Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 338,
+            "zh": "HUR-L5",
+            "en": "Hurston Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 339,
+            "zh": "MIC-L1",
+            "en": "microTech Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 340,
+            "zh": "MIC-L2",
+            "en": "microTech Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 343,
+            "zh": "MIC-L5",
+            "en": "microTech Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 373,
+            "zh": "CRU-L3",
+            "en": "Crusader Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Dolivine": {
+      "commodityId": 28,
+      "commodityName": "Dolivine",
+      "commodityCode": "DOLI",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/dolivine/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 4,
+            "zh": "弧光星",
+            "en": "ArcCorp",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 325,
+            "zh": "戴拉玛",
+            "en": "Delamar",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 190,
+            "zh": "微科星",
+            "en": "MicroTech",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Feynmaline": {
+      "commodityId": 169,
+      "commodityName": "Feynmaline",
+      "commodityCode": "FEYN",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/feynmaline/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Glacosite": {
+      "commodityId": 168,
+      "commodityName": "Glacosite",
+      "commodityCode": "GLAC",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/glacosite/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Gold": {
+      "commodityId": 34,
+      "commodityName": "Gold (Ore)",
+      "commodityCode": "GOLD",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/gold-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 43,
+            "zh": "伊格尼斯",
+            "en": "Ignis",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 69,
+            "zh": "瓦特拉",
+            "en": "Vatra",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 330,
+            "zh": "ARC-L5",
+            "en": "ArcCorp Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 332,
+            "zh": "CRU-L4",
+            "en": "Crusader Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 341,
+            "zh": "MIC-L3",
+            "en": "microTech Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Hadanite": {
+      "commodityId": 36,
+      "commodityName": "Hadanite",
+      "commodityCode": "HADA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/hadanite/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 4,
+            "zh": "弧光星",
+            "en": "ArcCorp",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 325,
+            "zh": "戴拉玛",
+            "en": "Delamar",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 190,
+            "zh": "微科星",
+            "en": "MicroTech",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 2,
+            "zh": "阿迪尔",
+            "en": "Adir",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 16,
+            "zh": "卡利俄珀",
+            "en": "Calliope",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 18,
+            "zh": "塞林",
+            "en": "Cellin",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 23,
+            "zh": "克利俄",
+            "en": "Clio",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 25,
+            "zh": "戴玛",
+            "en": "Daymar",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 34,
+            "zh": "欧忒耳佩",
+            "en": "Euterpe",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 43,
+            "zh": "伊格尼斯",
+            "en": "Ignis",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 45,
+            "zh": "伊塔",
+            "en": "Ita",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 50,
+            "zh": "莱里亚",
+            "en": "Lyria",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 69,
+            "zh": "瓦特拉",
+            "en": "Vatra",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 75,
+            "zh": "耶拉",
+            "en": "Yela",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Hephaestanite": {
+      "commodityId": 40,
+      "commodityName": "Hephaestanite (Raw)",
+      "commodityCode": "HEPH",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/hephaestanite-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 190,
+            "zh": "微科星",
+            "en": "MicroTech",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 16,
+            "zh": "卡利俄珀",
+            "en": "Calliope",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 326,
+            "zh": "ARC-L1",
+            "en": "ArcCorp Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 327,
+            "zh": "ARC-L2",
+            "en": "ArcCorp Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 329,
+            "zh": "ARC-L4",
+            "en": "ArcCorp Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 334,
+            "zh": "HUR-L1",
+            "en": "Hurston Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 335,
+            "zh": "HUR-L2",
+            "en": "Hurston Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 337,
+            "zh": "HUR-L4",
+            "en": "Hurston Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 338,
+            "zh": "HUR-L5",
+            "en": "Hurston Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 339,
+            "zh": "MIC-L1",
+            "en": "microTech Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 340,
+            "zh": "MIC-L2",
+            "en": "microTech Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 343,
+            "zh": "MIC-L5",
+            "en": "microTech Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 373,
+            "zh": "CRU-L3",
+            "en": "Crusader Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Iron": {
+      "commodityId": 45,
+      "commodityName": "Iron (Ore)",
+      "commodityCode": "IRONO",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/iron-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 190,
+            "zh": "微科星",
+            "en": "MicroTech",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 2,
+            "zh": "阿迪尔",
+            "en": "Adir",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 16,
+            "zh": "卡利俄珀",
+            "en": "Calliope",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 36,
+            "zh": "福埃戈",
+            "en": "Fuego",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 50,
+            "zh": "莱里亚",
+            "en": "Lyria",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 69,
+            "zh": "瓦特拉",
+            "en": "Vatra",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 73,
+            "zh": "武尔",
+            "en": "Vuur",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 273,
+            "zh": "耶拉环",
+            "en": "Yela Ring",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 328,
+            "zh": "ARC-L3",
+            "en": "ArcCorp Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 330,
+            "zh": "ARC-L5",
+            "en": "ArcCorp Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 331,
+            "zh": "CRU-L1",
+            "en": "Crusader Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 332,
+            "zh": "CRU-L4",
+            "en": "Crusader Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 333,
+            "zh": "CRU-L5",
+            "en": "Crusader Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 336,
+            "zh": "HUR-L3",
+            "en": "Hurston Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 341,
+            "zh": "MIC-L3",
+            "en": "microTech Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 342,
+            "zh": "MIC-L4",
+            "en": "microTech Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 372,
+            "zh": "CRU-L2",
+            "en": "Crusader Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Janalite": {
+      "commodityId": 46,
+      "commodityName": "Janalite",
+      "commodityCode": "JANA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/janalite/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 25,
+            "zh": "戴玛",
+            "en": "Daymar",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 45,
+            "zh": "伊塔",
+            "en": "Ita",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          }
+        ],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Laranite": {
+      "commodityId": 48,
+      "commodityName": "Laranite (Raw)",
+      "commodityCode": "LARA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/laranite-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 50,
+            "zh": "莱里亚",
+            "en": "Lyria",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          },
+          {
+            "id": 74,
+            "zh": "瓦拉",
+            "en": "Wala",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "弧光星",
+            "parentEn": "ArcCorp"
+          }
+        ],
+        "pointsOfInterest": [],
+        "lagrangePoints": [
+          {
+            "id": 334,
+            "zh": "HUR-L1",
+            "en": "Hurston Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 337,
+            "zh": "HUR-L4",
+            "en": "Hurston Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 338,
+            "zh": "HUR-L5",
+            "en": "Hurston Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Lindinium": {
+      "commodityId": 185,
+      "commodityName": "Lindinium (Ore)",
+      "commodityCode": "LINW",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/lindinium-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Ouratite": {
+      "commodityId": 210,
+      "commodityName": "Ouratite (Raw)",
+      "commodityCode": "OURW",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/ouratite-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 273,
+            "zh": "耶拉环",
+            "en": "Yela Ring",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Pressurized Ice": {
+      "commodityId": 125,
+      "commodityName": "Ice (Raw)",
+      "commodityCode": "ICEW",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/ice-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 190,
+            "zh": "微科星",
+            "en": "MicroTech",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 16,
+            "zh": "卡利俄珀",
+            "en": "Calliope",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 23,
+            "zh": "克利俄",
+            "en": "Clio",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 34,
+            "zh": "欧忒耳佩",
+            "en": "Euterpe",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 273,
+            "zh": "耶拉环",
+            "en": "Yela Ring",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 328,
+            "zh": "ARC-L3",
+            "en": "ArcCorp Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 330,
+            "zh": "ARC-L5",
+            "en": "ArcCorp Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 336,
+            "zh": "HUR-L3",
+            "en": "Hurston Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 341,
+            "zh": "MIC-L3",
+            "en": "microTech Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 342,
+            "zh": "MIC-L4",
+            "en": "microTech Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Quantainium": {
+      "commodityId": 59,
+      "commodityName": "Quantainium (Raw)",
+      "commodityCode": "QUAN",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/quantainium-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Quartz": {
+      "commodityId": 61,
+      "commodityName": "Quartz (Raw)",
+      "commodityCode": "QUAR",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/quartz-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 18,
+            "zh": "塞林",
+            "en": "Cellin",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 25,
+            "zh": "戴玛",
+            "en": "Daymar",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 75,
+            "zh": "耶拉",
+            "en": "Yela",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Riccite": {
+      "commodityId": 163,
+      "commodityName": "Riccite (Ore)",
+      "commodityCode": "RICO",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/riccite-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 2,
+            "zh": "阿迪尔",
+            "en": "Adir",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 43,
+            "zh": "伊格尼斯",
+            "en": "Ignis",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 69,
+            "zh": "瓦特拉",
+            "en": "Vatra",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Sadaryx": {
+      "commodityId": 212,
+      "commodityName": "Sadaryx (Raw)",
+      "commodityCode": "SADA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/sadaryx-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [
+          {
+            "id": 271,
+            "zh": "OV 破碎站",
+            "en": "OV Breaker Stations",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Saldynium (Ore)": {
+      "commodityId": 172,
+      "commodityName": "Saldynium (Ore)",
+      "commodityCode": "SALD",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/saldynium-ore/",
+      "locations": {
+        "starSystems": [],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": false
+    },
+    "Savrilium": {
+      "commodityId": 187,
+      "commodityName": "Savrilium (Ore)",
+      "commodityCode": "SAVW",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/savrilium-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 271,
+            "zh": "OV 破碎站",
+            "en": "OV Breaker Stations",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Silicon": {
+      "commodityId": 161,
+      "commodityName": "Silicon (Raw)",
+      "commodityCode": "SILI",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/silicon-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 18,
+            "zh": "塞林",
+            "en": "Cellin",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 25,
+            "zh": "戴玛",
+            "en": "Daymar",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 43,
+            "zh": "伊格尼斯",
+            "en": "Ignis",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 69,
+            "zh": "瓦特拉",
+            "en": "Vatra",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 75,
+            "zh": "耶拉",
+            "en": "Yela",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Stileron": {
+      "commodityId": 162,
+      "commodityName": "Stileron (Raw)",
+      "commodityCode": "STIL",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/stileron-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 242,
+            "zh": "布鲁姆",
+            "en": "Bloom",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 243,
+            "zh": "派罗 IV",
+            "en": "Pyro IV",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 244,
+            "zh": "派罗 V",
+            "en": "Pyro V",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Taranite": {
+      "commodityId": 74,
+      "commodityName": "Taranite (Raw)",
+      "commodityCode": "TARA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/taranite-raw/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 18,
+            "zh": "塞林",
+            "en": "Cellin",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          },
+          {
+            "id": 23,
+            "zh": "克利俄",
+            "en": "Clio",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 34,
+            "zh": "欧忒耳佩",
+            "en": "Euterpe",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "微科星",
+            "parentEn": "MicroTech"
+          },
+          {
+            "id": 75,
+            "zh": "耶拉",
+            "en": "Yela",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 326,
+            "zh": "ARC-L1",
+            "en": "ArcCorp Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 327,
+            "zh": "ARC-L2",
+            "en": "ArcCorp Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 329,
+            "zh": "ARC-L4",
+            "en": "ArcCorp Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 335,
+            "zh": "HUR-L2",
+            "en": "Hurston Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Tin": {
+      "commodityId": 176,
+      "commodityName": "Tin (Ore)",
+      "commodityCode": "TINO",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/tin-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 116,
+            "zh": "赫斯顿",
+            "en": "Hurston",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 240,
+            "zh": "派罗 I",
+            "en": "Pyro I",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 241,
+            "zh": "莫诺克斯",
+            "en": "Monox",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 4,
+            "zh": "阿里尔",
+            "en": "Arial",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 43,
+            "zh": "伊格尼斯",
+            "en": "Ignis",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 45,
+            "zh": "伊塔",
+            "en": "Ita",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": true
+    },
+    "Titanium": {
+      "commodityId": 76,
+      "commodityName": "Titanium (Ore)",
+      "commodityCode": "TITA",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/titanium-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [
+          {
+            "id": 245,
+            "zh": "终点",
+            "en": "Terminus",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "moons": [
+          {
+            "id": 1,
+            "zh": "阿伯丁",
+            "en": "Aberdeen",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          },
+          {
+            "id": 51,
+            "zh": "玛格达",
+            "en": "Magda",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "赫斯顿",
+            "parentEn": "Hurston"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 221,
+            "zh": "亚伦光环",
+            "en": "Aaron Halo",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 273,
+            "zh": "耶拉环",
+            "en": "Yela Ring",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "十字军",
+            "parentEn": "Crusader"
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 331,
+            "zh": "CRU-L1",
+            "en": "Crusader Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 336,
+            "zh": "HUR-L3",
+            "en": "Hurston Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 372,
+            "zh": "CRU-L2",
+            "en": "Crusader Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Torite": {
+      "commodityId": 189,
+      "commodityName": "Torite (Ore)",
+      "commodityCode": "TORIO",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/torite-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 55,
+            "zh": "尼克斯",
+            "en": "Nyx",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [
+          {
+            "id": 225,
+            "zh": "基格带",
+            "en": "Keeger Belt",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 226,
+            "zh": "冰川环",
+            "en": "Glaciem Ring",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 271,
+            "zh": "OV 破碎站",
+            "en": "OV Breaker Stations",
+            "systemZh": "尼克斯",
+            "systemEn": "Nyx",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 272,
+            "zh": "亚基罗星团",
+            "en": "Akiro Cluster",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 339,
+            "zh": "MIC-L1",
+            "en": "microTech Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 340,
+            "zh": "MIC-L2",
+            "en": "microTech Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 343,
+            "zh": "MIC-L5",
+            "en": "microTech Lagrange Point 5",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 373,
+            "zh": "CRU-L3",
+            "en": "Crusader Lagrange Point 3",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Tungsten": {
+      "commodityId": 78,
+      "commodityName": "Tungsten (Ore)",
+      "commodityCode": "TUNG",
+      "sourceUrl": "https://uexcorp.space/mining/locations/commodity/tungsten-ore/",
+      "locations": {
+        "starSystems": [
+          {
+            "id": 64,
+            "zh": "派罗",
+            "en": "Pyro",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 68,
+            "zh": "斯坦顿",
+            "en": "Stanton",
+            "systemZh": "未知",
+            "systemEn": "",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "planets": [],
+        "moons": [
+          {
+            "id": 2,
+            "zh": "阿迪尔",
+            "en": "Adir",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          },
+          {
+            "id": 35,
+            "zh": "法伊罗",
+            "en": "Fairo",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "派罗 V",
+            "parentEn": "Pyro V"
+          }
+        ],
+        "pointsOfInterest": [
+          {
+            "id": 270,
+            "zh": "派罗小行星群",
+            "en": "Pyro Clusters",
+            "systemZh": "派罗",
+            "systemEn": "Pyro",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ],
+        "lagrangePoints": [
+          {
+            "id": 326,
+            "zh": "ARC-L1",
+            "en": "ArcCorp Lagrange Point 1",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 327,
+            "zh": "ARC-L2",
+            "en": "ArcCorp Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 329,
+            "zh": "ARC-L4",
+            "en": "ArcCorp Lagrange Point 4",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          },
+          {
+            "id": 335,
+            "zh": "HUR-L2",
+            "en": "Hurston Lagrange Point 2",
+            "systemZh": "斯坦顿",
+            "systemEn": "Stanton",
+            "parentZh": "未知",
+            "parentEn": ""
+          }
+        ]
+      },
+      "hasReliableLocations": true
+    },
+    "Yormandi Eye": {
+      "commodityId": null,
+      "commodityName": null,
+      "commodityCode": null,
+      "sourceUrl": "",
+      "locations": {
+        "starSystems": [],
+        "planets": [],
+        "moons": [],
+        "pointsOfInterest": [],
+        "lagrangePoints": []
+      },
+      "hasReliableLocations": false
+    }
+  }
+}
