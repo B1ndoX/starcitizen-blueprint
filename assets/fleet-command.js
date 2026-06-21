@@ -485,56 +485,6 @@ function initOperationMap() {
   activateNode(nodes.find((node) => node.classList.contains("active")) || nodes[0], false);
 }
 
-function initApplicationForm() {
-  const form = document.querySelector("#applicationForm");
-  const output = document.querySelector("#applicationOutput");
-  const copyButton = document.querySelector("[data-copy-card]");
-  if (!form || !output) return;
-
-  function buildCard() {
-    const formData = new FormData(form);
-    const gameId = String(formData.get("gameId") || "").trim();
-    const role = String(formData.get("role") || "探索侦察");
-
-    if (!gameId) {
-      output.textContent = "填写游戏 ID 后，生成一段可复制的申请卡文案。\n真实加入舰队仍需要前往 RSI 官网 GVY 页面提交申请。";
-      return false;
-    }
-
-    output.textContent = `我是 ${gameId}，希望加入星际远航者舰队。
-偏好位置：${role}
-我认同舰队“勇敢追寻，无限探索”的理念，希望和大家一起远航、协作、探索未知。`;
-    return true;
-  }
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    buildCard();
-  });
-
-  form.addEventListener("input", () => {
-    const field = form.elements.gameId;
-    if (field?.value?.trim()) buildCard();
-  });
-
-  copyButton?.addEventListener("click", async () => {
-    if (!buildCard()) return;
-    const text = output.textContent.trim();
-    try {
-      await navigator.clipboard.writeText(text);
-      copyButton.textContent = "已复制";
-      setTimeout(() => {
-        copyButton.textContent = "复制申请卡";
-      }, 1400);
-    } catch {
-      copyButton.textContent = "请手动选择复制";
-      setTimeout(() => {
-        copyButton.textContent = "复制申请卡";
-      }, 1800);
-    }
-  });
-}
-
 function initArchiveLightbox() {
   const dialog = document.querySelector("#archiveDialog");
   const image = document.querySelector("#archiveDialogImage");
@@ -758,5 +708,4 @@ initDoctrinePanel();
 initOperationMap();
 initArchiveImageFallback();
 initArchiveOrbit();
-initApplicationForm();
 initArchiveLightbox();

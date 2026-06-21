@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260621-operation-bright" />
+    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260621-hero1280-brawl" />
   </head>
   <body id="pageTop">
     <a class="skip-link" href="#doctrine">跳到舰队内容</a>
@@ -279,64 +279,26 @@
         </div>
       </section>
 
-      <section class="recruit-section" id="recruit">
-        <div class="recruit-copy reveal">
-          <p class="system-label">RECRUIT TERMINAL</p>
-          <h2>无论你是首次起航，还是经验丰富的舰长，这里都是你的家。</h2>
-          <p>
-            星际远航者舰队欢迎愿意合作、愿意探索、愿意一起成长的玩家。你可以选择战斗护航、工业贸易、医疗后勤、探索侦察等方向加入舰队。
-          </p>
-          <a
-            class="hud-button hud-button-inline"
-            href="https://robertsspaceindustries.com/en/orgs/GVY"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>前往 RSI 官网申请</span>
-            <small>RSI ORG / GVY</small>
-          </a>
-        </div>
-
-        <div class="terminal reveal" aria-label="申请卡生成终端">
+      <section class="recruit-section brawl-section" id="recruit">
+        <div class="member-brawl-terminal reveal" aria-label="舰队成员大乱斗">
           <div class="terminal-topline">
-            <span>GVY // APPLICATION CARD</span>
-            <span>LINK READY</span>
+            <span>GVY // MEMBER ARENA</span>
+            <span>JOIN READY</span>
           </div>
-          <form class="application-form" id="applicationForm">
-            <label>
-              <span>游戏 ID</span>
-              <input name="gameId" autocomplete="nickname" placeholder="输入你的游戏 ID" required />
-            </label>
-            <label>
-              <span>偏好位置</span>
-              <select name="role">
-                <option>战斗护航</option>
-                <option>工业贸易</option>
-                <option>医疗后勤</option>
-                <option>探索侦察</option>
-              </select>
-            </label>
-            <div class="terminal-actions">
-              <button class="hud-button hud-button-submit" type="submit">
-                <span>生成申请卡</span>
-                <small>GENERATE</small>
-              </button>
-              <a
-                class="hud-button hud-button-secondary"
-                href="https://robertsspaceindustries.com/en/orgs/GVY"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>前往 RSI 官网申请</span>
-                <small>SUBMIT ON RSI</small>
-              </a>
-            </div>
-          </form>
-          <output class="application-output" id="applicationOutput">
-填写游戏 ID 后，生成一段可复制的申请卡文案。
-真实加入舰队仍需要前往 RSI 官网 GVY 页面提交申请。
-          </output>
-          <button class="copy-button" type="button" data-copy-card>复制申请卡</button>
+          <div class="member-brawl-heading">
+            <p class="system-label">RECRUIT ARENA</p>
+            <h2>舰队成员大乱斗，快快加入我们！</h2>
+            <a
+              class="hud-button hud-button-inline"
+              href="https://robertsspaceindustries.com/en/orgs/GVY"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>前往 RSI 官网申请</span>
+              <small>RSI ORG / GVY</small>
+            </a>
+          </div>
+          <div class="command-brawl-field tag-field" data-member-brawl-field aria-label="舰队成员大乱斗"></div>
         </div>
       </section>
     </main>
@@ -365,6 +327,8 @@
       </p>
     </footer>
 
-    <script src="./assets/fleet-command.js?v=20260621-operation-bright" defer></script>
+    <script src="./assets/vendor/matter.min.js?v=0.20.0" defer></script>
+    <script src="./assets/fleet-command-brawl.js?v=20260621-hero1280-brawl" defer></script>
+    <script src="./assets/fleet-command.js?v=20260621-hero1280-brawl" defer></script>
   </body>
 </html>
