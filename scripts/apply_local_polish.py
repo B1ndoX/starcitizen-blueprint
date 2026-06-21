@@ -225,6 +225,68 @@ def load_json(path: Path, default: Any) -> Any:
         return json.load(handle)
 
 
+def clean_localized_name(value: Any) -> str:
+    text = str(value or "").strip()
+    if not text or text == "<-=MISSING=->":
+        return ""
+    if text.startswith("[PH]") or text.startswith("(PH)"):
+        return ""
+    if "\n" in text:
+        text = text.splitlines()[0].strip()
+    return text
+
+
+def add_plain_names(names: dict[str, str], payload: Any) -> int:
+    if not isinstance(payload, dict):
+        return 0
+    added = 0
+    for key, value in payload.items():
+        clean_key = normalize_name(str(key or ""))
+        clean_value = clean_localized_name(value)
+        if clean_key and clean_value:
+            names[clean_key] = clean_value
+            added += 1
+    return added
+
+
+def add_item_name_records(names: dict[str, str], payload: Any) -> int:
+    if not isinstance(payload, dict):
+        return 0
+    added = 0
+    for value in payload.values():
+        if not isinstance(value, dict):
+            continue
+        english = normalize_name(str(value.get("english") or ""))
+        chinese = clean_localized_name(value.get("chinese"))
+        if not english or not chinese:
+            continue
+        if chinese.startswith("[") and chinese.endswith("]"):
+            continue
+        names[english] = chinese
+        added += 1
+    return added
+
+
+def load_star_citizen_localization(bot_assets: Path) -> tuple[dict[str, str], dict[str, int]]:
+    base = bot_assets / "localization" / "starcitizen"
+    names: dict[str, str] = {}
+    if not base.exists():
+        return names, {}
+
+    counts: dict[str, int] = {}
+    for source_name, relative in (
+        ("starcitizenItemsByEnglish", "items/by-english.json"),
+        ("starcitizenComponentCandidates", "items/component-candidates.json"),
+        ("starcitizenBotComponents", "bot/component-names.json"),
+        ("starcitizenBotShips", "bot/ship-names.json"),
+        ("starcitizenShips", "ships/names.json"),
+    ):
+        counts[source_name] = add_plain_names(names, load_json(base / relative, {}))
+    counts["starcitizenItemRecords"] = add_item_name_records(names, load_json(base / "items/names.json", {}))
+    counts["starcitizenTotal"] = len(names)
+    return names, counts
+
+
 def load_bot_names(bot_assets: Path) -> dict[str, str]:
     names: dict[str, str] = {}
     for filename in ("component-name-n55.json", "component-name-local.json", "ship-name-zh.json"):
@@ -250,6 +312,8 @@ def load_bot_names(bot_assets: Path) -> dict[str, str]:
             chinese = str(values[chinese_index]).strip()
             if english and chinese and english != chinese:
                 names[english] = chinese
+    starcitizen_names, _counts = load_star_citizen_localization(bot_assets)
+    names.update(starcitizen_names)
     return names
 
 
@@ -458,12 +522,15 @@ def polish_machine_text(text: str) -> str:
     return compact_size_tokens(text)
 
 
-def apply(index: dict[str, Any], local_names: dict[str, str], flowcld_calibration: dict[str, dict[str, Any]]) -> None:
+def apply(index: dict[str, Any], local_names: dict[str, str], flowcld_calibration: dict[str, dict[str, Any]], bot_assets: Path) -> None:
+    starcitizen_names, starcitizen_counts = load_star_citizen_localization(bot_assets)
     polish_meta = index.setdefault("localization", {})
     polish_meta.update(
         {
-            "polishSource": "sc-spectrum-qq-bot local component and ship localization",
+            "polishSource": "sc-spectrum-qq-bot Star Citizen localization package",
             "localNameCount": len(local_names),
+            "starCitizenLocalizationCount": len(starcitizen_names),
+            "starCitizenLocalizationCounts": starcitizen_counts,
             "flowcldCalibrationCount": len(flowcld_calibration.get("by_id") or {}),
             "flowcldMetadataCount": len(flowcld_calibration.get("items_by_id") or {}),
             "flowcldCalibrationSource": "https://flowcld.xyz/tools/blueprint",
@@ -475,12 +542,12 @@ def apply(index: dict[str, Any], local_names: dict[str, str], flowcld_calibratio
         calibrated_name = flowcld_name(record, flowcld_calibration)
         calibrated_item = flowcld_item(record, flowcld_calibration)
         apply_flowcld_metadata(record, calibrated_item)
-        if calibrated_name:
+        if local_name:
+            zh["name"] = local_name
+            zh["nameSource"] = "starcitizen-localization"
+        elif calibrated_name:
             zh["name"] = polish_machine_text(calibrated_name)
             zh["nameSource"] = "flowcld-calibration"
-        elif local_name:
-            zh["name"] = local_name
-            zh["nameSource"] = "local"
         else:
             zh["name"] = polish_machine_text(str(zh.get("name") or record.get("name") or ""))
             zh["nameSource"] = zh.get("nameSource") or "google-polished"
@@ -590,7 +657,7 @@ def main() -> int:
     index = load_json(args.index, {})
     local_names = load_names(args.bot_assets, args.local_names)
     flowcld_calibration = load_flowcld_calibration(args.flowcld_calibration)
-    apply(index, local_names, flowcld_calibration)
+    apply(index, local_names, flowcld_calibration, args.bot_assets)
     with args.index.open("w", encoding="utf-8") as handle:
         json.dump(index, handle, ensure_ascii=False, separators=(",", ":"))
     print(

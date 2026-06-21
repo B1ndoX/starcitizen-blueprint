@@ -15,6 +15,8 @@ const state = {
   sort: "relevance",
 };
 
+const DATA_VERSION = "20260621-5";
+
 const els = {
   versionBadge: document.querySelector("#versionBadge"),
   searchForm: document.querySelector("#searchForm"),
@@ -1018,8 +1020,8 @@ async function boot() {
   els.resultList.innerHTML = `<div class="loading-state"><div><h3>正在加载蓝图</h3><p>请稍候...</p></div></div>`;
   try {
     const [response, mineralResponse] = await Promise.all([
-      fetch("./data/blueprint-index.json"),
-      fetch("./data/mineral-locations.json").catch(() => null),
+      fetch(`./data/blueprint-index.json?v=${DATA_VERSION}`),
+      fetch(`./data/mineral-locations.json?v=${DATA_VERSION}`).catch(() => null),
     ]);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();

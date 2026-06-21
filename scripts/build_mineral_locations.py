@@ -90,6 +90,20 @@ STATION_ZH = {
 }
 
 
+def load_star_citizen_locations() -> dict[str, str]:
+    path = ROOT.parent / "work" / "sc-spectrum-qq-bot-handoff" / "sc-spectrum-qq-bot" / "assets" / "localization" / "starcitizen" / "locations" / "names.json"
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8-sig") as handle:
+        payload = json.load(handle)
+    if not isinstance(payload, dict):
+        return {}
+    return {str(key): str(value) for key, value in payload.items() if key and value}
+
+
+STAR_CITIZEN_LOCATION_NAMES = load_star_citizen_locations()
+
+
 def fetch_resource(resource: str) -> list[dict]:
     req = Request(f"{API_BASE}/{resource}/", headers={"User-Agent": "A-Yuan-Blueprint-Atlas/1.0"})
     with urlopen(req, timeout=30) as response:
@@ -114,7 +128,7 @@ def ids(value: object) -> list[int]:
 def zh_name(name: str | None) -> str:
     if not name:
         return "未知"
-    return NAME_ZH.get(name, name)
+    return STAR_CITIZEN_LOCATION_NAMES.get(name) or NAME_ZH.get(name, name)
 
 
 def lagrange_label(name: str, code: str | None, station: dict | None = None) -> tuple[str, str]:

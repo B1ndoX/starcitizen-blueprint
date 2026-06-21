@@ -19,6 +19,7 @@ from apply_local_polish import (
     STAT_TERMS,
     SUBTYPE_TERMS,
     TYPE_WORDS,
+    clean_localized_name,
     load_json,
     polish_machine_text,
 )
@@ -69,6 +70,69 @@ def add_simple_dict(
             result[clean_key] = clean_zh
             add_entry(entries, clean_key, clean_zh, source, domain, priority)
     return result
+
+
+def add_star_citizen_localization(entries: dict[str, dict[str, Any]], bot_assets: Path) -> dict[str, Any]:
+    base = bot_assets / "localization" / "starcitizen"
+    names: dict[str, str] = {}
+    locations: dict[str, str] = {}
+    source_counts: dict[str, int] = {}
+    if not base.exists():
+        return {"names": names, "locations": locations, "sourceCounts": source_counts}
+
+    for source_name, relative, domain in (
+        ("itemsByEnglish", "items/by-english.json", "item-name"),
+        ("componentCandidates", "items/component-candidates.json", "component-name"),
+        ("botComponents", "bot/component-names.json", "component-name"),
+        ("botShips", "bot/ship-names.json", "ship-name"),
+        ("ships", "ships/names.json", "ship-name"),
+    ):
+        payload = load_json(base / relative, {})
+        count = 0
+        if isinstance(payload, dict):
+            for key, value in payload.items():
+                clean_key = str(key or "").strip()
+                clean_value = clean_localized_name(value)
+                if not clean_key or not clean_value:
+                    continue
+                names[clean_key] = clean_value
+                add_entry(entries, clean_key, clean_value, f"starcitizen-localization:{relative}", domain, 130)
+                count += 1
+        source_counts[source_name] = count
+
+    item_records = load_json(base / "items/names.json", {})
+    item_count = 0
+    if isinstance(item_records, dict):
+        for value in item_records.values():
+            if not isinstance(value, dict):
+                continue
+            english = str(value.get("english") or "").strip()
+            chinese = clean_localized_name(value.get("chinese"))
+            if not english or not chinese:
+                continue
+            if chinese.startswith("[") and chinese.endswith("]"):
+                continue
+            names[english] = chinese
+            add_entry(entries, english, chinese, "starcitizen-localization:items/names.json", "item-name", 125)
+            item_count += 1
+    source_counts["itemRecords"] = item_count
+
+    for relative in ("locations/names.json", "bot/location-names.json"):
+        payload = load_json(base / relative, {})
+        if not isinstance(payload, dict):
+            continue
+        before = len(locations)
+        for key, value in payload.items():
+            clean_key = str(key or "").strip()
+            clean_value = str(value or "").strip()
+            if clean_key and clean_value:
+                locations[clean_key] = clean_value
+                add_entry(entries, clean_key, clean_value, f"starcitizen-localization:{relative}", "location-name", 130)
+        source_counts[relative] = len(locations) - before
+
+    source_counts["totalNames"] = len(names)
+    source_counts["totalLocations"] = len(locations)
+    return {"names": names, "locations": locations, "sourceCounts": source_counts}
 
 
 def load_component_matrix(entries: dict[str, dict[str, Any]], matrix_path: Path) -> dict[str, str]:
@@ -198,6 +262,8 @@ def main() -> int:
 
     entries: dict[str, dict[str, Any]] = {}
 
+    starcitizen = add_star_citizen_localization(entries, args.bot_assets)
+
     n55_components = add_simple_dict(
         entries,
         load_json(args.bot_assets / "component-name-n55.json", {}),
@@ -251,6 +317,7 @@ def main() -> int:
             "botLocal": str(args.bot_assets / "component-name-local.json"),
             "botShipNames": str(args.bot_assets / "ship-name-zh.json"),
             "botComponentMatrix": str(args.bot_assets / "component-matrix-erkul.json"),
+            "starCitizenLocalization": str(args.bot_assets / "localization" / "starcitizen"),
             "flowcld": "https://flowcld.xyz/tools/blueprint",
             "flowcldCache": str(args.flowcld),
             "blueprintIndex": str(args.index),
@@ -263,6 +330,8 @@ def main() -> int:
             "localComponentCount": len(local_components),
             "matrixComponentCount": len(matrix_components),
             "shipNameCount": len(ships),
+            "starCitizenLocalizationCount": len(starcitizen["names"]),
+            "starCitizenLocationCount": len(starcitizen["locations"]),
             "flowcldBlueprintCount": len(blueprints["byRecordGuid"]),
             "polishedBlueprintCount": len(blueprints["polishedByRecordGuid"]),
             "materialCount": len(MATERIALS),
@@ -276,8 +345,13 @@ def main() -> int:
             "n55": n55_components,
             "local": local_components,
             "matrix": matrix_components,
+            "starcitizen": starcitizen["names"],
         },
         "ships": ships,
+        "locations": {
+            key: {"zh": value, "source": "starcitizen-localization"}
+            for key, value in sorted(starcitizen["locations"].items())
+        },
         "blueprints": blueprints,
         "materials": {
             key: {"zh": value, "label": f"{value} ({key})", "source": "flowcld-local-polish"}
@@ -292,6 +366,9 @@ def main() -> int:
             "statTerms": STAT_TERMS,
             "slotTerms": SLOT_TERMS,
             "subtypeTerms": SUBTYPE_TERMS,
+        },
+        "starCitizenLocalization": {
+            "sourceCounts": starcitizen["sourceCounts"],
         },
     }
 

@@ -6,7 +6,7 @@
     "signalSource": "Star Citizen Mining Signals spreadsheet",
     "locationSignalSource": "https://sg-mining-finder.pages.dev/",
     "signalUpdatedAt": "2026-06-21",
-    "retrievedAt": "2026-06-21T05:48:08.240500+00:00",
+    "retrievedAt": "2026-06-21T06:18:21.160800+00:00",
     "note": "UEX data is community-maintained and may not reflect live servers. Empty entries are shown as no reliable mining location instead of inferred locations."
   },
   "materials": {
@@ -39,7 +39,7 @@
         "planets": [
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -63,7 +63,7 @@
         "moons": [
           {
             "id": 18,
-            "zh": "塞林",
+            "zh": "赛琳",
             "en": "Cellin",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -85,7 +85,7 @@
           },
           {
             "id": 25,
-            "zh": "戴玛",
+            "zh": "戴玛尔",
             "en": "Daymar",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -107,7 +107,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -305,7 +305,7 @@
           },
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -328,7 +328,7 @@
           },
           {
             "id": 45,
-            "zh": "伊塔",
+            "zh": "依塔",
             "en": "Ita",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -727,7 +727,7 @@
           },
           {
             "id": 325,
-            "zh": "戴拉玛",
+            "zh": "德拉玛",
             "en": "Delamar",
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
@@ -754,7 +754,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -781,7 +781,7 @@
           },
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -810,7 +810,7 @@
           },
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -819,7 +819,7 @@
           },
           {
             "id": 16,
-            "zh": "卡利俄珀",
+            "zh": "卡利俄佩",
             "en": "Calliope",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -828,7 +828,7 @@
           },
           {
             "id": 18,
-            "zh": "塞林",
+            "zh": "赛琳",
             "en": "Cellin",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -846,7 +846,7 @@
           },
           {
             "id": 25,
-            "zh": "戴玛",
+            "zh": "戴玛尔",
             "en": "Daymar",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -873,7 +873,7 @@
           },
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -891,7 +891,7 @@
           },
           {
             "id": 45,
-            "zh": "伊塔",
+            "zh": "依塔",
             "en": "Ita",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -900,7 +900,7 @@
           },
           {
             "id": 50,
-            "zh": "莱里亚",
+            "zh": "莉瑞雅",
             "en": "Lyria",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -918,7 +918,7 @@
           },
           {
             "id": 69,
-            "zh": "瓦特拉",
+            "zh": "瓦塔拉",
             "en": "Vatra",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -927,7 +927,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -936,7 +936,7 @@
           },
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -989,7 +989,7 @@
         "moons": [
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1011,7 +1011,7 @@
           },
           {
             "id": 45,
-            "zh": "伊塔",
+            "zh": "依塔",
             "en": "Ita",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -1055,7 +1055,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1252,7 +1252,7 @@
         "moons": [
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -1431,7 +1431,7 @@
           },
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1440,7 +1440,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1674,7 +1674,7 @@
           },
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1862,7 +1862,7 @@
           },
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1933,7 +1933,7 @@
           },
           {
             "id": 50,
-            "zh": "莱里亚",
+            "zh": "莉瑞雅",
             "en": "Lyria",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -1956,7 +1956,7 @@
           },
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -2027,7 +2027,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2321,7 +2321,7 @@
           },
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -2651,7 +2651,7 @@
           },
           {
             "id": 325,
-            "zh": "戴拉玛",
+            "zh": "德拉玛",
             "en": "Delamar",
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
@@ -2678,7 +2678,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2705,7 +2705,7 @@
           },
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2803,7 +2803,7 @@
         "planets": [
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2857,7 +2857,7 @@
         "planets": [
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2922,7 +2922,7 @@
           },
           {
             "id": 69,
-            "zh": "瓦特拉",
+            "zh": "瓦塔拉",
             "en": "Vatra",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3088,7 +3088,7 @@
           },
           {
             "id": 325,
-            "zh": "戴拉玛",
+            "zh": "德拉玛",
             "en": "Delamar",
             "systemZh": "尼克斯",
             "systemEn": "Nyx",
@@ -3115,7 +3115,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3142,7 +3142,7 @@
           },
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3171,7 +3171,7 @@
           },
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3180,7 +3180,7 @@
           },
           {
             "id": 16,
-            "zh": "卡利俄珀",
+            "zh": "卡利俄佩",
             "en": "Calliope",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3189,7 +3189,7 @@
           },
           {
             "id": 18,
-            "zh": "塞林",
+            "zh": "赛琳",
             "en": "Cellin",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3207,7 +3207,7 @@
           },
           {
             "id": 25,
-            "zh": "戴玛",
+            "zh": "戴玛尔",
             "en": "Daymar",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3234,7 +3234,7 @@
           },
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3252,7 +3252,7 @@
           },
           {
             "id": 45,
-            "zh": "伊塔",
+            "zh": "依塔",
             "en": "Ita",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3261,7 +3261,7 @@
           },
           {
             "id": 50,
-            "zh": "莱里亚",
+            "zh": "莉瑞雅",
             "en": "Lyria",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3279,7 +3279,7 @@
           },
           {
             "id": 69,
-            "zh": "瓦特拉",
+            "zh": "瓦塔拉",
             "en": "Vatra",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3288,7 +3288,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3297,7 +3297,7 @@
           },
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3372,7 +3372,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3397,7 +3397,7 @@
         "moons": [
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3420,7 +3420,7 @@
           },
           {
             "id": 16,
-            "zh": "卡利俄珀",
+            "zh": "卡利俄佩",
             "en": "Calliope",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3443,7 +3443,7 @@
           },
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3466,7 +3466,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3824,7 +3824,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3918,7 +3918,7 @@
           },
           {
             "id": 16,
-            "zh": "卡利俄珀",
+            "zh": "卡利俄佩",
             "en": "Calliope",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3964,7 +3964,7 @@
           },
           {
             "id": 36,
-            "zh": "福埃戈",
+            "zh": "弗果",
             "en": "Fuego",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3987,7 +3987,7 @@
           },
           {
             "id": 50,
-            "zh": "莱里亚",
+            "zh": "莉瑞雅",
             "en": "Lyria",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4033,7 +4033,7 @@
           },
           {
             "id": 69,
-            "zh": "瓦特拉",
+            "zh": "瓦塔拉",
             "en": "Vatra",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -4056,7 +4056,7 @@
           },
           {
             "id": 73,
-            "zh": "武尔",
+            "zh": "伏尔",
             "en": "Vuur",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -4079,7 +4079,7 @@
           },
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4182,7 +4182,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -4467,7 +4467,7 @@
         "moons": [
           {
             "id": 25,
-            "zh": "戴玛",
+            "zh": "戴玛尔",
             "en": "Daymar",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4476,7 +4476,7 @@
           },
           {
             "id": 45,
-            "zh": "伊塔",
+            "zh": "依塔",
             "en": "Ita",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4494,7 +4494,7 @@
           },
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4561,7 +4561,7 @@
         "moons": [
           {
             "id": 50,
-            "zh": "莱里亚",
+            "zh": "莉瑞雅",
             "en": "Lyria",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4583,7 +4583,7 @@
           },
           {
             "id": 74,
-            "zh": "瓦拉",
+            "zh": "瓦菈",
             "en": "Wala",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4812,7 +4812,7 @@
           },
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -4931,7 +4931,7 @@
         "moons": [
           {
             "id": 16,
-            "zh": "卡利俄珀",
+            "zh": "卡利俄佩",
             "en": "Calliope",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -5094,7 +5094,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -5345,7 +5345,7 @@
         "moons": [
           {
             "id": 18,
-            "zh": "塞林",
+            "zh": "赛琳",
             "en": "Cellin",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -5368,7 +5368,7 @@
           },
           {
             "id": 25,
-            "zh": "戴玛",
+            "zh": "戴玛尔",
             "en": "Daymar",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -5479,7 +5479,7 @@
           },
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -5541,7 +5541,7 @@
           },
           {
             "id": 69,
-            "zh": "瓦特拉",
+            "zh": "瓦塔拉",
             "en": "Vatra",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -5583,7 +5583,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -5769,7 +5769,7 @@
         "moons": [
           {
             "id": 18,
-            "zh": "塞林",
+            "zh": "赛琳",
             "en": "Cellin",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -5792,7 +5792,7 @@
           },
           {
             "id": 25,
-            "zh": "戴玛",
+            "zh": "戴玛尔",
             "en": "Daymar",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -5861,7 +5861,7 @@
           },
           {
             "id": 69,
-            "zh": "瓦特拉",
+            "zh": "瓦塔拉",
             "en": "Vatra",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -5955,7 +5955,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -6017,7 +6017,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -6083,7 +6083,7 @@
           },
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -6124,7 +6124,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -6177,7 +6177,7 @@
         "moons": [
           {
             "id": 18,
-            "zh": "塞林",
+            "zh": "赛琳",
             "en": "Cellin",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -6446,7 +6446,7 @@
           },
           {
             "id": 241,
-            "zh": "莫诺克斯",
+            "zh": "殁氧星",
             "en": "Monox",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -6471,7 +6471,7 @@
         "moons": [
           {
             "id": 4,
-            "zh": "阿里尔",
+            "zh": "艾瑞尔",
             "en": "Arial",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -6517,7 +6517,7 @@
           },
           {
             "id": 45,
-            "zh": "伊塔",
+            "zh": "依塔",
             "en": "Ita",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -6608,7 +6608,7 @@
         "planets": [
           {
             "id": 245,
-            "zh": "终点",
+            "zh": "端点星",
             "en": "Terminus",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -6927,7 +6927,7 @@
           },
           {
             "id": 272,
-            "zh": "亚基罗星团",
+            "zh": "阿克罗团",
             "en": "Akiro Cluster",
             "systemZh": "派罗",
             "systemEn": "Pyro",
