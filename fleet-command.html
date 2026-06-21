@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260621-mobile-stats" />
+    <link rel="stylesheet" href="./assets/fleet-command.css?v=20260621-planet-grid" />
   </head>
   <body id="pageTop">
     <a class="skip-link" href="#doctrine">跳到舰队内容</a>
@@ -152,20 +152,51 @@
         </div>
 
         <div class="operation-map reveal" data-operation-map data-active-role="combat" aria-label="舰队行动编队星图">
-          <div class="operation-media-reel" aria-hidden="true">
-            <div class="operation-media-track">
-              <img src="./assets/gallery/team-05.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-13.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-14.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-15.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-18.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-05.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-13.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-14.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-15.jpg" alt="" loading="lazy" decoding="async" />
-              <img src="./assets/gallery/team-18.jpg" alt="" loading="lazy" decoding="async" />
+          <div class="operation-planet-net" aria-hidden="true">
+            <div class="planet-globe">
+              <span class="planet-surface"></span>
+              <span class="planet-scan"></span>
+              <svg class="planet-web" viewBox="0 0 1000 1000" focusable="false">
+                <defs>
+                  <radialGradient id="planetGlow" cx="50%" cy="42%" r="58%">
+                    <stop offset="0%" stop-color="#8edcff" stop-opacity="0.92" />
+                    <stop offset="45%" stop-color="#32b7e6" stop-opacity="0.52" />
+                    <stop offset="100%" stop-color="#0b1a24" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <circle class="planet-web-haze" cx="500" cy="500" r="456" fill="url(#planetGlow)" />
+                <g class="planet-web-lines">
+                  <path d="M154 318 L286 188 L448 238 L606 126 L764 232 L852 408 L784 622 L608 760 L382 812 L214 646 Z" />
+                  <path d="M286 188 L354 412 L154 318 M448 238 L354 412 L606 126 M606 126 L586 368 L764 232" />
+                  <path d="M214 646 L354 412 L586 368 L852 408 M354 412 L382 812 M586 368 L608 760 M784 622 L586 368" />
+                  <path d="M154 318 C310 286 482 316 586 368 C682 418 738 512 784 622" />
+                  <path d="M238 548 C376 498 532 500 682 552 C730 570 764 596 784 622" />
+                  <path d="M286 188 C394 148 548 150 706 190" />
+                  <path d="M214 646 C350 724 512 764 704 704" />
+                </g>
+                <g class="planet-web-dots">
+                  <circle cx="154" cy="318" r="6" />
+                  <circle cx="286" cy="188" r="6" />
+                  <circle cx="448" cy="238" r="7" />
+                  <circle cx="606" cy="126" r="7" />
+                  <circle cx="764" cy="232" r="6" />
+                  <circle cx="852" cy="408" r="7" />
+                  <circle cx="784" cy="622" r="6" />
+                  <circle cx="608" cy="760" r="7" />
+                  <circle cx="382" cy="812" r="6" />
+                  <circle cx="214" cy="646" r="6" />
+                  <circle cx="354" cy="412" r="9" />
+                  <circle cx="586" cy="368" r="9" />
+                  <circle cx="682" cy="552" r="6" />
+                </g>
+                <g class="planet-data-dots">
+                  <path d="M238 286 H650 M206 356 H786 M184 426 H822 M180 496 H828 M198 566 H800 M240 636 H742" />
+                </g>
+              </svg>
             </div>
-            <span>GVY MISSION ARCHIVE / OPERATIONS FOOTAGE</span>
+            <span class="planet-ring planet-ring-one"></span>
+            <span class="planet-ring planet-ring-two"></span>
+            <span class="planet-caption">GVY PLANETARY INTEL GRID / LIVE ROUTE DATA</span>
           </div>
           <div class="route-layer" aria-hidden="true">
             <span class="route route-focus"></span>
@@ -370,6 +401,6 @@
       </p>
     </footer>
 
-    <script src="./assets/fleet-command.js?v=20260621-mobile-stats" defer></script>
+    <script src="./assets/fleet-command.js?v=20260621-planet-grid" defer></script>
   </body>
 </html>
