@@ -118,7 +118,7 @@ function initHeroVideoFallback() {
   const videoOptions = (video.dataset.heroVideos || "")
     .split("|")
     .map((path) => path.trim())
-    .filter(Boolean);
+    .filter((path) => path && !path.includes("operations-planet-video"));
   const requestedVideo = Number(new URLSearchParams(window.location.search).get("heroVideo"));
 
   if (videoOptions.length > 0) {
