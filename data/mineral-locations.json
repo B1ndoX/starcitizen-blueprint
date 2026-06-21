@@ -3,7 +3,9 @@
     "name": "Star Citizen mineral locations",
     "source": "UEX API 2.0",
     "sourceUrl": "https://api.uexcorp.uk/2.0/",
-    "retrievedAt": "2026-06-21T04:38:25.488973+00:00",
+    "signalSource": "Star Citizen Mining Signals spreadsheet",
+    "signalUpdatedAt": "2026-06-21",
+    "retrievedAt": "2026-06-21T05:09:05.608890+00:00",
     "note": "UEX data is community-maintained and may not reflect live servers. Empty entries are shown as no reliable mining location instead of inferred locations."
   },
   "materials": {
@@ -97,7 +99,7 @@
           {
             "id": 328,
             "zh": "ARC-L3",
-            "en": "ArcCorp Lagrange Point 3",
+            "en": "ARC-L3 Modern Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -106,7 +108,7 @@
           {
             "id": 333,
             "zh": "CRU-L5",
-            "en": "Crusader Lagrange Point 5",
+            "en": "CRU-L5 Beautiful Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -115,12 +117,23 @@
           {
             "id": 342,
             "zh": "MIC-L4",
-            "en": "microTech Lagrange Point 4",
+            "en": "MIC-L4 Red Crossroads Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Uncommon",
+        "values": [
+          3885,
+          7770,
+          11655,
+          15540,
+          19425,
+          23310
         ]
       },
       "hasReliableLocations": true
@@ -202,7 +215,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -240,8 +253,8 @@
         "lagrangePoints": [
           {
             "id": 326,
-            "zh": "ARC-L1",
-            "en": "ArcCorp Lagrange Point 1",
+            "zh": "弧L1 广袤森林站",
+            "en": "ARC-L1 Wide Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -250,7 +263,7 @@
           {
             "id": 327,
             "zh": "ARC-L2",
-            "en": "ArcCorp Lagrange Point 2",
+            "en": "ARC-L2 Lively Pathway Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -258,8 +271,8 @@
           },
           {
             "id": 334,
-            "zh": "HUR-L1",
-            "en": "Hurston Lagrange Point 1",
+            "zh": "赫L1 绿色林地",
+            "en": "HUR-L1 Green Glade Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -267,8 +280,8 @@
           },
           {
             "id": 335,
-            "zh": "HUR-L2",
-            "en": "Hurston Lagrange Point 2",
+            "zh": "赫L2 坚贞梦想站",
+            "en": "HUR-L2 Faithful Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -276,8 +289,8 @@
           },
           {
             "id": 337,
-            "zh": "HUR-L4",
-            "en": "Hurston Lagrange Point 4",
+            "zh": "赫L4 旋律领域站",
+            "en": "HUR-L4 Melodic Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -286,7 +299,7 @@
           {
             "id": 338,
             "zh": "HUR-L5",
-            "en": "Hurston Lagrange Point 5",
+            "en": "HUR-L5 High Course Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -294,8 +307,8 @@
           },
           {
             "id": 339,
-            "zh": "MIC-L1",
-            "en": "microTech Lagrange Point 1",
+            "zh": "INS Jericho",
+            "en": "INS Jericho",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -303,8 +316,8 @@
           },
           {
             "id": 340,
-            "zh": "MIC-L2",
-            "en": "microTech Lagrange Point 2",
+            "zh": "微L2 长林站",
+            "en": "MIC-L2 Long Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -312,8 +325,8 @@
           },
           {
             "id": 343,
-            "zh": "MIC-L5",
-            "en": "microTech Lagrange Point 5",
+            "zh": "微L5 现代伊卡洛斯站",
+            "en": "MIC-L5 Modern Icarus Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -328,6 +341,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4285,
+          8570,
+          12855,
+          17140,
+          21425,
+          25710
         ]
       },
       "hasReliableLocations": true
@@ -379,7 +403,7 @@
           },
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -617,6 +641,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Aslarite": {
@@ -687,7 +712,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -708,7 +733,7 @@
           {
             "id": 330,
             "zh": "ARC-L5",
-            "en": "ArcCorp Lagrange Point 5",
+            "en": "ARC-L5 Yellow Core Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -716,8 +741,8 @@
           },
           {
             "id": 332,
-            "zh": "CRU-L4",
-            "en": "Crusader Lagrange Point 4",
+            "zh": "十L4 轻浅田野站",
+            "en": "CRU-L4 Shallow Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -726,12 +751,23 @@
           {
             "id": 342,
             "zh": "MIC-L4",
-            "en": "microTech Lagrange Point 4",
+            "en": "MIC-L4 Red Crossroads Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Uncommon",
+        "values": [
+          3840,
+          7680,
+          11520,
+          15360,
+          19200,
+          23040
         ]
       },
       "hasReliableLocations": true
@@ -765,7 +801,7 @@
           },
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -777,6 +813,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Beryl": {
@@ -820,7 +857,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -841,7 +878,7 @@
           {
             "id": 328,
             "zh": "ARC-L3",
-            "en": "ArcCorp Lagrange Point 3",
+            "en": "ARC-L3 Modern Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -850,7 +887,7 @@
           {
             "id": 333,
             "zh": "CRU-L5",
-            "en": "Crusader Lagrange Point 5",
+            "en": "CRU-L5 Beautiful Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -859,12 +896,23 @@
           {
             "id": 342,
             "zh": "MIC-L4",
-            "en": "microTech Lagrange Point 4",
+            "en": "MIC-L4 Red Crossroads Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Rare",
+        "values": [
+          3540,
+          7080,
+          10620,
+          14160,
+          17700,
+          21240
         ]
       },
       "hasReliableLocations": true
@@ -966,8 +1014,8 @@
         "lagrangePoints": [
           {
             "id": 331,
-            "zh": "CRU-L1",
-            "en": "Crusader Lagrange Point 1",
+            "zh": "十L1 雄心伟梦站",
+            "en": "CRU-L1 Ambitious Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -976,7 +1024,7 @@
           {
             "id": 336,
             "zh": "HUR-L3",
-            "en": "Hurston Lagrange Point 3",
+            "en": "HUR-L3 Thundering Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -991,6 +1039,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Rare",
+        "values": [
+          3600,
+          7200,
+          10800,
+          14400,
+          18000,
+          21600
         ]
       },
       "hasReliableLocations": true
@@ -1024,7 +1083,7 @@
         "planets": [
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1075,8 +1134,8 @@
         "lagrangePoints": [
           {
             "id": 334,
-            "zh": "HUR-L1",
-            "en": "Hurston Lagrange Point 1",
+            "zh": "赫L1 绿色林地",
+            "en": "HUR-L1 Green Glade Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1084,8 +1143,8 @@
           },
           {
             "id": 337,
-            "zh": "HUR-L4",
-            "en": "Hurston Lagrange Point 4",
+            "zh": "赫L4 旋律领域站",
+            "en": "HUR-L4 Melodic Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1094,12 +1153,23 @@
           {
             "id": 338,
             "zh": "HUR-L5",
-            "en": "Hurston Lagrange Point 5",
+            "en": "HUR-L5 High Course Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Rare",
+        "values": [
+          3570,
+          7140,
+          10710,
+          14280,
+          17850,
+          21420
         ]
       },
       "hasReliableLocations": true
@@ -1116,6 +1186,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": false
     },
     "Copper": {
@@ -1214,7 +1285,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -1241,7 +1312,7 @@
           },
           {
             "id": 273,
-            "zh": "耶拉环",
+            "zh": "耶拉环带",
             "en": "Yela Ring",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -1253,7 +1324,7 @@
           {
             "id": 328,
             "zh": "ARC-L3",
-            "en": "ArcCorp Lagrange Point 3",
+            "en": "ARC-L3 Modern Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1262,7 +1333,7 @@
           {
             "id": 330,
             "zh": "ARC-L5",
-            "en": "ArcCorp Lagrange Point 5",
+            "en": "ARC-L5 Yellow Core Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1270,8 +1341,8 @@
           },
           {
             "id": 331,
-            "zh": "CRU-L1",
-            "en": "Crusader Lagrange Point 1",
+            "zh": "十L1 雄心伟梦站",
+            "en": "CRU-L1 Ambitious Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1279,8 +1350,8 @@
           },
           {
             "id": 332,
-            "zh": "CRU-L4",
-            "en": "Crusader Lagrange Point 4",
+            "zh": "十L4 轻浅田野站",
+            "en": "CRU-L4 Shallow Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1289,7 +1360,7 @@
           {
             "id": 333,
             "zh": "CRU-L5",
-            "en": "Crusader Lagrange Point 5",
+            "en": "CRU-L5 Beautiful Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1298,7 +1369,7 @@
           {
             "id": 341,
             "zh": "MIC-L3",
-            "en": "microTech Lagrange Point 3",
+            "en": "MIC-L3 Endless Odyssey Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1307,7 +1378,7 @@
           {
             "id": 342,
             "zh": "MIC-L4",
-            "en": "microTech Lagrange Point 4",
+            "en": "MIC-L4 Red Crossroads Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1322,6 +1393,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4240,
+          8480,
+          12720,
+          16960,
+          21200,
+          25440
         ]
       },
       "hasReliableLocations": true
@@ -1397,8 +1479,8 @@
         "lagrangePoints": [
           {
             "id": 326,
-            "zh": "ARC-L1",
-            "en": "ArcCorp Lagrange Point 1",
+            "zh": "弧L1 广袤森林站",
+            "en": "ARC-L1 Wide Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1407,7 +1489,7 @@
           {
             "id": 327,
             "zh": "ARC-L2",
-            "en": "ArcCorp Lagrange Point 2",
+            "en": "ARC-L2 Lively Pathway Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1416,7 +1498,7 @@
           {
             "id": 329,
             "zh": "ARC-L4",
-            "en": "ArcCorp Lagrange Point 4",
+            "en": "ARC-L4 Faint Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1424,8 +1506,8 @@
           },
           {
             "id": 334,
-            "zh": "HUR-L1",
-            "en": "Hurston Lagrange Point 1",
+            "zh": "赫L1 绿色林地",
+            "en": "HUR-L1 Green Glade Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1433,8 +1515,8 @@
           },
           {
             "id": 335,
-            "zh": "HUR-L2",
-            "en": "Hurston Lagrange Point 2",
+            "zh": "赫L2 坚贞梦想站",
+            "en": "HUR-L2 Faithful Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1442,8 +1524,8 @@
           },
           {
             "id": 337,
-            "zh": "HUR-L4",
-            "en": "Hurston Lagrange Point 4",
+            "zh": "赫L4 旋律领域站",
+            "en": "HUR-L4 Melodic Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1452,7 +1534,7 @@
           {
             "id": 338,
             "zh": "HUR-L5",
-            "en": "Hurston Lagrange Point 5",
+            "en": "HUR-L5 High Course Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1460,8 +1542,8 @@
           },
           {
             "id": 339,
-            "zh": "MIC-L1",
-            "en": "microTech Lagrange Point 1",
+            "zh": "INS Jericho",
+            "en": "INS Jericho",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1469,8 +1551,8 @@
           },
           {
             "id": 340,
-            "zh": "MIC-L2",
-            "en": "microTech Lagrange Point 2",
+            "zh": "微L2 长林站",
+            "en": "MIC-L2 Long Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1478,8 +1560,8 @@
           },
           {
             "id": 343,
-            "zh": "MIC-L5",
-            "en": "microTech Lagrange Point 5",
+            "zh": "微L5 现代伊卡洛斯站",
+            "en": "MIC-L5 Modern Icarus Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1494,6 +1576,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4225,
+          8450,
+          12675,
+          16900,
+          21125,
+          25350
         ]
       },
       "hasReliableLocations": true
@@ -1545,7 +1638,7 @@
           },
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -1620,6 +1713,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Feynmaline": {
@@ -1673,6 +1767,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Glacosite": {
@@ -1726,6 +1821,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Gold": {
@@ -1809,7 +1905,7 @@
           {
             "id": 330,
             "zh": "ARC-L5",
-            "en": "ArcCorp Lagrange Point 5",
+            "en": "ARC-L5 Yellow Core Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1817,8 +1913,8 @@
           },
           {
             "id": 332,
-            "zh": "CRU-L4",
-            "en": "Crusader Lagrange Point 4",
+            "zh": "十L4 轻浅田野站",
+            "en": "CRU-L4 Shallow Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -1827,12 +1923,23 @@
           {
             "id": 341,
             "zh": "MIC-L3",
-            "en": "microTech Lagrange Point 3",
+            "en": "MIC-L3 Endless Odyssey Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Rare",
+        "values": [
+          3585,
+          7170,
+          10755,
+          14340,
+          17925,
+          21510
         ]
       },
       "hasReliableLocations": true
@@ -1884,7 +1991,7 @@
           },
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2122,6 +2229,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Hephaestanite": {
@@ -2222,8 +2330,8 @@
         "lagrangePoints": [
           {
             "id": 326,
-            "zh": "ARC-L1",
-            "en": "ArcCorp Lagrange Point 1",
+            "zh": "弧L1 广袤森林站",
+            "en": "ARC-L1 Wide Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2232,7 +2340,7 @@
           {
             "id": 327,
             "zh": "ARC-L2",
-            "en": "ArcCorp Lagrange Point 2",
+            "en": "ARC-L2 Lively Pathway Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2241,7 +2349,7 @@
           {
             "id": 329,
             "zh": "ARC-L4",
-            "en": "ArcCorp Lagrange Point 4",
+            "en": "ARC-L4 Faint Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2249,8 +2357,8 @@
           },
           {
             "id": 334,
-            "zh": "HUR-L1",
-            "en": "Hurston Lagrange Point 1",
+            "zh": "赫L1 绿色林地",
+            "en": "HUR-L1 Green Glade Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2258,8 +2366,8 @@
           },
           {
             "id": 335,
-            "zh": "HUR-L2",
-            "en": "Hurston Lagrange Point 2",
+            "zh": "赫L2 坚贞梦想站",
+            "en": "HUR-L2 Faithful Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2267,8 +2375,8 @@
           },
           {
             "id": 337,
-            "zh": "HUR-L4",
-            "en": "Hurston Lagrange Point 4",
+            "zh": "赫L4 旋律领域站",
+            "en": "HUR-L4 Melodic Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2277,7 +2385,7 @@
           {
             "id": 338,
             "zh": "HUR-L5",
-            "en": "Hurston Lagrange Point 5",
+            "en": "HUR-L5 High Course Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2285,8 +2393,8 @@
           },
           {
             "id": 339,
-            "zh": "MIC-L1",
-            "en": "microTech Lagrange Point 1",
+            "zh": "INS Jericho",
+            "en": "INS Jericho",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2294,8 +2402,8 @@
           },
           {
             "id": 340,
-            "zh": "MIC-L2",
-            "en": "microTech Lagrange Point 2",
+            "zh": "微L2 长林站",
+            "en": "MIC-L2 Long Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2303,8 +2411,8 @@
           },
           {
             "id": 343,
-            "zh": "MIC-L5",
-            "en": "microTech Lagrange Point 5",
+            "zh": "微L5 现代伊卡洛斯站",
+            "en": "MIC-L5 Modern Icarus Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2319,6 +2427,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4180,
+          8360,
+          12540,
+          16720,
+          20900,
+          25080
         ]
       },
       "hasReliableLocations": true
@@ -2388,7 +2507,7 @@
           },
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -2491,7 +2610,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -2536,7 +2655,7 @@
           },
           {
             "id": 273,
-            "zh": "耶拉环",
+            "zh": "耶拉环带",
             "en": "Yela Ring",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -2548,7 +2667,7 @@
           {
             "id": 328,
             "zh": "ARC-L3",
-            "en": "ArcCorp Lagrange Point 3",
+            "en": "ARC-L3 Modern Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2557,7 +2676,7 @@
           {
             "id": 330,
             "zh": "ARC-L5",
-            "en": "ArcCorp Lagrange Point 5",
+            "en": "ARC-L5 Yellow Core Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2565,8 +2684,8 @@
           },
           {
             "id": 331,
-            "zh": "CRU-L1",
-            "en": "Crusader Lagrange Point 1",
+            "zh": "十L1 雄心伟梦站",
+            "en": "CRU-L1 Ambitious Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2574,8 +2693,8 @@
           },
           {
             "id": 332,
-            "zh": "CRU-L4",
-            "en": "Crusader Lagrange Point 4",
+            "zh": "十L4 轻浅田野站",
+            "en": "CRU-L4 Shallow Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2584,7 +2703,7 @@
           {
             "id": 333,
             "zh": "CRU-L5",
-            "en": "Crusader Lagrange Point 5",
+            "en": "CRU-L5 Beautiful Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2593,7 +2712,7 @@
           {
             "id": 336,
             "zh": "HUR-L3",
-            "en": "Hurston Lagrange Point 3",
+            "en": "HUR-L3 Thundering Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2602,7 +2721,7 @@
           {
             "id": 341,
             "zh": "MIC-L3",
-            "en": "microTech Lagrange Point 3",
+            "en": "MIC-L3 Endless Odyssey Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2611,7 +2730,7 @@
           {
             "id": 342,
             "zh": "MIC-L4",
-            "en": "microTech Lagrange Point 4",
+            "en": "MIC-L4 Red Crossroads Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2626,6 +2745,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4270,
+          8540,
+          12810,
+          17080,
+          21350,
+          25620
         ]
       },
       "hasReliableLocations": true
@@ -2699,6 +2829,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Laranite": {
@@ -2762,8 +2893,8 @@
         "lagrangePoints": [
           {
             "id": 334,
-            "zh": "HUR-L1",
-            "en": "Hurston Lagrange Point 1",
+            "zh": "赫L1 绿色林地",
+            "en": "HUR-L1 Green Glade Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2771,8 +2902,8 @@
           },
           {
             "id": 337,
-            "zh": "HUR-L4",
-            "en": "Hurston Lagrange Point 4",
+            "zh": "赫L4 旋律领域站",
+            "en": "HUR-L4 Melodic Fields Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -2781,12 +2912,23 @@
           {
             "id": 338,
             "zh": "HUR-L5",
-            "en": "Hurston Lagrange Point 5",
+            "en": "HUR-L5 High Course Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Uncommon",
+        "values": [
+          3825,
+          7650,
+          11475,
+          15300,
+          19125,
+          22950
         ]
       },
       "hasReliableLocations": true
@@ -2831,6 +2973,17 @@
           }
         ],
         "lagrangePoints": []
+      },
+      "signal": {
+        "rarity": "Epic",
+        "values": [
+          3400,
+          6800,
+          10200,
+          13600,
+          17000,
+          20400
+        ]
       },
       "hasReliableLocations": true
     },
@@ -2885,7 +3038,7 @@
         "pointsOfInterest": [
           {
             "id": 273,
-            "zh": "耶拉环",
+            "zh": "耶拉环带",
             "en": "Yela Ring",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -2894,6 +3047,17 @@
           }
         ],
         "lagrangePoints": []
+      },
+      "signal": {
+        "rarity": "Epic",
+        "values": [
+          3370,
+          6740,
+          10110,
+          13480,
+          16850,
+          20220
+        ]
       },
       "hasReliableLocations": true
     },
@@ -2975,7 +3139,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3020,7 +3184,7 @@
           },
           {
             "id": 273,
-            "zh": "耶拉环",
+            "zh": "耶拉环带",
             "en": "Yela Ring",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3032,7 +3196,7 @@
           {
             "id": 328,
             "zh": "ARC-L3",
-            "en": "ArcCorp Lagrange Point 3",
+            "en": "ARC-L3 Modern Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3041,7 +3205,7 @@
           {
             "id": 330,
             "zh": "ARC-L5",
-            "en": "ArcCorp Lagrange Point 5",
+            "en": "ARC-L5 Yellow Core Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3050,7 +3214,7 @@
           {
             "id": 336,
             "zh": "HUR-L3",
-            "en": "Hurston Lagrange Point 3",
+            "en": "HUR-L3 Thundering Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3059,7 +3223,7 @@
           {
             "id": 341,
             "zh": "MIC-L3",
-            "en": "microTech Lagrange Point 3",
+            "en": "MIC-L3 Endless Odyssey Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3068,12 +3232,23 @@
           {
             "id": 342,
             "zh": "MIC-L4",
-            "en": "microTech Lagrange Point 4",
+            "en": "MIC-L4 Red Crossroads Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4300,
+          8600,
+          12900,
+          17200,
+          21500,
+          25800
         ]
       },
       "hasReliableLocations": true
@@ -3099,6 +3274,17 @@
         "moons": [],
         "pointsOfInterest": [],
         "lagrangePoints": []
+      },
+      "signal": {
+        "rarity": "Legendary",
+        "values": [
+          3170,
+          6340,
+          9510,
+          12680,
+          15850,
+          19020
+        ]
       },
       "hasReliableLocations": true
     },
@@ -3131,7 +3317,7 @@
         "planets": [
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3181,6 +3367,17 @@
         ],
         "lagrangePoints": []
       },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4210,
+          8420,
+          12630,
+          16840,
+          21050,
+          25260
+        ]
+      },
       "hasReliableLocations": true
     },
     "Riccite": {
@@ -3203,7 +3400,7 @@
         "planets": [
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3271,6 +3468,17 @@
         ],
         "lagrangePoints": []
       },
+      "signal": {
+        "rarity": "Epic",
+        "values": [
+          3385,
+          6770,
+          10155,
+          13540,
+          16925,
+          20310
+        ]
+      },
       "hasReliableLocations": true
     },
     "Sadaryx": {
@@ -3305,6 +3513,7 @@
         ],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": true
     },
     "Saldynium (Ore)": {
@@ -3319,6 +3528,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": false
     },
     "Savrilium": {
@@ -3370,6 +3580,17 @@
           }
         ],
         "lagrangePoints": []
+      },
+      "signal": {
+        "rarity": "Legendary",
+        "values": [
+          3200,
+          6400,
+          9600,
+          12800,
+          16000,
+          19200
+        ]
       },
       "hasReliableLocations": true
     },
@@ -3459,7 +3680,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3486,6 +3707,17 @@
           }
         ],
         "lagrangePoints": []
+      },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4255,
+          8510,
+          12765,
+          17020,
+          21275,
+          25530
+        ]
       },
       "hasReliableLocations": true
     },
@@ -3527,7 +3759,7 @@
           },
           {
             "id": 242,
-            "zh": "布鲁姆",
+            "zh": "盛放星",
             "en": "Bloom",
             "systemZh": "派罗",
             "systemEn": "Pyro",
@@ -3584,6 +3816,17 @@
           }
         ],
         "lagrangePoints": []
+      },
+      "signal": {
+        "rarity": "Legendary",
+        "values": [
+          3185,
+          6370,
+          9555,
+          12740,
+          15925,
+          19110
+        ]
       },
       "hasReliableLocations": true
     },
@@ -3666,8 +3909,8 @@
         "lagrangePoints": [
           {
             "id": 326,
-            "zh": "ARC-L1",
-            "en": "ArcCorp Lagrange Point 1",
+            "zh": "弧L1 广袤森林站",
+            "en": "ARC-L1 Wide Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3676,7 +3919,7 @@
           {
             "id": 327,
             "zh": "ARC-L2",
-            "en": "ArcCorp Lagrange Point 2",
+            "en": "ARC-L2 Lively Pathway Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3685,7 +3928,7 @@
           {
             "id": 329,
             "zh": "ARC-L4",
-            "en": "ArcCorp Lagrange Point 4",
+            "en": "ARC-L4 Faint Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3693,13 +3936,24 @@
           },
           {
             "id": 335,
-            "zh": "HUR-L2",
-            "en": "Hurston Lagrange Point 2",
+            "zh": "赫L2 坚贞梦想站",
+            "en": "HUR-L2 Faithful Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Rare",
+        "values": [
+          3555,
+          7110,
+          10665,
+          14220,
+          17775,
+          21330
         ]
       },
       "hasReliableLocations": true
@@ -3801,6 +4055,17 @@
         ],
         "lagrangePoints": []
       },
+      "signal": {
+        "rarity": "Common",
+        "values": [
+          4195,
+          8390,
+          12585,
+          16780,
+          20975,
+          25170
+        ]
+      },
       "hasReliableLocations": true
     },
     "Titanium": {
@@ -3863,7 +4128,7 @@
         "pointsOfInterest": [
           {
             "id": 221,
-            "zh": "亚伦光环",
+            "zh": "亚伦环",
             "en": "Aaron Halo",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3881,7 +4146,7 @@
           },
           {
             "id": 273,
-            "zh": "耶拉环",
+            "zh": "耶拉环带",
             "en": "Yela Ring",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
@@ -3892,8 +4157,8 @@
         "lagrangePoints": [
           {
             "id": 331,
-            "zh": "CRU-L1",
-            "en": "Crusader Lagrange Point 1",
+            "zh": "十L1 雄心伟梦站",
+            "en": "CRU-L1 Ambitious Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3902,7 +4167,7 @@
           {
             "id": 336,
             "zh": "HUR-L3",
-            "en": "Hurston Lagrange Point 3",
+            "en": "HUR-L3 Thundering Express Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -3917,6 +4182,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Uncommon",
+        "values": [
+          3855,
+          7710,
+          11565,
+          15420,
+          19275,
+          23130
         ]
       },
       "hasReliableLocations": true
@@ -4008,8 +4284,8 @@
         "lagrangePoints": [
           {
             "id": 339,
-            "zh": "MIC-L1",
-            "en": "microTech Lagrange Point 1",
+            "zh": "INS Jericho",
+            "en": "INS Jericho",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -4017,8 +4293,8 @@
           },
           {
             "id": 340,
-            "zh": "MIC-L2",
-            "en": "microTech Lagrange Point 2",
+            "zh": "微L2 长林站",
+            "en": "MIC-L2 Long Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -4026,8 +4302,8 @@
           },
           {
             "id": 343,
-            "zh": "MIC-L5",
-            "en": "microTech Lagrange Point 5",
+            "zh": "微L5 现代伊卡洛斯站",
+            "en": "MIC-L5 Modern Icarus Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -4042,6 +4318,17 @@
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Uncommon",
+        "values": [
+          3900,
+          7800,
+          11700,
+          15600,
+          19500,
+          23400
         ]
       },
       "hasReliableLocations": true
@@ -4107,8 +4394,8 @@
         "lagrangePoints": [
           {
             "id": 326,
-            "zh": "ARC-L1",
-            "en": "ArcCorp Lagrange Point 1",
+            "zh": "弧L1 广袤森林站",
+            "en": "ARC-L1 Wide Forest Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -4117,7 +4404,7 @@
           {
             "id": 327,
             "zh": "ARC-L2",
-            "en": "ArcCorp Lagrange Point 2",
+            "en": "ARC-L2 Lively Pathway Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -4126,7 +4413,7 @@
           {
             "id": 329,
             "zh": "ARC-L4",
-            "en": "ArcCorp Lagrange Point 4",
+            "en": "ARC-L4 Faint Glen Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
@@ -4134,13 +4421,24 @@
           },
           {
             "id": 335,
-            "zh": "HUR-L2",
-            "en": "Hurston Lagrange Point 2",
+            "zh": "赫L2 坚贞梦想站",
+            "en": "HUR-L2 Faithful Dream Station",
             "systemZh": "斯坦顿",
             "systemEn": "Stanton",
             "parentZh": "未知",
             "parentEn": ""
           }
+        ]
+      },
+      "signal": {
+        "rarity": "Uncommon",
+        "values": [
+          3870,
+          7740,
+          11610,
+          15480,
+          19350,
+          23220
         ]
       },
       "hasReliableLocations": true
@@ -4157,6 +4455,7 @@
         "pointsOfInterest": [],
         "lagrangePoints": []
       },
+      "signal": {},
       "hasReliableLocations": false
     }
   }

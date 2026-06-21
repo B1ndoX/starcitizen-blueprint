@@ -1030,10 +1030,59 @@ input:focus {
   gap: 8px;
 }
 
-.mineral-location-group h4 {
+.mineral-location-group h4,
+.mineral-signal-section h4 {
   margin: 0;
   color: var(--orange);
   font-size: 13px;
+}
+
+.mineral-signal-section {
+  display: grid;
+  gap: 8px;
+}
+
+.mineral-signal-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mineral-signal-item {
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 196, 104, 0.28);
+  border-radius: 14px;
+  background: rgba(42, 34, 18, 0.4);
+}
+
+.mineral-signal-item strong {
+  overflow: hidden;
+  color: var(--text-strong);
+  font-size: 12px;
+  font-weight: 780;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mineral-signal-item span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.mineral-signal-item b {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: #071019;
+  background: var(--orange);
+  font-size: 11px;
+  font-weight: 880;
 }
 
 .mineral-location-list {

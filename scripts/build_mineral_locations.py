@@ -17,6 +17,7 @@ RESOURCE_FILES = {
     "moons": "moons",
     "pointsOfInterest": "poi",
     "orbits": "orbits",
+    "spaceStations": "space_stations",
 }
 
 MATERIAL_ALIASES = {
@@ -34,7 +35,7 @@ NAME_ZH = {
     "Crusader": "十字军",
     "Pyro I": "派罗 I",
     "Monox": "莫诺克斯",
-    "Bloom": "布鲁姆",
+    "Bloom": "盛放星",
     "Pyro IV": "派罗 IV",
     "Pyro V": "派罗 V",
     "Terminus": "终点",
@@ -57,7 +58,7 @@ NAME_ZH = {
     "Vuur": "武尔",
     "Wala": "瓦拉",
     "Yela": "耶拉",
-    "Aaron Halo": "亚伦光环",
+    "Aaron Halo": "亚伦环",
     "Keeger Belt": "基格带",
     "Glaciem Ring": "冰川环",
     "Pyro Asteroid Clusters": "派罗小行星群",
@@ -65,7 +66,7 @@ NAME_ZH = {
     "OV Breaker Stations": "OV 破碎站",
     "Akiro Cluster Alpha": "亚基罗星团 Alpha",
     "Akiro Cluster": "亚基罗星团",
-    "Yela Ring": "耶拉环",
+    "Yela Ring": "耶拉环带",
 }
 
 LAGRANGE_PREFIX = {
@@ -73,6 +74,17 @@ LAGRANGE_PREFIX = {
     "Crusader": "CRU",
     "Hurston": "HUR",
     "microTech": "MIC",
+}
+
+STATION_ZH = {
+    "ARC-L1 Wide Forest Station": "弧L1 广袤森林站",
+    "CRU-L1 Ambitious Dream Station": "十L1 雄心伟梦站",
+    "CRU-L4 Shallow Fields Station": "十L4 轻浅田野站",
+    "HUR-L1 Green Glade Station": "赫L1 绿色林地",
+    "HUR-L2 Faithful Dream Station": "赫L2 坚贞梦想站",
+    "HUR-L4 Melodic Fields Station": "赫L4 旋律领域站",
+    "MIC-L2 Long Forest Station": "微L2 长林站",
+    "MIC-L5 Modern Icarus Station": "微L5 现代伊卡洛斯站",
 }
 
 
@@ -97,7 +109,10 @@ def zh_name(name: str | None) -> str:
     return NAME_ZH.get(name, name)
 
 
-def lagrange_label(name: str, code: str | None) -> tuple[str, str]:
+def lagrange_label(name: str, code: str | None, station: dict | None = None) -> tuple[str, str]:
+    if station:
+        station_name = station.get("name") or name
+        return STATION_ZH.get(station_name) or station.get("nickname") or zh_name(station_name), station_name
     for prefix, short in LAGRANGE_PREFIX.items():
         marker = f"{prefix} Lagrange Point "
         if name.startswith(marker):
@@ -108,10 +123,10 @@ def lagrange_label(name: str, code: str | None) -> tuple[str, str]:
     return zh_name(name), name
 
 
-def location_entry(item: dict, kind: str) -> dict:
+def location_entry(item: dict, kind: str, station_by_orbit: dict[int, dict] | None = None) -> dict:
     name = item.get("nickname") or item.get("name") or "Unknown"
     if kind == "lagrangePoints":
-        zh, en = lagrange_label(name, item.get("code"))
+        zh, en = lagrange_label(name, item.get("code"), (station_by_orbit or {}).get(item.get("id")))
     else:
         en = name
         zh = zh_name(name)
@@ -148,9 +163,27 @@ def raw_commodity_for(name: str, by_name: dict[str, dict], by_id: dict[int, dict
     return first_with_locations(candidates) or current
 
 
+def load_signal_calibration() -> dict:
+    path = DATA_DIR / "mineral-signal-calibration.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def main() -> None:
     resources = {key: fetch_resource(path) for key, path in RESOURCE_FILES.items()}
-    lookup = {key: {item["id"]: item for item in value} for key, value in resources.items() if key != "commodities"}
+    lookup = {
+        key: {item["id"]: item for item in value}
+        for key, value in resources.items()
+        if key not in {"commodities", "spaceStations"}
+    }
+    station_by_orbit = {
+        item["id_orbit"]: item
+        for item in resources["spaceStations"]
+        if item.get("id_orbit")
+    }
+    signal_calibration = load_signal_calibration()
+    signal_by_material = signal_calibration.get("signals") or {}
     commodities = resources["commodities"]
     by_name = {item["name"]: item for item in commodities}
     by_id = {item["id"]: item for item in commodities}
@@ -166,7 +199,7 @@ def main() -> None:
             "planets": [location_entry(lookup["planets"][item_id], "planets") for item_id in ids(commodity.get("ids_planets") if commodity else None) if item_id in lookup["planets"]],
             "moons": [location_entry(lookup["moons"][item_id], "moons") for item_id in ids(commodity.get("ids_moons") if commodity else None) if item_id in lookup["moons"]],
             "pointsOfInterest": [location_entry(lookup["pointsOfInterest"][item_id], "pointsOfInterest") for item_id in ids(commodity.get("ids_poi") if commodity else None) if item_id in lookup["pointsOfInterest"]],
-            "lagrangePoints": [location_entry(lookup["orbits"][item_id], "lagrangePoints") for item_id in ids(commodity.get("ids_orbits") if commodity else None) if item_id in lookup["orbits"]],
+            "lagrangePoints": [location_entry(lookup["orbits"][item_id], "lagrangePoints", station_by_orbit) for item_id in ids(commodity.get("ids_orbits") if commodity else None) if item_id in lookup["orbits"]],
         }
         materials[name] = {
             "commodityId": commodity.get("id") if commodity else None,
@@ -174,6 +207,7 @@ def main() -> None:
             "commodityCode": commodity.get("code") if commodity else None,
             "sourceUrl": f"https://uexcorp.space/mining/locations/commodity/{(commodity.get('name') or name).lower().replace(' ', '-').replace('(', '').replace(')', '')}/" if commodity else "",
             "locations": groups,
+            "signal": signal_by_material.get(name) or {},
             "hasReliableLocations": any(groups.values()),
         }
 
@@ -182,6 +216,8 @@ def main() -> None:
             "name": "Star Citizen mineral locations",
             "source": "UEX API 2.0",
             "sourceUrl": "https://api.uexcorp.uk/2.0/",
+            "signalSource": signal_calibration.get("source", ""),
+            "signalUpdatedAt": signal_calibration.get("updatedAt", ""),
             "retrievedAt": datetime.now(timezone.utc).isoformat(),
             "note": "UEX data is community-maintained and may not reflect live servers. Empty entries are shown as no reliable mining location instead of inferred locations.",
         },

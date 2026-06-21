@@ -23732,19 +23732,37 @@
       "'WRATH'": "愤怒",
       "10-Series Greatsword": "10系长剑",
       "11-Series Broadsword": "11系阔剑",
+      "5CA 'Akura'": "5CA 阿库拉",
+      "5MA 'Chimalli'": "5MA 奇马利",
+      "5SA 'Rhada'": "5SA 拉达",
+      "6CA 'Bila'": "6CA 比拉",
+      "6MA 'Kozane'": "6MA 科扎内",
+      "6SA 'Arbiter'": "6SA 仲裁者",
+      "7CA 'Nargun'": "7CA 纳尔贡",
+      "7MA 'Lorica'": "7MA 洛里卡",
+      "7SA 'Concord'": "7SA 协和",
       "9-Series Longsword": "9系长剑",
-      "ATLS GEO Module": "ATLS GEO 模块",
+      "ARMOR": "装甲盾",
+      "ATLS GEO Module": "ATLS GEO 采矿模块",
       "Abrade Scraper Module": "Abrade 刮削模块",
+      "AbsoluteZero": "绝对零度",
       "Absolution": "赦免",
+      "Agni": "阿格尼",
       "Aither": "以太",
+      "Algid": "寒冽",
+      "AllStop": "全停",
       "Allegro": "快板",
+      "Arctic": "极地",
+      "ArcticStorm": "极地风暴",
       "Ardor-1 Salvaged": "炽热1",
       "Ardor-2 Salvaged": "炽热2",
       "Ardor-3 Salvaged": "炽热3",
       "Argo Ore Pod": "南船座矿石舱",
       "Argos IX": "阿尔戈斯 IX",
       "Argos IX-G": "阿尔戈斯 IX-G",
+      "Armada": "舰队",
       "Arrester III": "拦截者 III",
+      "Aspis": "圆盾",
       "Assailant IV": "突击者 IV",
       "Assailant IV-G": "突击者 IV-G",
       "Atlas": "擎天之神",
@@ -23754,10 +23772,26 @@
       "Attrition-4": "磨损-4",
       "Attrition-5": "磨损-5",
       "Attrition-6": "磨损-6",
+      "Aufeis": "层冰",
+      "Avalanche": "雪崩",
+      "BLOC": "BLOC 护盾",
       "Balandin": "巴兰丁",
       "Baler Salvage Head": "Baler 打捞头",
+      "Bamoty": "巴莫提",
+      "Barbican": "外堡",
       "Beacon": "信标",
-      "Brandt Module": "Brandt 模块",
+      "Berian": "贝里安",
+      "BlastChill": "爆冷",
+      "Blizzard": "暴雪",
+      "Bolide": "火流星",
+      "Bolon": "伯龙",
+      "Bolt": "电掣",
+      "Bonito": "鲣鱼油罐",
+      "Boreal": "北境",
+      "Bracer": "护臂",
+      "Brandt Module": "勃兰特采矿模组",
+      "Breton": "布雷顿",
+      "Bulwark": "堡垒",
       "Burst": "离子爆裂",
       "CF-117 Bulldog": "CF-117 恶犬",
       "CF-227 Badger": "CF-227 凶灌",
@@ -23765,29 +23799,56 @@
       "CF-447 Rhino": "CF-447 犀牛",
       "CF-557 Galdereen": "CF-557 吼兽",
       "CF-667 Mammoth": "CF-667 猛犸",
+      "CR-60": "CR-60 油罐",
       "Calamity XII-CS": "灾厄 XII-CS",
       "Calamity XII-EM": "灾厄 XII-EM",
       "Calamity XII-IR": "灾厄 XII-IR",
       "Cascade": "菲耶尔级联",
+      "Castra": "营垒",
+      "Celestial": "天穹",
+      "Centurion": "百夫长",
+      "Charger": "充能者",
+      "Chill-Max": "极寒Max",
       "Cinch Scraper Module": "Cinch 刮削模块",
+      "Cirrus": "卷云",
+      "Citadel": "要塞",
+      "Cloak": "隐幕",
+      "ColdSnap": "寒潮",
+      "ColdSurge": "冷涌",
       "Colossus": "巨像",
       "Condemnation": "谴责",
+      "CoolCore": "冷芯",
+      "CoverAll": "全域覆盖",
       "Crossfield": "克罗斯菲尔德",
+      "Cryo-Star": "冷冻星",
+      "Cryo-Star EX": "冷冻星 EX",
+      "Cryo-Star SL": "冷冻星 SL",
+      "Cryo-Star XL": "冷冻星 XL",
+      "DayBreak": "破晓",
       "Deadbolt I": "死锁1",
       "Deadbolt II": "死锁2",
       "Deadbolt III": "死锁3",
       "Deadbolt IV": "死锁4",
       "Deadbolt V": "死锁5",
       "Deadbolt VI": "死锁6",
+      "Defiant": "反抗者",
+      "DeltaMax": "德尔塔Max",
       "Destroyer Mass Driver": "毁灭者电磁炮",
+      "Diligence": "勤勉",
       "Dominance-1": "统治-1",
       "Dominance-2": "统治-2",
       "Dominance-3": "统治-3",
       "Dominator II": "主宰 II",
       "Dominator II-G": "主宰 II-G",
       "Drake Ore Pod": "德雷克矿石舱",
+      "Drassik": "德拉西克",
+      "Draug": "德劳格",
       "Draugar": "尸鬼",
       "Drift": "漂泊",
+      "Drifter": "漂流者",
+      "DuraJet": "耐久喷流",
+      "Durango": "杜兰戈",
+      "DynaFlux": "动态通量",
       "EX-T10-CS \"Executor\"": "EX-T10-CS 执行者",
       "EX-T10-EM \"Executor\"": "EX-T10-EM 执行者",
       "EX-T10-IR \"Executor\"": "EX-T10-IR 执行者",
@@ -23795,37 +23856,109 @@
       "EX-T12-EM \"Executor\"": "EX-T12-EM 执行者",
       "EX-T12-IR \"Executor\"": "EX-T12-IR 执行者",
       "Echo": "回声",
+      "Eclipse": "日蚀",
+      "Eco-Flow": "生态流",
+      "Elsen": "埃尔森",
+      "Endo": "内核",
+      "Endurance": "耐力",
       "Eos": "黎明女神",
       "Erebos": "黑暗之神",
+      "ExoGen": "外源发生器",
+      "Exotherm": "放热器",
       "Expedition": "远征",
-      "FLTR Module": "FLTR 模块",
-      "FLTR-L Module": "FLTR-L 模块",
-      "FLTR-XL Module": "FLTR-XL 模块",
+      "FLTR Module": "FLTR 采矿模组",
+      "FLTR-L Module": "FLTR-L 采矿模组",
+      "FLTR-XL Module": "FLTR-XL 采矿模组",
+      "FR-66": "FR-66 护盾",
+      "FR-76": "FR-76 护盾",
+      "FR-86": "FR-86 护盾",
+      "Falco": "隼鹰",
+      "Fierell Cascade": "菲耶尔级联",
+      "Fissure": "裂隙",
       "Flash": "闪电",
+      "FlashFreeze": "瞬冻",
       "Flood": "溢流",
       "Focus II Module": "Focus II 模块",
       "Focus III Module": "Focus III 模块",
       "Focus Module": "Focus 模块",
-      "Forel Module": "Forel 模块",
+      "ForceWall": "力墙",
+      "Forel Module": "福雷尔采矿模组",
+      "Fortitude": "坚毅",
       "FoxFire": "狐火",
+      "Fridan": "弗里丹",
       "Frontline": "前线",
+      "Frost-Star": "霜星",
+      "Frost-Star EX": "霜星 EX",
+      "Frost-Star SL": "霜星 SL",
+      "Frost-Star XL": "霜星 XL",
+      "FrostBite": "霜咬",
+      "FrostBurn": "霜灼",
       "Fuel Tank": "油罐",
+      "Fulgur": "雷光",
+      "FullBlock": "完全阻隔",
+      "FullForce": "全力",
+      "FullForce Pro": "全力 Pro",
+      "FullFrost": "满霜",
+      "FullStop": "完全停止",
+      "GSX-EX": "GSX-EX 油罐",
+      "GSX-HP": "GSX-HP 油罐",
+      "GSX-RF": "GSX-RF 油罐",
+      "GUARD": "护卫盾",
+      "Galinstan": "镓铟锡",
+      "GammaMax": "伽马Max",
+      "Gargant": "巨罐",
+      "Gelid": "冰冷",
+      "Genoa": "热那亚",
+      "Ginzel": "金泽尔",
+      "Glacier": "冰川",
+      "Glacis": "斜堤",
       "Goliath": "哥利亚",
+      "Graupel": "霰粒",
       "Greycat ROC Ore Pod": "灰猫 ROC 矿石舱",
       "Greycat ROC-DS Ore Pod": "灰猫 ROC-DS 矿石舱",
+      "Guardian": "守护者",
+      "HAVEN": "避风港",
+      "HEX": "HEX 护盾",
+      "Haltur": "哈尔图尔",
+      "Harkin": "哈金加油嘴",
       "Havoc": "浩劫",
+      "HeatSafe": "隔热保险",
+      "HeatSink": "散热器",
       "Hellion": "恶棍",
       "Hellion VII": "恶棍 VII",
       "Hellion VII-G": "恶棍 VII-G",
       "Hemera": "白昼女神",
+      "Holdstrong": "坚守者",
       "Huracan": "乌拉坎",
+      "HydroJet": "水冷喷流",
+      "Hydrocel": "水冷芯",
+      "Hydropulse": "水冷脉冲",
+      "HyperGen": "超能发生器",
       "Hyperion": "光之神",
+      "INK": "墨盾",
+      "Ice-Flush": "冰冲",
+      "IceBox": "冰箱",
+      "IceDive": "冰潜",
+      "IcePlunge": "冰坠",
+      "Idris Power Plant": "伊德里斯电源",
       "Ignite II": "点燃 II",
       "Ignite II-G": "点燃 II-G",
       "Impulse": "脉冲",
+      "IonBurst": "离子爆裂",
+      "IonSurge": "离子涌动",
+      "IonSurge Pro": "离子涌动 Pro",
+      "IonWave": "离子波",
+      "JS-300": "JS-300 电源",
+      "JS-400": "JS-400 电源",
+      "JS-500": "JS-500 电源",
+      "Jaghte": "贾赫特",
+      "Jennet": "珍妮特",
       "Kama": "卡玛",
+      "Kelvid": "开尔维德",
       "Khaos": "混沌",
+      "Kragen": "克拉根",
       "Lifeline Module": "Lifeline 模块",
+      "LightBlossom": "光绽",
       "LightFire": "光火",
       "Lightstrike I": "光击 I",
       "Lightstrike II": "光击 II",
@@ -23833,13 +23966,26 @@
       "Lightstrike IV": "光击 IV",
       "Lightstrike V": "光击 V",
       "Lightstrike VI": "光击 VI",
+      "Lotus": "莲花",
+      "LumaCore": "流明核心",
+      "LuxCore": "辉光核心",
       "MISC Ore Pod": "武藏矿石舱",
+      "Maelstrom": "漩涡",
+      "MagnaBloom": "盛放",
       "Mantis GT-220": "螳螂 GT220",
       "Marksman I": "神射手 I",
       "Marksman I-G": "神射手 I-G",
+      "MegaFlux": "巨通量",
+      "Mercury": "水星",
       "Metis": "智谋女神",
       "Mining Arm": "采矿臂",
+      "Mirage": "海市蜃楼",
+      "Nemec": "内梅克油罐",
+      "NewDawn": "新黎明",
+      "NightFall": "夜幕",
+      "Norfield": "诺菲尔德加油嘴",
       "Nova": "新星",
+      "Obscura": "暗幕",
       "Odyssey": "奥德赛",
       "Omnisky III": "制空 III",
       "Omnisky IX": "制空 IX",
@@ -23848,27 +23994,51 @@
       "Omnisky XV": "制空 XV",
       "Omnisky XVIII": "制空 XVIII",
       "Optimum Module": "Optimum 模块",
+      "OverDrive": "超速驱动",
+      "PIN": "钉盾",
+      "Palisade": "栅壁",
+      "Parapet": "胸墙",
       "Pathfinder IV": "探路者 IV",
       "Pathfinder IV-G": "探路者 IV-G",
+      "Permafrost": "永久冻土",
       "Pioneer I": "开拓者 I",
       "Pioneer I-G": "开拓者 I-G",
+      "Polar": "极寒",
       "Pontes": "庞特斯",
+      "PowerBolt": "电能箭",
       "Predator": "捕食者",
       "PyroBurst": "爆炎",
+      "QuadraCell": "四元电池",
+      "QuadraCell MT": "四元电池 MT",
+      "QuadraCell MX": "四元电池 MX",
       "Quarreler": "争吵者",
       "Quest": "追逐",
+      "QuikCool": "速冷",
+      "RN-7s": "RN-7s 加油嘴",
+      "RPEL": "驱离盾",
+      "RS-Barrier": "RS 屏障",
+      "Radiance": "辉耀",
+      "Radix": "根源",
+      "Rampart": "壁垒",
       "Ranger": "游骑兵",
+      "RapidCool": "极速冷却",
       "Raptor IV": "猛禽 IV",
       "Rattler II": "响尾蛇 II",
       "ReadyGrip Tractor Module": "ReadyGrip 牵引模块",
       "Reaper V": "收割者 V",
       "Reaper V-G": "收割者 V-G",
+      "Reclaimer Power Plant": "回收者电源",
+      "Regulus": "轩辕十四",
+      "Reliance": "信赖",
       "Revenant": "亡魂",
       "Rieger Module": "Rieger 模块",
       "Rieger-C2 Module": "Rieger-C2 模块",
       "Rieger-C3 Module": "Rieger-C3 模块",
-      "Rime Module": "Rime 模块",
+      "Rime Module": "雾凇采矿模组",
+      "Roughneck": "硬汉",
+      "Rumford": "拉姆福德油罐",
       "Rush": "突进",
+      "STOP": "止盾",
       "SW16BR1 \"Buzzsaw\"": "SW16BR1 圆锯",
       "SW16BR2 \"Sawbuck\"": "SW16BR2 锯木架",
       "SW16BR3 \"Shredder\"": "SW16BR3 碎纸机",
@@ -23877,8 +24047,16 @@
       "Scimitar V": "弯刀 V",
       "Scimitar V-G": "弯刀 V-G",
       "Scorpion GT-215": "蝎子 GT215",
+      "SecureHyde": "安全隐蔽",
+      "SecureScreen": "安全屏障",
+      "SecureShield": "安全护盾",
+      "Sedulity": "勤勉",
       "Seeker IX": "搜索者 IX",
       "Seeker IX-G": "搜索者 IX-G",
+      "Serac": "冰塔",
+      "Sheut": "影壳",
+      "Shimmer": "微光",
+      "Shroud": "罩幕",
       "Singe-1": "焦糊-1",
       "Singe-2": "焦糊-2",
       "Singe-3": "焦糊-3",
@@ -23887,31 +24065,60 @@
       "Sledge I Mass Driver": "大锤 I",
       "Sledge II Mass Driver": "大锤 II",
       "Sledge III Mass Driver": "大锤 III",
+      "Slipstream": "滑流",
+      "SmartGen": "智能发生器",
+      "SnowBlind": "雪盲",
+      "Snowfall": "降雪",
+      "Snowpack": "积雪",
+      "Sojourn": "旅居",
+      "SolarFlare": "日耀",
+      "SonicLite": "声光",
       "Spark I": "火花 I",
       "Spark I-G": "火花 I-G",
       "SparkFire": "火花",
+      "SparkJet": "火花喷流",
+      "SparkJet Pro": "火花喷流 Pro",
       "Spectre": "幽魂",
       "Spicule": "刺针",
       "Stalker V": "潜猎者 V",
       "Stalker V-G": "潜猎者 V-G",
       "Stampede Module": "Stampede 模块",
+      "StarBurn": "星焰",
+      "StarHeart": "星心",
+      "Steadfast": "坚定",
+      "Stellate": "星芒",
+      "Steward": "管家",
       "Strife Mass Driver": "纷争",
       "StrikeForce II": "打击力量 II",
       "StrikeForce II-G": "打击力量 II-G",
+      "Stronghold": "据点",
       "Suckerpunch": "偷袭",
       "Suckerpunch-L": "偷袭L",
       "Suckerpunch-XL": "偷袭XL",
+      "Sukoran": "苏科兰",
+      "Suldrath": "苏德拉斯",
       "SunFire": "阳炎",
+      "SunFlare": "日焰",
+      "SuperDrive": "超级驱动",
+      "SureStop": "稳停",
       "Surge Module": "Surge 模块",
+      "TS-2": "TS-2 量子",
+      "Taiga": "泰加",
       "Tarantula GT-870 Mk 1": "狼蛛-1GT-870Mk1",
       "Tarantula GT-870 Mk 2": "狼蛛-2GT-870Mk2",
       "Tarantula GT-870 Mk 3": "狼蛛-3GT-870Mk3",
+      "Targa": "塔加",
       "TaskForce I": "特遣队 I",
       "TaskForce I-G": "特遣队 I-G",
+      "Tempest": "暴风",
       "Tempest II": "暴风 II",
       "Tempest II-G": "暴风 II-G",
+      "Tepilo": "特皮洛",
+      "ThermalCore": "热核",
+      "Thermax": "热限",
       "Thunderbolt III": "雷霆 III",
       "Thunderbolt III-G": "雷霆 III-G",
+      "TigerLilly": "虎百合",
       "Tigerstrike T-19P": "猛虎之袭T-19P",
       "Torpid Module": "Torpid 模块",
       "Torrent": "激流",
@@ -23920,29 +24127,54 @@
       "Torrent Module": "Torrent 模块",
       "Tractor Turret": "牵引炮塔",
       "Trawler Scraper Module": "Trawler 刮削模块",
+      "Trenta": "特伦塔",
+      "Trommel": "滚筒",
+      "Tundra": "苔原",
+      "TurboDrive": "涡轮驱动",
       "Tyche": "命运女神",
       "Typhoon IX": "台风 IX",
       "Typhoon IX-G": "台风 IX-G",
+      "Ultra-Flow": "超流",
+      "UltraFlux": "超通量",
+      "Umbra": "暗影",
+      "VK-00": "VK-00 量子",
       "VT-T10 \"Veritas\"": "VT-T10 真理",
       "Valkyrie V": "女武神 V",
       "Valkyrie V-G": "女武神 V-G",
       "Vanquisher X-CS": "征服者 X-CS",
       "Vanquisher X-EM": "征服者 X-EM",
       "Vanquisher X-IR": "征服者 X-IR",
+      "VaporBlock": "蒸汽阻隔",
       "Vaux Module": "Vaux 模块",
       "Vaux-C2 Module": "Vaux-C2 模块",
       "Vaux-C3 Module": "Vaux-C3 模块",
+      "Veil": "面纱",
+      "Vesta": "维斯塔",
       "Viper III": "毒蛇 III",
       "Viper III-G": "毒蛇 III-G",
+      "Vortex": "涡流",
       "Voyage": "航程",
+      "Vulcan": "伏尔甘",
+      "WEB": "网盾",
       "Wanderer": "漫游者",
+      "Ward": "守卫",
       "Wayfare": "旋行",
+      "WhiteOut": "白幕",
+      "WhiteRose": "白玫瑰",
+      "Winter-Star": "冬星",
+      "Winter-Star EX": "冬星 EX",
+      "Winter-Star SL": "冬星 SL",
+      "Winter-Star XL": "冬星 XL",
+      "XL-1": "XL-1 量子",
       "XTR Module": "XTR 模块",
       "XTR-L Module": "XTR-L 模块",
       "XTR-XL Module": "XTR-XL 模块",
+      "Yaluk": "亚鲁克",
       "Yeager": "猎人",
       "YellowJacket GT-210": "黄蜂 GT-210",
-      "Zephyr": "和风"
+      "ZapJet": "电击喷流",
+      "Zephyr": "和风",
+      "ZeroRush": "零点疾冲"
     },
     "n55": {
       "'WAR'": "战争",
@@ -24244,6 +24476,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24254,6 +24487,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24264,6 +24498,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24290,6 +24525,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24300,6 +24536,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24310,6 +24547,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24320,6 +24558,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24330,6 +24569,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -24340,6 +24580,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -25158,10 +25399,19 @@
       ],
       "zh": "ADP-mk4 腿甲 林地版"
     },
+    "ARC-L1 Wide Forest Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "弧L1 广袤森林站"
+    },
     "ARMOR": {
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "装甲盾"
@@ -25208,6 +25458,14 @@
       ],
       "zh": "ATVS 畸变速射炮 (S2)"
     },
+    "Aaron Halo": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "亚伦环"
+    },
     "Abetti": {
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
@@ -25230,6 +25488,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -25257,6 +25516,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -25265,11 +25525,12 @@
     },
     "Agricium": {
       "domain": "material",
-      "source": "flowcld-local-polish",
+      "source": "mining-signal-calibration",
       "sources": [
-        "flowcld-local-polish"
+        "flowcld-local-polish",
+        "mining-signal-calibration"
       ],
-      "zh": "艾格瑞金属"
+      "zh": "艾瑞格金属"
     },
     "Agrippa": {
       "domain": "blueprint-name",
@@ -25303,6 +25564,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -25313,6 +25575,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -25757,6 +26020,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -25767,6 +26031,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -26145,6 +26410,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -26600,6 +26866,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -26806,6 +27073,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -26872,6 +27140,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27130,6 +27399,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27451,6 +27721,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27461,6 +27732,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27544,6 +27816,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27568,11 +27841,12 @@
     },
     "Bexalite": {
       "domain": "material",
-      "source": "flowcld-local-polish",
+      "source": "mining-signal-calibration",
       "sources": [
-        "flowcld-local-polish"
+        "flowcld-local-polish",
+        "mining-signal-calibration"
       ],
-      "zh": "贝克斯莱特"
+      "zh": "贝沙电气石"
     },
     "BlackFire Racing Flight Suit": {
       "domain": "blueprint-name",
@@ -27604,6 +27878,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27614,11 +27889,20 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
       ],
       "zh": "暴雪 (S3)"
+    },
+    "Bloom": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "盛放星"
     },
     "BlueFlame Racing Flight Suit": {
       "domain": "blueprint-name",
@@ -27642,6 +27926,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27652,6 +27937,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27662,6 +27948,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27672,22 +27959,25 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "鲣鱼油罐"
     },
     "Borase": {
       "domain": "material",
-      "source": "flowcld-local-polish",
+      "source": "mining-signal-calibration",
       "sources": [
-        "flowcld-local-polish"
+        "flowcld-local-polish",
+        "mining-signal-calibration"
       ],
-      "zh": "硼砂"
+      "zh": "波射矿石"
     },
     "Boreal": {
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27706,6 +27996,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27725,6 +28016,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -27770,6 +28062,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28171,9 +28464,26 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "CR-60 油罐"
+    },
+    "CRU-L1 Ambitious Dream Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "十L1 雄心伟梦站"
+    },
+    "CRU-L4 Shallow Fields Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "十L4 轻浅田野站"
     },
     "CSP-68H Backpack": {
       "domain": "blueprint-name",
@@ -28359,11 +28669,12 @@
     },
     "Carinite": {
       "domain": "material",
-      "source": "flowcld-local-polish",
+      "source": "mining-signal-calibration",
       "sources": [
-        "flowcld-local-polish"
+        "flowcld-local-polish",
+        "mining-signal-calibration"
       ],
-      "zh": "科力晶"
+      "zh": "肯瑞特矿石"
     },
     "Carnifex Armor Core": {
       "domain": "blueprint-name",
@@ -28446,6 +28757,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28464,6 +28776,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28474,6 +28787,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "bot-ship-name",
         "citizen-chinese-polish",
@@ -28485,6 +28799,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28504,6 +28819,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28612,6 +28928,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28622,6 +28939,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28720,6 +29038,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28792,6 +29111,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28802,6 +29122,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -28903,6 +29224,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29149,6 +29471,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29177,6 +29500,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29187,6 +29511,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29197,6 +29522,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29207,6 +29533,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29479,6 +29806,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "破晓"
@@ -29891,6 +30219,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -29909,6 +30238,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30071,6 +30401,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30207,6 +30538,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30217,6 +30549,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30255,6 +30588,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30265,6 +30599,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30275,6 +30610,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30411,6 +30747,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30504,6 +30841,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "bot-ship-name",
         "citizen-chinese-polish",
@@ -30515,6 +30853,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30534,6 +30873,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30560,6 +30900,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30570,6 +30911,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "耐力"
@@ -30615,6 +30957,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30625,6 +30968,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30896,6 +31240,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30906,6 +31251,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30916,6 +31262,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -30971,6 +31318,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31051,6 +31399,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31069,6 +31418,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31089,6 +31439,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31151,6 +31502,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31188,6 +31540,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31309,6 +31662,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31329,6 +31683,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31339,6 +31694,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31349,6 +31705,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31359,6 +31716,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31369,6 +31727,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31379,6 +31738,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31405,6 +31765,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31415,6 +31776,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31425,6 +31787,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31435,6 +31798,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31445,6 +31809,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31482,6 +31847,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31772,6 +32138,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "GSX-EX 油罐"
@@ -31780,6 +32147,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "GSX-HP 油罐"
@@ -31788,6 +32156,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "GSX-RF 油罐"
@@ -31796,6 +32165,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31831,6 +32201,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31922,6 +32293,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -31932,6 +32304,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "巨罐"
@@ -32200,6 +32573,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32226,6 +32600,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32236,6 +32611,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32246,6 +32622,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32256,6 +32633,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32346,6 +32724,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32380,6 +32759,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "bot-ship-name",
         "citizen-chinese-polish",
@@ -32407,6 +32787,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32417,6 +32798,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32431,6 +32813,30 @@
       ],
       "zh": "统治-2 能量霰弹炮 (S2 赫斯顿动力)"
     },
+    "HUR-L1 Green Glade Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "赫L1 绿色林地"
+    },
+    "HUR-L2 Faithful Dream Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "赫L2 坚贞梦想站"
+    },
+    "HUR-L4 Melodic Fields Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "赫L4 旋律领域站"
+    },
     "Hadanite": {
       "domain": "material",
       "source": "flowcld-local-polish",
@@ -32443,6 +32849,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32461,6 +32868,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish"
       ],
@@ -32520,6 +32928,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32530,6 +32939,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "散热器"
@@ -32642,6 +33052,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32759,6 +33170,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32769,6 +33181,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32787,6 +33200,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32797,6 +33211,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32817,6 +33232,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32827,6 +33243,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32837,6 +33254,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "冰箱"
@@ -32845,6 +33263,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32855,6 +33274,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -32865,6 +33285,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "伊德里斯电源"
@@ -33514,6 +33935,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33524,6 +33946,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33534,6 +33957,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33544,6 +33968,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33578,6 +34003,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33588,6 +34014,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33598,6 +34025,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "JS-500 电源"
@@ -33606,6 +34034,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33632,6 +34061,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33714,6 +34144,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -33803,6 +34234,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34057,6 +34489,14 @@
       ],
       "zh": "莱文 基底服（翻新）"
     },
+    "Levski": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "列夫斯基"
+    },
     "Liberator": {
       "domain": "ship-name",
       "source": "bot-ship-name",
@@ -34077,6 +34517,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34229,6 +34670,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34239,6 +34681,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34276,6 +34719,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34516,6 +34960,22 @@
       ],
       "zh": "MDC"
     },
+    "MIC-L2 Long Forest Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "微L2 长林站"
+    },
+    "MIC-L5 Modern Icarus Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "微L5 现代伊卡洛斯站"
+    },
     "MISC Ore Pod": {
       "domain": "component:multi-tool",
       "source": "bot-component-matrix-erkul",
@@ -34650,6 +35110,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34668,6 +35129,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34763,6 +35225,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -34783,12 +35246,13 @@
       "sources": [
         "bot-ship-name"
       ],
-      "zh": "行商"
+      "zh": "巴商"
     },
     "Mercury": {
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "bot-ship-name",
         "citizen-chinese-polish",
@@ -34879,6 +35343,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -35593,6 +36058,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "内梅克油罐"
@@ -35601,6 +36067,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -35611,6 +36078,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "夜幕"
@@ -35627,6 +36095,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish"
       ],
@@ -36665,6 +37134,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -36925,11 +37395,12 @@
     },
     "Ouratite": {
       "domain": "material",
-      "source": "flowcld-local-polish",
+      "source": "mining-signal-calibration",
       "sources": [
-        "flowcld-local-polish"
+        "flowcld-local-polish",
+        "mining-signal-calibration"
       ],
-      "zh": "欧拉特烃"
+      "zh": "欧特拉烃"
     },
     "Outlaw Legacy Armor Medium Core": {
       "domain": "blueprint-name",
@@ -36943,6 +37414,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -37772,6 +38244,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38005,6 +38478,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38060,6 +38534,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38122,6 +38597,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38216,6 +38692,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38244,6 +38721,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38288,11 +38766,12 @@
     },
     "Pressurized Ice": {
       "domain": "material",
-      "source": "flowcld-local-polish",
+      "source": "mining-signal-calibration",
       "sources": [
-        "flowcld-local-polish"
+        "flowcld-local-polish",
+        "mining-signal-calibration"
       ],
-      "zh": "高压冰"
+      "zh": "压缩冰"
     },
     "Prevenir": {
       "domain": "blueprint-name",
@@ -38459,6 +38938,14 @@
       ],
       "zh": "粉碎者 轻机枪弹匣（120 发） (实弹)"
     },
+    "Pyro IV": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "派罗4"
+    },
     "PyroBurst": {
       "domain": "component-name",
       "source": "bot-n55",
@@ -38477,10 +38964,19 @@
       ],
       "zh": "爆炎 霰弹炮 (S3)"
     },
+    "QV Breaker Station": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "QV碎岩站"
+    },
     "QuadraCell": {
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38491,6 +38987,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38501,6 +38998,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38616,6 +39114,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38679,6 +39178,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish"
       ],
@@ -38704,6 +39204,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38714,6 +39215,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38732,6 +39234,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38742,6 +39245,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38784,6 +39288,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38828,6 +39333,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -38945,6 +39451,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "回收者电源"
@@ -38977,6 +39484,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39004,6 +39512,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39155,6 +39664,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39165,6 +39675,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "拉姆福德油罐"
@@ -39359,6 +39870,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39700,6 +40212,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39710,6 +40223,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39720,6 +40234,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39730,6 +40245,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39765,6 +40281,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39783,6 +40300,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39809,6 +40327,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -39843,6 +40362,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40022,6 +40542,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40032,6 +40553,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40050,6 +40572,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40060,6 +40583,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40070,6 +40594,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40089,6 +40614,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40099,6 +40625,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40109,6 +40636,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40145,6 +40673,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40155,6 +40684,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40226,6 +40756,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40236,6 +40767,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40286,6 +40818,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40304,6 +40837,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40314,6 +40848,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40642,6 +41177,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40714,6 +41250,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "苏科兰"
@@ -40722,6 +41259,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "苏德拉斯"
@@ -40740,6 +41278,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40750,6 +41289,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40824,6 +41364,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40895,6 +41436,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -40905,6 +41447,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41092,6 +41635,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41126,6 +41670,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41152,6 +41697,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41488,6 +42034,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41498,6 +42045,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41558,6 +42106,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41686,6 +42235,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -41714,6 +42264,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42242,6 +42793,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42260,6 +42812,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42275,6 +42828,14 @@
         "flowcld"
       ],
       "zh": "命运女神 (S3)"
+    },
+    "Tyilui": {
+      "domain": "ship-name",
+      "source": "bot-ship-name",
+      "sources": [
+        "bot-ship-name"
+      ],
+      "zh": "泰鲁伊"
     },
     "Typhoon IX": {
       "domain": "component:missile",
@@ -42304,6 +42865,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42314,6 +42876,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42324,6 +42887,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42410,6 +42974,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42524,6 +43089,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42558,6 +43124,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42641,6 +43208,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42741,6 +43309,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42761,6 +43330,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "bot-ship-name",
         "citizen-chinese-polish",
@@ -42788,6 +43358,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42808,6 +43379,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42895,6 +43467,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42905,6 +43478,7 @@
       "domain": "component-name",
       "source": "bot-local",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local"
       ],
       "zh": "白玫瑰"
@@ -42929,6 +43503,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42939,6 +43514,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42949,6 +43525,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -42959,6 +43536,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -43001,6 +43579,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -43053,6 +43632,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -43068,6 +43648,14 @@
         "flowcld"
       ],
       "zh": "猎人 (S2)"
+    },
+    "Yela Ring": {
+      "domain": "mining-location",
+      "source": "mining-signal-calibration",
+      "sources": [
+        "mining-signal-calibration"
+      ],
+      "zh": "耶拉环带"
     },
     "YellowJacket GT-210": {
       "domain": "component-name",
@@ -43144,6 +43732,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -43218,6 +43807,7 @@
       "domain": "blueprint-name",
       "source": "citizen-chinese-polish",
       "sources": [
+        "bot-component-matrix-erkul",
         "bot-local",
         "citizen-chinese-polish",
         "flowcld"
@@ -55585,7 +56175,7 @@
       "zh": "武器"
     }
   },
-  "generatedAt": "2026-06-15T05:59:39.868534+00:00",
+  "generatedAt": "2026-06-21T05:08:07.445778+00:00",
   "manufacturers": {
     "Aegis Dynamics": "圣盾动力",
     "Anvil Aerospace": "铁砧航天",
@@ -55619,9 +56209,9 @@
   },
   "materials": {
     "Agricium": {
-      "label": "艾格瑞金属 (Agricium)",
+      "label": "艾瑞格金属 (Agricium)",
       "source": "flowcld-local-polish",
-      "zh": "艾格瑞金属"
+      "zh": "艾瑞格金属"
     },
     "Aluminum": {
       "label": "铝 (Aluminum)",
@@ -55649,19 +56239,19 @@
       "zh": "绿柱石"
     },
     "Bexalite": {
-      "label": "贝克斯莱特 (Bexalite)",
+      "label": "贝沙电气石 (Bexalite)",
       "source": "flowcld-local-polish",
-      "zh": "贝克斯莱特"
+      "zh": "贝沙电气石"
     },
     "Borase": {
-      "label": "硼砂 (Borase)",
+      "label": "波射矿石 (Borase)",
       "source": "flowcld-local-polish",
-      "zh": "硼砂"
+      "zh": "波射矿石"
     },
     "Carinite": {
-      "label": "科力晶 (Carinite)",
+      "label": "肯瑞特矿石 (Carinite)",
       "source": "flowcld-local-polish",
-      "zh": "科力晶"
+      "zh": "肯瑞特矿石"
     },
     "Copper": {
       "label": "铜 (Copper)",
@@ -55739,14 +56329,14 @@
       "zh": "林登金"
     },
     "Ouratite": {
-      "label": "欧拉特烃 (Ouratite)",
+      "label": "欧特拉烃 (Ouratite)",
       "source": "flowcld-local-polish",
-      "zh": "欧拉特烃"
+      "zh": "欧特拉烃"
     },
     "Pressurized Ice": {
-      "label": "高压冰 (Pressurized Ice)",
+      "label": "压缩冰 (Pressurized Ice)",
       "source": "flowcld-local-polish",
-      "zh": "高压冰"
+      "zh": "压缩冰"
     },
     "Quantainium": {
       "label": "量子矿 (Quantainium)",
@@ -55823,6 +56413,379 @@
       "source": "flowcld-local-polish",
       "zh": "钨"
     }
+  },
+  "miningSignals": {
+    "localizationReference": "user-supplied mining location screenshot",
+    "locationLabels": {
+      "ARC-L1 Wide Forest Station": {
+        "en": "ARC-L1 Wide Forest Station",
+        "zh": "弧L1 广袤森林站"
+      },
+      "Aaron Halo": {
+        "en": "Aaron Halo",
+        "zh": "亚伦环"
+      },
+      "Bloom": {
+        "en": "Bloom",
+        "zh": "盛放星"
+      },
+      "CRU-L1 Ambitious Dream Station": {
+        "en": "CRU-L1 Ambitious Dream Station",
+        "zh": "十L1 雄心伟梦站"
+      },
+      "CRU-L4 Shallow Fields Station": {
+        "en": "CRU-L4 Shallow Fields Station",
+        "zh": "十L4 轻浅田野站"
+      },
+      "HUR-L1 Green Glade Station": {
+        "en": "HUR-L1 Green Glade Station",
+        "zh": "赫L1 绿色林地"
+      },
+      "HUR-L2 Faithful Dream Station": {
+        "en": "HUR-L2 Faithful Dream Station",
+        "zh": "赫L2 坚贞梦想站"
+      },
+      "HUR-L4 Melodic Fields Station": {
+        "en": "HUR-L4 Melodic Fields Station",
+        "zh": "赫L4 旋律领域站"
+      },
+      "Levski": {
+        "en": "Levski",
+        "zh": "列夫斯基"
+      },
+      "MIC-L2 Long Forest Station": {
+        "en": "MIC-L2 Long Forest Station",
+        "zh": "微L2 长林站"
+      },
+      "MIC-L5 Modern Icarus Station": {
+        "en": "MIC-L5 Modern Icarus Station",
+        "zh": "微L5 现代伊卡洛斯站"
+      },
+      "Pyro IV": {
+        "en": "Pyro IV",
+        "zh": "派罗4"
+      },
+      "QV Breaker Station": {
+        "en": "QV Breaker Station",
+        "zh": "QV碎岩站"
+      },
+      "Yela Ring": {
+        "en": "Yela Ring",
+        "zh": "耶拉环带"
+      }
+    },
+    "materialLabels": {
+      "Agricium": "艾瑞格金属",
+      "Bexalite": "贝沙电气石",
+      "Borase": "波射矿石",
+      "Carinite": "肯瑞特矿石",
+      "Ouratite": "欧特拉烃",
+      "Pressurized Ice": "压缩冰"
+    },
+    "name": "mineral-signal-calibration",
+    "schemaVersion": 2,
+    "signals": {
+      "Agricium": {
+        "rarity": "Uncommon",
+        "values": [
+          3885,
+          7770,
+          11655,
+          15540,
+          19425,
+          23310
+        ]
+      },
+      "Aluminum": {
+        "rarity": "Common",
+        "values": [
+          4285,
+          8570,
+          12855,
+          17140,
+          21425,
+          25710
+        ]
+      },
+      "Aslarite": {
+        "rarity": "Uncommon",
+        "values": [
+          3840,
+          7680,
+          11520,
+          15360,
+          19200,
+          23040
+        ]
+      },
+      "Beryl": {
+        "rarity": "Rare",
+        "values": [
+          3540,
+          7080,
+          10620,
+          14160,
+          17700,
+          21240
+        ]
+      },
+      "Bexalite": {
+        "rarity": "Rare",
+        "values": [
+          3600,
+          7200,
+          10800,
+          14400,
+          18000,
+          21600
+        ]
+      },
+      "Borase": {
+        "rarity": "Rare",
+        "values": [
+          3570,
+          7140,
+          10710,
+          14280,
+          17850,
+          21420
+        ]
+      },
+      "Copper": {
+        "rarity": "Common",
+        "values": [
+          4240,
+          8480,
+          12720,
+          16960,
+          21200,
+          25440
+        ]
+      },
+      "Corundum": {
+        "rarity": "Common",
+        "values": [
+          4225,
+          8450,
+          12675,
+          16900,
+          21125,
+          25350
+        ]
+      },
+      "Gold": {
+        "rarity": "Rare",
+        "values": [
+          3585,
+          7170,
+          10755,
+          14340,
+          17925,
+          21510
+        ]
+      },
+      "Hephaestanite": {
+        "rarity": "Common",
+        "values": [
+          4180,
+          8360,
+          12540,
+          16720,
+          20900,
+          25080
+        ]
+      },
+      "Iron": {
+        "rarity": "Common",
+        "values": [
+          4270,
+          8540,
+          12810,
+          17080,
+          21350,
+          25620
+        ]
+      },
+      "Laranite": {
+        "rarity": "Uncommon",
+        "values": [
+          3825,
+          7650,
+          11475,
+          15300,
+          19125,
+          22950
+        ]
+      },
+      "Lindinium": {
+        "rarity": "Epic",
+        "values": [
+          3400,
+          6800,
+          10200,
+          13600,
+          17000,
+          20400
+        ]
+      },
+      "Ouratite": {
+        "rarity": "Epic",
+        "values": [
+          3370,
+          6740,
+          10110,
+          13480,
+          16850,
+          20220
+        ]
+      },
+      "Pressurized Ice": {
+        "rarity": "Common",
+        "values": [
+          4300,
+          8600,
+          12900,
+          17200,
+          21500,
+          25800
+        ]
+      },
+      "Quantainium": {
+        "rarity": "Legendary",
+        "values": [
+          3170,
+          6340,
+          9510,
+          12680,
+          15850,
+          19020
+        ]
+      },
+      "Quantanium": {
+        "rarity": "Legendary",
+        "values": [
+          3170,
+          6340,
+          9510,
+          12680,
+          15850,
+          19020
+        ]
+      },
+      "Quartz": {
+        "rarity": "Common",
+        "values": [
+          4210,
+          8420,
+          12630,
+          16840,
+          21050,
+          25260
+        ]
+      },
+      "Riccite": {
+        "rarity": "Epic",
+        "values": [
+          3385,
+          6770,
+          10155,
+          13540,
+          16925,
+          20310
+        ]
+      },
+      "Savrilium": {
+        "rarity": "Legendary",
+        "values": [
+          3200,
+          6400,
+          9600,
+          12800,
+          16000,
+          19200
+        ]
+      },
+      "Silicon": {
+        "rarity": "Common",
+        "values": [
+          4255,
+          8510,
+          12765,
+          17020,
+          21275,
+          25530
+        ]
+      },
+      "Stileron": {
+        "rarity": "Legendary",
+        "values": [
+          3185,
+          6370,
+          9555,
+          12740,
+          15925,
+          19110
+        ]
+      },
+      "Taranite": {
+        "rarity": "Rare",
+        "values": [
+          3555,
+          7110,
+          10665,
+          14220,
+          17775,
+          21330
+        ]
+      },
+      "Tin": {
+        "rarity": "Common",
+        "values": [
+          4195,
+          8390,
+          12585,
+          16780,
+          20975,
+          25170
+        ]
+      },
+      "Titanium": {
+        "rarity": "Uncommon",
+        "values": [
+          3855,
+          7710,
+          11565,
+          15420,
+          19275,
+          23130
+        ]
+      },
+      "Torite": {
+        "rarity": "Uncommon",
+        "values": [
+          3900,
+          7800,
+          11700,
+          15600,
+          19500,
+          23400
+        ]
+      },
+      "Tungsten": {
+        "rarity": "Uncommon",
+        "values": [
+          3870,
+          7740,
+          11610,
+          15480,
+          19350,
+          23220
+        ]
+      }
+    },
+    "source": "Star Citizen Mining Signals spreadsheet",
+    "sourceUrl": "https://docs.google.com/spreadsheets/d/1n4qqOfwbtsOubUTMWJ532pBGoFbx567S/edit?usp=sharing&ouid=105665929212275882883&rtpof=true&sd=true",
+    "updatedAt": "2026-06-21"
   },
   "missionTypes": {
     "Bounty Hunter": "赏金猎人",
@@ -55996,7 +56959,7 @@
     "MPUV Tractor": "MPUV 牵引",
     "MTC": "MTC",
     "Mantis": "螳螂",
-    "Merchantman": "行商",
+    "Merchantman": "巴商",
     "Mercury": "墨丘利 星际快运船",
     "Meteor": "流星",
     "Mule": "骡子",
@@ -56074,6 +57037,7 @@
     "Terrapin": "水龟",
     "Terrapin Medic": "水龟 医疗",
     "Tiburon": "狂鲨",
+    "Tyilui": "泰鲁伊",
     "UTV": "UTV",
     "Ursa": "熊",
     "Ursa Fortuna": "熊 幸运版",
@@ -56101,20 +57065,22 @@
     "botN55": "/Users/bindox/Documents/Codex/Projects/starcitizen-crawler/work/sc-spectrum-qq-bot-handoff/sc-spectrum-qq-bot/assets/component-name-n55.json",
     "botShipNames": "/Users/bindox/Documents/Codex/Projects/starcitizen-crawler/work/sc-spectrum-qq-bot-handoff/sc-spectrum-qq-bot/assets/ship-name-zh.json",
     "flowcld": "https://flowcld.xyz/tools/blueprint",
-    "flowcldCache": "/Users/bindox/Documents/Codex/Projects/starcitizen-crawler/blueprint-site/data/flowcld-blueprint-calibration.json"
+    "flowcldCache": "/Users/bindox/Documents/Codex/Projects/starcitizen-crawler/blueprint-site/data/flowcld-blueprint-calibration.json",
+    "miningSignals": "/Users/bindox/Documents/Codex/Projects/starcitizen-crawler/blueprint-site/data/mineral-signal-calibration.json"
   },
   "summary": {
-    "entryCount": 3713,
+    "entryCount": 3728,
     "flowcldBlueprintCount": 1537,
     "localComponentCount": 239,
     "manufacturerCount": 29,
     "materialCount": 41,
-    "matrixComponentCount": 222,
+    "matrixComponentCount": 454,
+    "miningSignalMaterialCount": 27,
     "missionTypeCount": 13,
     "n55ComponentCount": 114,
     "polishedBlueprintCount": 1553,
-    "shipNameCount": 250,
-    "termCount": 3713
+    "shipNameCount": 251,
+    "termCount": 3728
   },
   "taxonomy": {
     "slotTerms": {
@@ -56345,19 +57311,21 @@
     "ADP-mk4 Core Woodland": "ADP-mk4 胸甲 林地版",
     "ADP-mk4 Helmet Woodland": "ADP-mk4 头盔 林地版",
     "ADP-mk4 Legs Woodland": "ADP-mk4 腿甲 林地版",
+    "ARC-L1 Wide Forest Station": "弧L1 广袤森林站",
     "ARMOR": "装甲盾",
     "ATLS": "ATLS",
     "ATLS GEO": "ATLS GEO",
     "ATLS GEO Module": "ATLS GEO 采矿模块",
     "ATVS": "ATVS",
     "ATVS Repeater": "ATVS 畸变速射炮 (S2)",
+    "Aaron Halo": "亚伦环",
     "Abetti": "阿贝提 (S1)",
     "Abrade Scraper Module": "Abrade 刮削模块",
     "AbsoluteZero": "绝对零度 (S2)",
     "Absolution": "赦免",
     "Aegis Dynamics": "圣盾动力",
     "Agni": "阿格尼 (S3)",
-    "Agricium": "艾格瑞金属",
+    "Agricium": "艾瑞格金属",
     "Agrippa": "阿格里帕 (S2)",
     "Agure": "阿古雷 (S0)",
     "Aither": "以太 (S2)",
@@ -56617,19 +57585,20 @@
     "Berian": "布内恩 (S1)",
     "Beryl": "绿柱石",
     "Bespoke": "Bespoke",
-    "Bexalite": "贝克斯莱特",
+    "Bexalite": "贝沙电气石",
     "BlackFire Racing Flight Suit": "黑火 竞速飞行服",
     "BlackFire Racing Helmet": "黑火 竞速头盔",
     "Blade": "刀锋",
     "BlastChill": "爆寒 (S1)",
     "Blizzard": "暴雪 (S3)",
+    "Bloom": "盛放星",
     "BlueFlame Racing Flight Suit": "蓝焰 竞速飞行服",
     "BlueFlame Racing Helmet": "蓝焰 竞速头盔",
     "Bolide": "火流星 (S2)",
     "Bolon": "伯龙 (S2)",
     "Bolt": "雷电 (S2)",
     "Bonito": "鲣鱼油罐",
-    "Borase": "硼砂",
+    "Borase": "波射矿石",
     "Boreal": "北风 (S2)",
     "Bounty Hunter": "赏金猎人",
     "Bracer": "寒索 (S1)",
@@ -56685,6 +57654,8 @@
     "CF-667 Mammoth": "CF-667 猛犸",
     "CF-667 Mammoth Repeater": "CF-667 猛犸 能量速射炮 (S6)",
     "CR-60": "CR-60 油罐",
+    "CRU-L1 Ambitious Dream Station": "十L1 雄心伟梦站",
+    "CRU-L4 Shallow Fields Station": "十L4 轻浅田野站",
     "CSP-68H Backpack": "CSP-68H 背包",
     "CSP-68L Backpack": "CSP-68L 背包",
     "CSP-68M Backpack": "CSP-68M 背包",
@@ -56706,7 +57677,7 @@
     "Cannon": "加农炮",
     "Capacitor": "电容器",
     "Capsulo": "卡普苏洛 (S3)",
-    "Carinite": "科力晶",
+    "Carinite": "肯瑞特矿石",
     "Carnifex Armor Core": "刽子手 胸甲",
     "Carnifex Armor Legs": "刽子手 腿甲",
     "Carrack": "克拉克",
@@ -57165,6 +58136,9 @@
     "HAVEN": "港湾 (S3)",
     "HEX": "六角 (S1)",
     "HRST_LaserScatterGun_S2": "统治-2 能量霰弹炮 (S2 赫斯顿动力)",
+    "HUR-L1 Green Glade Station": "赫L1 绿色林地",
+    "HUR-L2 Faithful Dream Station": "赫L2 坚贞梦想站",
+    "HUR-L4 Melodic Fields Station": "赫L4 旋律领域站",
     "Hadanite": "哈丹水晶",
     "Haltur": "哈尔图 (S2)",
     "Hammerhead": "锤头鲨",
@@ -57349,6 +58323,7 @@
     "Legionnaire": "军团兵",
     "Lens": "镜片",
     "Levin Undersuit (Refurbished)": "莱文 基底服（翻新）",
+    "Levski": "列夫斯基",
     "Liberator": "解放者",
     "Lifeline Module": "Lifeline 模块",
     "LightBlossom": "光绽 (S1)",
@@ -57402,6 +58377,8 @@
     "M8A Cannon": "M8A 激光加农炮 (S6)",
     "M9A": "M9A",
     "MDC": "MDC",
+    "MIC-L2 Long Forest Station": "微L2 长林站",
+    "MIC-L5 Modern Icarus Station": "微L5 现代伊卡洛斯站",
     "MISC Ore Pod": "武藏矿石舱",
     "MOLE": "鼹鼠",
     "MOTH": "飞蛾",
@@ -57433,7 +58410,7 @@
     "Matrix": "矩阵",
     "MegaFlux": "巨大流量 (S3)",
     "Mercenary": "雇佣兵",
-    "Merchantman": "行商",
+    "Merchantman": "巴商",
     "Mercury": "水银 (S3)",
     "Metamaterial Test #146": "超材料测试 #146",
     "Meteor": "流星",
@@ -57675,7 +58652,7 @@
     "Origin Jumpworks": "起源跃动",
     "Orion": "猎户座",
     "Other": "其他",
-    "Ouratite": "欧拉特烃",
+    "Ouratite": "欧特拉烃",
     "Outlaw Legacy Armor Medium Core": "审讯官 胸甲 焦炎",
     "OverDrive": "过载驱动 (S1)",
     "Overlord Arms Supernova": "领主 臂甲 超新星",
@@ -57828,7 +58805,7 @@
     "Precision Parts": "精密部件",
     "Predator": "掠食者 (S2)",
     "Predator Scattergun": "捕食者 实弹霰弹炮 (S3)",
-    "Pressurized Ice": "高压冰",
+    "Pressurized Ice": "压缩冰",
     "Prevenir": "戒备 (S0)",
     "Prism \"Bonedust\" Laser Shotgun": "棱镜 激光霰弹枪 “骨粉”",
     "Prism \"Deep Sea\" Laser Shotgun": "棱镜 激光霰弹枪 “深海”",
@@ -57848,8 +58825,10 @@
     "Pulse Laser Pistol Battery (60 Cap)": "脉冲 激光手枪 电池 （60发）",
     "Pulverizer LMG": "粉碎者 轻机枪 (实弹)",
     "Pulverizer LMG Magazine (120 Cap)": "粉碎者 轻机枪弹匣（120 发） (实弹)",
+    "Pyro IV": "派罗4",
     "PyroBurst": "爆炎",
     "PyroBurst Scattergun": "爆炎 霰弹炮 (S3)",
+    "QV Breaker Station": "QV碎岩站",
     "QuadraCell": "四相电池 (S1)",
     "QuadraCell MT": "四相电池 (S2)",
     "QuadraCell MX": "四相电池 (S3)",
@@ -58281,6 +59260,7 @@
     "Tungsten": "钨",
     "TurboDrive": "涡轮驱动 (S2)",
     "Tyche": "命运女神 (S3)",
+    "Tyilui": "泰鲁伊",
     "Typhoon IX": "台风 IX",
     "Typhoon IX-G": "台风 IX-G",
     "UTV": "UTV",
@@ -58373,6 +59353,7 @@
     "Xanthule Flight Suit": "贤梭 飞行服",
     "Yaluk": "亚鲁克 (S2)",
     "Yeager": "猎人 (S2)",
+    "Yela Ring": "耶拉环带",
     "YellowJacket GT-210": "黄蜂 GT-210",
     "YellowJacket GT-210 Gatling": "黄蜂 GT-210 实弹加特林 (S1 加仑森战术系统)",
     "Yeng'tu": "炎图",

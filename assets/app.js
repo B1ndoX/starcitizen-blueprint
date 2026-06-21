@@ -113,15 +113,15 @@ const flowcldMaterialOrder = [
 ];
 
 const flowcldMaterialLabels = {
-  Agricium: "艾格瑞金属",
+  Agricium: "艾瑞格金属",
   Aluminum: "铝",
   Aphorite: "紫钠水晶",
   Aslarite: "阿斯莱晶体",
   Beradom: "冰蓝珀",
   Beryl: "绿柱石",
-  Bexalite: "贝克斯莱特",
-  Borase: "硼砂",
-  Carinite: "科力晶",
+  Bexalite: "贝沙电气石",
+  Borase: "波射矿石",
+  Carinite: "肯瑞特矿石",
   Copper: "铜",
   Corundum: "刚玉",
   Dolivine: "暗橄榄石",
@@ -134,8 +134,8 @@ const flowcldMaterialLabels = {
   Janalite: "加纳石",
   Laranite: "砬兰石",
   Lindinium: "林登金",
-  Ouratite: "欧拉特烃",
-  "Pressurized Ice": "高压冰",
+  Ouratite: "欧特拉烃",
+  "Pressurized Ice": "压缩冰",
   Quartz: "石英",
   Quantainium: "量子矿",
   Quantanium: "量子矿",
@@ -350,6 +350,29 @@ function renderMineralLocationGroups(info) {
     .join("");
 }
 
+function renderMineralSignals(info) {
+  const signal = info?.signal || {};
+  const values = signal.values || [];
+  if (!values.length) return "";
+  return `
+    <section class="mineral-signal-section">
+      <h4>信号值</h4>
+      <div class="mineral-signal-list">
+        ${values
+          .map(
+            (value, index) => `
+              <div class="mineral-signal-item">
+                <strong>${index + 1} 块</strong>
+                <span><b>${escapeHtml(formatNumber(value))}</b></span>
+              </div>
+            `,
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderMineralInfo(name) {
   const info = mineralLocationInfo(name);
   const displayName = materialDisplayLabel(name, flowcldMaterialLabels[name]);
@@ -376,6 +399,7 @@ function renderMineralInfo(name) {
           <button type="button" class="mineral-close" data-close-mineral aria-label="关闭矿点详情">×</button>
         </header>
         <div class="mineral-card-body">
+          ${renderMineralSignals(info)}
           ${renderMineralLocationGroups(info)}
         </div>
         <footer class="mineral-source">

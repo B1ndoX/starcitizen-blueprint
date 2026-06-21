@@ -157,6 +157,25 @@ def build_blueprint_maps(
     }
 
 
+def load_mining_signal_calibration(entries: dict[str, dict[str, Any]], signal_path: Path) -> dict[str, Any]:
+    calibration = load_json(signal_path, {})
+    if not isinstance(calibration, dict):
+        return {}
+
+    for key, value in (calibration.get("materialLabels") or {}).items():
+        add_entry(entries, key, value, "mining-signal-calibration", "material", 105)
+
+    for value in (calibration.get("locationLabels") or {}).values():
+        if not isinstance(value, dict):
+            continue
+        english = str(value.get("en") or "").strip()
+        chinese = str(value.get("zh") or "").strip()
+        if english and chinese:
+            add_entry(entries, english, chinese, "mining-signal-calibration", "mining-location", 90)
+
+    return calibration
+
+
 def strip_priority(entries: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {
         key: {field: value for field, value in entry.items() if field != "priority"}
@@ -173,6 +192,7 @@ def main() -> int:
     parser.add_argument("--bot-assets", type=Path, default=bot_assets_default)
     parser.add_argument("--flowcld", type=Path, default=site / "data" / "flowcld-blueprint-calibration.json")
     parser.add_argument("--index", type=Path, default=site / "data" / "blueprint-index.json")
+    parser.add_argument("--mining-signals", type=Path, default=site / "data" / "mineral-signal-calibration.json")
     parser.add_argument("--output", type=Path, default=site / "data" / "citizen-chinese-localization.json")
     args = parser.parse_args()
 
@@ -216,6 +236,7 @@ def main() -> int:
         for key, value in source.items():
             add_entry(entries, key, value, "local-polish", domain, 80)
 
+    mining_signals = load_mining_signal_calibration(entries, args.mining_signals)
     blueprints = build_blueprint_maps(entries, args.flowcld, args.index)
     terms = {key: entry["zh"] for key, entry in sorted(entries.items(), key=lambda item: item[0].lower())}
 
@@ -233,6 +254,7 @@ def main() -> int:
             "flowcld": "https://flowcld.xyz/tools/blueprint",
             "flowcldCache": str(args.flowcld),
             "blueprintIndex": str(args.index),
+            "miningSignals": str(args.mining_signals),
         },
         "summary": {
             "entryCount": len(entries),
@@ -246,6 +268,7 @@ def main() -> int:
             "materialCount": len(MATERIALS),
             "manufacturerCount": len(MANUFACTURERS),
             "missionTypeCount": len(MISSION_TYPES),
+            "miningSignalMaterialCount": len((mining_signals.get("signals") or {})),
         },
         "terms": terms,
         "entries": strip_priority(entries),
@@ -260,6 +283,7 @@ def main() -> int:
             key: {"zh": value, "label": f"{value} ({key})", "source": "flowcld-local-polish"}
             for key, value in sorted(MATERIALS.items())
         },
+        "miningSignals": mining_signals,
         "manufacturers": MANUFACTURERS,
         "componentClasses": COMPONENT_CLASSES,
         "missionTypes": MISSION_TYPES,
