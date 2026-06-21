@@ -619,12 +619,12 @@ input:focus {
 }
 
 .results-panel {
-  height: clamp(430px, calc(100vh - 330px), 720px);
+  height: max(460px, calc(100dvh - 330px));
   min-height: 460px;
 }
 
 .detail-panel {
-  height: clamp(430px, calc(100vh - 330px), 720px);
+  height: max(460px, calc(100dvh - 330px));
   min-height: 460px;
 }
 
@@ -1250,7 +1250,7 @@ input:focus {
 
   .results-panel,
   .detail-panel {
-    height: clamp(380px, calc(100vh - 260px), 560px);
+    height: clamp(360px, 54dvh, 620px);
     min-height: 380px;
   }
 }
