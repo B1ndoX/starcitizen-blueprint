@@ -115,19 +115,65 @@ function initHeroVideoFallback() {
   if (!video || !intro) return;
 
   let markedSlow = false;
-  const videoOptions = (video.dataset.heroVideos || "")
-    .split("|")
-    .map((path) => path.trim())
-    .filter((path) => path && !path.includes("operations-planet-video"));
-  const requestedVideo = Number(new URLSearchParams(window.location.search).get("heroVideo"));
+  let usingCdnFallback = false;
+  const parseVideoOptions = (value = "") =>
+    value
+      .split("|")
+      .map((path) => path.trim())
+      .filter((path) => path && !path.includes("operations-planet-video"));
+  const localVideoOptions = parseVideoOptions(video.dataset.heroVideos);
+  const cdnVideoOptions = parseVideoOptions(video.dataset.heroCdnVideos);
+  const query = new URLSearchParams(window.location.search);
+  const requestedVideo = Number(query.get("heroVideo"));
+  const forceLocalVideo = query.get("heroSource") === "local";
+  const preferredSource = cdnVideoOptions.length > 0 && !forceLocalVideo ? "cdn" : "local";
+  const videoOptions = preferredSource === "cdn" ? cdnVideoOptions : localVideoOptions;
+  const fallbackVideoOptions = preferredSource === "cdn" ? localVideoOptions : [];
+  const cacheSourceKey = `${video.dataset.heroCacheKey || "gvy-command-hero-video"}:${preferredSource}`;
+  const cacheTtl = 1000 * 60 * 60 * 24 * 7;
+
+  function readCachedVideoIndex(cacheKey) {
+    try {
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
+      if (!cached || Date.now() - cached.time > cacheTtl) return -1;
+      return Number.isInteger(cached.index) ? cached.index : -1;
+    } catch {
+      return -1;
+    }
+  }
+
+  function writeCachedVideoIndex(cacheKey, index) {
+    try {
+      localStorage.setItem(cacheKey, JSON.stringify({ index, time: Date.now() }));
+    } catch {
+      // Private browsing or restricted storage should not block video playback.
+    }
+  }
+
+  function chooseVideoIndex(options, cacheKey) {
+    const requestedIndex = Number.isInteger(requestedVideo) ? requestedVideo - 1 : -1;
+    const cachedIndex = readCachedVideoIndex(cacheKey);
+    const randomIndex = Math.floor(Math.random() * options.length);
+    return requestedIndex >= 0 && requestedIndex < options.length
+      ? requestedIndex
+      : cachedIndex >= 0 && cachedIndex < options.length
+        ? cachedIndex
+        : randomIndex;
+  }
+
+  function applyVideoSource(options, source, cacheKey) {
+    if (!options.length) return false;
+    const selectedIndex = chooseVideoIndex(options, cacheKey);
+    video.src = options[selectedIndex];
+    video.dataset.heroVideoSelected = String(selectedIndex + 1);
+    video.dataset.heroVideoSource = source;
+    writeCachedVideoIndex(cacheKey, selectedIndex);
+    video.load();
+    return true;
+  }
 
   if (videoOptions.length > 0) {
-    const requestedIndex = Number.isInteger(requestedVideo) ? requestedVideo - 1 : -1;
-    const randomIndex = Math.floor(Math.random() * videoOptions.length);
-    const selectedIndex = requestedIndex >= 0 && requestedIndex < videoOptions.length ? requestedIndex : randomIndex;
-    video.src = videoOptions[selectedIndex];
-    video.dataset.heroVideoSelected = String(selectedIndex + 1);
-    video.load();
+    applyVideoSource(videoOptions, preferredSource, cacheSourceKey);
   }
 
   function showPoster() {
@@ -140,6 +186,13 @@ function initHeroVideoFallback() {
   }
 
   function markFailed() {
+    if (!usingCdnFallback && preferredSource === "cdn" && fallbackVideoOptions.length > 0) {
+      usingCdnFallback = true;
+      if (applyVideoSource(fallbackVideoOptions, "local-fallback", `${video.dataset.heroCacheKey || "gvy-command-hero-video"}:local`)) {
+        tryPlay();
+        return;
+      }
+    }
     intro.classList.add("video-failed");
   }
 

@@ -2148,20 +2148,22 @@ select:focus-visible,
 
 .site-footer strong {
   color: var(--text);
+  font-size: clamp(1.18rem, 1.15vw, 1.58rem);
+  line-height: 1.22;
 }
 
 .site-footer span,
 .site-footer p,
 .site-footer a {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: clamp(0.82rem, 0.72vw, 1rem);
   line-height: 1.6;
 }
 
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: clamp(12px, 1.3vw, 22px);
 }
 
 .site-footer a {
@@ -2175,6 +2177,7 @@ select:focus-visible,
 .disclaimer {
   grid-column: 1 / -1;
   color: var(--muted);
+  font-size: clamp(0.78rem, 0.68vw, 0.94rem);
 }
 
 .reveal {
