@@ -329,9 +329,9 @@ function initMemberPhysics() {
   engine.constraintIterations = 1;
   engine.gravity.y = 0.5;
   const runner = Runner.create();
-  const sideInset = Math.round(clamp(width * 0.018, 12, 24));
-  const topLimit = sideInset;
-  const groundY = height - Math.round(clamp(height * 0.08, 28, 56));
+  const sideInset = Math.round(clamp(width * 0.008, 8, 16));
+  const topLimit = Math.round(clamp(height * 0.018, 8, 18));
+  const groundY = height - Math.round(clamp(height * 0.042, 18, 34));
 
   combatants = chips.map((chip, index) => {
     const chipBox = chip.getBoundingClientRect();
@@ -362,9 +362,9 @@ function initMemberPhysics() {
       height: chipH,
       avatarCenterX,
       avatarCenterY,
-      edgePadX: Math.round(fighterSize * 0.72),
-      edgePadTop: Math.round(fighterSize * 0.16),
-      edgePadBottom: Math.round(fighterSize * 0.28),
+      edgePadX: Math.round(fighterSize * 0.34),
+      edgePadTop: Math.round(fighterSize * 0.06),
+      edgePadBottom: Math.round(fighterSize * 0.16),
       radius,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,

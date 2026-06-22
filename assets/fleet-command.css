@@ -1751,20 +1751,21 @@ select:focus-visible,
 }
 
 .fighter-name {
+  box-sizing: border-box;
   width: max-content;
   min-width: calc(var(--fighter-size, 66px) * 0.86);
   max-width: var(--fighter-name-max, 150px);
-  margin-bottom: 4px;
-  padding: 3px clamp(7px, calc(var(--fighter-size, 66px) * 0.14), 12px) 4px;
+  margin-bottom: 2px;
+  padding: 1px clamp(7px, calc(var(--fighter-size, 66px) * 0.12), 10px) 2px;
   overflow: hidden;
-  border: 3px solid var(--line);
+  border: 2px solid var(--line);
   border-radius: 999px;
   color: var(--ink);
   background: var(--paper);
-  box-shadow: 3px 3px 0 var(--line);
+  box-shadow: 2px 2px 0 var(--line);
   font-size: var(--fighter-name-size, 13px);
   font-weight: 950;
-  line-height: 1;
+  line-height: 0.88;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1776,10 +1777,13 @@ select:focus-visible,
   width: var(--fighter-size, 66px);
   height: var(--fighter-size, 66px);
   place-items: center;
-  border: 5px solid var(--line);
+  border: 4px solid rgba(246, 248, 250, 0.88);
   border-radius: 50%;
   background: var(--paper);
-  box-shadow: 5px 5px 0 var(--line);
+  box-shadow:
+    0 0 0 1px rgba(5, 5, 26, 0.78),
+    3px 3px 0 rgba(5, 5, 26, 0.62),
+    0 0 16px rgba(246, 248, 250, 0.08);
   transform: rotate(var(--body-rotation, 0rad));
   transform-origin: center;
   will-change: transform;
@@ -3058,14 +3062,17 @@ select:focus-visible,
   .fighter-name {
     min-width: calc(var(--fighter-size, 54px) * 0.9);
     max-width: var(--fighter-name-max, 108px);
-    padding: 3px 6px;
+    padding: 1px 6px 2px;
     border-width: 2px;
     font-size: var(--fighter-name-size, 10px);
   }
 
   .fighter-avatar-wrap {
     border-width: 3px;
-    box-shadow: 3px 3px 0 var(--line);
+    box-shadow:
+      0 0 0 1px rgba(5, 5, 26, 0.78),
+      2px 2px 0 rgba(5, 5, 26, 0.62),
+      0 0 12px rgba(246, 248, 250, 0.08);
   }
 
   .health-bar {
