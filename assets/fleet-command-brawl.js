@@ -442,31 +442,27 @@ function initMemberPhysics() {
   Events.on(engine, "collisionActive", handleWallCollisions);
 
   let frame = 0;
-  let lastDomSyncAt = 0;
-  function syncDom(now = performance.now()) {
-    if (now - lastDomSyncAt >= 32) {
-      lastDomSyncAt = now;
-      combatants.forEach((item) => {
-        const { body, chip, alive } = item;
-        if (!alive) return;
-        keepFighterInBounds(item, arenaBounds, true);
-        const nextX = Math.round((body.position.x - item.avatarCenterX) * 10) / 10;
-        const nextY = Math.round((body.position.y - item.avatarCenterY) * 10) / 10;
-        const nextAngle = Math.round(body.angle * 1000) / 1000;
-        if (nextX !== item.lastRenderX) {
-          chip.style.setProperty("--chip-x", `${nextX}px`);
-          item.lastRenderX = nextX;
-        }
-        if (nextY !== item.lastRenderY) {
-          chip.style.setProperty("--chip-y", `${nextY}px`);
-          item.lastRenderY = nextY;
-        }
-        if (nextAngle !== item.lastRenderAngle) {
-          chip.style.setProperty("--body-rotation", `${nextAngle}rad`);
-          item.lastRenderAngle = nextAngle;
-        }
-      });
-    }
+  function syncDom() {
+    combatants.forEach((item) => {
+      const { body, chip, alive } = item;
+      if (!alive) return;
+      keepFighterInBounds(item, arenaBounds, true);
+      const nextX = Math.round((body.position.x - item.avatarCenterX) * 10) / 10;
+      const nextY = Math.round((body.position.y - item.avatarCenterY) * 10) / 10;
+      const nextAngle = Math.round(body.angle * 1000) / 1000;
+      if (nextX !== item.lastRenderX) {
+        chip.style.setProperty("--chip-x", `${nextX}px`);
+        item.lastRenderX = nextX;
+      }
+      if (nextY !== item.lastRenderY) {
+        chip.style.setProperty("--chip-y", `${nextY}px`);
+        item.lastRenderY = nextY;
+      }
+      if (nextAngle !== item.lastRenderAngle) {
+        chip.style.setProperty("--body-rotation", `${nextAngle}rad`);
+        item.lastRenderAngle = nextAngle;
+      }
+    });
     frame = requestAnimationFrame(syncDom);
   }
 

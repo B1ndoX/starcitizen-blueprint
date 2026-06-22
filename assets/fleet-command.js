@@ -551,6 +551,12 @@ function initArchiveOrbit() {
   let pausedAt = 0;
   let pausedDuration = 0;
   let lastTickTime = 0;
+  let dragOffset = 0;
+  let dragStartX = 0;
+  let dragStartOffset = 0;
+  let dragPointerId = null;
+  let didDrag = false;
+  let suppressClickUntil = 0;
   let size = { width: 0, height: 0, radiusX: 0, radiusY: 0, radiusZ: 0 };
   const orbitItems = frames.map((frame, index) => ({
     frame,
@@ -582,7 +588,7 @@ function initArchiveOrbit() {
   }
 
   function place(time = lastTickTime) {
-    const rotation = prefersReducedMotion ? 0.72 : getOrbitTime(time) * 0.000105;
+    const rotation = (prefersReducedMotion ? 0.72 : getOrbitTime(time) * 0.000105) + dragOffset;
     orbitItems.forEach((item, index) => {
       const { frame } = item;
       const angle = item.angle + rotation;
@@ -642,23 +648,52 @@ function initArchiveOrbit() {
   place(0);
 
   frames.forEach((frame) => {
-    frame.addEventListener("mouseenter", () => {
-      if (paused) return;
-      paused = true;
-      pausedAt = performance.now();
-      cancelAnimationFrame(frameId);
-    });
-    frame.addEventListener("mouseleave", () => {
-      if (!active || prefersReducedMotion) return;
-      if (!paused) return;
-      if (pausedAt) {
-        pausedDuration += performance.now() - pausedAt;
-        pausedAt = 0;
-      }
-      paused = false;
-      frameId = requestAnimationFrame(tick);
-    });
+    frame.addEventListener("pointerenter", () => frame.classList.add("is-hovered"));
+    frame.addEventListener("pointerleave", () => frame.classList.remove("is-hovered"));
   });
+
+  gallery.addEventListener(
+    "click",
+    (event) => {
+      if (performance.now() > suppressClickUntil) return;
+      event.preventDefault();
+      event.stopPropagation();
+    },
+    true,
+  );
+
+  gallery.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 && event.pointerType === "mouse") return;
+    dragPointerId = event.pointerId;
+    dragStartX = event.clientX;
+    dragStartOffset = dragOffset;
+    didDrag = false;
+    gallery.classList.add("is-dragging");
+    gallery.setPointerCapture?.(event.pointerId);
+  });
+
+  gallery.addEventListener("pointermove", (event) => {
+    if (dragPointerId !== event.pointerId) return;
+    const deltaX = event.clientX - dragStartX;
+    if (Math.abs(deltaX) > 4) didDrag = true;
+    if (!didDrag) return;
+    event.preventDefault();
+    dragOffset = dragStartOffset + deltaX * 0.006;
+    place(lastTickTime || performance.now());
+  });
+
+  function endDrag(event) {
+    if (dragPointerId !== event.pointerId) return;
+    if (didDrag) suppressClickUntil = performance.now() + 180;
+    dragPointerId = null;
+    didDrag = false;
+    gallery.classList.remove("is-dragging");
+    frames.forEach((frame) => frame.classList.remove("is-hovered"));
+    gallery.releasePointerCapture?.(event.pointerId);
+  }
+
+  gallery.addEventListener("pointerup", endDrag);
+  gallery.addEventListener("pointercancel", endDrag);
 
   const observer = new IntersectionObserver(
     (entries) => {

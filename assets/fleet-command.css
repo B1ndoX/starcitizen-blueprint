@@ -1295,7 +1295,13 @@ select:focus-visible,
     linear-gradient(180deg, rgba(3, 5, 8, 0.18), rgba(3, 5, 8, 0.52));
   perspective: 1200px;
   perspective-origin: 50% 46%;
+  cursor: grab;
+  user-select: none;
   contain: layout paint;
+}
+
+.archive-wall.is-dragging {
+  cursor: grabbing;
 }
 
 .archive-wall::before,
@@ -1452,6 +1458,7 @@ select:focus-visible,
 }
 
 .archive-frame:hover,
+.archive-frame.is-hovered,
 .archive-frame:focus-visible {
   z-index: 40 !important;
   box-shadow:
@@ -1460,12 +1467,18 @@ select:focus-visible,
     0 0 24px rgba(95, 168, 211, 0.12);
 }
 
+.archive-wall.is-dragging .archive-frame {
+  cursor: grabbing;
+}
+
 .archive-frame:hover img,
+.archive-frame.is-hovered img,
 .archive-frame:focus-visible img {
-  transform: scale(1.055);
+  transform: scale(1.065);
 }
 
 .archive-frame:hover::after,
+.archive-frame.is-hovered::after,
 .archive-frame:focus-visible::after {
   opacity: 1;
   transform: translateY(0);
