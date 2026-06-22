@@ -223,7 +223,7 @@ function updateIntroProgress() {
   const rect = intro.getBoundingClientRect();
   const scrollable = Math.max(1, rect.height - window.innerHeight);
   const progress = clamp((0 - rect.top) / scrollable, 0, 1);
-  const titleExit = 1 - smoothRange(progress, 0.84, 1);
+  const titleExit = 1 - smoothRange(progress, 0.9, 1);
   const titleLabel = smoothRange(progress, 0.018, 0.11) * titleExit;
   const titleMain = smoothRange(progress, 0.055, 0.28) * titleExit;
   const titleSub = smoothRange(progress, 0.14, 0.36) * titleExit;
@@ -232,12 +232,12 @@ function updateIntroProgress() {
   const motto = smoothRange(progress, 0.34, 0.62) * titleExit;
   const hud = smoothRange(progress, 0.5, 0.68);
   const actions = smoothRange(progress, 0.62, 0.8);
-  const exit = smoothRange(progress, 0.78, 1);
+  const exit = smoothRange(progress, 0.88, 1);
   const navReveal = smoothRange(progress, 0.46, 0.62);
   const scrollCue = 1 - smoothRange(progress, 0.035, 0.18);
-  const blackout = smoothRange(progress, 0.68, 0.92);
+  const blackout = smoothRange(progress, 0.9, 1);
   const dark = clamp(0.28 + motto * 0.12 + hud * 0.08 + exit * 0.34, 0.28, 0.82);
-  const videoOpacity = clamp(0.96 - blackout * 0.92, 0.04, 0.96);
+  const videoOpacity = clamp(0.98 - blackout * 0.9, 0.08, 0.98);
   const scanY = -26 + progress * 520;
   const scanOpacity = clamp(0.16 + title * 0.18 + actions * 0.12, 0.12, 0.46);
   const fleetOpacity = clamp(0.06 + hud * 0.15 - exit * 0.08, 0.03, 0.21);

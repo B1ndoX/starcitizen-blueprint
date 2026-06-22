@@ -388,8 +388,8 @@ select:focus-visible,
       180deg,
       rgba(3, 5, 8, var(--intro-blackout, 0)) 0%,
       rgba(3, 5, 8, calc(var(--intro-blackout, 0) * 0.92)) 42%,
-      rgba(3, 5, 8, 0.72) 78%,
-      #030508 100%
+      rgba(3, 5, 8, calc(0.16 + var(--intro-blackout, 0) * 0.68)) 78%,
+      rgba(3, 5, 8, calc(0.36 + var(--intro-blackout, 0) * 0.64)) 100%
     );
   content: "";
   pointer-events: none;
