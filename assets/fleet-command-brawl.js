@@ -288,7 +288,7 @@ function calculateChipSizing(fieldWidth, memberCount) {
 
   return {
     size,
-    nameSize: Math.round(clamp(size / 7.4, isMobile ? 7 : 8, isMobile ? 8 : 10)),
+    nameSize: Math.round(clamp(size / 5.2, isMobile ? 8 : 11, isMobile ? 10 : 13)),
     weaponSize: Math.round(clamp(size / 7.2, isMobile ? 7 : 8, isMobile ? 9 : 10)),
   };
 }
@@ -327,18 +327,21 @@ function initMemberPhysics() {
   engine.constraintIterations = 1;
   engine.gravity.y = 0.5;
   const runner = Runner.create();
-  const sideInset = Math.round(clamp(width * 0.002, 2, 6));
+  const sideInset = Math.round(clamp(width * 0.003, 4, 8));
   const topLimit = Math.round(clamp(height * 0.006, 2, 6));
   const groundY = height - Math.round(clamp(height * 0.012, 4, 10));
 
   combatants = chips.map((chip, index) => {
+    const chipBox = chip.getBoundingClientRect();
     const avatar = chip.querySelector(".fighter-avatar-wrap");
     const avatarBox = avatar?.getBoundingClientRect();
     const fighterSize = sizing.size;
-    const chipW = fighterSize + (width < 560 ? 22 : 34);
-    const chipH = fighterSize + (width < 560 ? 46 : 64);
-    const avatarCenterX = chipW / 2;
-    const avatarCenterY = chipH - (avatarBox?.height || fighterSize) / 2 - (width < 560 ? 10 : 12);
+    const chipW = chipBox.width || fighterSize + (width < 560 ? 22 : 34);
+    const chipH = chipBox.height || fighterSize + (width < 560 ? 46 : 64);
+    const avatarCenterX = avatarBox ? avatarBox.left - chipBox.left + avatarBox.width / 2 : chipW / 2;
+    const avatarCenterY = avatarBox
+      ? avatarBox.top - chipBox.top + avatarBox.height / 2
+      : chipH - fighterSize / 2 - (width < 560 ? 10 : 12);
     const radius = Math.max(width < 560 ? 12 : 16, (avatarBox?.width || fighterSize) / 2);
     const weapon = selectWeapon(index);
     const spawnMinX = sideInset + radius;
@@ -359,9 +362,6 @@ function initMemberPhysics() {
       height: chipH,
       avatarCenterX,
       avatarCenterY,
-      edgePadX: 0,
-      edgePadTop: 0,
-      edgePadBottom: 0,
       radius,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
@@ -536,10 +536,7 @@ function keepFighterInBounds(item, bounds, strict = false) {
   if (!window.Matter) return;
   const { Body } = window.Matter;
   const { body } = item;
-  const minX = bounds.sideInset + item.edgePadX + item.avatarCenterX;
-  const maxX = bounds.width - bounds.sideInset - item.edgePadX - (item.width - item.avatarCenterX);
-  const minY = bounds.topLimit + item.edgePadTop + item.avatarCenterY;
-  const maxY = bounds.groundY - item.edgePadBottom - (item.height - item.avatarCenterY);
+  const { minX, maxX, minY, maxY } = getFighterLimits(item, bounds);
   const nextX = clampInside(body.position.x, minX, maxX);
   const nextY = clampInside(body.position.y, minY, maxY);
   const maxVelocity = strict ? 7.5 : 9;
@@ -585,6 +582,16 @@ function keepFighterInBounds(item, bounds, strict = false) {
 function lockArenaBoundary(item) {
   if (!item?.alive || !activeArenaBounds) return;
   keepFighterInBounds(item, activeArenaBounds, true);
+}
+
+function getFighterLimits(item, bounds) {
+  const radius = item.radius;
+  return {
+    minX: bounds.sideInset + radius,
+    maxX: bounds.width - bounds.sideInset - radius,
+    minY: bounds.topLimit + radius,
+    maxY: bounds.groundY - radius,
+  };
 }
 
 function beginAttack(engine, attacker, target, now) {
@@ -734,6 +741,7 @@ function absorbWallCollision(body, otherBody) {
 
   const { Body } = window.Matter;
   const velocity = { x: body.velocity.x, y: body.velocity.y };
+  const bounds = activeArenaBounds;
 
   if (edge === "left" || edge === "right") {
     velocity.x = 0;
@@ -746,6 +754,14 @@ function absorbWallCollision(body, otherBody) {
 
   Body.setVelocity(body, velocity);
   Body.setAngularVelocity(body, clamp(body.angularVelocity * 0.45, -0.035, 0.035));
+  if (bounds) {
+    const limits = getFighterLimits(item, bounds);
+    const nextPosition = {
+      x: edge === "left" ? limits.minX : edge === "right" ? limits.maxX : clampInside(body.position.x, limits.minX, limits.maxX),
+      y: edge === "top" ? limits.minY : edge === "bottom" ? limits.maxY : clampInside(body.position.y, limits.minY, limits.maxY),
+    };
+    Body.setPosition(body, nextPosition);
+  }
   lockArenaBoundary(item);
 }
 
@@ -1025,10 +1041,7 @@ function movePhysicsDrag(event) {
     sideInset: 14,
   };
   const { sideInset, groundY, topLimit } = bounds;
-  const minX = sideInset + item.edgePadX + item.avatarCenterX;
-  const maxX = bounds.width - sideInset - item.edgePadX - (item.width - item.avatarCenterX);
-  const minY = topLimit + item.edgePadTop + item.avatarCenterY;
-  const maxY = groundY - item.edgePadBottom - (item.height - item.avatarCenterY);
+  const { minX, maxX, minY, maxY } = getFighterLimits(item, { ...bounds, sideInset, groundY, topLimit });
   const nextX = clampInside(
     event.clientX - fieldBox.left - activePhysicsDrag.offsetX + item.avatarCenterX,
     minX,

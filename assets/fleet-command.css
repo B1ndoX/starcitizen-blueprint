@@ -1752,22 +1752,26 @@ select:focus-visible,
 
 .fighter-name {
   box-sizing: border-box;
-  display: block;
+  display: inline-flex;
   width: max-content;
+  height: calc(var(--fighter-name-size, 13px) + 9px);
   min-width: 0;
-  max-width: none;
-  margin-bottom: 2px;
-  padding: 0.02em 0.5em 0.06em;
+  max-width: min(calc(var(--fighter-size, 66px) + 84px), calc(100vw - 36px));
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3px;
+  padding: 0 8px;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   border-radius: 999px;
   color: var(--ink);
   background: var(--paper);
-  box-shadow: 1px 1px 0 var(--line);
+  box-shadow: 2px 2px 0 var(--line);
   font-size: var(--fighter-name-size, 13px);
   font-weight: 950;
-  line-height: 0.92;
+  line-height: 1;
   text-align: center;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -1891,7 +1895,6 @@ select:focus-visible,
 
 .member-fighter.is-attacking {
   filter: saturate(1.35) contrast(1.12);
-  scale: 1.08;
 }
 
 .member-fighter.is-attacking .weapon-aim {
@@ -3060,9 +3063,10 @@ select:focus-visible,
   }
 
   .fighter-name {
-    max-width: none;
-    padding: 0.02em 0.48em 0.06em;
-    border-width: 1px;
+    height: calc(var(--fighter-name-size, 10px) + 8px);
+    max-width: min(calc(var(--fighter-size, 54px) + 84px), calc(100vw - 32px));
+    padding: 0 7px;
+    border-width: 2px;
     font-size: var(--fighter-name-size, 10px);
   }
 
