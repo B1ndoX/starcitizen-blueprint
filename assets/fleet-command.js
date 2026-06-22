@@ -14,6 +14,108 @@ function smoothRange(progress, start, end) {
   return value * value * (3 - 2 * value);
 }
 
+function initSiteBackdrop() {
+  const canvas = document.querySelector("#siteBackdropCanvas");
+  if (!canvas) return;
+
+  const context = canvas.getContext("2d", { alpha: true });
+  let width = 0;
+  let height = 0;
+  let stars = [];
+  let pointerX = 0;
+  let pointerY = 0;
+  let targetX = 0;
+  let targetY = 0;
+  let pointerDown = false;
+  let frameId = 0;
+
+  function createStars() {
+    const compact = window.innerWidth < 720;
+    const count = compact ? 90 : 190;
+    stars = Array.from({ length: count }, () => ({
+      x: Math.random(),
+      y: Math.random(),
+      z: Math.random() * 0.85 + 0.15,
+      size: Math.random() * 1.25 + 0.25,
+      twinkle: Math.random() * Math.PI * 2,
+      warm: Math.random() > 0.86,
+    }));
+  }
+
+  function resize() {
+    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(1, Math.round(window.innerWidth));
+    height = Math.max(1, Math.round(window.innerHeight));
+    canvas.width = Math.round(width * scale);
+    canvas.height = Math.round(height * scale);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(scale, 0, 0, scale, 0, 0);
+    createStars();
+  }
+
+  function render(time = 0) {
+    pointerX += (targetX - pointerX) * 0.055;
+    pointerY += (targetY - pointerY) * 0.055;
+    root.style.setProperty("--site-star-x", `${pointerX.toFixed(2)}px`);
+    root.style.setProperty("--site-star-y", `${pointerY.toFixed(2)}px`);
+
+    context.clearRect(0, 0, width, height);
+    context.fillStyle = "#030508";
+    context.fillRect(0, 0, width, height);
+
+    const glowA = context.createRadialGradient(width * 0.72 + pointerX * 0.08, height * 0.24 + pointerY * 0.05, 0, width * 0.72, height * 0.24, width * 0.7);
+    glowA.addColorStop(0, "rgba(95, 168, 211, 0.12)");
+    glowA.addColorStop(0.45, "rgba(95, 168, 211, 0.035)");
+    glowA.addColorStop(1, "rgba(95, 168, 211, 0)");
+    context.fillStyle = glowA;
+    context.fillRect(0, 0, width, height);
+
+    const glowB = context.createRadialGradient(width * 0.18 - pointerX * 0.06, height * 0.68 - pointerY * 0.04, 0, width * 0.18, height * 0.68, width * 0.48);
+    glowB.addColorStop(0, "rgba(200, 164, 93, 0.06)");
+    glowB.addColorStop(0.54, "rgba(200, 164, 93, 0.018)");
+    glowB.addColorStop(1, "rgba(200, 164, 93, 0)");
+    context.fillStyle = glowB;
+    context.fillRect(0, 0, width, height);
+
+    stars.forEach((star) => {
+      const strengthX = pointerDown ? 0.075 : 0.045;
+      const strengthY = pointerDown ? 0.06 : 0.036;
+      const x = star.x * width + pointerX * star.z * strengthX;
+      const y = star.y * height + pointerY * star.z * strengthY;
+      const alpha = clamp(0.22 + star.z * 0.62 + Math.sin(time * 0.0012 + star.twinkle) * 0.12, 0.16, 0.88);
+      context.beginPath();
+      context.fillStyle = star.warm ? `rgba(200, 164, 93, ${alpha})` : `rgba(222, 240, 248, ${alpha})`;
+      context.arc(x, y, star.size * star.z, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    if (!prefersReducedMotion) frameId = requestAnimationFrame(render);
+  }
+
+  function updatePointer(event) {
+    targetX = event.clientX - width / 2;
+    targetY = event.clientY - height / 2;
+  }
+
+  resize();
+  render();
+  window.addEventListener("resize", resize, { passive: true });
+  window.addEventListener("pointermove", updatePointer, { passive: true });
+  window.addEventListener("pointerdown", (event) => {
+    pointerDown = true;
+    updatePointer(event);
+  }, { passive: true });
+  window.addEventListener("pointerup", () => {
+    pointerDown = false;
+  }, { passive: true });
+  window.addEventListener("pointercancel", () => {
+    pointerDown = false;
+  }, { passive: true });
+
+  return () => cancelAnimationFrame(frameId);
+}
+
 function initStarfield() {
   const canvas = document.querySelector("#starfieldCanvas");
   if (!canvas || !introSticky) return;
@@ -546,7 +648,12 @@ function initArchiveLightbox() {
   if (!dialog || !image || !caption || !frames.length) return;
 
   frames.forEach((frame) => {
-    frame.addEventListener("click", () => {
+    frame.addEventListener("click", (event) => {
+      if (frame.closest("[data-orbit-gallery]")?.dataset.dragSuppressClick === "true") {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+      }
       const src = frame.dataset.full;
       const label = frame.dataset.caption || frame.querySelector("img")?.alt || "GVY ARCHIVE";
       if (!src) return;
@@ -609,7 +716,7 @@ function initArchiveOrbit() {
   let dragStartOffset = 0;
   let dragPointerId = null;
   let didDrag = false;
-  let suppressClickUntil = 0;
+  let dragSuppressTimer = 0;
   let size = { width: 0, height: 0, radiusX: 0, radiusY: 0, radiusZ: 0 };
   const orbitItems = frames.map((frame, index) => ({
     frame,
@@ -708,7 +815,7 @@ function initArchiveOrbit() {
   gallery.addEventListener(
     "click",
     (event) => {
-      if (performance.now() > suppressClickUntil) return;
+      if (gallery.dataset.dragSuppressClick !== "true") return;
       event.preventDefault();
       event.stopPropagation();
     },
@@ -721,6 +828,8 @@ function initArchiveOrbit() {
     dragStartX = event.clientX;
     dragStartOffset = dragOffset;
     didDrag = false;
+    window.clearTimeout(dragSuppressTimer);
+    gallery.dataset.dragSuppressClick = "false";
     gallery.classList.add("is-dragging");
     gallery.setPointerCapture?.(event.pointerId);
   });
@@ -737,7 +846,12 @@ function initArchiveOrbit() {
 
   function endDrag(event) {
     if (dragPointerId !== event.pointerId) return;
-    if (didDrag) suppressClickUntil = performance.now() + 180;
+    if (didDrag) {
+      gallery.dataset.dragSuppressClick = "true";
+      dragSuppressTimer = window.setTimeout(() => {
+        gallery.dataset.dragSuppressClick = "false";
+      }, 320);
+    }
     dragPointerId = null;
     didDrag = false;
     gallery.classList.remove("is-dragging");
@@ -785,6 +899,7 @@ function initScrollLoop() {
   window.addEventListener("resize", requestUpdate, { passive: true });
 }
 
+initSiteBackdrop();
 initStarfield();
 initHeroVideoFallback();
 initPointerParallax();
