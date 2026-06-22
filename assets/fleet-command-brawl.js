@@ -288,9 +288,8 @@ function calculateChipSizing(fieldWidth, memberCount) {
 
   return {
     size,
-    nameSize: Math.round(clamp(size / 5.2, isMobile ? 8 : 11, isMobile ? 10 : 13)),
+    nameSize: Math.round(clamp(size / 7.4, isMobile ? 7 : 8, isMobile ? 8 : 10)),
     weaponSize: Math.round(clamp(size / 7.2, isMobile ? 7 : 8, isMobile ? 9 : 10)),
-    nameMax: Math.round(clamp(size * (isMobile ? 2.45 : 2.7), isMobile ? 72 : 92, isMobile ? 120 : 170)),
   };
 }
 
@@ -298,7 +297,6 @@ function applyChipSizing(size) {
   memberField.style.setProperty("--fighter-size", `${size.size}px`);
   memberField.style.setProperty("--fighter-name-size", `${size.nameSize}px`);
   memberField.style.setProperty("--fighter-weapon-size", `${size.weaponSize}px`);
-  memberField.style.setProperty("--fighter-name-max", `${size.nameMax}px`);
 }
 
 function initMemberPhysics() {
@@ -329,23 +327,22 @@ function initMemberPhysics() {
   engine.constraintIterations = 1;
   engine.gravity.y = 0.5;
   const runner = Runner.create();
-  const sideInset = Math.round(clamp(width * 0.008, 8, 16));
-  const topLimit = Math.round(clamp(height * 0.018, 8, 18));
-  const groundY = height - Math.round(clamp(height * 0.042, 18, 34));
+  const sideInset = Math.round(clamp(width * 0.002, 2, 6));
+  const topLimit = Math.round(clamp(height * 0.006, 2, 6));
+  const groundY = height - Math.round(clamp(height * 0.012, 4, 10));
 
   combatants = chips.map((chip, index) => {
-    const chipBox = chip.getBoundingClientRect();
     const avatar = chip.querySelector(".fighter-avatar-wrap");
     const avatarBox = avatar?.getBoundingClientRect();
     const fighterSize = sizing.size;
-    const chipW = chipBox.width || fighterSize + 30;
-    const chipH = chipBox.height || fighterSize + 34;
-    const avatarCenterX = avatarBox ? avatarBox.left - chipBox.left + avatarBox.width / 2 : chipW / 2;
-    const avatarCenterY = avatarBox ? avatarBox.top - chipBox.top + avatarBox.height / 2 : chipH / 2;
+    const chipW = fighterSize + (width < 560 ? 22 : 34);
+    const chipH = fighterSize + (width < 560 ? 46 : 64);
+    const avatarCenterX = chipW / 2;
+    const avatarCenterY = chipH - (avatarBox?.height || fighterSize) / 2 - (width < 560 ? 10 : 12);
     const radius = Math.max(width < 560 ? 12 : 16, (avatarBox?.width || fighterSize) / 2);
     const weapon = selectWeapon(index);
-    const spawnMinX = sideInset + avatarCenterX;
-    const spawnMaxX = width - sideInset - (chipW - avatarCenterX);
+    const spawnMinX = sideInset + radius;
+    const spawnMaxX = width - sideInset - radius;
     const x = clampInside(randomRange(spawnMinX, Math.max(spawnMinX, spawnMaxX)), spawnMinX, spawnMaxX);
     const y = -randomRange(radius * 1.8, Math.max(radius * 5, height * 0.5)) - index * randomRange(3, 8);
     const body = Bodies.circle(x, y, radius, {
@@ -362,9 +359,9 @@ function initMemberPhysics() {
       height: chipH,
       avatarCenterX,
       avatarCenterY,
-      edgePadX: Math.round(fighterSize * 0.34),
-      edgePadTop: Math.round(fighterSize * 0.06),
-      edgePadBottom: Math.round(fighterSize * 0.16),
+      edgePadX: 0,
+      edgePadTop: 0,
+      edgePadBottom: 0,
       radius,
       maxHp: weapon.maxHp || maxHp,
       hp: weapon.maxHp || maxHp,
@@ -445,28 +442,31 @@ function initMemberPhysics() {
   Events.on(engine, "collisionActive", handleWallCollisions);
 
   let frame = 0;
-  function syncDom() {
-    combatants.forEach((item) => {
-      const { body, chip, width: chipW, height: chipH, alive } = item;
-      if (!alive) return;
-      keepFighterInBounds(item, arenaBounds, true);
-      const nextX = Math.round((body.position.x - item.avatarCenterX) * 10) / 10;
-      const nextY = Math.round((body.position.y - item.avatarCenterY) * 10) / 10;
-      const nextAngle = Math.round(body.angle * 1000) / 1000;
-      if (nextX !== item.lastRenderX) {
-        chip.style.setProperty("--chip-x", `${nextX}px`);
-        item.lastRenderX = nextX;
-      }
-      if (nextY !== item.lastRenderY) {
-        chip.style.setProperty("--chip-y", `${nextY}px`);
-        item.lastRenderY = nextY;
-      }
-      if (nextAngle !== item.lastRenderAngle) {
-        chip.style.setProperty("--body-rotation", `${nextAngle}rad`);
-        item.lastRenderAngle = nextAngle;
-      }
-      if (item.target?.alive) aimWeaponAt(item, item.target);
-    });
+  let lastDomSyncAt = 0;
+  function syncDom(now = performance.now()) {
+    if (now - lastDomSyncAt >= 32) {
+      lastDomSyncAt = now;
+      combatants.forEach((item) => {
+        const { body, chip, alive } = item;
+        if (!alive) return;
+        keepFighterInBounds(item, arenaBounds, true);
+        const nextX = Math.round((body.position.x - item.avatarCenterX) * 10) / 10;
+        const nextY = Math.round((body.position.y - item.avatarCenterY) * 10) / 10;
+        const nextAngle = Math.round(body.angle * 1000) / 1000;
+        if (nextX !== item.lastRenderX) {
+          chip.style.setProperty("--chip-x", `${nextX}px`);
+          item.lastRenderX = nextX;
+        }
+        if (nextY !== item.lastRenderY) {
+          chip.style.setProperty("--chip-y", `${nextY}px`);
+          item.lastRenderY = nextY;
+        }
+        if (nextAngle !== item.lastRenderAngle) {
+          chip.style.setProperty("--body-rotation", `${nextAngle}rad`);
+          item.lastRenderAngle = nextAngle;
+        }
+      });
+    }
     frame = requestAnimationFrame(syncDom);
   }
 
@@ -516,7 +516,7 @@ function startCombatLoop(engine) {
       if (!target || target.distance > attacker.weapon.range) return;
       beginAttack(engine, attacker, target.item, now);
     });
-  }, 160);
+  }, 220);
 }
 
 function getCombatTarget(attacker) {

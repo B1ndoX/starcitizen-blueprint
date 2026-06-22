@@ -1733,7 +1733,7 @@ select:focus-visible,
   z-index: 1;
   display: grid;
   justify-items: center;
-  width: max(calc(var(--fighter-size, 66px) + 34px), var(--fighter-name-max, 118px));
+  width: calc(var(--fighter-size, 66px) + 34px);
   min-height: calc(var(--fighter-size, 66px) + 64px);
   border: 0;
   padding: 0;
@@ -1752,22 +1752,22 @@ select:focus-visible,
 
 .fighter-name {
   box-sizing: border-box;
+  display: block;
   width: max-content;
-  min-width: calc(var(--fighter-size, 66px) * 0.86);
-  max-width: var(--fighter-name-max, 150px);
+  min-width: 0;
+  max-width: none;
   margin-bottom: 2px;
-  padding: 1px clamp(7px, calc(var(--fighter-size, 66px) * 0.12), 10px) 2px;
+  padding: 0.02em 0.5em 0.06em;
   overflow: hidden;
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--ink);
   background: var(--paper);
-  box-shadow: 2px 2px 0 var(--line);
+  box-shadow: 1px 1px 0 var(--line);
   font-size: var(--fighter-name-size, 13px);
   font-weight: 950;
-  line-height: 0.88;
+  line-height: 0.92;
   text-align: center;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -3055,15 +3055,14 @@ select:focus-visible,
   }
 
   .member-fighter {
-    width: max(calc(var(--fighter-size, 54px) + 22px), var(--fighter-name-max, 82px));
+    width: calc(var(--fighter-size, 54px) + 22px);
     min-height: calc(var(--fighter-size, 54px) + 46px);
   }
 
   .fighter-name {
-    min-width: calc(var(--fighter-size, 54px) * 0.9);
-    max-width: var(--fighter-name-max, 108px);
-    padding: 1px 6px 2px;
-    border-width: 2px;
+    max-width: none;
+    padding: 0.02em 0.48em 0.06em;
+    border-width: 1px;
     font-size: var(--fighter-name-size, 10px);
   }
 
